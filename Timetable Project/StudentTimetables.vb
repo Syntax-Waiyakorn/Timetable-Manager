@@ -72,18 +72,14 @@ Public Class StudentTimetables
                 conn.Open()
             End If
             For i As Integer = 1 To 5
-                Dim cmd As New OleDb.OleDbCommand("SELECT DayName FROM Days WHERE DayNumber = @DayNumber", conn)
-                cmd.Parameters.Clear()
-                cmd.Parameters.AddWithValue("@DayNumber", i)
+                Dim cmd As New OleDb.OleDbCommand("Select DayNumber, DayName from Days WHERE `DayNumber` like '%" & CStr(i) & "%' ", conn)
                 dr = cmd.ExecuteReader
                 While dr.Read
                     lblDays(i - 1).Text = CStr(dr.Item("DayName"))
                 End While
             Next
             For i As Integer = 1 To 11
-                Dim cmd As New OleDb.OleDbCommand("Select PeriodNumber, PeriodName, PeriodTimeStart, PeriodTimeEnd from Periods WHERE PeriodNumber = @PeriodNumber", conn)
-                cmd.Parameters.Clear()
-                cmd.Parameters.AddWithValue("@PeriodNumber", i)
+                Dim cmd As New OleDb.OleDbCommand("Select PeriodNumber, PeriodName, PeriodTimeStart, PeriodTimeEnd from Periods WHERE `PeriodNumber` like '%" & CStr(i) & "%' ", conn)
                 dr = cmd.ExecuteReader
                 While dr.Read
                     lblPeriods(i - 1).Text = CStr(dr.Item("PeriodName"))
@@ -215,7 +211,7 @@ Public Class StudentTimetables
             Dim cmd3 As New OleDb.OleDbCommand("UPDATE TimetablesPeriods SET `TeacherSubjectID`=@TeacherSubjectID Where TimetablePeriodID=@TimetablePeriodID", conn)
             cmd3.Parameters.Clear()
             cmd3.Parameters.AddWithValue("@TeacherSubjectID", TeacherSubjectID)
-            cmd3.Parameters.AddWithValue("@TimetablePeriodID", TimetablePeriodID)
+            cmd3.Parameters.AddWithValue("TimetablePeriodID", TimetablePeriodID)
             If cmd3.ExecuteNonQuery > 0 Then
                 MsgBox("แก้ไขแล้ว!", vbInformation)
             Else
