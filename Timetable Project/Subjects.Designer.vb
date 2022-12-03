@@ -75,6 +75,7 @@ Partial Class Subjects
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel1.Controls.Add(Me.chkDefaultClass)
         Me.Panel1.Controls.Add(Me.cboDepartment)
         Me.Panel1.Controls.Add(Me.txtSubjectPlace)
@@ -154,7 +155,7 @@ Partial Class Subjects
         Me.lblRoom.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.lblRoom.Font = New System.Drawing.Font("Sylfaen", 30.0!)
         Me.lblRoom.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.lblRoom.Location = New System.Drawing.Point(21, 332)
+        Me.lblRoom.Location = New System.Drawing.Point(20, 331)
         Me.lblRoom.Name = "lblRoom"
         Me.lblRoom.Size = New System.Drawing.Size(148, 52)
         Me.lblRoom.TabIndex = 154
@@ -362,6 +363,7 @@ Partial Class Subjects
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.btnEdit)
         Me.Panel2.Controls.Add(Me.btnDelete)
         Me.Panel2.Controls.Add(Me.btnClear)
