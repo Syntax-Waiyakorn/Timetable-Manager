@@ -36,7 +36,9 @@ Public Class TeachersTimetables
     Sub search(Table As String, Field1 As String, txtBox As TextBox, cboBox As ComboBox)
         Try
             cboBox.Items.Clear()
-            conn.Open()
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
             Dim cmd1 As New OleDb.OleDbCommand("Select " & Field1 & " from " & Table & " WHERE " & Field1 & " like '%" & txtBox.Text & "%'", conn)
             dr = cmd1.ExecuteReader
             While dr.Read
