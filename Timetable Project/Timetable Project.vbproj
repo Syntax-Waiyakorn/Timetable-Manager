@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8A5FF586-9974-41C3-B8EF-3FC53B25CCE6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>project.My.MyApplication</StartupObject>
+    <RootNamespace>project</RootNamespace>
+    <AssemblyName>project</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>project.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>project.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="adodb, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CloseTab.Designer.vb">
+      <DependentUpon>CloseTab.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CloseTab.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.vb">
+      <DependentUpon>Home.vb</DependentUpon>
+      <SubType>home</SubType>
+    </Compile>
+    <Compile Include="Condition.Designer.vb">
+      <DependentUpon>Condition.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Condition.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Homescreen.Designer.vb">
+      <DependentUpon>Homescreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Homescreen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classrooms.Designer.vb">
+      <DependentUpon>Classrooms.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Classrooms.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeachersTimetables.Designer.vb">
+      <DependentUpon>TeachersTimetables.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TeachersTimetables.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Subjects.Designer.vb">
+      <DependentUpon>Subjects.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Subjects.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentTimetables.Designer.vb">
+      <DependentUpon>StudentTimetables.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StudentTimetables.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teachers.Designer.vb">
+      <DependentUpon>Teachers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Teachers.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CloseTab.resx">
+      <DependentUpon>CloseTab.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Condition.resx">
+      <DependentUpon>Condition.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Homescreen.resx">
+      <DependentUpon>Homescreen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classrooms.resx">
+      <DependentUpon>Classrooms.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeachersTimetables.resx">
+      <DependentUpon>TeachersTimetables.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Subjects.resx">
+      <DependentUpon>Subjects.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentTimetables.resx">
+      <DependentUpon>StudentTimetables.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teachers.resx">
+      <DependentUpon>Teachers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\study-tools.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teacher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gear %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\classroom %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\text-books %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\text-books %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teacher %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize-sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize-sign %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\สกรีนช็อต 2022-11-26 140642.png" />
+    <None Include="Resources\reading-book1.png" />
+    <None Include="Resources\reading-book.png" />
+    <None Include="Resources\teacher-512.png" />
+    <None Include="Resources\training.png" />
+    <None Include="Resources\teacher1.png" />
+    <None Include="Resources\window-512.png" />
+    <None Include="Resources\TimetableeReference.png" />
+    <None Include="Resources\1544641784.png" />
+    <None Include="Resources\icon.png" />
+    <None Include="Resources\Black_White_Minimalist_Line_T-shirt_Logo-removebg-preview.png" />
+    <None Include="Resources\add-user-xxl.png" />
+    <None Include="Resources\add-user-24.png" />
+    <None Include="Resources\literature-24.png" />
+    <None Include="Resources\classroom-24.png" />
+    <None Include="Resources\gear-24.png" />
+    <None Include="Resources\grid-two-up-24.png" />
+    <None Include="Resources\account-logout-24.png" />
+    <None Include="Resources\553e9750160831.58c8ff8bc2909-removebg-preview.png" />
+    <None Include="Resources\home-7-24.png" />
+    <None Include="Resources\194936.png" />
+    <None Include="Resources\classroom-24 %281%29.png" />
+    <None Include="Resources\classroom-512.png" />
+    <None Include="Resources\book-stack-512.png" />
+    <None Include="Resources\conference-512 %281%29.png" />
+    <None Include="Resources\Logo.png" />
+    <Content Include="Logo.ico" />
+    <None Include="Resources\maximize-window-512 %281%29.png" />
+    <None Include="Resources\book-stack.png" />
+    <None Include="Resources\books.png" />
+    <None Include="Resources\books-512.png" />
+    <None Include="Resources\classroom-2-512.png" />
+    <None Include="Resources\homeGray.png" />
+    <None Include="Resources\add-userGray.png" />
+    <None Include="Resources\literatureGray.png" />
+    <None Include="Resources\classroomGray.png" />
+    <None Include="Resources\gearGray.png" />
+    <None Include="Resources\grid-two-upgray.png" />
+    <None Include="Resources\books1.png" />
+    <Content Include="Resources\pencil.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
