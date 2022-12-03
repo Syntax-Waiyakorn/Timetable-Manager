@@ -42,7 +42,7 @@ Public Class Homescreen
             lblHello.Text = "สวัสดีตอนเย็น !"
         End If
         If Date.Now.ToString("HH") >= 19 Then
-            lblHello.Text = "สวัสดีตอนเกลางคืน !"
+            lblHello.Text = "สวัสดีตอนกลางคืน !"
         End If
         conn.Close()
     End Sub
