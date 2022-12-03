@@ -154,7 +154,6 @@ Public Class StudentTimetables
                 Catch
                     PPeriodC = PLabelNameC.Chars(6)
                 End Try
-
                 lblCurrentDay.Tag = PDayC
                 lblCurrentPeriod.Tag = PPeriodC
                 Dim cmd1 As New OleDb.OleDbCommand("Select TOP 1 DayNumber, DayName from Days WHERE `DayNumber` like '%" & PDayC & "%' ", conn)
@@ -203,14 +202,12 @@ Public Class StudentTimetables
                 TimetablePeriodID = dr.Item("TimetablePeriodID")
             End While
             dr.Close()
-
             Dim cmd2 As New OleDb.OleDbCommand("SELECT TeacherSubjectID FROM TeachersSubjectsQuery WHERE TeacherSubjectIndex = '" + TeacherSubjectIndex + "'", conn)
             dr = cmd2.ExecuteReader
             While dr.Read
                 TeacherSubjectID = dr.Item("TeacherSubjectID")
             End While
             dr.Close()
-
             Dim cmd3 As New OleDb.OleDbCommand("UPDATE TimetablesPeriods SET `TeacherSubjectID`=@TeacherSubjectID Where TimetablePeriodID=@TimetablePeriodID", conn)
             cmd3.Parameters.Clear()
             cmd3.Parameters.AddWithValue("@TeacherSubjectID", TeacherSubjectID)
@@ -230,7 +227,6 @@ Public Class StudentTimetables
     Sub Auto()
         Try
             conn.Open()
-
             Dim TeacherOrder() As String = {}
             Dim cmd1 As New OleDb.OleDbCommand("SELECT TeacherFirstName FROM Teachers ORDER BY TeacherQuota DESC", conn)
             dr = cmd1.ExecuteReader
@@ -274,7 +270,6 @@ Public Class StudentTimetables
     Private Sub StudentTimetables_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
         LoadCbo()
     End Sub
-
     Private Sub btnAuto_Click(sender As Object, e As EventArgs) Handles btnAuto.Click
         Auto()
     End Sub
