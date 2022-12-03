@@ -57,7 +57,7 @@ Public Class Condition
 
             conn.Open()
             Dim cmd1 As New OleDb.OleDbCommand("Select TeacherFirstName, SubjectCode, SubjectName from TeachersSubjectsQuery", conn)
-            Dim cmd2 As New OleDb.OleDbCommand("Select TeacherSubjectDisplay, ClassroomName  from TSClassroomsQuery", conn)
+            Dim cmd2 As New OleDb.OleDbCommand("Select TSClassroomDisplay, ClassroomName  from TSClassroomsQuery", conn)
 
             dr = cmd1.ExecuteReader
             While dr.Read
@@ -67,7 +67,7 @@ Public Class Condition
 
             dr = cmd2.ExecuteReader
             While dr.Read
-                DataGridView2.Rows.Add(dr.Item("TeacherSubjectDisplay"), dr.Item("ClassroomName"))
+                DataGridView2.Rows.Add(dr.Item("TSClassroomDisplay"), dr.Item("ClassroomName"))
             End While
             dr.Close()
         Catch ex As Exception
