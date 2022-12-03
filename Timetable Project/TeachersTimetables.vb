@@ -60,14 +60,18 @@ Public Class TeachersTimetables
                 conn.Open()
             End If
             For i As Integer = 1 To 5
-                Dim cmd As New OleDb.OleDbCommand("Select DayNumber, DayName from Days WHERE `DayNumber` like '%" & CStr(i) & "%' ", conn)
+                Dim cmd As New OleDb.OleDbCommand("SELECT DayName FROM Days WHERE DayNumber = @DayNumber", conn)
+                cmd.Parameters.Clear()
+                cmd.Parameters.AddWithValue("@DayNumber", i)
                 dr = cmd.ExecuteReader
                 While dr.Read
                     lblDays(i - 1).Text = CStr(dr.Item("DayName"))
                 End While
             Next
             For i As Integer = 1 To 11
-                Dim cmd As New OleDb.OleDbCommand("Select PeriodNumber, PeriodName, PeriodTimeStart, PeriodTimeEnd from Periods WHERE `PeriodNumber` like '%" & i & "%' ", conn)
+                Dim cmd As New OleDb.OleDbCommand("Select PeriodNumber, PeriodName, PeriodTimeStart, PeriodTimeEnd from Periods WHERE PeriodNumber = @PeriodNumber", conn)
+                cmd.Parameters.Clear()
+                cmd.Parameters.AddWithValue("@PeriodNumber", i)
                 dr = cmd.ExecuteReader
                 While dr.Read
                     lblPeriods(i - 1).Text = CStr(dr.Item("PeriodName"))
