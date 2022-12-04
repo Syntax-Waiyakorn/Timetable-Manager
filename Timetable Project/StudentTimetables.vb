@@ -55,7 +55,9 @@ Public Class StudentTimetables
     Sub search(Table As String, Field1 As String, Field2 As String, txtBox As TextBox, cboBox As ComboBox)
         Try
             cboBox.Items.Clear()
-            conn.Open()
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
             Dim cmd1 As New OleDb.OleDbCommand("Select  " & Field1 & ", " & Field2 & " from " & Table & " WHERE " & Field1 & " like '%" & txtBox.Text & "%' or " & Field2 & " like '%" & txtBox.Text & "%'", conn)
             dr = cmd1.ExecuteReader
             While dr.Read
@@ -219,8 +221,6 @@ Public Class StudentTimetables
                 TeacherSubjectID = dr.Item("TeacherSubjectID")
             End While
             dr.Close()
-            Console.WriteLine(TeacherSubjectIndex)
-            Console.WriteLine(TeacherSubjectID)
 
             Dim cmd3 As New OleDb.OleDbCommand("UPDATE TimetablesPeriods SET `TeacherSubjectID`=@TeacherSubjectID Where TimetablePeriodID=@TimetablePeriodID", conn)
             cmd3.Parameters.Clear()
