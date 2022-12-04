@@ -219,8 +219,6 @@ Public Class StudentTimetables
                 TeacherSubjectID = dr.Item("TeacherSubjectID")
             End While
             dr.Close()
-            Console.WriteLine(TeacherSubjectIndex)
-            Console.WriteLine(TeacherSubjectID)
 
             Dim cmd3 As New OleDb.OleDbCommand("UPDATE TimetablesPeriods SET `TeacherSubjectID`=@TeacherSubjectID Where TimetablePeriodID=@TimetablePeriodID", conn)
             cmd3.Parameters.Clear()
