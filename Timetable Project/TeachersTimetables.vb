@@ -110,9 +110,6 @@ Public Class TeachersTimetables
             Dim cmd As New OleDb.OleDbCommand("SELECT SubjectCode, ClassroomName, ClassroomCode FROM TimetablesQuery WHERE TeacherIndex = '" + TeacherIndex + "'", conn)
             dr = cmd.ExecuteReader
             While dr.Read
-                PLabel.Text = "ว่าง"
-            End While
-            While dr.Read
                 PLabel.Text = CStr(dr.Item("SubjectCode")) & vbCrLf & CStr(dr.Item("ClassroomName")) & vbCrLf & CStr(dr.Item("ClassroomCode"))
             End While
         Catch ex As Exception
