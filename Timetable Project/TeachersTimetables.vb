@@ -94,29 +94,37 @@ Public Class TeachersTimetables
         Next
     End Sub
     Sub DisplayPeriod(Teacher As String, PLabel As Label)
-        Try
-            If conn.State = ConnectionState.Closed Then
-                conn.Open()
-            End If
-            Dim PLabelName As String = PLabel.Name
-            Dim PDay As String = PLabelName.Chars(4)
-            Dim PPeriod As String
+        If PLabel.Text = "ว่าง" Then
             Try
-                PPeriod = PLabelName.Chars(6) & PLabelName.Chars(7)
-            Catch
-                PPeriod = PLabelName.Chars(6)
+                If conn.State = ConnectionState.Closed Then
+                    conn.Open()
+                End If
+                Dim PLabelName As String = PLabel.Name
+                Dim PDay As String = PLabelName.Chars(4)
+                Dim PPeriod As String
+                Try
+                    PPeriod = PLabelName.Chars(6) & PLabelName.Chars(7)
+                Catch
+                    PPeriod = PLabelName.Chars(6)
+                End Try
+                Dim TeacherIndex As String = CStr(Teacher) & "$$" & PDay & "$$" & PPeriod
+                Dim cmd As New OleDb.OleDbCommand("SELECT SubjectCode, ClassroomName, ClassroomCode FROM TimetablesQuery WHERE TeacherIndex = '" + TeacherIndex + "'", conn)
+                dr = cmd.ExecuteReader
+                While dr.Read
+                    If PLabel.Text = "ว่าง" Then
+                        PLabel.Text = CStr(dr.Item("SubjectCode")) & vbCrLf & CStr(dr.Item("ClassroomName")) & vbCrLf & CStr(dr.Item("ClassroomCode"))
+                    Else
+                        PLabel.Text = "ว่าง"
+                    End If
+                End While
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            Finally
+                conn.Close()
             End Try
-            Dim TeacherIndex As String = CStr(Teacher) & "$$" & PDay & "$$" & PPeriod
-            Dim cmd As New OleDb.OleDbCommand("SELECT SubjectCode, ClassroomName, ClassroomCode FROM TimetablesQuery WHERE TeacherIndex = '" + TeacherIndex + "'", conn)
-            dr = cmd.ExecuteReader
-            While dr.Read
-                PLabel.Text = CStr(dr.Item("SubjectCode")) & vbCrLf & CStr(dr.Item("ClassroomName")) & vbCrLf & CStr(dr.Item("ClassroomCode"))
-            End While
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        Finally
-            conn.Close()
-        End Try
+        Else
+            PLabel.Text = "ว่าง"
+        End If
     End Sub
     Sub Period_Click(sender As Label, e As EventArgs) Handles lblD1P1.Click, lblD1P2.Click, lblD1P3.Click, lblD1P4.Click, lblD1P5.Click, lblD1P6.Click, lblD1P7.Click, lblD1P8.Click, lblD1P9.Click, lblD1P10.Click, lblD1P11.Click,
                                                               lblD2P1.Click, lblD2P2.Click, lblD2P3.Click, lblD2P4.Click, lblD2P5.Click, lblD2P6.Click, lblD2P7.Click, lblD2P8.Click, lblD2P9.Click, lblD2P10.Click, lblD2P11.Click,
