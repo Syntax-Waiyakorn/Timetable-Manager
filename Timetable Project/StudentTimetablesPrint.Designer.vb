@@ -24,12 +24,12 @@ Partial Class StudentTimetablesPrint
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(StudentTimetablesPrint))
         Me.btnExit = New System.Windows.Forms.Button()
-        Me.PrintPreviewControl1 = New System.Windows.Forms.PrintPreviewControl()
         Me.PrintStudentTimetables = New System.Drawing.Printing.PrintDocument()
         Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
         Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
         Me.lblTitle = New System.Windows.Forms.Label()
         Me.btnSave = New System.Windows.Forms.Button()
+        Me.PrintPreviewControl1 = New System.Windows.Forms.PrintPreviewControl()
         Me.SuspendLayout()
         '
         'btnExit
@@ -48,18 +48,6 @@ Partial Class StudentTimetablesPrint
         Me.btnExit.Size = New System.Drawing.Size(45, 44)
         Me.btnExit.TabIndex = 34
         Me.btnExit.UseVisualStyleBackColor = False
-        '
-        'PrintPreviewControl1
-        '
-        Me.PrintPreviewControl1.AutoZoom = False
-        Me.PrintPreviewControl1.BackColor = System.Drawing.Color.Black
-        Me.PrintPreviewControl1.Cursor = System.Windows.Forms.Cursors.Default
-        Me.PrintPreviewControl1.Document = Me.PrintStudentTimetables
-        Me.PrintPreviewControl1.Location = New System.Drawing.Point(52, 183)
-        Me.PrintPreviewControl1.Name = "PrintPreviewControl1"
-        Me.PrintPreviewControl1.Size = New System.Drawing.Size(1016, 642)
-        Me.PrintPreviewControl1.TabIndex = 37
-        Me.PrintPreviewControl1.Zoom = 1.0R
         '
         'PrintStudentTimetables
         '
@@ -109,6 +97,18 @@ Partial Class StudentTimetablesPrint
         Me.btnSave.Text = "พิมพ์"
         Me.btnSave.UseVisualStyleBackColor = False
         '
+        'PrintPreviewControl1
+        '
+        Me.PrintPreviewControl1.AutoZoom = False
+        Me.PrintPreviewControl1.BackColor = System.Drawing.Color.Black
+        Me.PrintPreviewControl1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.PrintPreviewControl1.Document = Me.PrintStudentTimetables
+        Me.PrintPreviewControl1.Location = New System.Drawing.Point(23, 179)
+        Me.PrintPreviewControl1.Name = "PrintPreviewControl1"
+        Me.PrintPreviewControl1.Size = New System.Drawing.Size(1075, 642)
+        Me.PrintPreviewControl1.TabIndex = 37
+        Me.PrintPreviewControl1.Zoom = 1.2R
+        '
         'StudentTimetablesPrint
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -130,10 +130,10 @@ Partial Class StudentTimetablesPrint
     End Sub
 
     Friend WithEvents btnExit As Button
-    Friend WithEvents PrintPreviewControl1 As PrintPreviewControl
     Friend WithEvents PrintDialog1 As PrintDialog
     Friend WithEvents PrintPreviewDialog1 As PrintPreviewDialog
     Friend WithEvents lblTitle As Label
     Friend WithEvents btnSave As Button
     Friend WithEvents PrintStudentTimetables As Printing.PrintDocument
+    Friend WithEvents PrintPreviewControl1 As PrintPreviewControl
 End Class

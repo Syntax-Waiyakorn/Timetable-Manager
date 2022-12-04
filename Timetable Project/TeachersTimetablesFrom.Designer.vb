@@ -74,7 +74,7 @@ Partial Class TeachersTimetablesFrom
         Me.lblTitle.Font = New System.Drawing.Font("Sylfaen", 55.0!)
         Me.lblTitle.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblTitle.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblTitle.Location = New System.Drawing.Point(300, 35)
+        Me.lblTitle.Location = New System.Drawing.Point(300, 25)
         Me.lblTitle.Name = "lblTitle"
         Me.lblTitle.Padding = New System.Windows.Forms.Padding(10)
         Me.lblTitle.Size = New System.Drawing.Size(495, 118)
@@ -102,7 +102,7 @@ Partial Class TeachersTimetablesFrom
         Me.PrintPreviewControl1.AutoZoom = False
         Me.PrintPreviewControl1.BackColor = System.Drawing.Color.Black
         Me.PrintPreviewControl1.Document = Me.PrintTeachersTimetables
-        Me.PrintPreviewControl1.Location = New System.Drawing.Point(68, 167)
+        Me.PrintPreviewControl1.Location = New System.Drawing.Point(68, 156)
         Me.PrintPreviewControl1.Name = "PrintPreviewControl1"
         Me.PrintPreviewControl1.Size = New System.Drawing.Size(981, 665)
         Me.PrintPreviewControl1.TabIndex = 385
