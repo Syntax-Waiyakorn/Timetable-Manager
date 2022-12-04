@@ -75,6 +75,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
@@ -129,6 +130,12 @@
     <Compile Include="Classrooms.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="StudentTimetablesPrint.Designer.vb">
+      <DependentUpon>StudentTimetablesPrint.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StudentTimetablesPrint.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="TeachersTimetables.Designer.vb">
       <DependentUpon>TeachersTimetables.vb</DependentUpon>
     </Compile>
@@ -169,6 +176,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="TeachersTimetablesFrom.Designer.vb">
+      <DependentUpon>TeachersTimetablesFrom.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TeachersTimetablesFrom.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CloseTab.resx">
@@ -185,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Classrooms.resx">
       <DependentUpon>Classrooms.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentTimetablesPrint.resx">
+      <DependentUpon>StudentTimetablesPrint.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeachersTimetables.resx">
       <DependentUpon>TeachersTimetables.vb</DependentUpon>
@@ -203,6 +219,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeachersTimetablesFrom.resx">
+      <DependentUpon>TeachersTimetablesFrom.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

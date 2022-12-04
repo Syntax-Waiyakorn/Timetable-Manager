@@ -155,8 +155,11 @@ Public Class TeachersTimetables
             Finally
                 conn.Close()
             End Try
+        Else
+            MsgBox("เลือกครู", vbYes, "เเจ้งเตืน")
         End If
     End Sub
+
     Private Sub cboClassrooms_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboTeachers.SelectedIndexChanged
         Dim Teacher As String = cboTeachers.Text
         DisplayTeacherTable(Teacher)
@@ -177,5 +180,9 @@ Public Class TeachersTimetables
     Private Sub StudentTimetables_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
         LoadCbo()
         status()
+    End Sub
+    Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
+        Dim TeachersTimetablesFrom As New TeachersTimetablesFrom
+        TeachersTimetablesFrom.Show()
     End Sub
 End Class

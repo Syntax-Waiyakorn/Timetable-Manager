@@ -1,8 +1,9 @@
 ﻿Imports System.Drawing.Drawing2D
-Public Class CloseTab
+Imports System.Drawing.Printing
+Public Class TeachersTimetablesFrom
     Private borderRadius As Integer = 30
-    Private borderSize As Integer = 1
-    Private borderColor As Color = Color.Red
+    Private borderSize As Integer = 5
+    Private borderColor As Color = Color.IndianRed
     Private Function GetRoundedPath(rect As Rectangle, radius As Single) As GraphicsPath
         Dim path As GraphicsPath = New GraphicsPath()
         Dim curveSize As Single = radius * 2.0F
@@ -37,13 +38,23 @@ Public Class CloseTab
             End Using
         End If
     End Sub
-    Private Sub btnYes_Click(sender As Object, e As EventArgs) Handles btnYes.Click
-        Application.Exit()
+    Private Sub TeachersTimetablesFrom_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
+        FormRegionAndBorder(Me, borderRadius, e.Graphics, borderColor, borderSize)
     End Sub
-    Private Sub BtnNo_Click(sender As Object, e As EventArgs) Handles btnNo.Click
+    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Close()
     End Sub
-    Private Sub CloseTab_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
-        FormRegionAndBorder(Me, borderRadius, e.Graphics, borderColor, borderSize)
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        PrintDialog1.Document = PrintTeachersTimetables
+        PrintDialog1.PrinterSettings = PrintTeachersTimetables.PrinterSettings
+        PrintDialog1.AllowSomePages = True
+
+        If PrintDialog1.ShowDialog = DialogResult.OK Then
+            PrintTeachersTimetables.PrinterSettings = PrintDialog1.PrinterSettings
+            PrintTeachersTimetables.Print()
+        End If
+    End Sub
+    Private Sub PrintTeachersTimetables_PrintPage(sender As Object, e As PrintPageEventArgs) Handles PrintTeachersTimetables.PrintPage
+
     End Sub
 End Class

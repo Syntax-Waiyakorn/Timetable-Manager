@@ -25,6 +25,8 @@ Partial Class Home
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Home))
         Me.pnlMenu = New System.Windows.Forms.Panel()
+        Me.chkTeachersTable = New System.Windows.Forms.Panel()
+        Me.btnTeachersTable = New System.Windows.Forms.Button()
         Me.chkRoom = New System.Windows.Forms.Panel()
         Me.chkStudentTable = New System.Windows.Forms.Panel()
         Me.chkIF = New System.Windows.Forms.Panel()
@@ -46,8 +48,6 @@ Partial Class Home
         Me.btnMinimized = New System.Windows.Forms.Button()
         Me.btnExit = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.btnTeachersTable = New System.Windows.Forms.Button()
-        Me.chkTeachersTable = New System.Windows.Forms.Panel()
         Me.pnlMenu.SuspendLayout()
         Me.pnlIcon.SuspendLayout()
         CType(Me.picBook, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -77,6 +77,37 @@ Partial Class Home
         Me.pnlMenu.Name = "pnlMenu"
         Me.pnlMenu.Size = New System.Drawing.Size(192, 631)
         Me.pnlMenu.TabIndex = 30
+        '
+        'chkTeachersTable
+        '
+        Me.chkTeachersTable.BackColor = System.Drawing.Color.IndianRed
+        Me.chkTeachersTable.Location = New System.Drawing.Point(0, 521)
+        Me.chkTeachersTable.Name = "chkTeachersTable"
+        Me.chkTeachersTable.Size = New System.Drawing.Size(10, 41)
+        Me.chkTeachersTable.TabIndex = 4
+        Me.chkTeachersTable.Visible = False
+        '
+        'btnTeachersTable
+        '
+        Me.btnTeachersTable.BackColor = System.Drawing.Color.Transparent
+        Me.btnTeachersTable.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnTeachersTable.FlatAppearance.BorderSize = 0
+        Me.btnTeachersTable.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(88, Byte), Integer))
+        Me.btnTeachersTable.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(88, Byte), Integer))
+        Me.btnTeachersTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnTeachersTable.Font = New System.Drawing.Font("Sylfaen", 17.0!)
+        Me.btnTeachersTable.ForeColor = System.Drawing.Color.Gray
+        Me.btnTeachersTable.Image = Global.project.My.Resources.Resources.grid_two_upgray
+        Me.btnTeachersTable.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnTeachersTable.Location = New System.Drawing.Point(0, 515)
+        Me.btnTeachersTable.Name = "btnTeachersTable"
+        Me.btnTeachersTable.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
+        Me.btnTeachersTable.Size = New System.Drawing.Size(192, 55)
+        Me.btnTeachersTable.TabIndex = 16
+        Me.btnTeachersTable.Text = "  ตารางสอน"
+        Me.btnTeachersTable.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnTeachersTable.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnTeachersTable.UseVisualStyleBackColor = False
         '
         'chkRoom
         '
@@ -368,37 +399,6 @@ Partial Class Home
         'Timer1
         '
         '
-        'btnTeachersTable
-        '
-        Me.btnTeachersTable.BackColor = System.Drawing.Color.Transparent
-        Me.btnTeachersTable.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnTeachersTable.FlatAppearance.BorderSize = 0
-        Me.btnTeachersTable.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(88, Byte), Integer))
-        Me.btnTeachersTable.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(88, Byte), Integer))
-        Me.btnTeachersTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTeachersTable.Font = New System.Drawing.Font("Sylfaen", 17.0!)
-        Me.btnTeachersTable.ForeColor = System.Drawing.Color.Gray
-        Me.btnTeachersTable.Image = Global.project.My.Resources.Resources.grid_two_upgray
-        Me.btnTeachersTable.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnTeachersTable.Location = New System.Drawing.Point(0, 515)
-        Me.btnTeachersTable.Name = "btnTeachersTable"
-        Me.btnTeachersTable.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
-        Me.btnTeachersTable.Size = New System.Drawing.Size(192, 55)
-        Me.btnTeachersTable.TabIndex = 16
-        Me.btnTeachersTable.Text = "  ตารางสอน"
-        Me.btnTeachersTable.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnTeachersTable.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnTeachersTable.UseVisualStyleBackColor = False
-        '
-        'chkTeachersTable
-        '
-        Me.chkTeachersTable.BackColor = System.Drawing.Color.IndianRed
-        Me.chkTeachersTable.Location = New System.Drawing.Point(0, 521)
-        Me.chkTeachersTable.Name = "chkTeachersTable"
-        Me.chkTeachersTable.Size = New System.Drawing.Size(10, 41)
-        Me.chkTeachersTable.TabIndex = 4
-        Me.chkTeachersTable.Visible = False
-        '
         'Home
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -417,6 +417,7 @@ Partial Class Home
         Me.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Tag = ""
+        Me.Text = "โปรเเกรมจัดตารางสอน"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.pnlMenu.ResumeLayout(False)
         Me.pnlIcon.ResumeLayout(False)

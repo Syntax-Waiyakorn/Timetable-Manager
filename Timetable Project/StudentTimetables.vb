@@ -1,7 +1,12 @@
 ﻿Imports System.Data.OleDb
+Imports System.Drawing.Printing
+
 Public Class StudentTimetables
     Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\Timetable.accdb")
     Dim dr As OleDbDataReader
+    Dim WithEvents PD As New PrintDocument
+    Dim PPD As New PrintPreviewDialog
+    Dim longpaper As Integer
     Sub LoadCbo()
         Try
             If conn.State = ConnectionState.Closed Then
@@ -248,6 +253,8 @@ Public Class StudentTimetables
             conn.Close()
         End Try
     End Sub
+
+
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         If cboClassrooms.SelectedIndex = -1 Then
             MsgBox("เลือกห้องก่อน", vbYes, "เเจ้งเตือน")
@@ -282,5 +289,9 @@ Public Class StudentTimetables
     End Sub
     Private Sub btnAuto_Click(sender As Object, e As EventArgs) Handles btnAuto.Click
         Auto()
+    End Sub
+    Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
+        Dim StudentTimetablesPrint As New StudentTimetablesPrint
+        StudentTimetablesPrint.Show()
     End Sub
 End Class
