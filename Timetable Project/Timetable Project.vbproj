@@ -192,6 +192,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Condition.resx">
       <DependentUpon>Condition.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Homescreen.resx">
       <DependentUpon>Homescreen.vb</DependentUpon>

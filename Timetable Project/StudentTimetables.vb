@@ -210,10 +210,6 @@ Public Class StudentTimetables
             Dim TeacherIndex As String = "null"
             Dim Occupied As Boolean = False
 
-
-
-
-
             If cboText = "- : ว่าง" Then
                 Dim cmd1 As New OleDb.OleDbCommand("SELECT TimetablePeriodID FROM TimetablesQuery WHERE TimetableIndex = '" + TimetableIndex + "'", conn)
                 dr = cmd1.ExecuteReader
@@ -222,14 +218,12 @@ Public Class StudentTimetables
                 End While
                 dr.Close()
 
-
                 Dim cmd2 As New OleDb.OleDbCommand("SELECT TeacherSubjectID FROM TeachersSubjectsQuery WHERE TeacherSubjectIndex = '" + TeacherSubjectIndex + "'", conn)
                 dr = cmd2.ExecuteReader
                 While dr.Read
                     TeacherSubjectID = dr.Item("TeacherSubjectID")
                 End While
                 dr.Close()
-
 
                 Dim cmd3 As New OleDb.OleDbCommand("UPDATE TimetablesPeriods SET `TeacherSubjectID`=@TeacherSubjectID Where TimetablePeriodID=@TimetablePeriodID", conn)
                 cmd3.Parameters.Clear()
@@ -256,7 +250,7 @@ Public Class StudentTimetables
                 dr.Close()
 
                 If Occupied = True Then
-                    MsgBox("มันซ้ำเห้ย ไปเปลี่ยน", vbInformation)
+                    MsgBox("มันซ้ำ ไปเปลี่ยน", vbInformation)
                 End If
 
                 If Occupied = False Then
@@ -275,7 +269,6 @@ Public Class StudentTimetables
                         TeacherSubjectID = dr.Item("TeacherSubjectID")
                     End While
                     dr.Close()
-
 
                     Dim cmd3 As New OleDb.OleDbCommand("UPDATE TimetablesPeriods SET `TeacherSubjectID`=@TeacherSubjectID Where TimetablePeriodID=@TimetablePeriodID", conn)
                     cmd3.Parameters.Clear()
@@ -343,6 +336,7 @@ Public Class StudentTimetables
         status()
     End Sub
     Private Sub StudentTimetables_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
+
         LoadCbo()
         status()
     End Sub
