@@ -167,7 +167,7 @@ Public Class Condition
                 End While
                 dr.Close()
 
-                Dim cmd2 As New OleDb.OleDbCommand("Delete from TeachersSubjects WHERE TeacherSubjectID = @TeacherSubjectID", conn)
+                Dim cmd2 As New OleDb.OleDbCommand("Delete from TeachersSubjects WHERE TeacherSubjectID= @TeacherSubjectID", conn)
                 cmd2.Parameters.Clear()
                 cmd2.Parameters.AddWithValue("@TeacherSubjectID", TeacherSubjectID)
                 If cmd2.ExecuteNonQuery > 0 Then

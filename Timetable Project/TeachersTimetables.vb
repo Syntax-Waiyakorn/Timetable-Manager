@@ -106,9 +106,12 @@ Public Class TeachersTimetables
             Catch
                 PPeriod = PLabelName.Chars(6)
             End Try
-            Dim TimetableIndex As String = CStr(Teacher) & "$$" & PDay & "$$" & PPeriod
-            Dim cmd As New OleDb.OleDbCommand("SELECT SubjectCode, ClassroomName, ClassroomCode FROM TimetablesQuery WHERE TeacherIndex = '" + TimetableIndex + "'", conn)
+            Dim TeacherIndex As String = CStr(Teacher) & "$$" & PDay & "$$" & PPeriod
+            Dim cmd As New OleDb.OleDbCommand("SELECT SubjectCode, ClassroomName, ClassroomCode FROM TimetablesQuery WHERE TeacherIndex = '" + TeacherIndex + "'", conn)
             dr = cmd.ExecuteReader
+            While dr.Read
+                PLabel.Text = "ว่าง"
+            End While
             While dr.Read
                 PLabel.Text = CStr(dr.Item("SubjectCode")) & vbCrLf & CStr(dr.Item("ClassroomName")) & vbCrLf & CStr(dr.Item("ClassroomCode"))
             End While
