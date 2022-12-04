@@ -103,7 +103,7 @@ Public Class StudentTimetables
                                          lblD4P1, lblD4P2, lblD4P3, lblD4P4, lblD4P5, lblD4P6, lblD4P7, lblD4P8, lblD4P9, lblD4P10, lblD4P11,
                                          lblD5P1, lblD5P2, lblD5P3, lblD5P4, lblD5P5, lblD5P6, lblD5P7, lblD5P8, lblD5P9, lblD5P10, lblD5P11}
         For Each PLabel As Label In lblDaysPeriods
-            DisplayPeriod(CStr(Classroom), PLabel)
+            DisplayPeriod(Classroom, PLabel)
         Next
     End Sub
     Sub DisplayPeriod(Classroom As String, PLabel As Label)
@@ -120,7 +120,7 @@ Public Class StudentTimetables
                 PPeriod = PLabelName.Chars(6)
             End Try
             Dim TimetableIndex As String = CStr(Classroom) & "$$" & PDay & "$$" & PPeriod
-            Dim cmd As New OleDb.OleDbCommand("SELECT ClassroomCode, TeacherFirstName, SubjectCode FROM TimetablesQuery WHERE TimetableIndex = '" + CStr(TimetableIndex) + "'", conn)
+            Dim cmd As New OleDb.OleDbCommand("SELECT ClassroomCode, TeacherFirstName, SubjectCode FROM TimetablesQuery WHERE TimetableIndex = '" + TimetableIndex + "'", conn)
             dr = cmd.ExecuteReader
             While dr.Read
                 PLabel.Text = CStr(dr.Item("TeacherFirstName")) & vbCrLf & CStr(dr.Item("SubjectCode")) & vbCrLf & CStr(dr.Item("ClassroomCode"))
@@ -200,22 +200,27 @@ Public Class StudentTimetables
             Dim TeacherSubjectID As String = "null"
             Console.WriteLine(TimetableIndex)
 
-            Dim cmd1 As New OleDb.OleDbCommand("SELECT TimetablePeriodID FROM TimetablesQuery WHERE ClassroomIndex = '" + TimetableIndex + "'", conn)
+            Dim cmd1 As New OleDb.OleDbCommand("SELECT TimetablePeriodID FROM TimetablesQuery WHERE TimetableIndex = '" + TimetableIndex + "'", conn)
             dr = cmd1.ExecuteReader
             While dr.Read
                 TimetablePeriodID = dr.Item("TimetablePeriodID")
             End While
             dr.Close()
+            Console.WriteLine(TimetablePeriodID)
+
             Dim cmd2 As New OleDb.OleDbCommand("SELECT TeacherSubjectID FROM TeachersSubjectsQuery WHERE TeacherSubjectIndex = '" + TeacherSubjectIndex + "'", conn)
             dr = cmd2.ExecuteReader
             While dr.Read
                 TeacherSubjectID = dr.Item("TeacherSubjectID")
             End While
             dr.Close()
+            Console.WriteLine(TeacherSubjectIndex)
+            Console.WriteLine(TeacherSubjectID)
+
             Dim cmd3 As New OleDb.OleDbCommand("UPDATE TimetablesPeriods SET `TeacherSubjectID`=@TeacherSubjectID Where TimetablePeriodID=@TimetablePeriodID", conn)
             cmd3.Parameters.Clear()
             cmd3.Parameters.AddWithValue("@TeacherSubjectID", TeacherSubjectID)
-            cmd3.Parameters.AddWithValue("@TimetablePeriodID", TimetablePeriodID)
+            cmd3.Parameters.AddWithValue("TimetablePeriodID", TimetablePeriodID)
             If cmd3.ExecuteNonQuery > 0 Then
                 MsgBox("แก้ไขแล้ว!", vbInformation)
             Else
@@ -273,6 +278,7 @@ Public Class StudentTimetables
     End Sub
     Private Sub StudentTimetables_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
         LoadCbo()
+        status()
     End Sub
     Private Sub btnAuto_Click(sender As Object, e As EventArgs) Handles btnAuto.Click
         Auto()

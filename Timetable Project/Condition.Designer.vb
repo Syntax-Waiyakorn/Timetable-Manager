@@ -94,6 +94,7 @@ Partial Class Condition
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel1.Controls.Add(Me.btnTSDelete)
         Me.Panel1.Controls.Add(Me.btnTSSave)
         Me.Panel1.Controls.Add(Me.txtSearchS)
@@ -415,6 +416,7 @@ Partial Class Condition
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.btnTSCDelete)
         Me.Panel2.Controls.Add(Me.btnTSCSave)
         Me.Panel2.Controls.Add(Me.txtSearchC)

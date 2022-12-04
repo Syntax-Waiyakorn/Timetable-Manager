@@ -107,18 +107,18 @@ Partial Class TeachersTimetables
         Me.lblDay1 = New System.Windows.Forms.Label()
         Me.lblYear = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.cboTeachers = New System.Windows.Forms.ComboBox()
         Me.txtYear = New System.Windows.Forms.TextBox()
+        Me.lblCurrentPeriod = New System.Windows.Forms.Label()
+        Me.Connection = New System.Windows.Forms.Label()
+        Me.Connection_status = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblCurrentDay = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.cboTeachers = New System.Windows.Forms.ComboBox()
         Me.lblRoom = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.txtSearch = New System.Windows.Forms.TextBox()
-        Me.lblCurrentPeriod = New System.Windows.Forms.Label()
-        Me.lblCurrentDay = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Connection_status = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Connection = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnPrint = New System.Windows.Forms.Button()
         Me.btnEdit = New System.Windows.Forms.Button()
@@ -1265,6 +1265,7 @@ Partial Class TeachersTimetables
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.txtYear)
         Me.Panel2.Controls.Add(Me.lblYear)
         Me.Panel2.Controls.Add(Me.lblCurrentPeriod)
@@ -1277,6 +1278,92 @@ Partial Class TeachersTimetables
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(514, 242)
         Me.Panel2.TabIndex = 362
+        '
+        'txtYear
+        '
+        Me.txtYear.BackColor = System.Drawing.Color.Black
+        Me.txtYear.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtYear.Font = New System.Drawing.Font("Arial", 35.0!)
+        Me.txtYear.ForeColor = System.Drawing.Color.White
+        Me.txtYear.Location = New System.Drawing.Point(233, 26)
+        Me.txtYear.Name = "txtYear"
+        Me.txtYear.Size = New System.Drawing.Size(246, 61)
+        Me.txtYear.TabIndex = 369
+        '
+        'lblCurrentPeriod
+        '
+        Me.lblCurrentPeriod.AutoSize = True
+        Me.lblCurrentPeriod.BackColor = System.Drawing.Color.Transparent
+        Me.lblCurrentPeriod.Font = New System.Drawing.Font("Microsoft Tai Le", 25.0!)
+        Me.lblCurrentPeriod.ForeColor = System.Drawing.Color.Red
+        Me.lblCurrentPeriod.Location = New System.Drawing.Point(228, 178)
+        Me.lblCurrentPeriod.Name = "lblCurrentPeriod"
+        Me.lblCurrentPeriod.Size = New System.Drawing.Size(59, 44)
+        Me.lblCurrentPeriod.TabIndex = 375
+        Me.lblCurrentPeriod.Text = "ว่าง"
+        '
+        'Connection
+        '
+        Me.Connection.AllowDrop = True
+        Me.Connection.AutoSize = True
+        Me.Connection.BackColor = System.Drawing.Color.Transparent
+        Me.Connection.Font = New System.Drawing.Font("Sylfaen", 25.0!)
+        Me.Connection.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Connection.Location = New System.Drawing.Point(90, 84)
+        Me.Connection.Name = "Connection"
+        Me.Connection.Size = New System.Drawing.Size(115, 44)
+        Me.Connection.TabIndex = 370
+        Me.Connection.Text = "สถานะ :"
+        '
+        'Connection_status
+        '
+        Me.Connection_status.AutoSize = True
+        Me.Connection_status.BackColor = System.Drawing.Color.Transparent
+        Me.Connection_status.Font = New System.Drawing.Font("Microsoft Tai Le", 25.0!)
+        Me.Connection_status.ForeColor = System.Drawing.Color.Red
+        Me.Connection_status.Location = New System.Drawing.Point(228, 90)
+        Me.Connection_status.Name = "Connection_status"
+        Me.Connection_status.Size = New System.Drawing.Size(122, 44)
+        Me.Connection_status.TabIndex = 371
+        Me.Connection_status.Text = "เลือกห้อง"
+        '
+        'Label3
+        '
+        Me.Label3.AllowDrop = True
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Sylfaen", 25.0!)
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Label3.Location = New System.Drawing.Point(119, 172)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(86, 44)
+        Me.Label3.TabIndex = 373
+        Me.Label3.Text = "คาบ :"
+        '
+        'lblCurrentDay
+        '
+        Me.lblCurrentDay.AutoSize = True
+        Me.lblCurrentDay.BackColor = System.Drawing.Color.Transparent
+        Me.lblCurrentDay.Font = New System.Drawing.Font("Microsoft Tai Le", 25.0!)
+        Me.lblCurrentDay.ForeColor = System.Drawing.Color.Red
+        Me.lblCurrentDay.Location = New System.Drawing.Point(228, 134)
+        Me.lblCurrentDay.Name = "lblCurrentDay"
+        Me.lblCurrentDay.Size = New System.Drawing.Size(59, 44)
+        Me.lblCurrentDay.TabIndex = 374
+        Me.lblCurrentDay.Text = "ว่าง"
+        '
+        'Label2
+        '
+        Me.Label2.AllowDrop = True
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Sylfaen", 25.0!)
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Label2.Location = New System.Drawing.Point(136, 128)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(69, 44)
+        Me.Label2.TabIndex = 372
+        Me.Label2.Text = "วัน :"
         '
         'cboTeachers
         '
@@ -1291,17 +1378,6 @@ Partial Class TeachersTimetables
         Me.cboTeachers.Name = "cboTeachers"
         Me.cboTeachers.Size = New System.Drawing.Size(418, 40)
         Me.cboTeachers.TabIndex = 382
-        '
-        'txtYear
-        '
-        Me.txtYear.BackColor = System.Drawing.Color.Black
-        Me.txtYear.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtYear.Font = New System.Drawing.Font("Arial", 35.0!)
-        Me.txtYear.ForeColor = System.Drawing.Color.White
-        Me.txtYear.Location = New System.Drawing.Point(233, 26)
-        Me.txtYear.Name = "txtYear"
-        Me.txtYear.Size = New System.Drawing.Size(246, 61)
-        Me.txtYear.TabIndex = 369
         '
         'lblRoom
         '
@@ -1318,6 +1394,7 @@ Partial Class TeachersTimetables
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel3.Controls.Add(Me.txtSearch)
         Me.Panel3.Controls.Add(Me.cboTeachers)
         Me.Panel3.Controls.Add(Me.lblRoom)
@@ -1338,68 +1415,6 @@ Partial Class TeachersTimetables
         Me.txtSearch.Size = New System.Drawing.Size(426, 61)
         Me.txtSearch.TabIndex = 376
         '
-        'lblCurrentPeriod
-        '
-        Me.lblCurrentPeriod.AutoSize = True
-        Me.lblCurrentPeriod.BackColor = System.Drawing.Color.Transparent
-        Me.lblCurrentPeriod.Font = New System.Drawing.Font("Microsoft Tai Le", 25.0!)
-        Me.lblCurrentPeriod.ForeColor = System.Drawing.Color.Red
-        Me.lblCurrentPeriod.Location = New System.Drawing.Point(228, 178)
-        Me.lblCurrentPeriod.Name = "lblCurrentPeriod"
-        Me.lblCurrentPeriod.Size = New System.Drawing.Size(59, 44)
-        Me.lblCurrentPeriod.TabIndex = 375
-        Me.lblCurrentPeriod.Text = "ว่าง"
-        '
-        'lblCurrentDay
-        '
-        Me.lblCurrentDay.AutoSize = True
-        Me.lblCurrentDay.BackColor = System.Drawing.Color.Transparent
-        Me.lblCurrentDay.Font = New System.Drawing.Font("Microsoft Tai Le", 25.0!)
-        Me.lblCurrentDay.ForeColor = System.Drawing.Color.Red
-        Me.lblCurrentDay.Location = New System.Drawing.Point(228, 134)
-        Me.lblCurrentDay.Name = "lblCurrentDay"
-        Me.lblCurrentDay.Size = New System.Drawing.Size(59, 44)
-        Me.lblCurrentDay.TabIndex = 374
-        Me.lblCurrentDay.Text = "ว่าง"
-        '
-        'Label3
-        '
-        Me.Label3.AllowDrop = True
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Sylfaen", 25.0!)
-        Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label3.Location = New System.Drawing.Point(119, 172)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(86, 44)
-        Me.Label3.TabIndex = 373
-        Me.Label3.Text = "คาบ :"
-        '
-        'Label2
-        '
-        Me.Label2.AllowDrop = True
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Sylfaen", 25.0!)
-        Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label2.Location = New System.Drawing.Point(136, 128)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(69, 44)
-        Me.Label2.TabIndex = 372
-        Me.Label2.Text = "วัน :"
-        '
-        'Connection_status
-        '
-        Me.Connection_status.AutoSize = True
-        Me.Connection_status.BackColor = System.Drawing.Color.Transparent
-        Me.Connection_status.Font = New System.Drawing.Font("Microsoft Tai Le", 25.0!)
-        Me.Connection_status.ForeColor = System.Drawing.Color.Red
-        Me.Connection_status.Location = New System.Drawing.Point(228, 90)
-        Me.Connection_status.Name = "Connection_status"
-        Me.Connection_status.Size = New System.Drawing.Size(122, 44)
-        Me.Connection_status.TabIndex = 371
-        Me.Connection_status.Text = "เลือกห้อง"
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -1412,22 +1427,10 @@ Partial Class TeachersTimetables
         Me.Label1.TabIndex = 366
         Me.Label1.Text = "ค้นหา"
         '
-        'Connection
-        '
-        Me.Connection.AllowDrop = True
-        Me.Connection.AutoSize = True
-        Me.Connection.BackColor = System.Drawing.Color.Transparent
-        Me.Connection.Font = New System.Drawing.Font("Sylfaen", 25.0!)
-        Me.Connection.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Connection.Location = New System.Drawing.Point(90, 84)
-        Me.Connection.Name = "Connection"
-        Me.Connection.Size = New System.Drawing.Size(115, 44)
-        Me.Connection.TabIndex = 370
-        Me.Connection.Text = "สถานะ :"
-        '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel1.Controls.Add(Me.btnPrint)
         Me.Panel1.Controls.Add(Me.btnEdit)
         Me.Panel1.Location = New System.Drawing.Point(1292, 52)

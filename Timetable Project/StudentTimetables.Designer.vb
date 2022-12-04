@@ -1281,6 +1281,7 @@ Partial Class StudentTimetables
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.BtnSave)
         Me.Panel2.Controls.Add(Me.cboClassrooms)
         Me.Panel2.Controls.Add(Me.txtYear)
@@ -1347,6 +1348,7 @@ Partial Class StudentTimetables
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel3.Controls.Add(Me.cboTeachersSubjects)
         Me.Panel3.Controls.Add(Me.txtSearch)
         Me.Panel3.Controls.Add(Me.lblCurrentPeriod)
@@ -1477,6 +1479,7 @@ Partial Class StudentTimetables
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel1.Controls.Add(Me.btnPrint)
         Me.Panel1.Controls.Add(Me.btnAuto)
         Me.Panel1.Controls.Add(Me.btnEdit)

@@ -21,14 +21,13 @@ Public Class TeachersTimetables
     End Sub
     Sub status()
         If cboTeachers.SelectedIndex = -1 Then
-            Connection_status.Text = "กรุณาเลือกห้อง"
+            Connection_status.Text = "กรุณาเลือกครู"
             lblCurrentDay.Text = "ว่าง"
             lblCurrentPeriod.Text = "ว่าง"
             Connection_status.ForeColor = Color.Red
             lblCurrentDay.ForeColor = Color.Red
             lblCurrentPeriod.ForeColor = Color.Red
         Else
-
             Connection_status.Text = "แสดงข้อมูล"
             Connection_status.ForeColor = Color.Lime
         End If
@@ -60,14 +59,18 @@ Public Class TeachersTimetables
                 conn.Open()
             End If
             For i As Integer = 1 To 5
-                Dim cmd As New OleDb.OleDbCommand("Select DayNumber, DayName from Days WHERE `DayNumber` like '%" & CStr(i) & "%' ", conn)
+                Dim cmd As New OleDb.OleDbCommand("SELECT DayName FROM Days WHERE DayNumber = @DayNumber", conn)
+                cmd.Parameters.Clear()
+                cmd.Parameters.AddWithValue("@DayNumber", i)
                 dr = cmd.ExecuteReader
                 While dr.Read
                     lblDays(i - 1).Text = CStr(dr.Item("DayName"))
                 End While
             Next
             For i As Integer = 1 To 11
-                Dim cmd As New OleDb.OleDbCommand("Select PeriodNumber, PeriodName, PeriodTimeStart, PeriodTimeEnd from Periods WHERE `PeriodNumber` like '%" & i & "%' ", conn)
+                Dim cmd As New OleDb.OleDbCommand("Select PeriodNumber, PeriodName, PeriodTimeStart, PeriodTimeEnd from Periods WHERE PeriodNumber = @PeriodNumber", conn)
+                cmd.Parameters.Clear()
+                cmd.Parameters.AddWithValue("@PeriodNumber", i)
                 dr = cmd.ExecuteReader
                 While dr.Read
                     lblPeriods(i - 1).Text = CStr(dr.Item("PeriodName"))
@@ -104,8 +107,8 @@ Public Class TeachersTimetables
                 PPeriod = PLabelName.Chars(6)
             End Try
             Try
-                Dim TimetableIndex As String = CStr(Teacher) & "$$" & PDay & "$$" & PPeriod
-                Dim cmd As New OleDb.OleDbCommand("SELECT ClassroomCode, TeacherFirstName, SubjectCode, ClassroomCode FROM TimetablesQuery WHERE ClassroomIndex = '" + TimetableIndex + "'", conn)
+                Dim TimetableIndex As String = Teacher & "$$" & PDay & "$$" & PPeriod
+                Dim cmd As New OleDb.OleDbCommand("SELECT SubjectCode, ClassroomName, ClassroomCode FROM TimetablesQuery WHERE TimetableIndex like '%" & TimetableIndex & "%' ", conn)
                 dr = cmd.ExecuteReader
                 While dr.Read
                     PLabel.Text = CStr(dr.Item("SubjectCode")) & vbCrLf & CStr(dr.Item("ClassroomName")) & vbCrLf & CStr(dr.Item("ClassroomCode"))
@@ -130,13 +133,6 @@ Public Class TeachersTimetables
                 If conn.State = ConnectionState.Closed Then
                     conn.Open()
                 End If
-                Dim lblText As String = sender.Text
-                Dim Separaters() = {vbCrLf, ""}
-                Dim lblTextSplit() As String = lblText.Split(Separaters, StringSplitOptions.RemoveEmptyEntries)
-                Dim Teacher As String = lblTextSplit(0)
-                Dim Subject As String = lblTextSplit(1)
-                Dim TeacherSubject As String = Teacher & " : " & Subject
-
                 Dim PLabelNameC As String = sender.Name
                 Dim PDayC As String = PLabelNameC.Chars(4)
                 Dim PPeriodC As String
@@ -147,8 +143,8 @@ Public Class TeachersTimetables
                 End Try
                 lblCurrentDay.Tag = PDayC
                 lblCurrentPeriod.Tag = PPeriodC
-                Dim cmd1 As New OleDb.OleDbCommand("Select TOP 1 DayNumber, DayName from Days WHERE `DayNumber` like '%" & PDayC & "%' ", conn)
-                Dim cmd2 As New OleDb.OleDbCommand("Select TOP 1 PeriodNumber, PeriodName from Periods WHERE `PeriodNumber` like '%" & PPeriodC & "%' ", conn)
+                Dim cmd1 As New OleDb.OleDbCommand("Select DayNumber, DayName from Days WHERE `DayNumber` like '%" & PDayC & "%' ", conn)
+                Dim cmd2 As New OleDb.OleDbCommand("Select PeriodNumber, PeriodName from Periods WHERE `PeriodNumber` like '%" & PPeriodC & "%' ", conn)
                 dr = cmd1.ExecuteReader
                 While dr.Read
                     lblCurrentDay.Text = dr.Item("DayName")
@@ -177,7 +173,7 @@ Public Class TeachersTimetables
     End Sub
     Private Sub cboClassrooms_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboTeachers.SelectedIndexChanged
         Dim Teacher As String = CStr(cboTeachers.Text)
-        DisplayTeacherTable(CStr(Teacher))
+        DisplayTeacherTable(Teacher)
         status()
     End Sub
     Private Sub cboTeachersSubjects_SelectedIndexChanged(sender As Object, e As EventArgs)
@@ -194,5 +190,7 @@ Public Class TeachersTimetables
     End Sub
     Private Sub StudentTimetables_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
         LoadCbo()
+        status()
+
     End Sub
 End Class
