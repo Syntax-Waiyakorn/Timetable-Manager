@@ -914,7 +914,7 @@ Partial Class TeachersTimetables
         'lblTime11
         '
         Me.lblTime11.BackColor = System.Drawing.Color.Black
-        Me.lblTime11.Font = New System.Drawing.Font("Sylfaen", 14.0!)
+        Me.lblTime11.Font = New System.Drawing.Font("Symbol", 14.0!)
         Me.lblTime11.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblTime11.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.lblTime11.Location = New System.Drawing.Point(1483, 368)
@@ -1449,7 +1449,7 @@ Partial Class TeachersTimetables
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(306, 202)
         Me.btnPrint.TabIndex = 385
-        Me.btnPrint.Text = "พิมส์"
+        Me.btnPrint.Text = "พิมพ์"
         Me.btnPrint.UseVisualStyleBackColor = False
         '
         'agent
@@ -1465,7 +1465,7 @@ Partial Class TeachersTimetables
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
-        Me.ClientSize = New System.Drawing.Size(1696, 1080)
+        Me.ClientSize = New System.Drawing.Size(1696, 1021)
         Me.Controls.Add(Me.agent)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel2)

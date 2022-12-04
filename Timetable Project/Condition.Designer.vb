@@ -258,7 +258,7 @@ Partial Class Condition
         Me.DataGridView1.ShowCellToolTips = False
         Me.DataGridView1.ShowEditingIcon = False
         Me.DataGridView1.ShowRowErrors = False
-        Me.DataGridView1.Size = New System.Drawing.Size(500, 211)
+        Me.DataGridView1.Size = New System.Drawing.Size(500, 505)
         Me.DataGridView1.TabIndex = 372
         '
         'Column1
@@ -396,7 +396,7 @@ Partial Class Condition
         Me.DataGridView2.ShowCellToolTips = False
         Me.DataGridView2.ShowEditingIcon = False
         Me.DataGridView2.ShowRowErrors = False
-        Me.DataGridView2.Size = New System.Drawing.Size(500, 211)
+        Me.DataGridView2.Size = New System.Drawing.Size(500, 505)
         Me.DataGridView2.TabIndex = 377
         '
         'Column4

@@ -1501,7 +1501,7 @@ Partial Class StudentTimetables
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(306, 101)
         Me.btnPrint.TabIndex = 385
-        Me.btnPrint.Text = "พิมส์"
+        Me.btnPrint.Text = "พิมพ์"
         Me.btnPrint.UseVisualStyleBackColor = False
         '
         'btnAuto
