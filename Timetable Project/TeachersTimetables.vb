@@ -118,7 +118,6 @@ Public Class TeachersTimetables
             conn.Close()
         End Try
     End Sub
-
     Sub Period_Click(sender As Label, e As EventArgs) Handles lblD1P1.Click, lblD1P2.Click, lblD1P3.Click, lblD1P4.Click, lblD1P5.Click, lblD1P6.Click, lblD1P7.Click, lblD1P8.Click, lblD1P9.Click, lblD1P10.Click, lblD1P11.Click,
                                                               lblD2P1.Click, lblD2P2.Click, lblD2P3.Click, lblD2P4.Click, lblD2P5.Click, lblD2P6.Click, lblD2P7.Click, lblD2P8.Click, lblD2P9.Click, lblD2P10.Click, lblD2P11.Click,
                                                               lblD3P1.Click, lblD3P2.Click, lblD3P3.Click, lblD3P4.Click, lblD3P5.Click, lblD3P6.Click, lblD3P7.Click, lblD3P8.Click, lblD3P9.Click, lblD3P10.Click, lblD3P11.Click,
@@ -158,15 +157,8 @@ Public Class TeachersTimetables
             End Try
         End If
     End Sub
-    Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
-        If cboTeachers.SelectedIndex = -1 Then
-            MsgBox("เลือกห้องก่อน", vbYes, "เเจ้งเตือน")
-        Else
-            lblCurrentDay.Text = "ว่าง"
-        End If
-    End Sub
     Private Sub cboClassrooms_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboTeachers.SelectedIndexChanged
-        Dim Teacher As String = cboTeachers.SelectedText
+        Dim Teacher As String = cboTeachers.Text
         DisplayTeacherTable(Teacher)
         status()
     End Sub
@@ -185,6 +177,5 @@ Public Class TeachersTimetables
     Private Sub StudentTimetables_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
         LoadCbo()
         status()
-
     End Sub
 End Class
