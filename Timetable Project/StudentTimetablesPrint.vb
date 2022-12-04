@@ -48,7 +48,7 @@ Public Class StudentTimetablesPrint
         PrintDialog1.Document = PrintStudentTimetables
         PrintDialog1.PrinterSettings = PrintStudentTimetables.PrinterSettings
         PrintDialog1.AllowSomePages = True
-
+        PrintDialog1.ShowNetwork = False
         If PrintDialog1.ShowDialog = DialogResult.OK Then
             PrintStudentTimetables.PrinterSettings = PrintDialog1.PrinterSettings
             PrintStudentTimetables.Print()
