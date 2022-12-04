@@ -240,7 +240,9 @@ Public Class StudentTimetables
     End Sub
     Sub Auto()
         Try
-            conn.Open()
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
             Dim TeacherOrder() As String = {}
             Dim cmd1 As New OleDb.OleDbCommand("SELECT TeacherFirstName FROM Teachers ORDER BY TeacherQuota DESC", conn)
             dr = cmd1.ExecuteReader
