@@ -202,36 +202,93 @@ Public Class StudentTimetables
             Dim TeacherFirstName = cboTextSplit(0)
             Dim SubjectName = cboTextSplit(1)
             Dim TimetableIndex As String = Classroom & "$$" & TDay & "$$" & TPeriod
+            Dim UserTeacherIndex As String = TeacherFirstName & "$$" & TDay & "$$" & TPeriod
+            Dim DayPeriodIndex As String = TDay & "$$" & TPeriod
             Dim TeacherSubjectIndex As String = TeacherFirstName & "$$" & SubjectName
             Dim TimetablePeriodID As String = "null"
             Dim TeacherSubjectID As String = "null"
-            Console.WriteLine(TimetableIndex)
+            Dim TeacherIndex As String = "null"
+            Dim Occupied As Boolean = False
 
-            Dim cmd1 As New OleDb.OleDbCommand("SELECT TimetablePeriodID FROM TimetablesQuery WHERE TimetableIndex = '" + TimetableIndex + "'", conn)
-            dr = cmd1.ExecuteReader
-            While dr.Read
-                TimetablePeriodID = dr.Item("TimetablePeriodID")
-            End While
-            dr.Close()
-            Console.WriteLine(TimetablePeriodID)
 
-            Dim cmd2 As New OleDb.OleDbCommand("SELECT TeacherSubjectID FROM TeachersSubjectsQuery WHERE TeacherSubjectIndex = '" + TeacherSubjectIndex + "'", conn)
-            dr = cmd2.ExecuteReader
-            While dr.Read
-                TeacherSubjectID = dr.Item("TeacherSubjectID")
-            End While
-            dr.Close()
 
-            Dim cmd3 As New OleDb.OleDbCommand("UPDATE TimetablesPeriods SET `TeacherSubjectID`=@TeacherSubjectID Where TimetablePeriodID=@TimetablePeriodID", conn)
-            cmd3.Parameters.Clear()
-            cmd3.Parameters.AddWithValue("@TeacherSubjectID", TeacherSubjectID)
-            cmd3.Parameters.AddWithValue("TimetablePeriodID", TimetablePeriodID)
-            If cmd3.ExecuteNonQuery > 0 Then
-                MsgBox("แก้ไขแล้ว!", vbInformation)
+
+
+            If cboText = "- : ว่าง" Then
+                Dim cmd1 As New OleDb.OleDbCommand("SELECT TimetablePeriodID FROM TimetablesQuery WHERE TimetableIndex = '" + TimetableIndex + "'", conn)
+                dr = cmd1.ExecuteReader
+                While dr.Read
+                    TimetablePeriodID = dr.Item("TimetablePeriodID")
+                End While
+                dr.Close()
+
+
+                Dim cmd2 As New OleDb.OleDbCommand("SELECT TeacherSubjectID FROM TeachersSubjectsQuery WHERE TeacherSubjectIndex = '" + TeacherSubjectIndex + "'", conn)
+                dr = cmd2.ExecuteReader
+                While dr.Read
+                    TeacherSubjectID = dr.Item("TeacherSubjectID")
+                End While
+                dr.Close()
+
+
+                Dim cmd3 As New OleDb.OleDbCommand("UPDATE TimetablesPeriods SET `TeacherSubjectID`=@TeacherSubjectID Where TimetablePeriodID=@TimetablePeriodID", conn)
+                cmd3.Parameters.Clear()
+                cmd3.Parameters.AddWithValue("@TeacherSubjectID", TeacherSubjectID)
+                cmd3.Parameters.AddWithValue("TimetablePeriodID", TimetablePeriodID)
+                If cmd3.ExecuteNonQuery > 0 Then
+                    MsgBox("แก้ไขแล้ว!", vbInformation)
+                Else
+                    MsgBox("ผิดพลาด", vbCritical)
+                End If
+                DisplayClassroomTable(Classroom)
+
             Else
-                MsgBox("ผิดพลาด", vbCritical)
+                Dim cmd4 As New OleDb.OleDbCommand("SELECT TeacherIndex FROM TimetablesQuery WHERE DayPeriodIndex = '" + DayPeriodIndex + "' ", conn)
+                dr = cmd4.ExecuteReader
+                While dr.Read
+                    TeacherIndex = dr.Item("TeacherIndex")
+                    TeacherIndex.ToString()
+                    If TeacherIndex = UserTeacherIndex Then
+                        Occupied = True
+                    End If
+
+                End While
+                dr.Close()
+
+                If Occupied = True Then
+                    MsgBox("มันซ้ำเห้ย ไปเปลี่ยน", vbInformation)
+                End If
+
+                If Occupied = False Then
+
+                    Dim cmd1 As New OleDb.OleDbCommand("SELECT TimetablePeriodID FROM TimetablesQuery WHERE TimetableIndex = '" + TimetableIndex + "'", conn)
+                    dr = cmd1.ExecuteReader
+                    While dr.Read
+                        TimetablePeriodID = dr.Item("TimetablePeriodID")
+                    End While
+                    dr.Close()
+
+
+                    Dim cmd2 As New OleDb.OleDbCommand("SELECT TeacherSubjectID FROM TeachersSubjectsQuery WHERE TeacherSubjectIndex = '" + TeacherSubjectIndex + "'", conn)
+                    dr = cmd2.ExecuteReader
+                    While dr.Read
+                        TeacherSubjectID = dr.Item("TeacherSubjectID")
+                    End While
+                    dr.Close()
+
+
+                    Dim cmd3 As New OleDb.OleDbCommand("UPDATE TimetablesPeriods SET `TeacherSubjectID`=@TeacherSubjectID Where TimetablePeriodID=@TimetablePeriodID", conn)
+                    cmd3.Parameters.Clear()
+                    cmd3.Parameters.AddWithValue("@TeacherSubjectID", TeacherSubjectID)
+                    cmd3.Parameters.AddWithValue("TimetablePeriodID", TimetablePeriodID)
+                    If cmd3.ExecuteNonQuery > 0 Then
+                        MsgBox("แก้ไขแล้ว!", vbInformation)
+                    Else
+                        MsgBox("ผิดพลาด", vbCritical)
+                    End If
+                    DisplayClassroomTable(Classroom)
+                End If
             End If
-            DisplayClassroomTable(Classroom)
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
