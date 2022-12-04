@@ -26,10 +26,10 @@ Public Class Teachers
         Try
             DataGridView1.Rows.Clear()
             conn.Open()
-            Dim cmd As New OleDb.OleDbCommand("Select TeacherID, TeacherFirstName, TeacherLastName, TeacherDepartment from Teachers", conn)
+            Dim cmd As New OleDb.OleDbCommand("Select TeacherID, TeacherFirstName, TeacherLastName, TeacherDepartment, TeacherQuota from Teachers", conn)
             dr = cmd.ExecuteReader
             While dr.Read
-                DataGridView1.Rows.Add(dr.Item("TeacherID"), dr.Item("TeacherFirstName"), dr.Item("TeacherLastName"), dr.Item("TeacherDepartment"))
+                DataGridView1.Rows.Add(dr.Item("TeacherID"), dr.Item("TeacherFirstName"), dr.Item("TeacherLastName"), dr.Item("TeacherDepartment"), dr.Item("TeacherQuota"))
             End While
             dr.Close()
         Catch ex As Exception
@@ -42,6 +42,7 @@ Public Class Teachers
         txtTeacherFirstName.Text = DataGridView1.CurrentRow.Cells(1).Value
         txtTeacherLastName.Text = DataGridView1.CurrentRow.Cells(2).Value
         cboTeacherDepartment.Text = DataGridView1.CurrentRow.Cells(3).Value
+        txtTeacherQuota.Text = DataGridView1.CurrentRow.Cells(4).Value
     End Sub
     Sub clear()
         txtPR.Text = "[AUTO]"
@@ -52,11 +53,12 @@ Public Class Teachers
         Try
             If MsgBox("คุณต้องการเพิ่มข้อมูลหรือไม่ ?", vbQuestion + vbYesNo, "เเจ้งเตือน") = vbYes Then
                 conn.Open()
-                Dim cmd As New OleDb.OleDbCommand("Insert into Teachers(`TeacherFirstName`,`TeacherLastName`,`TeacherDepartment`) values(@TeacherCode,@TeacherFirstName,@TeacherLastName,@TeacherDepartment)", conn)
+                Dim cmd As New OleDb.OleDbCommand("Insert into Teachers(`TeacherFirstName`,`TeacherLastName`,`TeacherDepartment`,`TeacherQuota`) values(@TeacherCode,@TeacherFirstName,@TeacherLastName,@TeacherDepartment,@TeacherQuota)", conn)
                 cmd.Parameters.Clear()
                 cmd.Parameters.AddWithValue("@TeacherFirstName", txtTeacherFirstName.Text)
                 cmd.Parameters.AddWithValue("@TeacherLastName", txtTeacherLastName.Text)
                 cmd.Parameters.AddWithValue("@TeacherDepartment", cboTeacherDepartment.Text)
+                cmd.Parameters.AddWithValue("@TeacherQuota", txtTeacherQuota.Text)
                 i = cmd.ExecuteNonQuery
                 If i > 0 Then
                     MsgBox("เพิ่มข้อมูลเเล้ว !", vbInformation)
@@ -75,11 +77,12 @@ Public Class Teachers
     Sub edit()
         Try
             conn.Open()
-            Dim cmd As New OleDb.OleDbCommand("UPDATE Teachers SET `TeacherFirstName`=@TeacherFirstName,`TeacherLastName`=@TeacherLastName,`TeacherDepartment`=@TeacherDepartment Where TeacherID=@TeacherID ", conn)
+            Dim cmd As New OleDb.OleDbCommand("UPDATE Teachers SET `TeacherFirstName`=@TeacherFirstName,`TeacherLastName`=@TeacherLastName,`TeacherDepartment`=@TeacherDepartment,`TeacherQuota`=@TeacherQuota Where TeacherID=@TeacherID ", conn)
             cmd.Parameters.Clear()
             cmd.Parameters.AddWithValue("@TeacherFirstName", txtTeacherFirstName.Text)
             cmd.Parameters.AddWithValue("@TeacherLastName", txtTeacherLastName.Text)
             cmd.Parameters.AddWithValue("@TeacherDepartment", cboTeacherDepartment.Text)
+            cmd.Parameters.AddWithValue("@TeacherQuota", txtTeacherQuota.Text)
             cmd.Parameters.AddWithValue("@TeacherID", txtPR.Text)
             i = cmd.ExecuteNonQuery
             If i > 0 Then
@@ -98,10 +101,10 @@ Public Class Teachers
         Try
             DataGridView1.Rows.Clear()
             conn.Open()
-            Dim cmd As New OleDb.OleDbCommand("Select TeacherID, TeacherFirstName, TeacherLastName, TeacherDepartment from Teachers WHERE `TeacherFirstName` like '%" & txtSearch.Text & "%' or `TeacherLastName` like '%" & txtSearch.Text & "%'or `TeacherDepartment` like '%" & txtSearch.Text & "%'or `TeacherID` like '%" & txtSearch.Text & "%' ", conn)
+            Dim cmd As New OleDb.OleDbCommand("Select TeacherID, TeacherFirstName, TeacherLastName, TeacherDepartment from Teachers WHERE `TeacherFirstName` like '%" & txtSearch.Text & "%' or `TeacherLastName` like '%" & txtSearch.Text & "%' or `TeacherDepartment` like '%" & txtSearch.Text & "%' or `TeacherQuota` like '%" & txtSearch.Text & "%' or `TeacherID` like '%" & txtSearch.Text & "%' ", conn)
             dr = cmd.ExecuteReader
             While dr.Read
-                DataGridView1.Rows.Add(dr.Item("TeacherID"), dr.Item("TeacherFirstName"), dr.Item("TeacherLastName"), dr.Item("TeacherDepartment"))
+                DataGridView1.Rows.Add(dr.Item("TeacherID"), dr.Item("TeacherFirstName"), dr.Item("TeacherLastName"), dr.Item("TeacherDepartment"), dr.Item("TeacherQuota"))
             End While
             dr.Close()
         Catch ex As Exception
@@ -113,11 +116,9 @@ Public Class Teachers
         Try
             If MsgBox("คุณต้องการลบหรือไม่ ?", vbQuestion + vbYesNo, "เเจ้งเตือน") = vbYes Then
                 conn.Open()
-                Dim cmd As New OleDb.OleDbCommand("Delete from Teachers WHERE TeacherCode=@TeacherCode", conn)
+                Dim cmd As New OleDb.OleDbCommand("Delete from Teachers WHERE TeacherID=@TeacherID", conn)
                 cmd.Parameters.Clear()
-                cmd.Parameters.AddWithValue("@TeacherFirstName", txtTeacherFirstName.Text)
-                cmd.Parameters.AddWithValue("@TeacherLastName", txtTeacherLastName.Text)
-                cmd.Parameters.AddWithValue("@TeacherDepartment", cboTeacherDepartment.Text)
+                cmd.Parameters.AddWithValue("@TeacherID", txtPR.Text)
                 i = cmd.ExecuteNonQuery
                 If i > 0 Then
                     MsgBox("ลบสำเร็จ!", vbInformation)
