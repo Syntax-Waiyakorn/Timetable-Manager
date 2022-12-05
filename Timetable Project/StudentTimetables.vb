@@ -68,6 +68,7 @@ Public Class StudentTimetables
             conn.Close()
         End Try
     End Sub
+
     Sub InitializeTable()
         Dim lblDays() As Label = {lblDay1, lblDay2, lblDay3, lblDay4, lblDay5}
         Dim lblPeriods() As Label = {lbl1, lbl2, lbl3, lbl4, lbl5, lbl6, lbl7, lbl8, lbl9, lbl10, lbl11}
@@ -102,6 +103,10 @@ Public Class StudentTimetables
             conn.Close()
         End Try
     End Sub
+    Dim PLabelName As String = "null"
+    Dim PDay As String = "null"
+    Dim PPeriod As String = "null"
+    Dim TimetableIndex As String = "null"
     Sub DisplayClassroomTable(Classroom As String)
         Dim lblDaysPeriods() As Label = {lblD1P1, lblD1P2, lblD1P3, lblD1P4, lblD1P5, lblD1P6, lblD1P7, lblD1P8, lblD1P9, lblD1P10, lblD1P11,
                                          lblD2P1, lblD2P2, lblD2P3, lblD2P4, lblD2P5, lblD2P6, lblD2P7, lblD2P8, lblD2P9, lblD2P10, lblD2P11,
@@ -117,15 +122,14 @@ Public Class StudentTimetables
             If conn.State = ConnectionState.Closed Then
                 conn.Open()
             End If
-            Dim PLabelName As String = PLabel.Name
-            Dim PDay As String = PLabelName.Chars(4)
-            Dim PPeriod As String
+            PLabelName = PLabel.Name
+            PDay = PLabelName.Chars(4)
             Try
                 PPeriod = PLabelName.Chars(6) & PLabelName.Chars(7)
             Catch
                 PPeriod = PLabelName.Chars(6)
             End Try
-            Dim TimetableIndex As String = CStr(Classroom) & "$$" & PDay & "$$" & PPeriod
+            TimetableIndex = CStr(Classroom) & "$$" & PDay & "$$" & PPeriod
             Dim cmd As New OleDb.OleDbCommand("SELECT ClassroomCode, TeacherFirstName, SubjectCode FROM TimetablesQuery WHERE TimetableIndex = '" + TimetableIndex + "'", conn)
             dr = cmd.ExecuteReader
             While dr.Read

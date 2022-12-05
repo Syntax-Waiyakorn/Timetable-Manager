@@ -43,11 +43,6 @@ Partial Class Subjects
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.lblSearch = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.agent = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.btnEdit = New System.Windows.Forms.Button()
@@ -55,6 +50,16 @@ Partial Class Subjects
         Me.btnClear = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.lblTitle = New System.Windows.Forms.Label()
+        Me.lblSubjectQuota = New System.Windows.Forms.Label()
+        Me.chkSubjectSpecial = New System.Windows.Forms.CheckBox()
+        Me.txtSubjectQuota = New System.Windows.Forms.TextBox()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -66,7 +71,7 @@ Partial Class Subjects
         Me.lblDepartment.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.lblDepartment.Font = New System.Drawing.Font("Sylfaen", 30.0!)
         Me.lblDepartment.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.lblDepartment.Location = New System.Drawing.Point(16, 234)
+        Me.lblDepartment.Location = New System.Drawing.Point(16, 185)
         Me.lblDepartment.Name = "lblDepartment"
         Me.lblDepartment.Size = New System.Drawing.Size(151, 52)
         Me.lblDepartment.TabIndex = 139
@@ -76,6 +81,9 @@ Partial Class Subjects
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.txtSubjectQuota)
+        Me.Panel1.Controls.Add(Me.chkSubjectSpecial)
+        Me.Panel1.Controls.Add(Me.lblSubjectQuota)
         Me.Panel1.Controls.Add(Me.chkDefaultClass)
         Me.Panel1.Controls.Add(Me.cboDepartment)
         Me.Panel1.Controls.Add(Me.txtSubjectPlace)
@@ -95,7 +103,7 @@ Partial Class Subjects
         Me.chkDefaultClass.AutoSize = True
         Me.chkDefaultClass.Font = New System.Drawing.Font("Arial Narrow", 30.0!)
         Me.chkDefaultClass.ForeColor = System.Drawing.Color.White
-        Me.chkDefaultClass.Location = New System.Drawing.Point(197, 334)
+        Me.chkDefaultClass.Location = New System.Drawing.Point(25, 319)
         Me.chkDefaultClass.Name = "chkDefaultClass"
         Me.chkDefaultClass.Size = New System.Drawing.Size(164, 50)
         Me.chkDefaultClass.TabIndex = 380
@@ -110,7 +118,7 @@ Partial Class Subjects
         Me.cboDepartment.Font = New System.Drawing.Font("Arial", 20.0!)
         Me.cboDepartment.ForeColor = System.Drawing.Color.White
         Me.cboDepartment.FormattingEnabled = True
-        Me.cboDepartment.Location = New System.Drawing.Point(197, 246)
+        Me.cboDepartment.Location = New System.Drawing.Point(197, 196)
         Me.cboDepartment.Name = "cboDepartment"
         Me.cboDepartment.Size = New System.Drawing.Size(414, 40)
         Me.cboDepartment.TabIndex = 380
@@ -121,7 +129,7 @@ Partial Class Subjects
         Me.txtSubjectPlace.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtSubjectPlace.Font = New System.Drawing.Font("Arial", 35.0!)
         Me.txtSubjectPlace.ForeColor = System.Drawing.Color.White
-        Me.txtSubjectPlace.Location = New System.Drawing.Point(197, 390)
+        Me.txtSubjectPlace.Location = New System.Drawing.Point(197, 312)
         Me.txtSubjectPlace.Name = "txtSubjectPlace"
         Me.txtSubjectPlace.Size = New System.Drawing.Size(409, 61)
         Me.txtSubjectPlace.TabIndex = 381
@@ -143,7 +151,7 @@ Partial Class Subjects
         Me.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtName.Font = New System.Drawing.Font("Arial", 35.0!)
         Me.txtName.ForeColor = System.Drawing.Color.White
-        Me.txtName.Location = New System.Drawing.Point(197, 139)
+        Me.txtName.Location = New System.Drawing.Point(197, 110)
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(414, 61)
         Me.txtName.TabIndex = 368
@@ -155,7 +163,7 @@ Partial Class Subjects
         Me.lblRoom.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.lblRoom.Font = New System.Drawing.Font("Sylfaen", 30.0!)
         Me.lblRoom.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.lblRoom.Location = New System.Drawing.Point(20, 331)
+        Me.lblRoom.Location = New System.Drawing.Point(231, 257)
         Me.lblRoom.Name = "lblRoom"
         Me.lblRoom.Size = New System.Drawing.Size(148, 52)
         Me.lblRoom.TabIndex = 154
@@ -167,7 +175,7 @@ Partial Class Subjects
         Me.lblName.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.lblName.Font = New System.Drawing.Font("Sylfaen", 30.0!)
         Me.lblName.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.lblName.Location = New System.Drawing.Point(45, 139)
+        Me.lblName.Location = New System.Drawing.Point(46, 115)
         Me.lblName.Name = "lblName"
         Me.lblName.Size = New System.Drawing.Size(122, 52)
         Me.lblName.TabIndex = 138
@@ -273,7 +281,7 @@ Partial Class Subjects
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column5, Me.Column1, Me.Column4, Me.Column2, Me.Column3})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column5, Me.Column1, Me.Column4, Me.Column2, Me.Column3, Me.Column6, Me.Column7})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Arial Narrow", 13.0!)
@@ -315,42 +323,6 @@ Partial Class Subjects
         Me.DataGridView1.ShowRowErrors = False
         Me.DataGridView1.Size = New System.Drawing.Size(971, 751)
         Me.DataGridView1.TabIndex = 132
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "number"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        Me.Column5.Visible = False
-        '
-        'Column1
-        '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column1.HeaderText = "รหัสวิชา"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Width = 91
-        '
-        'Column4
-        '
-        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column4.HeaderText = "ชื่อวิชา"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column2.HeaderText = "กลุ่มสาระ"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        Me.Column2.Width = 97
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "ห้อง"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
         '
         'agent
         '
@@ -452,6 +424,90 @@ Partial Class Subjects
         Me.lblTitle.TabIndex = 134
         Me.lblTitle.Text = "เเก้ไขข้อมูลวิชา"
         '
+        'lblSubjectQuota
+        '
+        Me.lblSubjectQuota.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.lblSubjectQuota.AutoSize = True
+        Me.lblSubjectQuota.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.lblSubjectQuota.Font = New System.Drawing.Font("Sylfaen", 30.0!)
+        Me.lblSubjectQuota.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.lblSubjectQuota.Location = New System.Drawing.Point(204, 376)
+        Me.lblSubjectQuota.Name = "lblSubjectQuota"
+        Me.lblSubjectQuota.Size = New System.Drawing.Size(201, 52)
+        Me.lblSubjectQuota.TabIndex = 382
+        Me.lblSubjectQuota.Text = "คาบ/สัปดาห์"
+        '
+        'chkSubjectSpecial
+        '
+        Me.chkSubjectSpecial.AutoSize = True
+        Me.chkSubjectSpecial.Font = New System.Drawing.Font("Arial Narrow", 30.0!)
+        Me.chkSubjectSpecial.ForeColor = System.Drawing.Color.White
+        Me.chkSubjectSpecial.Location = New System.Drawing.Point(25, 438)
+        Me.chkSubjectSpecial.Name = "chkSubjectSpecial"
+        Me.chkSubjectSpecial.Size = New System.Drawing.Size(159, 50)
+        Me.chkSubjectSpecial.TabIndex = 383
+        Me.chkSubjectSpecial.Text = "คาบซ้ำได้"
+        Me.chkSubjectSpecial.UseVisualStyleBackColor = True
+        '
+        'txtSubjectQuota
+        '
+        Me.txtSubjectQuota.BackColor = System.Drawing.Color.Black
+        Me.txtSubjectQuota.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtSubjectQuota.Font = New System.Drawing.Font("Arial", 35.0!)
+        Me.txtSubjectQuota.ForeColor = System.Drawing.Color.White
+        Me.txtSubjectQuota.Location = New System.Drawing.Point(197, 431)
+        Me.txtSubjectQuota.Name = "txtSubjectQuota"
+        Me.txtSubjectQuota.Size = New System.Drawing.Size(409, 61)
+        Me.txtSubjectQuota.TabIndex = 384
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "number"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        Me.Column5.Visible = False
+        '
+        'Column1
+        '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column1.HeaderText = "รหัสวิชา"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 91
+        '
+        'Column4
+        '
+        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column4.HeaderText = "ชื่อวิชา"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column2.HeaderText = "กลุ่มสาระ"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.Width = 97
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "ห้อง"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        '
+        'Column6
+        '
+        Me.Column6.HeaderText = "ซ้ำได้"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        '
+        'Column7
+        '
+        Me.Column7.HeaderText = "คาบ"
+        Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
+        '
         'Subjects
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -491,11 +547,6 @@ Partial Class Subjects
     Friend WithEvents lblSearch As Label
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents lblRoom As Label
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents agent As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents btnEdit As Button
@@ -508,4 +559,14 @@ Partial Class Subjects
     Friend WithEvents txtName As TextBox
     Friend WithEvents chkDefaultClass As CheckBox
     Friend WithEvents lblTitle As Label
+    Friend WithEvents lblSubjectQuota As Label
+    Friend WithEvents txtSubjectQuota As TextBox
+    Friend WithEvents chkSubjectSpecial As CheckBox
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column6 As DataGridViewTextBoxColumn
+    Friend WithEvents Column7 As DataGridViewTextBoxColumn
 End Class
