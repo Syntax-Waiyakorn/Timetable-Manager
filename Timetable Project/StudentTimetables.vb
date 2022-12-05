@@ -4,9 +4,7 @@ Imports System.Drawing.Printing
 Public Class StudentTimetables
     Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\Timetable.accdb")
     Dim dr As OleDbDataReader
-    Dim WithEvents PD As New PrintDocument
-    Dim PPD As New PrintPreviewDialog
-    Dim longpaper As Integer
+
     Sub LoadCbo()
         Try
             If conn.State = ConnectionState.Closed Then
@@ -74,6 +72,7 @@ Public Class StudentTimetables
         Dim lblDays() As Label = {lblDay1, lblDay2, lblDay3, lblDay4, lblDay5}
         Dim lblPeriods() As Label = {lbl1, lbl2, lbl3, lbl4, lbl5, lbl6, lbl7, lbl8, lbl9, lbl10, lbl11}
         Dim lblTimes() As Label = {lblTime1, lblTime2, lblTime3, lblTime4, lblTime5, lblTime6, lblTime7, lblTime8, lblTime9, lblTime10, lblTime11}
+
         Try
             If conn.State = ConnectionState.Closed Then
                 conn.Open()

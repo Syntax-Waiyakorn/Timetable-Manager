@@ -1,5 +1,9 @@
-﻿Imports System.Drawing.Drawing2D
+﻿Imports System.Data.OleDb
+Imports System.Drawing.Drawing2D
 Public Class StudentTimetablesPrint
+    Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\Timetable.accdb")
+    Dim dr As OleDbDataReader
+
     Private borderRadius As Integer = 30
     Private borderSize As Integer = 5
     Private borderColor As Color = Color.IndianRed
@@ -53,8 +57,20 @@ Public Class StudentTimetablesPrint
             PrintStudentTimetables.PrinterSettings = PrintDialog1.PrinterSettings
             PrintStudentTimetables.Print()
         End If
+        Me.PrintStudentTimetables.PrinterSettings.DefaultPageSettings.Landscape = True
     End Sub
     Private Sub PrintStudentTimetables_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintStudentTimetables.PrintPage
+
+        Dim cmd As New OleDb.OleDbCommand("SELECT Dayname FROM Days ", conn)
+        Dim cmd1 As New OleDb.OleDbCommand("Select PeriodNumber, PeriodName, PeriodTimeStart, PeriodTimeEnd from Periods WHERE ", conn)
+        Dim cmd2 As New OleDb.OleDbCommand("SELECT ClassroomCode, TeacherFirstName, SubjectCode FROM TimetablesQuery ", conn)
+        Dim cmd3 As New OleDb.OleDbCommand("SELECT ClassroomCode, TeacherFirstName, SubjectCode FROM TimetablesQuery ", conn)
+
+        Dim labelFont As New Font("Arial", 11, FontStyle.Bold)
+        Dim textFont As New Font("Arial", 11, FontStyle.Regular)
+        Dim headerFont As New Font("Arial", 30, FontStyle.Bold)
+
+        e.Graphics.DrawString("ตารางสอนปีการศึกษา 2565", headerFont, Brushes.Black, 200, 30)
 
     End Sub
 End Class

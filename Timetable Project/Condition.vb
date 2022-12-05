@@ -273,7 +273,7 @@ Public Class Condition
         End Try
     End Sub
     Sub id()
-        Try 
+        Try
             conn.Open()
             Dim cmd As New OleDb.OleDbCommand("SELECT TimetablePeriodID FROM TimetablesPeriods WHERE TeacherSubjectID like '%" & CStr(txtPR.Text) & "%'", conn)
             dr = cmd.ExecuteReader
