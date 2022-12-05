@@ -56,12 +56,12 @@ Public Class Condition
             DataGridView2.Rows.Clear()
 
             conn.Open()
-            Dim cmd1 As New OleDb.OleDbCommand("Select TeacherFirstName, SubjectCode, SubjectName from TeachersSubjectsQuery", conn)
+            Dim cmd1 As New OleDb.OleDbCommand("Select TeacherSubjectID ,TeacherFirstName, SubjectCode, SubjectName from TeachersSubjectsQuery", conn)
             Dim cmd2 As New OleDb.OleDbCommand("Select TSClassroomDisplay, ClassroomName  from TSClassroomsQuery", conn)
 
             dr = cmd1.ExecuteReader
             While dr.Read
-                DataGridView1.Rows.Add(dr.Item("TeacherFirstName"), dr.Item("SubjectCode"), dr.Item("SubjectName"))
+                DataGridView1.Rows.Add(dr.Item("TeacherSubjectID"), dr.Item("TeacherFirstName"), dr.Item("SubjectCode"), dr.Item("SubjectName"))
             End While
             dr.Close()
 
@@ -157,19 +157,23 @@ Public Class Condition
         Try
             If MsgBox("คุณต้องการลบหรือไม่ ?", vbQuestion + vbYesNo, "เเจ้งเตือน") = vbYes Then
                 Dim TeacherSubjectIndex As String = cboTeachers.Text & "$$" & cboSubjects.Text
-                Dim TeacherSubjectID As String = "null"
+                Dim TeacherSubjectIDd As String = "null"
 
                 conn.Open()
                 Dim cmd1 As New OleDb.OleDbCommand("SELECT TeacherSubjectID FROM TeachersSubjectsQuery WHERE TeacherSubjectIndex = '" + TeacherSubjectIndex + "'", conn)
                 dr = cmd1.ExecuteReader
                 While dr.Read
-                    TeacherSubjectID = dr.Item("TeacherSubjectID")
+                    TeacherSubjectIDd = dr.Item("TeacherSubjectID")
                 End While
-                dr.Close()
 
-                Dim cmd2 As New OleDb.OleDbCommand("Delete from TeachersSubjects WHERE TeacherSubjectID= @TeacherSubjectID", conn)
-                cmd2.Parameters.Clear()
-                cmd2.Parameters.AddWithValue("@TeacherSubjectID", TeacherSubjectID)
+                Dim cmd2 As New OleDb.OleDbCommand("Delete from TeachersSubjects WHERE TeacherSubjectID=@TeacherSubjectID", conn)
+                cmd2.Parameters.AddWithValue("@TeacherSubjectID", TeacherSubjectIDd)
+
+                Dim cmd As New OleDb.OleDbCommand("UPDATE TimetablesPeriods SET `TeacherSubjectID`=@TeacherSubjectID Where TimetablePeriodID=@TimetablePeriodID", conn)
+                cmd.Parameters.AddWithValue("@TimetablePeriodID", agent.Text)
+                cmd.Parameters.AddWithValue("@TeacherSubjectID", txtId.Text)
+                cmd.ExecuteNonQuery()
+
                 If cmd2.ExecuteNonQuery > 0 Then
                     MsgBox("ลบสำเร็จ!", vbInformation)
                 Else
@@ -268,12 +272,29 @@ Public Class Condition
             conn.Close()
         End Try
     End Sub
+    Sub id()
+        Try 
+            conn.Open()
+            Dim cmd As New OleDb.OleDbCommand("SELECT TimetablePeriodID FROM TimetablesPeriods WHERE TeacherSubjectID like '%" & CStr(txtPR.Text) & "%'", conn)
+            dr = cmd.ExecuteReader
+            While dr.Read
+                txtId.Text = CStr(dr.Item("TimetablePeriodID"))
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            conn.Close()
+        End Try
+    End Sub
     Private Sub cboTeachers_SelectedValueChanged(sender As Object, e As EventArgs) Handles cboSubjects.SelectedValueChanged, cboSubjects.SelectionChangeCommitted, cboSubjects.SelectedIndexChanged, cboTeachers.SelectedIndexChanged
         Me.agent.Focus()
     End Sub
     Private Sub DataGridView1_Click(sender As Object, e As EventArgs) Handles DataGridView1.Click
-        cboTeachers.Text = DataGridView1.CurrentRow.Cells(0).Value
-        cboSubjects.Text = DataGridView1.CurrentRow.Cells(1).Value
+        cboTeachers.Text = DataGridView1.CurrentRow.Cells(1).Value
+        cboSubjects.Text = DataGridView1.CurrentRow.Cells(2).Value
+        txtPR.Text = DataGridView1.CurrentRow.Cells(0).Value
+        id()
+
     End Sub
     Private Sub DataGridView2_Click(sender As Object, e As EventArgs) Handles DataGridView2.Click
         cboTeachersSubjects.Text = DataGridView2.CurrentRow.Cells(0).Value
