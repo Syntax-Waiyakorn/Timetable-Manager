@@ -229,7 +229,7 @@ Public Class Condition
             cboBox.Items.Clear()
             conn.Open()
             Dim cmd1 As New OleDb.OleDbCommand("Select " & Field & " from " & Table & " WHERE " & Field & " like '%" & txtBox.Text & "%'", conn)
-            Dim cmd2 As New OleDb.OleDbCommand("Select TeacherFirstName, SubjectCode, SubjectName from TeachersSubjectsQuery WHERE " & Field & " like '%" & txtBox.Text & "%'", conn)
+            Dim cmd2 As New OleDb.OleDbCommand("Select TeacherSubjectID,TeacherFirstName, SubjectCode, SubjectName from TeachersSubjectsQuery WHERE " & Field & " like '%" & txtBox.Text & "%'", conn)
             dr = cmd1.ExecuteReader
             While dr.Read
                 cboBox.Items.Add(dr.Item(Field))
@@ -238,7 +238,7 @@ Public Class Condition
             DataGridView1.Rows.Clear()
             dr = cmd2.ExecuteReader
             While dr.Read
-                DataGridView1.Rows.Add(dr.Item("TeacherFirstName"), dr.Item("SubjectCode"), dr.Item("SubjectName"))
+                DataGridView1.Rows.Add(dr.Item("TeacherSubjectID"), dr.Item("TeacherFirstName"), dr.Item("SubjectCode"), dr.Item("SubjectName"))
             End While
             dr.Close()
         Catch ex As Exception
@@ -251,7 +251,7 @@ Public Class Condition
         Try
             conn.Open()
             Dim cmd1 As New OleDb.OleDbCommand("Select " & Field & " from " & Table & " WHERE " & Field & " like '%" & txtBox.Text & "%'", conn)
-            Dim cmd2 As New OleDb.OleDbCommand("Select TeacherSubjectDisplay, ClassroomName from TSClassroomsQuery WHERE " & Field & " like '%" & txtBox.Text & "%'", conn)
+            Dim cmd2 As New OleDb.OleDbCommand("Select TSClassroomDisplay, ClassroomName from TSClassroomsQuery WHERE " & Field & " like '%" & txtBox.Text & "%'", conn)
 
             cboBox.Items.Clear()
             dr = cmd1.ExecuteReader
@@ -263,7 +263,7 @@ Public Class Condition
             DataGridView2.Rows.Clear()
             dr = cmd2.ExecuteReader
             While dr.Read
-                DataGridView2.Rows.Add(dr.Item("TeacherSubjectDisplay"), dr.Item("ClassroomName"))
+                DataGridView2.Rows.Add(dr.Item("TSClassroomDisplay"), dr.Item("ClassroomName"))
             End While
             dr.Close()
         Catch ex As Exception
@@ -271,6 +271,9 @@ Public Class Condition
         Finally
             conn.Close()
         End Try
+    End Sub
+    Private Sub txtSearchC_TextChanged(sender As Object, e As EventArgs) Handles txtSearchC.TextChanged
+        TSCsearch("Classrooms", "ClassroomName", txtSearchC, cboClassrooms)
     End Sub
     Sub id()
         Try
@@ -309,9 +312,7 @@ Public Class Condition
     Private Sub txtSearchTS_TextChanged(sender As Object, e As EventArgs) Handles txtSearchTS.TextChanged
         TSCsearch("TeachersSubjectsQuery", "TeacherSubjectDisplay", txtSearchTS, cboTeachersSubjects)
     End Sub
-    Private Sub txtSearchC_TextChanged(sender As Object, e As EventArgs) Handles txtSearchC.TextChanged
-        TSCsearch("Classrooms", "ClassroomName", txtSearchC, cboClassrooms)
-    End Sub
+
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnTSSave.Click
         TSsave()
     End Sub
