@@ -1,5 +1,6 @@
 ﻿Imports System.Data.OleDb
 Public Class TeachersTimetables
+    Public Property Pass As String
     Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\Timetable.accdb")
     Dim dr As OleDbDataReader
     Sub LoadCbo()
@@ -13,6 +14,13 @@ Public Class TeachersTimetables
             While dr.Read
                 cboTeachers.Items.Add(dr.GetString(0))
             End While
+
+            Dim cmd2 As New OleDb.OleDbCommand("Select YearNumber from Years", conn)
+            dr = cmd2.ExecuteReader
+            While dr.Read
+                txtYear.Text = CStr(dr.Item("YearNumber"))
+            End While
+
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
@@ -183,6 +191,7 @@ Public Class TeachersTimetables
     End Sub
     Private Sub StudentTimetables_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         InitializeTable()
+        txtYear.Text = Pass
         status()
     End Sub
     Private Sub StudentTimetables_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint

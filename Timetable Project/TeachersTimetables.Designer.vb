@@ -107,7 +107,6 @@ Partial Class TeachersTimetables
         Me.lblDay1 = New System.Windows.Forms.Label()
         Me.lblYear = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.txtYear = New System.Windows.Forms.TextBox()
         Me.lblCurrentPeriod = New System.Windows.Forms.Label()
         Me.Connection = New System.Windows.Forms.Label()
         Me.Connection_status = New System.Windows.Forms.Label()
@@ -123,6 +122,7 @@ Partial Class TeachersTimetables
         Me.btnPrint = New System.Windows.Forms.Button()
         Me.agent = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.txtYear = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -1255,11 +1255,11 @@ Partial Class TeachersTimetables
         Me.lblYear.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.lblYear.Font = New System.Drawing.Font("Sylfaen", 25.0!)
         Me.lblYear.ForeColor = System.Drawing.Color.White
-        Me.lblYear.Location = New System.Drawing.Point(50, 26)
+        Me.lblYear.Location = New System.Drawing.Point(49, 35)
         Me.lblYear.Name = "lblYear"
-        Me.lblYear.Size = New System.Drawing.Size(154, 44)
+        Me.lblYear.Size = New System.Drawing.Size(170, 44)
         Me.lblYear.TabIndex = 360
-        Me.lblYear.Text = "ปีการศึกษา"
+        Me.lblYear.Text = "ปีการศึกษา :"
         '
         'Panel2
         '
@@ -1278,24 +1278,13 @@ Partial Class TeachersTimetables
         Me.Panel2.Size = New System.Drawing.Size(514, 242)
         Me.Panel2.TabIndex = 362
         '
-        'txtYear
-        '
-        Me.txtYear.BackColor = System.Drawing.Color.Black
-        Me.txtYear.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtYear.Font = New System.Drawing.Font("Arial", 35.0!)
-        Me.txtYear.ForeColor = System.Drawing.Color.White
-        Me.txtYear.Location = New System.Drawing.Point(233, 26)
-        Me.txtYear.Name = "txtYear"
-        Me.txtYear.Size = New System.Drawing.Size(246, 61)
-        Me.txtYear.TabIndex = 369
-        '
         'lblCurrentPeriod
         '
         Me.lblCurrentPeriod.AutoSize = True
         Me.lblCurrentPeriod.BackColor = System.Drawing.Color.Transparent
         Me.lblCurrentPeriod.Font = New System.Drawing.Font("Microsoft Tai Le", 25.0!)
         Me.lblCurrentPeriod.ForeColor = System.Drawing.Color.Red
-        Me.lblCurrentPeriod.Location = New System.Drawing.Point(228, 178)
+        Me.lblCurrentPeriod.Location = New System.Drawing.Point(223, 178)
         Me.lblCurrentPeriod.Name = "lblCurrentPeriod"
         Me.lblCurrentPeriod.Size = New System.Drawing.Size(59, 44)
         Me.lblCurrentPeriod.TabIndex = 375
@@ -1308,7 +1297,7 @@ Partial Class TeachersTimetables
         Me.Connection.BackColor = System.Drawing.Color.Transparent
         Me.Connection.Font = New System.Drawing.Font("Sylfaen", 25.0!)
         Me.Connection.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Connection.Location = New System.Drawing.Point(90, 84)
+        Me.Connection.Location = New System.Drawing.Point(104, 84)
         Me.Connection.Name = "Connection"
         Me.Connection.Size = New System.Drawing.Size(115, 44)
         Me.Connection.TabIndex = 370
@@ -1320,7 +1309,7 @@ Partial Class TeachersTimetables
         Me.Connection_status.BackColor = System.Drawing.Color.Transparent
         Me.Connection_status.Font = New System.Drawing.Font("Microsoft Tai Le", 25.0!)
         Me.Connection_status.ForeColor = System.Drawing.Color.Red
-        Me.Connection_status.Location = New System.Drawing.Point(228, 90)
+        Me.Connection_status.Location = New System.Drawing.Point(218, 90)
         Me.Connection_status.Name = "Connection_status"
         Me.Connection_status.Size = New System.Drawing.Size(122, 44)
         Me.Connection_status.TabIndex = 371
@@ -1333,7 +1322,7 @@ Partial Class TeachersTimetables
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Sylfaen", 25.0!)
         Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label3.Location = New System.Drawing.Point(119, 172)
+        Me.Label3.Location = New System.Drawing.Point(133, 172)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(86, 44)
         Me.Label3.TabIndex = 373
@@ -1345,7 +1334,7 @@ Partial Class TeachersTimetables
         Me.lblCurrentDay.BackColor = System.Drawing.Color.Transparent
         Me.lblCurrentDay.Font = New System.Drawing.Font("Microsoft Tai Le", 25.0!)
         Me.lblCurrentDay.ForeColor = System.Drawing.Color.Red
-        Me.lblCurrentDay.Location = New System.Drawing.Point(228, 134)
+        Me.lblCurrentDay.Location = New System.Drawing.Point(223, 134)
         Me.lblCurrentDay.Name = "lblCurrentDay"
         Me.lblCurrentDay.Size = New System.Drawing.Size(59, 44)
         Me.lblCurrentDay.TabIndex = 374
@@ -1358,7 +1347,7 @@ Partial Class TeachersTimetables
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Sylfaen", 25.0!)
         Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label2.Location = New System.Drawing.Point(136, 128)
+        Me.Label2.Location = New System.Drawing.Point(150, 128)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(69, 44)
         Me.Label2.TabIndex = 372
@@ -1459,6 +1448,18 @@ Partial Class TeachersTimetables
         Me.agent.Name = "agent"
         Me.agent.Size = New System.Drawing.Size(0, 13)
         Me.agent.TabIndex = 369
+        '
+        'txtYear
+        '
+        Me.txtYear.AutoSize = True
+        Me.txtYear.BackColor = System.Drawing.Color.Transparent
+        Me.txtYear.Font = New System.Drawing.Font("Microsoft Tai Le", 25.0!)
+        Me.txtYear.ForeColor = System.Drawing.Color.Lime
+        Me.txtYear.Location = New System.Drawing.Point(218, 43)
+        Me.txtYear.Name = "txtYear"
+        Me.txtYear.Size = New System.Drawing.Size(146, 44)
+        Me.txtYear.TabIndex = 376
+        Me.txtYear.Text = "ปีการศึกษา"
         '
         'TeachersTimetables
         '
@@ -1661,8 +1662,8 @@ Partial Class TeachersTimetables
     Friend WithEvents lblCurrentPeriod As Label
     Friend WithEvents lblCurrentDay As Label
     Friend WithEvents Timer1 As Timer
-    Friend WithEvents txtYear As TextBox
     Friend WithEvents cboTeachers As ComboBox
     Friend WithEvents txtSearch As TextBox
     Friend WithEvents btnPrint As Button
+    Friend WithEvents txtYear As Label
 End Class

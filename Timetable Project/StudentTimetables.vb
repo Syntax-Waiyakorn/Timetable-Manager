@@ -1,10 +1,7 @@
 ﻿Imports System.Data.OleDb
-Imports System.Drawing.Printing
-
 Public Class StudentTimetables
     Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\Timetable.accdb")
     Dim dr As OleDbDataReader
-
     Sub LoadCbo()
         Try
             If conn.State = ConnectionState.Closed Then
@@ -12,16 +9,25 @@ Public Class StudentTimetables
             End If
             Dim cmd As New OleDb.OleDbCommand("Select ClassroomName from Classrooms", conn)
             Dim cmd1 As New OleDb.OleDbCommand("Select TeacherSubjectDisplay from TeachersSubjectsQuery", conn)
+            Dim cmd2 As New OleDb.OleDbCommand("Select YearNumber from Years", conn)
+
             cboClassrooms.Items.Clear()
             dr = cmd.ExecuteReader
             While dr.Read
                 cboClassrooms.Items.Add(dr.GetString(0))
             End While
+
             cboTeachersSubjects.Items.Clear()
             dr = cmd1.ExecuteReader
             While dr.Read
                 cboTeachersSubjects.Items.Add(dr.GetString(0))
             End While
+
+            dr = cmd2.ExecuteReader
+            While dr.Read
+                txtYear.Text = CStr(dr.Item("YearNumber"))
+            End While
+
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
@@ -291,6 +297,27 @@ Public Class StudentTimetables
             conn.Close()
         End Try
     End Sub
+    Dim i As Integer
+
+    Sub Year()
+        Try
+            If MsgBox("คุณต้องการเพิ่มข้อมูลหรือไม่ ?", vbQuestion + vbYesNo, "เเจ้งเตือน") = vbYes Then
+                conn.Open()
+                Dim cmd As New OleDb.OleDbCommand("UPDATE Years SET `YearNumber`=@YearNumber ", conn)
+                cmd.Parameters.Clear()
+                cmd.Parameters.AddWithValue("@YearNumber", txtYear.Text)
+                i = cmd.ExecuteNonQuery
+                If i > 0 Then
+                    MsgBox("บันทึกเเล้ว !", vbInformation)
+                Else
+                    MsgBox("ผิดพลาด", vbCritical)
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        conn.Close()
+    End Sub
     Sub Auto()
         Try
             If conn.State = ConnectionState.Closed Then
@@ -349,5 +376,11 @@ Public Class StudentTimetables
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
         Dim StudentTimetablesPrint As New StudentTimetablesPrint
         StudentTimetablesPrint.Show()
+    End Sub
+
+    Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
+        Dim OBJ As New TeachersTimetables
+        OBJ.Pass = txtYear.Text
+        Year()
     End Sub
 End Class
