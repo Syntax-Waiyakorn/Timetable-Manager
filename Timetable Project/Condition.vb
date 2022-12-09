@@ -34,7 +34,9 @@ Public Class Condition
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
-            conn.Close()
+            If conn.State = ConnectionState.Open Then
+                conn.Close()
+            End If
         End Try
         LoadGrid()
     End Sub
@@ -62,7 +64,9 @@ Public Class Condition
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
-            conn.Close()
+            If conn.State = ConnectionState.Open Then
+                conn.Close()
+            End If
         End Try
     End Sub
     Sub TSsave()
@@ -96,7 +100,9 @@ Public Class Condition
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
-            conn.Close()
+            If conn.State = ConnectionState.Open Then
+                conn.Close()
+            End If
         End Try
         LoadGrid()
         loadcbo()
@@ -133,7 +139,9 @@ Public Class Condition
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
-            conn.Close()
+            If conn.State = ConnectionState.Open Then
+                conn.Close()
+            End If
         End Try
         LoadGrid()
         loadcbo()
@@ -166,7 +174,9 @@ Public Class Condition
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
-            conn.Close()
+            If conn.State = ConnectionState.Open Then
+                conn.Close()
+            End If
         End Try
         LoadGrid()
         loadcbo()
@@ -200,7 +210,9 @@ Public Class Condition
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
-            conn.Close()
+            If conn.State = ConnectionState.Open Then
+                conn.Close()
+            End If
         End Try
         LoadGrid()
         loadcbo()
@@ -225,7 +237,9 @@ Public Class Condition
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
-            conn.Close()
+            If conn.State = ConnectionState.Open Then
+                conn.Close()
+            End If
         End Try
     End Sub
     Sub TSCsearch(Table As String, Field As String, txtBox As TextBox, cboBox As ComboBox)
@@ -248,7 +262,9 @@ Public Class Condition
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
-            conn.Close()
+            If conn.State = ConnectionState.Open Then
+                conn.Close()
+            End If
         End Try
     End Sub
     Sub id()
@@ -262,7 +278,9 @@ Public Class Condition
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
-            conn.Close()
+            If conn.State = ConnectionState.Open Then
+                conn.Close()
+            End If
         End Try
     End Sub
     Private Sub cboTeachers_SelectedValueChanged(sender As Object, e As EventArgs) Handles cboSubjects.SelectedValueChanged, cboSubjects.SelectionChangeCommitted, cboSubjects.SelectedIndexChanged, cboTeachers.SelectedIndexChanged

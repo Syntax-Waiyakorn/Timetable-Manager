@@ -32,7 +32,9 @@ Public Class StudentTimetables
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
-            conn.Close()
+            If conn.State = ConnectionState.Open Then
+                conn.Close()
+            End If
         End Try
     End Sub
     Sub status()
@@ -72,7 +74,9 @@ Public Class StudentTimetables
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
-            conn.Close()
+            If conn.State = ConnectionState.Open Then
+                conn.Close()
+            End If
         End Try
     End Sub
     Sub InitializeTable()
@@ -105,7 +109,9 @@ Public Class StudentTimetables
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
-            conn.Close()
+            If conn.State = ConnectionState.Open Then
+                conn.Close()
+            End If
         End Try
     End Sub
     Sub DisplayClassroomTable(Classroom As String)
@@ -139,7 +145,9 @@ Public Class StudentTimetables
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
-            conn.Close()
+            If conn.State = ConnectionState.Open Then
+                conn.Close()
+            End If
         End Try
     End Sub
 
@@ -186,7 +194,9 @@ Public Class StudentTimetables
             Catch ex As Exception
                 MsgBox(ex.Message)
             Finally
-                conn.Close()
+                If conn.State = ConnectionState.Open Then
+                    conn.Close()
+                End If
             End Try
         Else
             MsgBox("เลือกห้องก่อน", vbYes, "เเจ้งเตืน")
@@ -292,8 +302,12 @@ Public Class StudentTimetables
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
+        Finally
+            If conn.State = ConnectionState.Open Then
+                conn.Close()
+            End If
         End Try
-        conn.Close()
+
     End Sub
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         If cboClassrooms.SelectedIndex = -1 Then

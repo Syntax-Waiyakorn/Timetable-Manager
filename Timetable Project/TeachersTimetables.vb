@@ -24,7 +24,9 @@ Public Class TeachersTimetables
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
-            conn.Close()
+            If conn.State = ConnectionState.Open Then
+                conn.Close()
+            End If
         End Try
     End Sub
     Sub status()
@@ -55,7 +57,9 @@ Public Class TeachersTimetables
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
-            conn.Close()
+            If conn.State = ConnectionState.Open Then
+                conn.Close()
+            End If
         End Try
     End Sub
     Sub InitializeTable()
@@ -88,7 +92,9 @@ Public Class TeachersTimetables
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
-            conn.Close()
+            If conn.State = ConnectionState.Open Then
+                conn.Close()
+            End If
         End Try
     End Sub
     Sub DisplayTeacherTable(Teacher As String)
@@ -128,7 +134,9 @@ Public Class TeachersTimetables
             Catch ex As Exception
                 MsgBox(ex.Message)
             Finally
-                conn.Close()
+                If conn.State = ConnectionState.Open Then
+                    conn.Close()
+                End If
             End Try
         Else
             PLabel.Text = "ว่าง"
@@ -169,7 +177,9 @@ Public Class TeachersTimetables
             Catch ex As Exception
                 MsgBox(ex.Message)
             Finally
-                conn.Close()
+                If conn.State = ConnectionState.Open Then
+                    conn.Close()
+                End If
             End Try
         Else
             MsgBox("เลือกครู", vbYes, "เเจ้งเตืน")
