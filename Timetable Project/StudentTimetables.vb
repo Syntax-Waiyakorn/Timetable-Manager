@@ -278,7 +278,7 @@ Public Class StudentTimetables
     End Sub
     Sub Year()
         Try
-            If MsgBox("คุณต้องการเพิ่มข้อมูลหรือไม่ ?", vbQuestion + vbYesNo, "เเจ้งเตือน") = vbYes Then
+            If MsgBox("คุณต้องบันทึกปีการฯศึกษาหรือไม่ ?", vbQuestion + vbYesNo, "เเจ้งเตือน") = vbYes Then
                 conn.Open()
                 Dim cmd As New OleDb.OleDbCommand("UPDATE Years SET `YearNumber`=@YearNumber ", conn)
                 cmd.Parameters.Clear()
