@@ -48,6 +48,8 @@ Public Class StudentTimetablesPrint
         Close()
     End Sub
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        Me.Close()
+
         PrintDialog1.Document = PrintStudentTimetables
         PrintDialog1.PrinterSettings = PrintStudentTimetables.PrinterSettings
         PrintDialog1.AllowSomePages = True
@@ -56,7 +58,7 @@ Public Class StudentTimetablesPrint
             PrintStudentTimetables.PrinterSettings = PrintDialog1.PrinterSettings
             PrintStudentTimetables.Print()
         End If
-        Me.PrintStudentTimetables.PrinterSettings.DefaultPageSettings.Landscape = True
+
     End Sub
     Public Function RoundRect(bounds As Rectangle, radius1 As Integer, radius2 As Integer, radius3 As Integer, radius4 As Integer) As GraphicsPath
         Dim diameter1 As Integer = radius1 * 2
@@ -71,14 +73,12 @@ Public Class StudentTimetablesPrint
 
         Dim path As GraphicsPath = New GraphicsPath()
 
-        'arc - top left
         If radius1 = 0 Then
             path.AddLine(arc1.Location, arc1.Location)
         Else
             path.AddArc(arc1, 180, 90)
         End If
 
-        'arc - top right
         arc2.X = bounds.Right - diameter2
 
         If radius2 = 0 Then
@@ -87,7 +87,6 @@ Public Class StudentTimetablesPrint
             path.AddArc(arc2, 270, 90)
         End If
 
-        'arc - bottom right
         arc3.X = bounds.Right - diameter3
         arc3.Y = bounds.Bottom - diameter3
 
@@ -97,8 +96,6 @@ Public Class StudentTimetablesPrint
             path.AddArc(arc3, 0, 90)
         End If
 
-        'arc - bottom left
-        'arc4.X = bounds.Right - diameter4
         arc4.Y = bounds.Bottom - diameter4
         arc4.X = bounds.Left
 
@@ -113,13 +110,21 @@ Public Class StudentTimetablesPrint
         Return path
     End Function
     Private Sub CreateProductLabel(g As Graphics)
+        Dim cmd As New OleDb.OleDbCommand("SELECT Dayname FROM Days ", conn)
+        Dim cmd1 As New OleDb.OleDbCommand("Select PeriodNumber, PeriodName, PeriodTimeStart, PeriodTimeEnd from Periods WHERE ", conn)
+        Dim cmd2 As New OleDb.OleDbCommand("SELECT ClassroomCode, TeacherFirstName, SubjectCode FROM TimetablesQuery ", conn)
+        Dim cmd3 As New OleDb.OleDbCommand("SELECT ClassroomCode, TeacherFirstName, SubjectCode FROM TimetablesQuery ", conn)
+        Dim cmd4 As New OleDb.OleDbCommand("SELECT YearNumber FROM Years ", conn)
+
+        Dim labelFont As New Font("Arial", 11, FontStyle.Bold)
+        Dim textFont As New Font("Arial", 11, FontStyle.Regular)
+        Dim headerFont As New Font("Arial", 30, FontStyle.Bold)
 
         Dim widthOuter As Integer = 740
         Dim heightOuter As Integer = 310
 
         Using penDimGray As Pen = New Pen(Color.DimGray, 0)
             Dim outerRect As Rectangle = New Rectangle(60, 100, widthOuter, heightOuter)
-
 
             Using path As GraphicsPath = RoundRect(outerRect, 10, 10, 10, 10)
                 g.DrawPath(penDimGray, path)
@@ -128,8 +133,8 @@ Public Class StudentTimetablesPrint
             g.DrawLine(penDimGray, New PointF(100, 130), New PointF(800, 130))
             g.DrawLine(penDimGray, New PointF(100, 145), New PointF(800, 145))
             g.DrawLine(penDimGray, New PointF(60, 160), New PointF(800, 160))
-            g.DrawLine(penDimGray, New PointF(100, 100), New PointF(100, 410))
 
+            g.DrawLine(penDimGray, New PointF(100, 100), New PointF(100, 410))
 
             g.DrawLine(penDimGray, New PointF(170, 100), New PointF(170, 410))
             g.DrawLine(penDimGray, New PointF(240, 100), New PointF(240, 410))
@@ -146,32 +151,31 @@ Public Class StudentTimetablesPrint
             g.DrawLine(penDimGray, New PointF(60, 310), New PointF(800, 310))
             g.DrawLine(penDimGray, New PointF(60, 310), New PointF(800, 310))
             g.DrawLine(penDimGray, New PointF(60, 360), New PointF(800, 360))
+        End Using
 
+        Dim sizeProductionDate As SizeF = New SizeF() 'initialize
+        Dim sizeShipper As SizeF = New SizeF() 'initialize
+        Dim sizeCosigner As SizeF = New SizeF() 'initialize
 
+        Using penBlack As Pen = New Pen(Color.Black, 7)
+            Using fontArial9Bold As Font = New Font("Arial", 15, FontStyle.Bold)
+                Using brush As SolidBrush = New SolidBrush(Color.Black)
+                    g.DrawString("0", labelFont, brush, 100, 100)
+                    g.DrawString("1", labelFont, brush, 170, 100)
+                    g.DrawString("2", labelFont, brush, 240, 100)
+                    g.DrawString("3", labelFont, brush, 310, 100)
+                    g.DrawString("4", labelFont, brush, 380, 100)
+                    g.DrawString("5", labelFont, brush, 450, 100)
+                    g.DrawString("6", labelFont, brush, 520, 100)
+                    g.DrawString("7", labelFont, brush, 590, 100)
+                    g.DrawString("8", labelFont, brush, 660, 100)
+                    g.DrawString("9", labelFont, brush, 730, 100)
 
-
+                End Using
+            End Using
         End Using
     End Sub
     Private Sub PrintStudentTimetables_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintStudentTimetables.PrintPage
-        Dim year As String = "null"
-        conn.Open()
-        Dim cmd As New OleDb.OleDbCommand("SELECT Dayname FROM Days ", conn)
-        Dim cmd1 As New OleDb.OleDbCommand("Select PeriodNumber, PeriodName, PeriodTimeStart, PeriodTimeEnd from Periods WHERE ", conn)
-        Dim cmd2 As New OleDb.OleDbCommand("SELECT ClassroomCode, TeacherFirstName, SubjectCode FROM TimetablesQuery ", conn)
-        Dim cmd3 As New OleDb.OleDbCommand("SELECT ClassroomCode, TeacherFirstName, SubjectCode FROM TimetablesQuery ", conn)
-        Dim cmd4 As New OleDb.OleDbCommand("SELECT YearNumber FROM Years ", conn)
-        dr = cmd4.ExecuteReader
-
-        While dr.Read
-            year = dr.Item("YearNumber")
-        End While
-        Dim labelFont As New Font("Arial", 11, FontStyle.Bold)
-        Dim textFont As New Font("Arial", 11, FontStyle.Regular)
-        Dim headerFont As New Font("Arial", 30, FontStyle.Bold)
-
         CreateProductLabel(e.Graphics)
-        conn.Close()
-
-
     End Sub
 End Class
