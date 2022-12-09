@@ -120,12 +120,12 @@ Public Class StudentTimetablesPrint
         Using penDimGray As Pen = New Pen(Color.DimGray, 0)
             Dim outerRect As Rectangle = New Rectangle(60, 100, widthOuter, heightOuter)
 
-            g.DrawLine(penDimGray, New PointF(60, 130), New PointF(widthOuter, 130))
 
             Using path As GraphicsPath = RoundRect(outerRect, 10, 10, 10, 10)
                 g.DrawPath(penDimGray, path)
             End Using
 
+            g.DrawLine(penDimGray, New PointF(100, 130), New PointF(800, 130))
             g.DrawLine(penDimGray, New PointF(100, 145), New PointF(800, 145))
             g.DrawLine(penDimGray, New PointF(60, 160), New PointF(800, 160))
             g.DrawLine(penDimGray, New PointF(100, 100), New PointF(100, 410))
