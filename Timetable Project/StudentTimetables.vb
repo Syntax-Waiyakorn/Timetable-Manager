@@ -2,6 +2,11 @@
 Public Class StudentTimetables
     Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\Timetable.accdb")
     Dim dr As OleDbDataReader
+    Dim i As Integer
+    Dim PLabelName As String = "null"
+    Dim PDay As String = "null"
+    Dim PPeriod As String = "null"
+    Dim TimetableIndex As String = "null"
     Sub LoadCbo()
         Try
             If conn.State = ConnectionState.Closed Then
@@ -74,7 +79,6 @@ Public Class StudentTimetables
             conn.Close()
         End Try
     End Sub
-
     Sub InitializeTable()
         Dim lblDays() As Label = {lblDay1, lblDay2, lblDay3, lblDay4, lblDay5}
         Dim lblPeriods() As Label = {lbl1, lbl2, lbl3, lbl4, lbl5, lbl6, lbl7, lbl8, lbl9, lbl10, lbl11}
@@ -109,10 +113,6 @@ Public Class StudentTimetables
             conn.Close()
         End Try
     End Sub
-    Dim PLabelName As String = "null"
-    Dim PDay As String = "null"
-    Dim PPeriod As String = "null"
-    Dim TimetableIndex As String = "null"
     Sub DisplayClassroomTable(Classroom As String)
         Dim lblDaysPeriods() As Label = {lblD1P1, lblD1P2, lblD1P3, lblD1P4, lblD1P5, lblD1P6, lblD1P7, lblD1P8, lblD1P9, lblD1P10, lblD1P11,
                                          lblD2P1, lblD2P2, lblD2P3, lblD2P4, lblD2P5, lblD2P6, lblD2P7, lblD2P8, lblD2P9, lblD2P10, lblD2P11,
@@ -297,8 +297,6 @@ Public Class StudentTimetables
             conn.Close()
         End Try
     End Sub
-    Dim i As Integer
-
     Sub Year()
         Try
             If MsgBox("คุณต้องการเพิ่มข้อมูลหรือไม่ ?", vbQuestion + vbYesNo, "เเจ้งเตือน") = vbYes Then
@@ -318,25 +316,6 @@ Public Class StudentTimetables
         End Try
         conn.Close()
     End Sub
-    Sub Auto()
-        Try
-            If conn.State = ConnectionState.Closed Then
-                conn.Open()
-            End If
-            Dim TeacherOrder() As String = {}
-            Dim cmd1 As New OleDb.OleDbCommand("SELECT TeacherFirstName FROM Teachers ORDER BY TeacherQuota DESC", conn)
-            dr = cmd1.ExecuteReader
-            While dr.Read
-                Console.WriteLine(dr.Item("TeacherFirstName"))
-            End While
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        Finally
-            conn.Close()
-        End Try
-    End Sub
-
-
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         If cboClassrooms.SelectedIndex = -1 Then
             MsgBox("เลือกห้องก่อน", vbYes, "เเจ้งเตือน")
@@ -366,12 +345,8 @@ Public Class StudentTimetables
         status()
     End Sub
     Private Sub StudentTimetables_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
-
         LoadCbo()
         status()
-    End Sub
-    Private Sub btnAuto_Click(sender As Object, e As EventArgs) 
-        Auto()
     End Sub
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
         Dim StudentTimetablesPrint As New StudentTimetablesPrint
