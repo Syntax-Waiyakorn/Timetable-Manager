@@ -48,6 +48,8 @@ Public Class Teachers
         txtPR.Text = "[AUTO]"
         txtTeacherFirstName.Clear()
         txtTeacherLastName.Clear()
+        cboTeacherDepartment.SelectedIndex = -1
+        txtTeacherQuota.Clear()
     End Sub
     Sub save()
         Try
@@ -101,7 +103,7 @@ Public Class Teachers
         Try
             DataGridView1.Rows.Clear()
             conn.Open()
-            Dim cmd As New OleDb.OleDbCommand("Select TeacherID, TeacherFirstName, TeacherLastName, TeacherDepartment from Teachers WHERE `TeacherFirstName` like '%" & txtSearch.Text & "%' or `TeacherLastName` like '%" & txtSearch.Text & "%' or `TeacherDepartment` like '%" & txtSearch.Text & "%' or `TeacherQuota` like '%" & txtSearch.Text & "%' or `TeacherID` like '%" & txtSearch.Text & "%' ", conn)
+            Dim cmd As New OleDb.OleDbCommand("Select TeacherID, TeacherFirstName, TeacherLastName, TeacherDepartment, TeacherQuota from Teachers WHERE `TeacherFirstName` like '%" & txtSearch.Text & "%' or `TeacherLastName` like '%" & txtSearch.Text & "%' or `TeacherDepartment` like '%" & txtSearch.Text & "%' or `TeacherQuota` like '%" & txtSearch.Text & "%' or `TeacherID` like '%" & txtSearch.Text & "%' ", conn)
             dr = cmd.ExecuteReader
             While dr.Read
                 DataGridView1.Rows.Add(dr.Item("TeacherID"), dr.Item("TeacherFirstName"), dr.Item("TeacherLastName"), dr.Item("TeacherDepartment"), dr.Item("TeacherQuota"))

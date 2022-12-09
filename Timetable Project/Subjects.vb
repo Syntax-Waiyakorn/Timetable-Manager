@@ -1,4 +1,6 @@
 ﻿Imports System.Data.OleDb
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+
 Public Class Subjects
     Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\Timetable.accdb")
     Dim dr As OleDbDataReader
@@ -63,6 +65,11 @@ Public Class Subjects
         txtID.Clear()
         txtName.Clear()
         txtSubjectPlace.Clear()
+        cboDepartment.SelectedIndex = -1
+        chkDefaultClass.CheckState = False
+        txtSubjectQuota.Clear()
+        chkSubjectSpecial.CheckState = False
+
     End Sub
     Sub save()
         Try
@@ -120,7 +127,7 @@ Public Class Subjects
         Try
             DataGridView1.Rows.Clear()
             conn.Open()
-            Dim cmd As New OleDb.OleDbCommand("Select SubjectID, SubjectCode, SubjectName, SubjectDepartment, SubjectPlace, SubjectQuota from Subjects WHERE `SubjectName` like '%" & txtSearch.Text & "%' or `SubjectDepartment` like '%" & txtSearch.Text & "%'or `SubjectCode` like '%" & txtSearch.Text & "%'or `SubjectID` like '%" & txtSearch.Text & "%' ", conn)
+            Dim cmd As New OleDb.OleDbCommand("Select SubjectID, SubjectCode, SubjectName, SubjectDepartment, SubjectPlace, SubjectQuota,SubjectSpecial from Subjects WHERE `SubjectName` like '%" & txtSearch.Text & "%' or `SubjectDepartment` like '%" & txtSearch.Text & "%'or `SubjectCode` like '%" & txtSearch.Text & "%'or `SubjectID` like '%" & txtSearch.Text & "%' ", conn)
             dr = cmd.ExecuteReader
             While dr.Read
                 DataGridView1.Rows.Add(dr.Item("SubjectID"), dr.Item("SubjectCode"), dr.Item("SubjectName"), dr.Item("SubjectDepartment"), dr.Item("SubjectPlace"), dr.Item("SubjectSpecial"), dr.Item("SubjectQuota"))

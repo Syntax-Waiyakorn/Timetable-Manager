@@ -370,7 +370,7 @@ Public Class StudentTimetables
         LoadCbo()
         status()
     End Sub
-    Private Sub btnAuto_Click(sender As Object, e As EventArgs) Handles btnAuto.Click
+    Private Sub btnAuto_Click(sender As Object, e As EventArgs) 
         Auto()
     End Sub
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click

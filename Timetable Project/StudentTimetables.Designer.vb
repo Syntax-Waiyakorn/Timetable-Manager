@@ -124,7 +124,6 @@ Partial Class StudentTimetables
         Me.Connection = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnPrint = New System.Windows.Forms.Button()
-        Me.btnAuto = New System.Windows.Forms.Button()
         Me.btnEdit = New System.Windows.Forms.Button()
         Me.agent = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
@@ -1481,7 +1480,6 @@ Partial Class StudentTimetables
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel1.Controls.Add(Me.btnPrint)
-        Me.Panel1.Controls.Add(Me.btnAuto)
         Me.Panel1.Controls.Add(Me.btnEdit)
         Me.Panel1.Location = New System.Drawing.Point(1292, 52)
         Me.Panel1.Name = "Panel1"
@@ -1504,22 +1502,6 @@ Partial Class StudentTimetables
         Me.btnPrint.Text = "พิมพ์"
         Me.btnPrint.UseVisualStyleBackColor = False
         '
-        'btnAuto
-        '
-        Me.btnAuto.BackColor = System.Drawing.Color.Black
-        Me.btnAuto.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed
-        Me.btnAuto.FlatAppearance.BorderSize = 2
-        Me.btnAuto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-        Me.btnAuto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAuto.Font = New System.Drawing.Font("Arial", 25.0!)
-        Me.btnAuto.ForeColor = System.Drawing.Color.White
-        Me.btnAuto.Location = New System.Drawing.Point(29, 14)
-        Me.btnAuto.Name = "btnAuto"
-        Me.btnAuto.Size = New System.Drawing.Size(150, 101)
-        Me.btnAuto.TabIndex = 384
-        Me.btnAuto.Text = "Auto"
-        Me.btnAuto.UseVisualStyleBackColor = False
-        '
         'btnEdit
         '
         Me.btnEdit.BackColor = System.Drawing.Color.Black
@@ -1529,9 +1511,9 @@ Partial Class StudentTimetables
         Me.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEdit.Font = New System.Drawing.Font("Arial", 25.0!)
         Me.btnEdit.ForeColor = System.Drawing.Color.White
-        Me.btnEdit.Location = New System.Drawing.Point(185, 14)
+        Me.btnEdit.Location = New System.Drawing.Point(29, 14)
         Me.btnEdit.Name = "btnEdit"
-        Me.btnEdit.Size = New System.Drawing.Size(150, 101)
+        Me.btnEdit.Size = New System.Drawing.Size(306, 101)
         Me.btnEdit.TabIndex = 383
         Me.btnEdit.Text = "แก้ไข"
         Me.btnEdit.UseVisualStyleBackColor = False
@@ -1752,6 +1734,5 @@ Partial Class StudentTimetables
     Friend WithEvents cboTeachersSubjects As ComboBox
     Friend WithEvents txtSearch As TextBox
     Friend WithEvents btnPrint As Button
-    Friend WithEvents btnAuto As Button
     Friend WithEvents btnEdit As Button
 End Class
