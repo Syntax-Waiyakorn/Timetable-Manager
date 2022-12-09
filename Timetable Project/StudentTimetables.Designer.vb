@@ -22,7 +22,6 @@ Partial Class StudentTimetables
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.lblTeachers = New System.Windows.Forms.Label()
         Me.lblD5P11 = New System.Windows.Forms.Label()
         Me.lblD5P10 = New System.Windows.Forms.Label()
@@ -126,7 +125,6 @@ Partial Class StudentTimetables
         Me.btnPrint = New System.Windows.Forms.Button()
         Me.btnEdit = New System.Windows.Forms.Button()
         Me.agent = New System.Windows.Forms.Label()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -1727,7 +1725,6 @@ Partial Class StudentTimetables
     Friend WithEvents Label2 As Label
     Friend WithEvents lblCurrentPeriod As Label
     Friend WithEvents lblCurrentDay As Label
-    Friend WithEvents Timer1 As Timer
     Friend WithEvents txtYear As TextBox
     Friend WithEvents cboClassrooms As ComboBox
     Friend WithEvents BtnSave As Button
