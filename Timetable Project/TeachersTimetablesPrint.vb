@@ -1,6 +1,6 @@
 ﻿Imports System.Drawing.Drawing2D
 Imports System.Drawing.Printing
-Public Class TeachersTimetablesFrom
+Public Class TeachersTimetablesPrint
     Private borderRadius As Integer = 30
     Private borderSize As Integer = 5
     Private borderColor As Color = Color.IndianRed

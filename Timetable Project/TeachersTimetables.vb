@@ -209,7 +209,7 @@ Public Class TeachersTimetables
         status()
     End Sub
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
-        Dim TeachersTimetablesFrom As New TeachersTimetablesFrom
+        Dim TeachersTimetablesFrom As New TeachersTimetablesPrint
         TeachersTimetablesFrom.Show()
     End Sub
 End Class

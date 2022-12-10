@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class TeachersTimetablesFrom
+Partial Class TeachersTimetablesPrint
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,7 @@ Partial Class TeachersTimetablesFrom
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TeachersTimetablesFrom))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TeachersTimetablesPrint))
         Me.btnExit = New System.Windows.Forms.Button()
         Me.PrintTeachersTimetables = New System.Drawing.Printing.PrintDocument()
         Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()

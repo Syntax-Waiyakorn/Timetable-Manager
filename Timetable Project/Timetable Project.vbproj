@@ -176,10 +176,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="TeachersTimetablesFrom.Designer.vb">
-      <DependentUpon>TeachersTimetablesFrom.vb</DependentUpon>
+    <Compile Include="TeachersTimetablesPrint.Designer.vb">
+      <DependentUpon>TeachersTimetablesPrint.vb</DependentUpon>
     </Compile>
-    <Compile Include="TeachersTimetablesFrom.vb">
+    <Compile Include="TeachersTimetablesPrint.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -221,8 +221,8 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="TeachersTimetablesFrom.resx">
-      <DependentUpon>TeachersTimetablesFrom.vb</DependentUpon>
+    <EmbeddedResource Include="TeachersTimetablesPrint.resx">
+      <DependentUpon>TeachersTimetablesPrint.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
