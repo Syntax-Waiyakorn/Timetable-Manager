@@ -2,6 +2,7 @@
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Maximize()
         switch(Homescreen)
+        Timer1.Enabled = True
     End Sub
     Sub switch(panel As Form)
         pnlMain.Controls.Clear()
@@ -50,7 +51,7 @@
             btnCondition.Image = project.My.Resources.Resources.gearGray
             btnStudentTable.Image = project.My.Resources.Resources.grid_two_upgray
             btnTeachersTable.Image = project.My.Resources.Resources.grid_two_upgray
-            btnlockTable.Image = project.My.Resources.Resources.grid_two_up_24
+            btnlockTable.Image = project.My.Resources.Resources.grid_two_upgray
 
 
         End If
@@ -79,7 +80,7 @@
             btnCondition.Image = project.My.Resources.Resources.gearGray
             btnStudentTable.Image = project.My.Resources.Resources.grid_two_upgray
             btnTeachersTable.Image = project.My.Resources.Resources.grid_two_upgray
-            btnlockTable.Image = project.My.Resources.Resources.grid_two_up_24
+            btnlockTable.Image = project.My.Resources.Resources.grid_two_upgray
 
 
         End If
@@ -106,7 +107,7 @@
             btnCondition.Image = project.My.Resources.Resources.gearGray
             btnStudentTable.Image = project.My.Resources.Resources.grid_two_upgray
             btnTeachersTable.Image = project.My.Resources.Resources.grid_two_upgray
-            btnlockTable.Image = project.My.Resources.Resources.grid_two_up_24
+            btnlockTable.Image = project.My.Resources.Resources.grid_two_upgray
 
 
         End If
@@ -124,9 +125,6 @@
             btnStudentTable.ForeColor = Color.Gray
             btnTeachersTable.ForeColor = Color.Gray
             btnlockTable.ForeColor = Color.Gray
-
-
-
         End If
         If chkRoom.Visible = True Then
             btnHome.Image = project.My.Resources.Resources.homeGray
@@ -136,10 +134,7 @@
             btnCondition.Image = project.My.Resources.Resources.gearGray
             btnStudentTable.Image = project.My.Resources.Resources.grid_two_upgray
             btnTeachersTable.Image = project.My.Resources.Resources.grid_two_upgray
-            btnlockTable.Image = project.My.Resources.Resources.grid_two_up_24
-
-
-
+            btnlockTable.Image = project.My.Resources.Resources.grid_two_upgray
         End If
     End Sub
     Private Sub btnCondition_Click(sender As Object, e As EventArgs) Handles btnCondition.Click
@@ -166,7 +161,7 @@
             btnCondition.Image = project.My.Resources.Resources.gear_24
             btnStudentTable.Image = project.My.Resources.Resources.grid_two_upgray
             btnTeachersTable.Image = project.My.Resources.Resources.grid_two_upgray
-            btnlockTable.Image = project.My.Resources.Resources.grid_two_up_24
+            btnlockTable.Image = project.My.Resources.Resources.grid_two_upgray
 
 
         End If
@@ -195,7 +190,7 @@
             btnCondition.Image = project.My.Resources.Resources.gearGray
             btnStudentTable.Image = project.My.Resources.Resources.grid_two_up_24
             btnTeachersTable.Image = project.My.Resources.Resources.grid_two_upgray
-            btnlockTable.Image = project.My.Resources.Resources.grid_two_up_24
+            btnlockTable.Image = project.My.Resources.Resources.grid_two_upgray
 
 
         End If
@@ -207,9 +202,7 @@
     Private Sub btnMinimized_Click(sender As Object, e As EventArgs) Handles btnMinimized.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs)
-        lbltime.Text = Date.Now.ToString("   วันที่ dd เดือน MMMM ปี yyyy เวลา HH:mm:ss จัดทำโดย") + " ทีม Syntax"
-    End Sub
+
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnTeachersTable.Click
         CheckClear()
@@ -263,6 +256,10 @@
             btnTeachersTable.Image = project.My.Resources.Resources.grid_two_upgray
             btnlockTable.Image = project.My.Resources.Resources.grid_two_up_24
         End If
+    End Sub
+
+    Private Sub Timer1_Tick_1(sender As Object, e As EventArgs) Handles Timer1.Tick
+        lbltime.Text = Date.Now.ToString("   วันที่ dd เดือน MMMM ปี yyyy เวลา HH:mm:ss จัดทำโดย") + " ทีม Syntax"
     End Sub
 End Class
 

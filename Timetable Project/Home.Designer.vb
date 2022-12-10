@@ -22,8 +22,11 @@ Partial Class Home
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Home))
         Me.pnlMenu = New System.Windows.Forms.Panel()
+        Me.chklockTable = New System.Windows.Forms.Panel()
+        Me.btnlockTable = New System.Windows.Forms.Button()
         Me.chkTeachersTable = New System.Windows.Forms.Panel()
         Me.btnTeachersTable = New System.Windows.Forms.Button()
         Me.chkRoom = New System.Windows.Forms.Panel()
@@ -46,8 +49,7 @@ Partial Class Home
         Me.btnExit = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.pnlMain = New System.Windows.Forms.Panel()
-        Me.btnlockTable = New System.Windows.Forms.Button()
-        Me.chklockTable = New System.Windows.Forms.Panel()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.pnlMenu.SuspendLayout()
         Me.pnlIcon.SuspendLayout()
         CType(Me.picBook, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -79,6 +81,37 @@ Partial Class Home
         Me.pnlMenu.Name = "pnlMenu"
         Me.pnlMenu.Size = New System.Drawing.Size(192, 631)
         Me.pnlMenu.TabIndex = 30
+        '
+        'chklockTable
+        '
+        Me.chklockTable.BackColor = System.Drawing.Color.IndianRed
+        Me.chklockTable.Location = New System.Drawing.Point(0, 576)
+        Me.chklockTable.Name = "chklockTable"
+        Me.chklockTable.Size = New System.Drawing.Size(10, 41)
+        Me.chklockTable.TabIndex = 5
+        Me.chklockTable.Visible = False
+        '
+        'btnlockTable
+        '
+        Me.btnlockTable.BackColor = System.Drawing.Color.Transparent
+        Me.btnlockTable.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnlockTable.FlatAppearance.BorderSize = 0
+        Me.btnlockTable.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(88, Byte), Integer))
+        Me.btnlockTable.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(88, Byte), Integer))
+        Me.btnlockTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnlockTable.Font = New System.Drawing.Font("Sylfaen", 17.0!)
+        Me.btnlockTable.ForeColor = System.Drawing.Color.Gray
+        Me.btnlockTable.Image = Global.project.My.Resources.Resources.grid_two_upgray
+        Me.btnlockTable.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnlockTable.Location = New System.Drawing.Point(0, 570)
+        Me.btnlockTable.Name = "btnlockTable"
+        Me.btnlockTable.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
+        Me.btnlockTable.Size = New System.Drawing.Size(192, 55)
+        Me.btnlockTable.TabIndex = 17
+        Me.btnlockTable.Text = "  ล็อกตาราง"
+        Me.btnlockTable.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnlockTable.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnlockTable.UseVisualStyleBackColor = False
         '
         'chkTeachersTable
         '
@@ -399,36 +432,8 @@ Partial Class Home
         Me.pnlMain.Size = New System.Drawing.Size(1055, 632)
         Me.pnlMain.TabIndex = 31
         '
-        'btnlockTable
+        'Timer1
         '
-        Me.btnlockTable.BackColor = System.Drawing.Color.Transparent
-        Me.btnlockTable.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnlockTable.FlatAppearance.BorderSize = 0
-        Me.btnlockTable.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(88, Byte), Integer))
-        Me.btnlockTable.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(88, Byte), Integer))
-        Me.btnlockTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnlockTable.Font = New System.Drawing.Font("Sylfaen", 17.0!)
-        Me.btnlockTable.ForeColor = System.Drawing.Color.Gray
-        Me.btnlockTable.Image = Global.project.My.Resources.Resources.grid_two_upgray
-        Me.btnlockTable.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnlockTable.Location = New System.Drawing.Point(0, 570)
-        Me.btnlockTable.Name = "btnlockTable"
-        Me.btnlockTable.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
-        Me.btnlockTable.Size = New System.Drawing.Size(192, 55)
-        Me.btnlockTable.TabIndex = 17
-        Me.btnlockTable.Text = "ล็อกตาราง"
-        Me.btnlockTable.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnlockTable.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnlockTable.UseVisualStyleBackColor = False
-        '
-        'chklockTable
-        '
-        Me.chklockTable.BackColor = System.Drawing.Color.IndianRed
-        Me.chklockTable.Location = New System.Drawing.Point(0, 576)
-        Me.chklockTable.Name = "chklockTable"
-        Me.chklockTable.Size = New System.Drawing.Size(10, 41)
-        Me.chklockTable.TabIndex = 5
-        Me.chklockTable.Visible = False
         '
         'Home
         '
@@ -483,4 +488,5 @@ Partial Class Home
     Friend WithEvents btnTeachersTable As Button
     Friend WithEvents chklockTable As Panel
     Friend WithEvents btnlockTable As Button
+    Friend WithEvents Timer1 As Timer
 End Class
