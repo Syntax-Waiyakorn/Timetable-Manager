@@ -13,21 +13,25 @@ Public Class lockTable
                 conn.Open()
             End If
             Dim cmd As New OleDb.OleDbCommand("Select ClassroomName from Classrooms", conn)
-            Dim cmd1 As New OleDb.OleDbCommand("Select TeacherSubjectDisplay from TeachersSubjectsQuery", conn)
+            Dim cmd1 As New OleDb.OleDbCommand("Select SubjectName from Subjects where SubjectSpecial =@", conn)
+            cmd1.Parameters.Clear()
+            cmd1.Parameters.AddWithValue("@SubjectSpecial", True)
             Dim cmd2 As New OleDb.OleDbCommand("Select YearNumber from Years", conn)
-            cboClassrooms.Items.Clear()
+            Dim cmd3 As New OleDb.OleDbCommand("Select ClassroomName from Classrooms", conn)
+            ChackClassrooms.Items.Clear()
             dr = cmd.ExecuteReader
             While dr.Read
-                cboClassrooms.Items.Add(dr.GetString(0))
+                ChackClassrooms.Items.Add(dr.GetString(0))
             End While
             cboTeachersSubjects.Items.Clear()
             dr = cmd1.ExecuteReader
             While dr.Read
                 cboTeachersSubjects.Items.Add(dr.GetString(0))
             End While
-            dr = cmd2.ExecuteReader
+            ChackClassrooms.Items.Clear()
+            dr = cmd3.ExecuteReader
             While dr.Read
-                txtYear.Text = CStr(dr.Item("YearNumber"))
+                ChackClassrooms.Items.Add(dr.GetString(0))
             End While
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -38,7 +42,7 @@ Public Class lockTable
         End Try
     End Sub
     Sub status()
-        If cboClassrooms.SelectedIndex = -1 Then
+        If ChackClassrooms.SelectedIndex = -1 Then
             txtSearch.Enabled = False
             cboTeachersSubjects.Enabled = False
             Connection_status.Text = "กรุณาเลือกห้อง"
@@ -136,12 +140,7 @@ Public Class lockTable
             Catch
                 PPeriod = PLabelName.Chars(6)
             End Try
-            TimetableIndex = CStr(Classroom) & "$$" & PDay & "$$" & PPeriod
-            Dim cmd As New OleDb.OleDbCommand("SELECT ClassroomCode, TeacherFirstName, SubjectCode FROM TimetablesQuery WHERE TimetableIndex = '" + TimetableIndex + "'", conn)
-            dr = cmd.ExecuteReader
-            While dr.Read
-                PLabel.Text = CStr(dr.Item("TeacherFirstName")) & vbCrLf & CStr(dr.Item("SubjectCode")) & vbCrLf & CStr(dr.Item("ClassroomCode"))
-            End While
+            PLabel.Text = "ว่าง"
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
@@ -156,58 +155,55 @@ Public Class lockTable
                                                               lblD3P1.Click, lblD3P2.Click, lblD3P3.Click, lblD3P4.Click, lblD3P5.Click, lblD3P6.Click, lblD3P7.Click, lblD3P8.Click, lblD3P9.Click, lblD3P10.Click, lblD3P11.Click,
                                                               lblD4P1.Click, lblD4P2.Click, lblD4P3.Click, lblD4P4.Click, lblD4P5.Click, lblD4P6.Click, lblD4P7.Click, lblD4P8.Click, lblD4P9.Click, lblD4P10.Click, lblD4P11.Click,
                                                               lblD5P1.Click, lblD5P2.Click, lblD5P3.Click, lblD5P4.Click, lblD5P5.Click, lblD5P6.Click, lblD5P7.Click, lblD5P8.Click, lblD5P9.Click, lblD5P10.Click, lblD5P11.Click
-        If Not cboClassrooms.SelectedIndex = -1 Then
+
+        Try
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
+            Dim lblText As String = sender.Text
+            Dim Separaters() = {vbCrLf, ""}
+            Dim lblTextSplit() As String = lblText.Split(Separaters, StringSplitOptions.RemoveEmptyEntries)
+            Dim Teacher As String = lblTextSplit(0)
+            Dim Subject As String = lblTextSplit(1)
+            Dim TeacherSubject As String = Teacher & " : " & Subject
+            Dim cboIndex = cboTeachersSubjects.FindString(TeacherSubject)
+            cboTeachersSubjects.SelectedIndex = cboIndex
+            Dim PLabelNameC As String = sender.Name
+            Dim PDayC As String = PLabelNameC.Chars(4)
+            Dim PPeriodC As String
             Try
-                If conn.State = ConnectionState.Closed Then
-                    conn.Open()
-                End If
-                Dim lblText As String = sender.Text
-                Dim Separaters() = {vbCrLf, ""}
-                Dim lblTextSplit() As String = lblText.Split(Separaters, StringSplitOptions.RemoveEmptyEntries)
-                Dim Teacher As String = lblTextSplit(0)
-                Dim Subject As String = lblTextSplit(1)
-                Dim TeacherSubject As String = Teacher & " : " & Subject
-                Dim cboIndex = cboTeachersSubjects.FindString(TeacherSubject)
-                cboTeachersSubjects.SelectedIndex = cboIndex
-                Dim PLabelNameC As String = sender.Name
-                Dim PDayC As String = PLabelNameC.Chars(4)
-                Dim PPeriodC As String
-                Try
-                    PPeriodC = PLabelNameC.Chars(6) & PLabelNameC.Chars(7)
-                Catch
-                    PPeriodC = PLabelNameC.Chars(6)
-                End Try
-                lblCurrentDay.Tag = PDayC
-                lblCurrentPeriod.Tag = PPeriodC
-                Dim cmd1 As New OleDb.OleDbCommand("Select TOP 1 DayNumber, DayName from Days WHERE `DayNumber` like '%" & PDayC & "%' ", conn)
-                Dim cmd2 As New OleDb.OleDbCommand("Select TOP 1 PeriodNumber, PeriodName  from Periods WHERE `PeriodNumber` like '%" & PPeriodC & "%' ", conn)
-                dr = cmd1.ExecuteReader
-                While dr.Read
-                    lblCurrentDay.Text = dr.Item("DayName")
-                    lblCurrentDay.ForeColor = Color.Lime
-                End While
-                dr = cmd2.ExecuteReader
-                While dr.Read
-                    lblCurrentPeriod.Text = dr.Item("PeriodName")
-                    lblCurrentPeriod.ForeColor = Color.Lime
-                End While
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            Finally
-                If conn.State = ConnectionState.Open Then
-                    conn.Close()
-                End If
+                PPeriodC = PLabelNameC.Chars(6) & PLabelNameC.Chars(7)
+            Catch
+                PPeriodC = PLabelNameC.Chars(6)
             End Try
-        Else
-            MsgBox("เลือกห้องก่อน", vbYes, "เเจ้งเตืน")
-        End If
+            lblCurrentDay.Tag = PDayC
+            lblCurrentPeriod.Tag = PPeriodC
+            Dim cmd1 As New OleDb.OleDbCommand("Select TOP 1 DayNumber, DayName from Days WHERE `DayNumber` like '%" & PDayC & "%' ", conn)
+            Dim cmd2 As New OleDb.OleDbCommand("Select TOP 1 PeriodNumber, PeriodName  from Periods WHERE `PeriodNumber` like '%" & PPeriodC & "%' ", conn)
+            dr = cmd1.ExecuteReader
+            While dr.Read
+                lblCurrentDay.Text = dr.Item("DayName")
+                lblCurrentDay.ForeColor = Color.Lime
+            End While
+            dr = cmd2.ExecuteReader
+            While dr.Read
+                lblCurrentPeriod.Text = dr.Item("PeriodName")
+                lblCurrentPeriod.ForeColor = Color.Lime
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If conn.State = ConnectionState.Open Then
+                conn.Close()
+            End If
+        End Try
     End Sub
     Sub edit()
         Try
             If conn.State = ConnectionState.Closed Then
                 conn.Open()
             End If
-            Dim Classroom As String = cboClassrooms.Text
+            Dim Classroom As String = ChackClassrooms.Text
             Dim TDay As String = lblCurrentDay.Tag
             Dim TPeriod As String = lblCurrentPeriod.Tag
             Dim cboText = cboTeachersSubjects.Text
@@ -286,31 +282,9 @@ Public Class lockTable
             conn.Close()
         End Try
     End Sub
-    Sub Year()
-        Try
-            If MsgBox("คุณต้องบันทึกปีการฯศึกษาหรือไม่ ?", vbQuestion + vbYesNo, "เเจ้งเตือน") = vbYes Then
-                conn.Open()
-                Dim cmd As New OleDb.OleDbCommand("UPDATE Years SET `YearNumber`=@YearNumber ", conn)
-                cmd.Parameters.Clear()
-                cmd.Parameters.AddWithValue("@YearNumber", txtYear.Text)
-                i = cmd.ExecuteNonQuery
-                If i > 0 Then
-                    MsgBox("บันทึกเเล้ว !", vbInformation)
-                Else
-                    MsgBox("ผิดพลาด", vbCritical)
-                End If
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        Finally
-            If conn.State = ConnectionState.Open Then
-                conn.Close()
-            End If
-        End Try
 
-    End Sub
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
-        If cboClassrooms.SelectedIndex = -1 Then
+        If ChackClassrooms.SelectedIndex = -1 Then
             MsgBox("เลือกห้องก่อน", vbYes, "เเจ้งเตือน")
         Else
             If lblCurrentDay.Text = "ว่าง" Then
@@ -320,10 +294,8 @@ Public Class lockTable
             End If
         End If
     End Sub
-    Private Sub cboClassrooms_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboClassrooms.SelectedIndexChanged
-        Dim Classroom As String = CStr(cboClassrooms.Text)
-        DisplayClassroomTable(Classroom)
-        status()
+    Private Sub cboClassrooms_SelectedIndexChanged(sender As Object, e As EventArgs)
+
     End Sub
     Private Sub cboTeachersSubjects_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboTeachersSubjects.SelectedIndexChanged
         Me.agent.Focus()
@@ -341,13 +313,21 @@ Public Class lockTable
         LoadCbo()
         status()
     End Sub
-    Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
+    Private Sub btnPrint_Click(sender As Object, e As EventArgs)
         Dim StudentTimetablesPrint As New StudentTimetablesPrint
         StudentTimetablesPrint.Show()
     End Sub
-    Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
+    Private Sub BtnSave_Click(sender As Object, e As EventArgs)
         Dim OBJ As New TeachersTimetables
-        OBJ.Pass = txtYear.Text
-        Year()
+    End Sub
+
+    Private Sub ChackClassrooms_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ChackClassrooms.SelectedIndexChanged
+        Dim Classroom As String = CStr(ChackClassrooms.Text)
+        DisplayClassroomTable(Classroom)
+        status()
+    End Sub
+
+    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
+
     End Sub
 End Class
