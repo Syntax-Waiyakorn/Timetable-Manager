@@ -130,6 +130,12 @@
     <Compile Include="Classrooms.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="lockTable.Designer.vb">
+      <DependentUpon>lockTable.vb</DependentUpon>
+    </Compile>
+    <Compile Include="lockTable.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="StudentTimetablesPrint.Designer.vb">
       <DependentUpon>StudentTimetablesPrint.vb</DependentUpon>
     </Compile>
@@ -199,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Classrooms.resx">
       <DependentUpon>Classrooms.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lockTable.resx">
+      <DependentUpon>lockTable.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentTimetablesPrint.resx">
       <DependentUpon>StudentTimetablesPrint.vb</DependentUpon>

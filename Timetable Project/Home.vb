@@ -2,7 +2,6 @@
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Maximize()
         switch(Homescreen)
-        Timer1.Enabled = True
     End Sub
     Sub switch(panel As Form)
         pnlMain.Controls.Clear()
@@ -18,6 +17,7 @@
         chkIF.Visible = False
         chkStudentTable.Visible = False
         chkTeachersTable.Visible = False
+        chklockTable.Visible = False
     End Sub
     Sub Maximize()
         Dim x As Integer = SystemInformation.WorkingArea.Width
@@ -38,6 +38,8 @@
             btnCondition.ForeColor = Color.Gray
             btnStudentTable.ForeColor = Color.Gray
             btnTeachersTable.ForeColor = Color.Gray
+            btnlockTable.ForeColor = Color.Gray
+
 
         End If
         If chkHome.Visible = True Then
@@ -48,6 +50,8 @@
             btnCondition.Image = project.My.Resources.Resources.gearGray
             btnStudentTable.Image = project.My.Resources.Resources.grid_two_upgray
             btnTeachersTable.Image = project.My.Resources.Resources.grid_two_upgray
+            btnlockTable.Image = project.My.Resources.Resources.grid_two_up_24
+
 
         End If
     End Sub
@@ -63,6 +67,8 @@
             btnCondition.ForeColor = Color.Gray
             btnStudentTable.ForeColor = Color.Gray
             btnTeachersTable.ForeColor = Color.Gray
+            btnlockTable.ForeColor = Color.Gray
+
 
         End If
         If chkT.Visible = True Then
@@ -73,6 +79,8 @@
             btnCondition.Image = project.My.Resources.Resources.gearGray
             btnStudentTable.Image = project.My.Resources.Resources.grid_two_upgray
             btnTeachersTable.Image = project.My.Resources.Resources.grid_two_upgray
+            btnlockTable.Image = project.My.Resources.Resources.grid_two_up_24
+
 
         End If
     End Sub
@@ -87,6 +95,8 @@
             btnClassroom.ForeColor = Color.Gray
             btnCondition.ForeColor = Color.Gray
             btnStudentTable.ForeColor = Color.Gray
+            btnlockTable.ForeColor = Color.Gray
+
         End If
         If chkSub.Visible = True Then
             btnHome.Image = project.My.Resources.Resources.homeGray
@@ -96,6 +106,8 @@
             btnCondition.Image = project.My.Resources.Resources.gearGray
             btnStudentTable.Image = project.My.Resources.Resources.grid_two_upgray
             btnTeachersTable.Image = project.My.Resources.Resources.grid_two_upgray
+            btnlockTable.Image = project.My.Resources.Resources.grid_two_up_24
+
 
         End If
     End Sub
@@ -111,6 +123,9 @@
             btnCondition.ForeColor = Color.Gray
             btnStudentTable.ForeColor = Color.Gray
             btnTeachersTable.ForeColor = Color.Gray
+            btnlockTable.ForeColor = Color.Gray
+
+
 
         End If
         If chkRoom.Visible = True Then
@@ -121,6 +136,9 @@
             btnCondition.Image = project.My.Resources.Resources.gearGray
             btnStudentTable.Image = project.My.Resources.Resources.grid_two_upgray
             btnTeachersTable.Image = project.My.Resources.Resources.grid_two_upgray
+            btnlockTable.Image = project.My.Resources.Resources.grid_two_up_24
+
+
 
         End If
     End Sub
@@ -136,6 +154,8 @@
             btnCondition.ForeColor = Color.White
             btnStudentTable.ForeColor = Color.Gray
             btnTeachersTable.ForeColor = Color.Gray
+            btnlockTable.ForeColor = Color.Gray
+
 
         End If
         If chkIF.Visible = True Then
@@ -146,6 +166,8 @@
             btnCondition.Image = project.My.Resources.Resources.gear_24
             btnStudentTable.Image = project.My.Resources.Resources.grid_two_upgray
             btnTeachersTable.Image = project.My.Resources.Resources.grid_two_upgray
+            btnlockTable.Image = project.My.Resources.Resources.grid_two_up_24
+
 
         End If
     End Sub
@@ -161,6 +183,8 @@
             btnCondition.ForeColor = Color.Gray
             btnStudentTable.ForeColor = Color.White
             btnTeachersTable.ForeColor = Color.Gray
+            btnlockTable.ForeColor = Color.Gray
+
 
         End If
         If chkStudentTable.Visible = True Then
@@ -171,6 +195,8 @@
             btnCondition.Image = project.My.Resources.Resources.gearGray
             btnStudentTable.Image = project.My.Resources.Resources.grid_two_up_24
             btnTeachersTable.Image = project.My.Resources.Resources.grid_two_upgray
+            btnlockTable.Image = project.My.Resources.Resources.grid_two_up_24
+
 
         End If
     End Sub
@@ -181,7 +207,7 @@
     Private Sub btnMinimized_Click(sender As Object, e As EventArgs) Handles btnMinimized.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs)
         lbltime.Text = Date.Now.ToString("   วันที่ dd เดือน MMMM ปี yyyy เวลา HH:mm:ss จัดทำโดย") + " ทีม Syntax"
     End Sub
 
@@ -197,6 +223,8 @@
             btnCondition.ForeColor = Color.Gray
             btnStudentTable.ForeColor = Color.Gray
             btnTeachersTable.ForeColor = Color.White
+            btnlockTable.ForeColor = Color.Gray
+
         End If
         If chkTeachersTable.Visible = True Then
             btnHome.Image = project.My.Resources.Resources.homeGray
@@ -206,11 +234,35 @@
             btnCondition.Image = project.My.Resources.Resources.gearGray
             btnStudentTable.Image = project.My.Resources.Resources.grid_two_upgray
             btnTeachersTable.Image = project.My.Resources.Resources.grid_two_up_24
+            btnlockTable.Image = project.My.Resources.Resources.grid_two_upgray
+
         End If
     End Sub
 
-    Private Sub pnlTop_Paint(sender As Object, e As PaintEventArgs) Handles pnlTop.Paint
-
+    Private Sub btnlockTable_Click(sender As Object, e As EventArgs) Handles btnlockTable.Click
+        CheckClear()
+        chklockTable.Visible = True
+        switch(lockTable)
+        If chklockTable.Visible = True Then
+            btnHome.ForeColor = Color.Gray
+            btnTeacher.ForeColor = Color.Gray
+            btnSubject.ForeColor = Color.Gray
+            btnClassroom.ForeColor = Color.Gray
+            btnCondition.ForeColor = Color.Gray
+            btnStudentTable.ForeColor = Color.Gray
+            btnTeachersTable.ForeColor = Color.Gray
+            btnlockTable.ForeColor = Color.White
+        End If
+        If chklockTable.Visible = True Then
+            btnHome.Image = project.My.Resources.Resources.homeGray
+            btnTeacher.Image = project.My.Resources.Resources.add_userGray
+            btnSubject.Image = project.My.Resources.Resources.literatureGray
+            btnClassroom.Image = project.My.Resources.Resources.classroomGray
+            btnCondition.Image = project.My.Resources.Resources.gearGray
+            btnStudentTable.Image = project.My.Resources.Resources.grid_two_upgray
+            btnTeachersTable.Image = project.My.Resources.Resources.grid_two_upgray
+            btnlockTable.Image = project.My.Resources.Resources.grid_two_up_24
+        End If
     End Sub
 End Class
 
