@@ -156,47 +156,39 @@ Public Class lockTable
                                                               lblD4P1.Click, lblD4P2.Click, lblD4P3.Click, lblD4P4.Click, lblD4P5.Click, lblD4P6.Click, lblD4P7.Click, lblD4P8.Click, lblD4P9.Click, lblD4P10.Click, lblD4P11.Click,
                                                               lblD5P1.Click, lblD5P2.Click, lblD5P3.Click, lblD5P4.Click, lblD5P5.Click, lblD5P6.Click, lblD5P7.Click, lblD5P8.Click, lblD5P9.Click, lblD5P10.Click, lblD5P11.Click
 
+        Dim lblName As String = sender.Name
+        Dim lblPeriod As Integer
+        Dim lblDay As String = lblName.Chars(4)
+        Dim lblDayName As String = "null"
         Try
             If conn.State = ConnectionState.Closed Then
                 conn.Open()
             End If
-            Dim lblText As String = sender.Text
-            Dim Separaters() = {vbCrLf, ""}
-            Dim lblTextSplit() As String = lblText.Split(Separaters, StringSplitOptions.RemoveEmptyEntries)
-            Dim Teacher As String = lblTextSplit(0)
-            Dim Subject As String = lblTextSplit(1)
-            Dim TeacherSubject As String = Teacher & " : " & Subject
-            Dim cboIndex = cboTeachersSubjects.FindString(TeacherSubject)
-            cboTeachersSubjects.SelectedIndex = cboIndex
-            Dim PLabelNameC As String = sender.Name
-            Dim PDayC As String = PLabelNameC.Chars(4)
-            Dim PPeriodC As String
+            Dim cmd As New OleDb.OleDbCommand("Select DayName From Days Where DayNumber = '" + lblDay + "' ", conn)
+            dr = cmd.ExecuteReader
+            While dr.Read
+                lblDayName = dr.Item("DayName")
+            End While
+
+            lblCurrentDay.Text = lblDayName
+            lblCurrentDay.ForeColor = Color.Lime
             Try
-                PPeriodC = PLabelNameC.Chars(6) & PLabelNameC.Chars(7)
-            Catch
-                PPeriodC = PLabelNameC.Chars(6)
-            End Try
-            lblCurrentDay.Tag = PDayC
-            lblCurrentPeriod.Tag = PPeriodC
-            Dim cmd1 As New OleDb.OleDbCommand("Select TOP 1 DayNumber, DayName from Days WHERE `DayNumber` like '%" & PDayC & "%' ", conn)
-            Dim cmd2 As New OleDb.OleDbCommand("Select TOP 1 PeriodNumber, PeriodName  from Periods WHERE `PeriodNumber` like '%" & PPeriodC & "%' ", conn)
-            dr = cmd1.ExecuteReader
-            While dr.Read
-                lblCurrentDay.Text = dr.Item("DayName")
-                lblCurrentDay.ForeColor = Color.Lime
-            End While
-            dr = cmd2.ExecuteReader
-            While dr.Read
-                lblCurrentPeriod.Text = dr.Item("PeriodName")
+                lblPeriod = lblName.Chars(6) & lblName.Chars(7)
+                lblCurrentPeriod.Text = lblPeriod - 1
                 lblCurrentPeriod.ForeColor = Color.Lime
-            End While
+            Catch ex As Exception
+                lblPeriod = lblName.Chars(6) & Int(0)
+                lblCurrentPeriod.Text = lblPeriod / 10 - 1
+                lblCurrentPeriod.ForeColor = Color.Lime
+            End Try
+
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
-            If conn.State = ConnectionState.Open Then
-                conn.Close()
-            End If
+            conn.Close()
         End Try
+
+
     End Sub
     Sub edit()
         Try
@@ -322,12 +314,18 @@ Public Class lockTable
     End Sub
 
     Private Sub ChackClassrooms_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ChackClassrooms.SelectedIndexChanged
-        Dim Classroom As String = CStr(ChackClassrooms.Text)
-        DisplayClassroomTable(Classroom)
         status()
     End Sub
 
     Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
+
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles SubjectNameBox.TextChanged
+
+    End Sub
+
+    Private Sub Label9_Click(sender As Object, e As EventArgs) Handles Label9.Click
 
     End Sub
 End Class
