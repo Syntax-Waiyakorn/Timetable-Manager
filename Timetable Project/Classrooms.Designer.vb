@@ -54,8 +54,7 @@ Partial Class Classrooms
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.Panel1.Controls.Add(Me.txtName)
         Me.Panel1.Controls.Add(Me.txtID)
         Me.Panel1.Controls.Add(Me.lblName)
@@ -90,7 +89,7 @@ Partial Class Classrooms
         'lblName
         '
         Me.lblName.AutoSize = True
-        Me.lblName.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.lblName.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.lblName.Font = New System.Drawing.Font("Sylfaen", 30.0!)
         Me.lblName.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblName.Location = New System.Drawing.Point(106, 139)
@@ -102,7 +101,7 @@ Partial Class Classrooms
         'lblID
         '
         Me.lblID.AutoSize = True
-        Me.lblID.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.lblID.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.lblID.Font = New System.Drawing.Font("Sylfaen", 30.0!)
         Me.lblID.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblID.Location = New System.Drawing.Point(37, 41)
@@ -164,15 +163,14 @@ Partial Class Classrooms
         'lblTitle
         '
         Me.lblTitle.AutoSize = True
-        Me.lblTitle.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-        Me.lblTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblTitle.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.lblTitle.Font = New System.Drawing.Font("Sylfaen", 60.0!)
         Me.lblTitle.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblTitle.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.lblTitle.Location = New System.Drawing.Point(110, 50)
         Me.lblTitle.Name = "lblTitle"
         Me.lblTitle.Padding = New System.Windows.Forms.Padding(10)
-        Me.lblTitle.Size = New System.Drawing.Size(512, 127)
+        Me.lblTitle.Size = New System.Drawing.Size(510, 125)
         Me.lblTitle.TabIndex = 132
         Me.lblTitle.Text = "เเก้ไขข้อมูลห้อง"
         '
@@ -180,10 +178,10 @@ Partial Class Classrooms
         '
         Me.txtPR.AllowDrop = True
         Me.txtPR.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.txtPR.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.txtPR.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.txtPR.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtPR.Font = New System.Drawing.Font("Arial", 22.0!)
-        Me.txtPR.Location = New System.Drawing.Point(1366, 32)
+        Me.txtPR.Location = New System.Drawing.Point(1419, 32)
         Me.txtPR.MaxLength = 5
         Me.txtPR.Name = "txtPR"
         Me.txtPR.Size = New System.Drawing.Size(240, 34)
@@ -217,7 +215,7 @@ Partial Class Classrooms
         '
         'txtSearch
         '
-        Me.txtSearch.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.txtSearch.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtSearch.Font = New System.Drawing.Font("Arial", 22.0!)
         Me.txtSearch.ForeColor = System.Drawing.Color.White
@@ -240,7 +238,7 @@ Partial Class Classrooms
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.DataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.DataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText
@@ -300,7 +298,7 @@ Partial Class Classrooms
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.btnEdit)
         Me.Panel2.Controls.Add(Me.btnDelete)
@@ -364,7 +362,8 @@ Partial Class Classrooms
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
-        Me.ClientSize = New System.Drawing.Size(1696, 1080)
+        Me.BackgroundImage = Global.project.My.Resources.Resources.BGExtend
+        Me.ClientSize = New System.Drawing.Size(1803, 1080)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.lblSearch)

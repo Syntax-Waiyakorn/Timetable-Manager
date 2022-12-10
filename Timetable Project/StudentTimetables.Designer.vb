@@ -133,7 +133,7 @@ Partial Class StudentTimetables
         'lblTeachers
         '
         Me.lblTeachers.AutoSize = True
-        Me.lblTeachers.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.lblTeachers.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.lblTeachers.Font = New System.Drawing.Font("Sylfaen", 25.0!)
         Me.lblTeachers.ForeColor = System.Drawing.Color.White
         Me.lblTeachers.Location = New System.Drawing.Point(29, 97)
@@ -1266,7 +1266,7 @@ Partial Class StudentTimetables
         'lblYear
         '
         Me.lblYear.AutoSize = True
-        Me.lblYear.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.lblYear.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.lblYear.Font = New System.Drawing.Font("Sylfaen", 25.0!)
         Me.lblYear.ForeColor = System.Drawing.Color.White
         Me.lblYear.Location = New System.Drawing.Point(67, 30)
@@ -1277,8 +1277,7 @@ Partial Class StudentTimetables
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.Panel2.Controls.Add(Me.BtnSave)
         Me.Panel2.Controls.Add(Me.cboClassrooms)
         Me.Panel2.Controls.Add(Me.txtYear)
@@ -1333,7 +1332,7 @@ Partial Class StudentTimetables
         'lblRoom
         '
         Me.lblRoom.AutoSize = True
-        Me.lblRoom.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.lblRoom.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.lblRoom.Font = New System.Drawing.Font("Sylfaen", 25.0!)
         Me.lblRoom.ForeColor = System.Drawing.Color.White
         Me.lblRoom.Location = New System.Drawing.Point(21, 92)
@@ -1344,8 +1343,7 @@ Partial Class StudentTimetables
         '
         'Panel3
         '
-        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.Panel3.Controls.Add(Me.cboTeachersSubjects)
         Me.Panel3.Controls.Add(Me.txtSearch)
         Me.Panel3.Controls.Add(Me.lblCurrentPeriod)
@@ -1389,10 +1387,10 @@ Partial Class StudentTimetables
         'lblCurrentPeriod
         '
         Me.lblCurrentPeriod.AutoSize = True
-        Me.lblCurrentPeriod.BackColor = System.Drawing.Color.Transparent
+        Me.lblCurrentPeriod.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.lblCurrentPeriod.Font = New System.Drawing.Font("Microsoft Tai Le", 25.0!)
         Me.lblCurrentPeriod.ForeColor = System.Drawing.Color.Red
-        Me.lblCurrentPeriod.Location = New System.Drawing.Point(572, 170)
+        Me.lblCurrentPeriod.Location = New System.Drawing.Point(572, 172)
         Me.lblCurrentPeriod.Name = "lblCurrentPeriod"
         Me.lblCurrentPeriod.Size = New System.Drawing.Size(59, 44)
         Me.lblCurrentPeriod.TabIndex = 375
@@ -1401,10 +1399,10 @@ Partial Class StudentTimetables
         'lblCurrentDay
         '
         Me.lblCurrentDay.AutoSize = True
-        Me.lblCurrentDay.BackColor = System.Drawing.Color.Transparent
+        Me.lblCurrentDay.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.lblCurrentDay.Font = New System.Drawing.Font("Microsoft Tai Le", 25.0!)
         Me.lblCurrentDay.ForeColor = System.Drawing.Color.Red
-        Me.lblCurrentDay.Location = New System.Drawing.Point(382, 170)
+        Me.lblCurrentDay.Location = New System.Drawing.Point(382, 172)
         Me.lblCurrentDay.Name = "lblCurrentDay"
         Me.lblCurrentDay.Size = New System.Drawing.Size(59, 44)
         Me.lblCurrentDay.TabIndex = 374
@@ -1414,7 +1412,7 @@ Partial Class StudentTimetables
         '
         Me.Label3.AllowDrop = True
         Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.Label3.Font = New System.Drawing.Font("Sylfaen", 25.0!)
         Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Label3.Location = New System.Drawing.Point(498, 168)
@@ -1427,7 +1425,7 @@ Partial Class StudentTimetables
         '
         Me.Label2.AllowDrop = True
         Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.Label2.Font = New System.Drawing.Font("Sylfaen", 25.0!)
         Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Label2.Location = New System.Drawing.Point(319, 168)
@@ -1439,10 +1437,10 @@ Partial Class StudentTimetables
         'Connection_status
         '
         Me.Connection_status.AutoSize = True
-        Me.Connection_status.BackColor = System.Drawing.Color.Transparent
+        Me.Connection_status.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.Connection_status.Font = New System.Drawing.Font("Microsoft Tai Le", 25.0!)
         Me.Connection_status.ForeColor = System.Drawing.Color.Red
-        Me.Connection_status.Location = New System.Drawing.Point(119, 170)
+        Me.Connection_status.Location = New System.Drawing.Point(123, 172)
         Me.Connection_status.Name = "Connection_status"
         Me.Connection_status.Size = New System.Drawing.Size(122, 44)
         Me.Connection_status.TabIndex = 371
@@ -1451,7 +1449,7 @@ Partial Class StudentTimetables
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.Label1.Font = New System.Drawing.Font("Sylfaen", 25.0!)
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(52, 30)
@@ -1464,7 +1462,7 @@ Partial Class StudentTimetables
         '
         Me.Connection.AllowDrop = True
         Me.Connection.AutoSize = True
-        Me.Connection.BackColor = System.Drawing.Color.Transparent
+        Me.Connection.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.Connection.Font = New System.Drawing.Font("Sylfaen", 25.0!)
         Me.Connection.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Connection.Location = New System.Drawing.Point(14, 170)
@@ -1475,8 +1473,7 @@ Partial Class StudentTimetables
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.Panel1.Controls.Add(Me.btnPrint)
         Me.Panel1.Controls.Add(Me.btnEdit)
         Me.Panel1.Location = New System.Drawing.Point(1292, 52)
@@ -1529,7 +1526,8 @@ Partial Class StudentTimetables
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
-        Me.ClientSize = New System.Drawing.Size(1696, 1080)
+        Me.BackgroundImage = Global.project.My.Resources.Resources.BGExtend
+        Me.ClientSize = New System.Drawing.Size(1803, 1080)
         Me.Controls.Add(Me.agent)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel2)

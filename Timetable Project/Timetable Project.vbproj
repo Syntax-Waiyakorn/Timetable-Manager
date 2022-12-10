@@ -278,6 +278,7 @@
     <None Include="Resources\minimize-sign %281%29.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\TPN Phrakiaw.png" />
     <None Include="Resources\สกรีนช็อต 2022-11-26 140642.png" />
     <None Include="Resources\reading-book1.png" />
     <None Include="Resources\reading-book.png" />
@@ -317,6 +318,8 @@
     <None Include="Resources\gearGray.png" />
     <None Include="Resources\grid-two-upgray.png" />
     <None Include="Resources\books1.png" />
+    <None Include="Resources\BG.png" />
+    <None Include="Resources\BGExtend.png" />
     <Content Include="Resources\pencil.ico" />
   </ItemGroup>
   <ItemGroup>

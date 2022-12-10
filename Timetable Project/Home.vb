@@ -208,6 +208,10 @@
             btnTeachersTable.Image = project.My.Resources.Resources.grid_two_up_24
         End If
     End Sub
+
+    Private Sub pnlTop_Paint(sender As Object, e As PaintEventArgs) Handles pnlTop.Paint
+
+    End Sub
 End Class
 
 

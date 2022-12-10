@@ -122,18 +122,18 @@ Public Class StudentTimetablesPrint
         End Using
 
         Using penBlack As Pen = New Pen(Color.Black, 7)
-                Using fontArial9Bold As Font = New Font("Arial", 15, FontStyle.Bold)
-                    Using brush As SolidBrush = New SolidBrush(Color.Black)
-                        Dim XCoord = 100
-                        For PeriodNumber As Integer = 0 To 9
+            Using fontArial9Bold As Font = New Font("Arial", 15, FontStyle.Bold)
+                Using brush As SolidBrush = New SolidBrush(Color.Black)
+                    Dim XCoord = 100
+                    For PeriodNumber As Integer = 0 To 9
                         g.DrawString(CStr(PeriodNumber), labelFont, brush, XCoord, 130)
                         XCoord = XCoord + 70
-                        Next
-                    End Using
+                    Next
                 End Using
             End Using
+        End Using
 
-            Using font As Font = New Font("Arial", 7, FontStyle.Regular)
+        Using font As Font = New Font("Arial", 7, FontStyle.Regular)
             Using brush As SolidBrush = New SolidBrush(Color.Black)
                 g.DrawString("07:30-08:20", font, brush, 100, 150)
                 g.DrawString("7:30-08:20", font, brush, 170, 150)

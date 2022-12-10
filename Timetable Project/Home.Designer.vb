@@ -26,37 +26,37 @@ Partial Class Home
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Home))
         Me.pnlMenu = New System.Windows.Forms.Panel()
         Me.chkTeachersTable = New System.Windows.Forms.Panel()
-        Me.btnTeachersTable = New System.Windows.Forms.Button()
         Me.chkRoom = New System.Windows.Forms.Panel()
         Me.chkStudentTable = New System.Windows.Forms.Panel()
         Me.chkIF = New System.Windows.Forms.Panel()
         Me.chkSub = New System.Windows.Forms.Panel()
         Me.chkT = New System.Windows.Forms.Panel()
         Me.chkHome = New System.Windows.Forms.Panel()
+        Me.pnlIcon = New System.Windows.Forms.Panel()
+        Me.pnlTop = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lbltime = New System.Windows.Forms.Label()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.btnTeachersTable = New System.Windows.Forms.Button()
         Me.btnStudentTable = New System.Windows.Forms.Button()
         Me.btnCondition = New System.Windows.Forms.Button()
         Me.btnClassroom = New System.Windows.Forms.Button()
         Me.btnSubject = New System.Windows.Forms.Button()
         Me.btnTeacher = New System.Windows.Forms.Button()
         Me.btnHome = New System.Windows.Forms.Button()
-        Me.pnlIcon = New System.Windows.Forms.Panel()
         Me.picBook = New System.Windows.Forms.PictureBox()
-        Me.pnlMain = New System.Windows.Forms.Panel()
-        Me.pnlTop = New System.Windows.Forms.Panel()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.lbltime = New System.Windows.Forms.Label()
         Me.btnMinimized = New System.Windows.Forms.Button()
         Me.btnExit = New System.Windows.Forms.Button()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.pnlMain = New System.Windows.Forms.Panel()
         Me.pnlMenu.SuspendLayout()
         Me.pnlIcon.SuspendLayout()
-        CType(Me.picBook, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlTop.SuspendLayout()
+        CType(Me.picBook, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnlMenu
         '
-        Me.pnlMenu.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.pnlMenu.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.pnlMenu.Controls.Add(Me.chkTeachersTable)
         Me.pnlMenu.Controls.Add(Me.btnTeachersTable)
         Me.pnlMenu.Controls.Add(Me.chkRoom)
@@ -86,28 +86,6 @@ Partial Class Home
         Me.chkTeachersTable.Size = New System.Drawing.Size(10, 41)
         Me.chkTeachersTable.TabIndex = 4
         Me.chkTeachersTable.Visible = False
-        '
-        'btnTeachersTable
-        '
-        Me.btnTeachersTable.BackColor = System.Drawing.Color.Transparent
-        Me.btnTeachersTable.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnTeachersTable.FlatAppearance.BorderSize = 0
-        Me.btnTeachersTable.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(88, Byte), Integer))
-        Me.btnTeachersTable.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(88, Byte), Integer))
-        Me.btnTeachersTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTeachersTable.Font = New System.Drawing.Font("Sylfaen", 17.0!)
-        Me.btnTeachersTable.ForeColor = System.Drawing.Color.Gray
-        Me.btnTeachersTable.Image = Global.project.My.Resources.Resources.grid_two_upgray
-        Me.btnTeachersTable.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnTeachersTable.Location = New System.Drawing.Point(0, 515)
-        Me.btnTeachersTable.Name = "btnTeachersTable"
-        Me.btnTeachersTable.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
-        Me.btnTeachersTable.Size = New System.Drawing.Size(192, 55)
-        Me.btnTeachersTable.TabIndex = 16
-        Me.btnTeachersTable.Text = "  ตารางสอน"
-        Me.btnTeachersTable.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnTeachersTable.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnTeachersTable.UseVisualStyleBackColor = False
         '
         'chkRoom
         '
@@ -161,6 +139,74 @@ Partial Class Home
         Me.chkHome.Name = "chkHome"
         Me.chkHome.Size = New System.Drawing.Size(10, 41)
         Me.chkHome.TabIndex = 0
+        '
+        'pnlIcon
+        '
+        Me.pnlIcon.Controls.Add(Me.picBook)
+        Me.pnlIcon.Dock = System.Windows.Forms.DockStyle.Top
+        Me.pnlIcon.Location = New System.Drawing.Point(0, 0)
+        Me.pnlIcon.Name = "pnlIcon"
+        Me.pnlIcon.Size = New System.Drawing.Size(192, 171)
+        Me.pnlIcon.TabIndex = 8
+        '
+        'pnlTop
+        '
+        Me.pnlTop.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar
+        Me.pnlTop.BackColor = System.Drawing.Color.FromArgb(CType(CType(84, Byte), Integer), CType(CType(44, Byte), Integer), CType(CType(140, Byte), Integer))
+        Me.pnlTop.Controls.Add(Me.lbltime)
+        Me.pnlTop.Controls.Add(Me.btnMinimized)
+        Me.pnlTop.Controls.Add(Me.btnExit)
+        Me.pnlTop.Controls.Add(Me.Panel1)
+        Me.pnlTop.Dock = System.Windows.Forms.DockStyle.Top
+        Me.pnlTop.Location = New System.Drawing.Point(0, 0)
+        Me.pnlTop.Name = "pnlTop"
+        Me.pnlTop.Size = New System.Drawing.Size(1247, 69)
+        Me.pnlTop.TabIndex = 32
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(192, 69)
+        Me.Panel1.TabIndex = 0
+        '
+        'lbltime
+        '
+        Me.lbltime.AutoSize = True
+        Me.lbltime.Font = New System.Drawing.Font("Sylfaen", 17.0!)
+        Me.lbltime.ForeColor = System.Drawing.Color.White
+        Me.lbltime.Location = New System.Drawing.Point(198, 19)
+        Me.lbltime.Name = "lbltime"
+        Me.lbltime.Size = New System.Drawing.Size(58, 29)
+        Me.lbltime.TabIndex = 36
+        Me.lbltime.Text = "time"
+        '
+        'Timer1
+        '
+        '
+        'btnTeachersTable
+        '
+        Me.btnTeachersTable.BackColor = System.Drawing.Color.Transparent
+        Me.btnTeachersTable.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnTeachersTable.FlatAppearance.BorderSize = 0
+        Me.btnTeachersTable.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(88, Byte), Integer))
+        Me.btnTeachersTable.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(88, Byte), Integer))
+        Me.btnTeachersTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnTeachersTable.Font = New System.Drawing.Font("Sylfaen", 17.0!)
+        Me.btnTeachersTable.ForeColor = System.Drawing.Color.Gray
+        Me.btnTeachersTable.Image = Global.project.My.Resources.Resources.grid_two_upgray
+        Me.btnTeachersTable.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnTeachersTable.Location = New System.Drawing.Point(0, 515)
+        Me.btnTeachersTable.Name = "btnTeachersTable"
+        Me.btnTeachersTable.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
+        Me.btnTeachersTable.Size = New System.Drawing.Size(192, 55)
+        Me.btnTeachersTable.TabIndex = 16
+        Me.btnTeachersTable.Text = "  ตารางสอน"
+        Me.btnTeachersTable.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnTeachersTable.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnTeachersTable.UseVisualStyleBackColor = False
         '
         'btnStudentTable
         '
@@ -294,71 +340,15 @@ Partial Class Home
         Me.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnHome.UseVisualStyleBackColor = False
         '
-        'pnlIcon
-        '
-        Me.pnlIcon.Controls.Add(Me.picBook)
-        Me.pnlIcon.Dock = System.Windows.Forms.DockStyle.Top
-        Me.pnlIcon.Location = New System.Drawing.Point(0, 0)
-        Me.pnlIcon.Name = "pnlIcon"
-        Me.pnlIcon.Size = New System.Drawing.Size(192, 171)
-        Me.pnlIcon.TabIndex = 8
-        '
         'picBook
         '
-        Me.picBook.Image = Global.project.My.Resources.Resources.สกรีนช็อต_2022_11_26_140642
-        Me.picBook.Location = New System.Drawing.Point(-21, -16)
+        Me.picBook.Image = Global.project.My.Resources.Resources.Logo
+        Me.picBook.Location = New System.Drawing.Point(21, 16)
         Me.picBook.Name = "picBook"
-        Me.picBook.Size = New System.Drawing.Size(221, 181)
-        Me.picBook.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picBook.Size = New System.Drawing.Size(138, 137)
+        Me.picBook.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.picBook.TabIndex = 0
         Me.picBook.TabStop = False
-        '
-        'pnlMain
-        '
-        Me.pnlMain.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.pnlMain.BackColor = System.Drawing.Color.Black
-        Me.pnlMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.pnlMain.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.pnlMain.Location = New System.Drawing.Point(192, 68)
-        Me.pnlMain.Name = "pnlMain"
-        Me.pnlMain.Size = New System.Drawing.Size(1055, 632)
-        Me.pnlMain.TabIndex = 31
-        '
-        'pnlTop
-        '
-        Me.pnlTop.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar
-        Me.pnlTop.BackColor = System.Drawing.Color.Black
-        Me.pnlTop.Controls.Add(Me.Panel1)
-        Me.pnlTop.Controls.Add(Me.lbltime)
-        Me.pnlTop.Controls.Add(Me.btnMinimized)
-        Me.pnlTop.Controls.Add(Me.btnExit)
-        Me.pnlTop.Dock = System.Windows.Forms.DockStyle.Top
-        Me.pnlTop.Location = New System.Drawing.Point(0, 0)
-        Me.pnlTop.Name = "pnlTop"
-        Me.pnlTop.Size = New System.Drawing.Size(1247, 69)
-        Me.pnlTop.TabIndex = 32
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(192, 69)
-        Me.Panel1.TabIndex = 0
-        '
-        'lbltime
-        '
-        Me.lbltime.AutoSize = True
-        Me.lbltime.Font = New System.Drawing.Font("Sylfaen", 17.0!)
-        Me.lbltime.ForeColor = System.Drawing.Color.White
-        Me.lbltime.Location = New System.Drawing.Point(198, 19)
-        Me.lbltime.Name = "lbltime"
-        Me.lbltime.Size = New System.Drawing.Size(58, 29)
-        Me.lbltime.TabIndex = 36
-        Me.lbltime.Text = "time"
         '
         'btnMinimized
         '
@@ -396,8 +386,19 @@ Partial Class Home
         Me.btnExit.TabIndex = 33
         Me.btnExit.UseVisualStyleBackColor = False
         '
-        'Timer1
+        'pnlMain
         '
+        Me.pnlMain.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.pnlMain.BackColor = System.Drawing.Color.White
+        Me.pnlMain.BackgroundImage = Global.project.My.Resources.Resources.BG
+        Me.pnlMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.pnlMain.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.pnlMain.Location = New System.Drawing.Point(192, 68)
+        Me.pnlMain.Name = "pnlMain"
+        Me.pnlMain.Size = New System.Drawing.Size(1055, 632)
+        Me.pnlMain.TabIndex = 31
         '
         'Home
         '
@@ -421,9 +422,9 @@ Partial Class Home
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.pnlMenu.ResumeLayout(False)
         Me.pnlIcon.ResumeLayout(False)
-        CType(Me.picBook, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlTop.ResumeLayout(False)
         Me.pnlTop.PerformLayout()
+        CType(Me.picBook, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
