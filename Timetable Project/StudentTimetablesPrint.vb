@@ -159,8 +159,9 @@ Public Class StudentTimetablesPrint
                     Next
                 End Using
             End Using
+        End Using
 
-            Using font As Font = New Font("Arial", 11, FontStyle.Regular)
+        Using font As Font = New Font("Arial", 11, FontStyle.Regular)
             Using brush As SolidBrush = New SolidBrush(Color.Black)
                 g.DrawString("จ.", font, brush, 60, 170)
                 g.DrawString("จ.", font, brush, 60, 220)
