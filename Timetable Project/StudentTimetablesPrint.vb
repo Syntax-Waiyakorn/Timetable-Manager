@@ -112,52 +112,38 @@ Public Class StudentTimetablesPrint
 
             g.DrawLine(penDimGray, New PointF(100, 100), New PointF(100, 410))
 
-            g.DrawLine(penDimGray, New PointF(170, 130), New PointF(170, 410))
-            g.DrawLine(penDimGray, New PointF(240, 130), New PointF(240, 410))
-            g.DrawLine(penDimGray, New PointF(310, 130), New PointF(310, 410))
-            g.DrawLine(penDimGray, New PointF(380, 130), New PointF(380, 410))
-            g.DrawLine(penDimGray, New PointF(450, 130), New PointF(450, 410))
-            g.DrawLine(penDimGray, New PointF(520, 130), New PointF(520, 410))
-            g.DrawLine(penDimGray, New PointF(590, 130), New PointF(590, 410))
-            g.DrawLine(penDimGray, New PointF(660, 130), New PointF(660, 410))
-            g.DrawLine(penDimGray, New PointF(730, 130), New PointF(730, 410))
+            For XCoord As Integer = 170 To 730 Step +70
+                g.DrawLine(penDimGray, New PointF(XCoord, 100), New PointF(XCoord, 410))
+            Next
 
-            g.DrawLine(penDimGray, New PointF(60, 210), New PointF(800, 210))
-            g.DrawLine(penDimGray, New PointF(60, 260), New PointF(800, 260))
-            g.DrawLine(penDimGray, New PointF(60, 310), New PointF(800, 310))
-            g.DrawLine(penDimGray, New PointF(60, 360), New PointF(800, 360))
+            For YCoord As Integer = 210 To 360 Step +50
+                g.DrawLine(penDimGray, New PointF(60, YCoord), New PointF(800, YCoord))
+            Next
         End Using
-
-        Using fontArial9Bold As Font = New Font("Arial", 15, FontStyle.Bold)
-            Using brush As SolidBrush = New SolidBrush(Color.Black)
-                g.DrawString("asdfsfasdfsafasdfasfafs", labelFont, brush, 200, 110)
-            End Using
-        End Using
-
-        Using fontArial9Bold As Font = New Font("Arial", 15, FontStyle.Bold)
-            Using brush As SolidBrush = New SolidBrush(Color.Black)
-                g.DrawString("0", labelFont, brush, 100, 130)
-                g.DrawString("1", labelFont, brush, 170, 130)
-                g.DrawString("2", labelFont, brush, 240, 130)
-                g.DrawString("3", labelFont, brush, 310, 130)
-                g.DrawString("4", labelFont, brush, 380, 130)
-                g.DrawString("5", labelFont, brush, 450, 130)
-                g.DrawString("6", labelFont, brush, 520, 130)
-                g.DrawString("7", labelFont, brush, 590, 130)
-                g.DrawString("8", labelFont, brush, 660, 130)
-                g.DrawString("9", labelFont, brush, 730, 130)
-            End Using
-        End Using
-
         Using penBlack As Pen = New Pen(Color.Black, 7)
-            Using fontArial9Bold As Font = New Font("Arial", 15, FontStyle.Bold)
-                Using brush As SolidBrush = New SolidBrush(Color.Black)
-                    Dim XCoord = 100
-                    For PeriodNumber As Integer = 0 To 9
-                        g.DrawString(CStr(PeriodNumber), labelFont, brush, XCoord, 100)
-                        XCoord = XCoord + 70
-                    Next
+                Using fontArial9Bold As Font = New Font("Arial", 15, FontStyle.Bold)
+                    Using brush As SolidBrush = New SolidBrush(Color.Black)
+                        Dim XCoord = 100
+                        For PeriodNumber As Integer = 0 To 9
+                            g.DrawString(CStr(PeriodNumber), labelFont, brush, XCoord, 100)
+                            XCoord = XCoord + 70
+                        Next
+                    End Using
                 End Using
+            End Using
+
+            Using font As Font = New Font("Arial", 7, FontStyle.Regular)
+            Using brush As SolidBrush = New SolidBrush(Color.Black)
+                g.DrawString("07:30-08:20", font, brush, 100, 150)
+                g.DrawString("7:30-08:20", font, brush, 170, 150)
+                g.DrawString("7:30-08:20", font, brush, 240, 150)
+                g.DrawString("7:30-08:20", font, brush, 310, 150)
+                g.DrawString("7:30-08:20", font, brush, 380, 150)
+                g.DrawString("7:30-08:20", font, brush, 450, 150)
+                g.DrawString("7:30-08:20", font, brush, 520, 150)
+                g.DrawString("7:30-08:20", font, brush, 590, 150)
+                g.DrawString("7:30-08:20", font, brush, 660, 150)
+                g.DrawString("7:30-08:20", font, brush, 730, 150)
             End Using
         End Using
 
@@ -171,7 +157,6 @@ Public Class StudentTimetablesPrint
             End Using
         End Using
     End Sub
-
     Private Sub TeachersTimetablesFrom_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
         FormRegionAndBorder(Me, borderRadius, e.Graphics, borderColor, borderSize)
     End Sub
