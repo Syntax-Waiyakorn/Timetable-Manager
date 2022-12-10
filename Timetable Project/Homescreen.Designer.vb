@@ -56,10 +56,10 @@ Partial Class Homescreen
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Sylfaen", 20.0!)
         Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(100, 225)
+        Me.Label7.Location = New System.Drawing.Point(55, 189)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(501, 35)
         Me.Label7.TabIndex = 138
@@ -69,10 +69,10 @@ Partial Class Homescreen
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Sylfaen", 40.0!)
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(93, 151)
+        Me.Label6.Location = New System.Drawing.Point(48, 119)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(718, 70)
         Me.Label6.TabIndex = 137
@@ -81,11 +81,11 @@ Partial Class Homescreen
         '
         'lblHello
         '
-        Me.lblHello.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.lblHello.BackColor = System.Drawing.Color.Transparent
         Me.lblHello.Font = New System.Drawing.Font("Sylfaen", 70.0!)
         Me.lblHello.ForeColor = System.Drawing.Color.White
         Me.lblHello.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.lblHello.Location = New System.Drawing.Point(84, 45)
+        Me.lblHello.Location = New System.Drawing.Point(40, 13)
         Me.lblHello.Name = "lblHello"
         Me.lblHello.Size = New System.Drawing.Size(857, 106)
         Me.lblHello.TabIndex = 136
@@ -189,6 +189,9 @@ Partial Class Homescreen
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.Panel1.Controls.Add(Me.PictureBox4)
+        Me.Panel1.Controls.Add(Me.Label7)
+        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Controls.Add(Me.lblHello)
         Me.Panel1.Location = New System.Drawing.Point(45, 32)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1175, 277)
@@ -288,9 +291,6 @@ Partial Class Homescreen
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.ClientSize = New System.Drawing.Size(1803, 1080)
         Me.Controls.Add(Me.Panel3)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.lblHello)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel4)
@@ -301,6 +301,7 @@ Partial Class Homescreen
         Me.Name = "Homescreen"
         Me.Text = "MixmizeHomescreen"
         Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()

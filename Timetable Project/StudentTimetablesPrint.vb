@@ -99,33 +99,34 @@ Public Class StudentTimetablesPrint
         Dim sizeProductionDate As SizeF = New SizeF() 'initialize
         Dim sizeShipper As SizeF = New SizeF() 'initialize
         Dim sizeCosigner As SizeF = New SizeF() 'initialize
-        Dim widthOuter As Integer = 740
+        Dim widthOuter As Integer = 820
         Dim heightOuter As Integer = 310
+
         Using penDimGray As Pen = New Pen(Color.DimGray, 0)
-            Dim outerRect As Rectangle = New Rectangle(60, 100, widthOuter, heightOuter)
+            Dim outerRect As Rectangle = New Rectangle(15, 100, widthOuter, heightOuter)
             Using path As GraphicsPath = RoundRect(outerRect, 10, 10, 10, 10)
                 g.DrawPath(penDimGray, path)
             End Using
-            g.DrawLine(penDimGray, New PointF(100, 130), New PointF(800, 130))
-            g.DrawLine(penDimGray, New PointF(100, 145), New PointF(800, 145))
-            g.DrawLine(penDimGray, New PointF(60, 160), New PointF(800, 160))
+            g.DrawLine(penDimGray, New PointF(60, 130), New PointF(835, 130))
+            g.DrawLine(penDimGray, New PointF(60, 145), New PointF(835, 145))
+            g.DrawLine(penDimGray, New PointF(15, 160), New PointF(835, 160))
 
-            g.DrawLine(penDimGray, New PointF(100, 100), New PointF(100, 410))
+            g.DrawLine(penDimGray, New PointF(60, 100), New PointF(60, 410))
 
-            For XCoord As Integer = 170 To 730 Step +70
+            For XCoord As Integer = 130 To 820 Step +70
                 g.DrawLine(penDimGray, New PointF(XCoord, 130), New PointF(XCoord, 410))
             Next
 
             For YCoord As Integer = 210 To 360 Step +50
-                g.DrawLine(penDimGray, New PointF(60, YCoord), New PointF(800, YCoord))
+                g.DrawLine(penDimGray, New PointF(15, YCoord), New PointF(835, YCoord))
             Next
         End Using
 
         Using penBlack As Pen = New Pen(Color.Black, 7)
             Using fontArial9Bold As Font = New Font("Arial", 15, FontStyle.Bold)
                 Using brush As SolidBrush = New SolidBrush(Color.Black)
-                    Dim XCoord = 100
-                    For PeriodNumber As Integer = 0 To 9
+                    Dim XCoord = 90
+                    For PeriodNumber As Integer = 0 To 10
                         g.DrawString(CStr(PeriodNumber), labelFont, brush, XCoord, 130)
                         XCoord = XCoord + 70
                     Next
@@ -133,28 +134,106 @@ Public Class StudentTimetablesPrint
             End Using
         End Using
 
+        Using font As Font = New Font("Arial", 11, FontStyle.Regular)
+            Using brush As SolidBrush = New SolidBrush(Color.Black)
+                g.DrawString("ชั้น ม. *** ห้องประจำ *** ภาคเรียนที่ ******", font, brush, 300, 107)
+            End Using
+        End Using
+
         Using font As Font = New Font("Arial", 7, FontStyle.Regular)
             Using brush As SolidBrush = New SolidBrush(Color.Black)
-                g.DrawString("07:30-08:20", font, brush, 100, 150)
-                g.DrawString("7:30-08:20", font, brush, 170, 150)
-                g.DrawString("7:30-08:20", font, brush, 240, 150)
-                g.DrawString("7:30-08:20", font, brush, 310, 150)
-                g.DrawString("7:30-08:20", font, brush, 380, 150)
-                g.DrawString("7:30-08:20", font, brush, 450, 150)
-                g.DrawString("7:30-08:20", font, brush, 520, 150)
-                g.DrawString("7:30-08:20", font, brush, 590, 150)
-                g.DrawString("7:30-08:20", font, brush, 660, 150)
-                g.DrawString("7:30-08:20", font, brush, 730, 150)
+                g.DrawString("07:30-08:20", font, brush, 70, 150)
+                g.DrawString("07:30-08:20", font, brush, 140, 150)
+                g.DrawString("07:30-08:20", font, brush, 210, 150)
+                g.DrawString("07:30-08:20", font, brush, 280, 150)
+                g.DrawString("07:30-08:20", font, brush, 350, 150)
+                g.DrawString("07:30-08:20", font, brush, 420, 150)
+                g.DrawString("07:30-08:20", font, brush, 490, 150)
+                g.DrawString("07:30-08:20", font, brush, 560, 150)
+                g.DrawString("07:30-08:20", font, brush, 630, 150)
+                g.DrawString("07:30-08:20", font, brush, 700, 150)
+                g.DrawString("07:30-08:20", font, brush, 770, 150)
             End Using
         End Using
 
         Using font As Font = New Font("Arial", 11, FontStyle.Regular)
             Using brush As SolidBrush = New SolidBrush(Color.Black)
-                g.DrawString("จ.", font, brush, 60, 170)
-                g.DrawString("จ.", font, brush, 60, 220)
-                g.DrawString("จ.", font, brush, 60, 270)
-                g.DrawString("จ.", font, brush, 60, 320)
-                g.DrawString("จ.", font, brush, 60, 370)
+                g.DrawString("จ.", font, brush, 15, 170)
+                g.DrawString("จ.", font, brush, 15, 220)
+                g.DrawString("จ.", font, brush, 15, 270)
+                g.DrawString("จ.", font, brush, 15, 320)
+                g.DrawString("จ.", font, brush, 15, 370)
+            End Using
+        End Using
+
+        Using font As Font = New Font("Arial", 9, FontStyle.Regular)
+            Using brush As SolidBrush = New SolidBrush(Color.Black)
+                'Day 1
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 65, 165)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 135, 165)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 205, 165)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 275, 165)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 345, 165)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 415, 165)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 485, 165)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 555, 165)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 625, 165)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 695, 165)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 765, 165)
+
+                'Day 2
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 65, 215)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 135, 215)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 205, 215)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 275, 215)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 345, 215)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 415, 215)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 485, 215)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 555, 215)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 625, 215)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 695, 215)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 765, 215)
+
+
+                'Day 3
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 65, 265)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 135, 265)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 205, 265)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 275, 265)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 345, 265)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 415, 265)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 485, 265)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 555, 265)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 625, 265)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 695, 265)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 765, 265)
+
+                'Day 4
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 65, 315)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 135, 315)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 205, 315)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 275, 315)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 345, 315)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 415, 315)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 485, 315)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 555, 315)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 625, 315)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 695, 315)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 765, 315)
+
+
+                'Day 5
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 65, 365)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 135, 365)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 205, 365)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 275, 365)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 345, 365)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 415, 365)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 485, 365)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 555, 365)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 625, 365)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 695, 365)
+                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 765, 365)
             End Using
         End Using
     End Sub

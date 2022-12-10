@@ -123,18 +123,18 @@ Partial Class lockTable
         Me.ChackClassrooms = New System.Windows.Forms.CheckedListBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Save = New System.Windows.Forms.Button()
+        Me.SubjectPlacecheck = New System.Windows.Forms.CheckBox()
+        Me.SubjectPlaceBox = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.KumsaraBox = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.SubjectCodeBox = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.SubjectNameBox = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.SubjectNameBox = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.SubjectCodeBox = New System.Windows.Forms.TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.KumsaraBox = New System.Windows.Forms.TextBox()
-        Me.SubjectPlaceBox = New System.Windows.Forms.TextBox()
-        Me.SubjectPlacecheck = New System.Windows.Forms.CheckBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Save = New System.Windows.Forms.Button()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -1464,6 +1464,7 @@ Partial Class lockTable
         'ChackClassrooms
         '
         Me.ChackClassrooms.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.ChackClassrooms.CheckOnClick = True
         Me.ChackClassrooms.Cursor = System.Windows.Forms.Cursors.AppStarting
         Me.ChackClassrooms.ForeColor = System.Drawing.Color.Snow
         Me.ChackClassrooms.FormattingEnabled = True
@@ -1504,6 +1505,118 @@ Partial Class lockTable
         Me.Panel2.Size = New System.Drawing.Size(376, 277)
         Me.Panel2.TabIndex = 388
         '
+        'Save
+        '
+        Me.Save.BackColor = System.Drawing.Color.Black
+        Me.Save.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed
+        Me.Save.FlatAppearance.BorderSize = 2
+        Me.Save.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Save.Font = New System.Drawing.Font("Arial", 15.0!)
+        Me.Save.ForeColor = System.Drawing.Color.White
+        Me.Save.Location = New System.Drawing.Point(13, 227)
+        Me.Save.Name = "Save"
+        Me.Save.Size = New System.Drawing.Size(123, 37)
+        Me.Save.TabIndex = 384
+        Me.Save.Text = "เพิ่ม"
+        Me.Save.UseVisualStyleBackColor = False
+        '
+        'SubjectPlacecheck
+        '
+        Me.SubjectPlacecheck.AutoSize = True
+        Me.SubjectPlacecheck.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.0!)
+        Me.SubjectPlacecheck.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.SubjectPlacecheck.Location = New System.Drawing.Point(142, 190)
+        Me.SubjectPlacecheck.Name = "SubjectPlacecheck"
+        Me.SubjectPlacecheck.Size = New System.Drawing.Size(186, 34)
+        Me.SubjectPlacecheck.TabIndex = 396
+        Me.SubjectPlacecheck.Text = "ห้องเรียนประจำ"
+        Me.SubjectPlacecheck.UseVisualStyleBackColor = True
+        '
+        'SubjectPlaceBox
+        '
+        Me.SubjectPlaceBox.BackColor = System.Drawing.SystemColors.InfoText
+        Me.SubjectPlaceBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
+        Me.SubjectPlaceBox.Location = New System.Drawing.Point(142, 227)
+        Me.SubjectPlaceBox.Name = "SubjectPlaceBox"
+        Me.SubjectPlaceBox.Size = New System.Drawing.Size(221, 30)
+        Me.SubjectPlaceBox.TabIndex = 395
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Label11.Font = New System.Drawing.Font("Sylfaen", 19.0!)
+        Me.Label11.ForeColor = System.Drawing.Color.White
+        Me.Label11.Location = New System.Drawing.Point(7, 189)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(129, 35)
+        Me.Label11.TabIndex = 394
+        Me.Label11.Text = "สถานที่เรียน"
+        '
+        'KumsaraBox
+        '
+        Me.KumsaraBox.BackColor = System.Drawing.SystemColors.InfoText
+        Me.KumsaraBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
+        Me.KumsaraBox.Location = New System.Drawing.Point(113, 149)
+        Me.KumsaraBox.Name = "KumsaraBox"
+        Me.KumsaraBox.Size = New System.Drawing.Size(250, 30)
+        Me.KumsaraBox.TabIndex = 393
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Label10.Font = New System.Drawing.Font("Sylfaen", 19.0!)
+        Me.Label10.ForeColor = System.Drawing.Color.White
+        Me.Label10.Location = New System.Drawing.Point(7, 144)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(100, 35)
+        Me.Label10.TabIndex = 392
+        Me.Label10.Text = "กลุ่มสาระ"
+        '
+        'SubjectCodeBox
+        '
+        Me.SubjectCodeBox.BackColor = System.Drawing.SystemColors.InfoText
+        Me.SubjectCodeBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
+        Me.SubjectCodeBox.Location = New System.Drawing.Point(113, 100)
+        Me.SubjectCodeBox.Name = "SubjectCodeBox"
+        Me.SubjectCodeBox.Size = New System.Drawing.Size(250, 30)
+        Me.SubjectCodeBox.TabIndex = 391
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Label9.Font = New System.Drawing.Font("Sylfaen", 19.0!)
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(7, 97)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(91, 35)
+        Me.Label9.TabIndex = 390
+        Me.Label9.Text = "รหัสวิชา"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Label8.Font = New System.Drawing.Font("Sylfaen", 19.0!)
+        Me.Label8.ForeColor = System.Drawing.Color.White
+        Me.Label8.Location = New System.Drawing.Point(7, 51)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(80, 35)
+        Me.Label8.TabIndex = 389
+        Me.Label8.Text = "ชื่อวิชา"
+        '
+        'SubjectNameBox
+        '
+        Me.SubjectNameBox.BackColor = System.Drawing.SystemColors.InfoText
+        Me.SubjectNameBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
+        Me.SubjectNameBox.Location = New System.Drawing.Point(113, 56)
+        Me.SubjectNameBox.Name = "SubjectNameBox"
+        Me.SubjectNameBox.Size = New System.Drawing.Size(250, 30)
+        Me.SubjectNameBox.TabIndex = 388
+        '
         'Label6
         '
         Me.Label6.AutoSize = True
@@ -1526,118 +1639,6 @@ Partial Class lockTable
         Me.Label7.Size = New System.Drawing.Size(229, 44)
         Me.Label7.TabIndex = 384
         Me.Label7.Text = "เพิ่มรายวิชาพิเศษ"
-        '
-        'SubjectNameBox
-        '
-        Me.SubjectNameBox.BackColor = System.Drawing.SystemColors.InfoText
-        Me.SubjectNameBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
-        Me.SubjectNameBox.Location = New System.Drawing.Point(113, 56)
-        Me.SubjectNameBox.Name = "SubjectNameBox"
-        Me.SubjectNameBox.Size = New System.Drawing.Size(250, 30)
-        Me.SubjectNameBox.TabIndex = 388
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.Label8.Font = New System.Drawing.Font("Sylfaen", 19.0!)
-        Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(7, 51)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(80, 35)
-        Me.Label8.TabIndex = 389
-        Me.Label8.Text = "ชื่อวิชา"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.Label9.Font = New System.Drawing.Font("Sylfaen", 19.0!)
-        Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(7, 97)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(91, 35)
-        Me.Label9.TabIndex = 390
-        Me.Label9.Text = "รหัสวิชา"
-        '
-        'SubjectCodeBox
-        '
-        Me.SubjectCodeBox.BackColor = System.Drawing.SystemColors.InfoText
-        Me.SubjectCodeBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
-        Me.SubjectCodeBox.Location = New System.Drawing.Point(113, 100)
-        Me.SubjectCodeBox.Name = "SubjectCodeBox"
-        Me.SubjectCodeBox.Size = New System.Drawing.Size(250, 30)
-        Me.SubjectCodeBox.TabIndex = 391
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.Label10.Font = New System.Drawing.Font("Sylfaen", 19.0!)
-        Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(7, 144)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(100, 35)
-        Me.Label10.TabIndex = 392
-        Me.Label10.Text = "กลุ่มสาระ"
-        '
-        'KumsaraBox
-        '
-        Me.KumsaraBox.BackColor = System.Drawing.SystemColors.InfoText
-        Me.KumsaraBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
-        Me.KumsaraBox.Location = New System.Drawing.Point(113, 149)
-        Me.KumsaraBox.Name = "KumsaraBox"
-        Me.KumsaraBox.Size = New System.Drawing.Size(250, 30)
-        Me.KumsaraBox.TabIndex = 393
-        '
-        'SubjectPlaceBox
-        '
-        Me.SubjectPlaceBox.BackColor = System.Drawing.SystemColors.InfoText
-        Me.SubjectPlaceBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
-        Me.SubjectPlaceBox.Location = New System.Drawing.Point(142, 227)
-        Me.SubjectPlaceBox.Name = "SubjectPlaceBox"
-        Me.SubjectPlaceBox.Size = New System.Drawing.Size(221, 30)
-        Me.SubjectPlaceBox.TabIndex = 395
-        '
-        'SubjectPlacecheck
-        '
-        Me.SubjectPlacecheck.AutoSize = True
-        Me.SubjectPlacecheck.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.0!)
-        Me.SubjectPlacecheck.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.SubjectPlacecheck.Location = New System.Drawing.Point(142, 190)
-        Me.SubjectPlacecheck.Name = "SubjectPlacecheck"
-        Me.SubjectPlacecheck.Size = New System.Drawing.Size(186, 34)
-        Me.SubjectPlacecheck.TabIndex = 396
-        Me.SubjectPlacecheck.Text = "ห้องเรียนประจำ"
-        Me.SubjectPlacecheck.UseVisualStyleBackColor = True
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.Label11.Font = New System.Drawing.Font("Sylfaen", 19.0!)
-        Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(7, 189)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(129, 35)
-        Me.Label11.TabIndex = 394
-        Me.Label11.Text = "สถานที่เรียน"
-        '
-        'Save
-        '
-        Me.Save.BackColor = System.Drawing.Color.Black
-        Me.Save.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed
-        Me.Save.FlatAppearance.BorderSize = 2
-        Me.Save.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-        Me.Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Save.Font = New System.Drawing.Font("Arial", 15.0!)
-        Me.Save.ForeColor = System.Drawing.Color.White
-        Me.Save.Location = New System.Drawing.Point(13, 227)
-        Me.Save.Name = "Save"
-        Me.Save.Size = New System.Drawing.Size(123, 37)
-        Me.Save.TabIndex = 384
-        Me.Save.Text = "เพิ่ม"
-        Me.Save.UseVisualStyleBackColor = False
         '
         'DataGridView2
         '
