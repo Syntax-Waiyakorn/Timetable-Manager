@@ -113,20 +113,21 @@ Public Class StudentTimetablesPrint
             g.DrawLine(penDimGray, New PointF(100, 100), New PointF(100, 410))
 
             For XCoord As Integer = 170 To 730 Step +70
-                g.DrawLine(penDimGray, New PointF(XCoord, 100), New PointF(XCoord, 410))
+                g.DrawLine(penDimGray, New PointF(XCoord, 130), New PointF(XCoord, 410))
             Next
 
             For YCoord As Integer = 210 To 360 Step +50
                 g.DrawLine(penDimGray, New PointF(60, YCoord), New PointF(800, YCoord))
             Next
         End Using
+
         Using penBlack As Pen = New Pen(Color.Black, 7)
                 Using fontArial9Bold As Font = New Font("Arial", 15, FontStyle.Bold)
                     Using brush As SolidBrush = New SolidBrush(Color.Black)
                         Dim XCoord = 100
                         For PeriodNumber As Integer = 0 To 9
-                            g.DrawString(CStr(PeriodNumber), labelFont, brush, XCoord, 100)
-                            XCoord = XCoord + 70
+                        g.DrawString(CStr(PeriodNumber), labelFont, brush, XCoord, 130)
+                        XCoord = XCoord + 70
                         Next
                     End Using
                 End Using
