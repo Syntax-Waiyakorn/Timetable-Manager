@@ -1,29 +1,6 @@
 ﻿Imports System.Data.OleDb
 Imports System.Drawing.Drawing2D
-Imports System.Runtime.Remoting.Messaging
-Imports System.Windows.Forms.Design
-
 Public Class StudentTimetablesPrint
-    Sub LoadCbo()
-        Try
-            If conn.State = ConnectionState.Closed Then
-                conn.Open()
-            End If
-            Dim cmd As New OleDb.OleDbCommand("Select ClassroomName from Classrooms", conn)
-
-            classroom.Items.Clear()
-            dr = cmd.ExecuteReader
-            While dr.Read
-                classroom.Items.Add(dr.GetString(0))
-            End While
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        Finally
-            If conn.State = ConnectionState.Open Then
-                conn.Close()
-            End If
-        End Try
-    End Sub
     Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\Timetable.accdb")
     Dim dr As OleDbDataReader
     Private borderRadius As Integer = 30
@@ -62,8 +39,15 @@ Public Class StudentTimetablesPrint
         End If
     End Sub
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        Close()
-        PrintStudentTimetables.Print()
+        Me.Close()
+        PrintDialog1.Document = PrintStudentTimetables
+        PrintDialog1.PrinterSettings = PrintStudentTimetables.PrinterSettings
+        PrintDialog1.AllowSomePages = True
+        PrintDialog1.ShowNetwork = False
+        If PrintDialog1.ShowDialog = DialogResult.OK Then
+            PrintStudentTimetables.PrinterSettings = PrintDialog1.PrinterSettings
+            PrintStudentTimetables.Print()
+        End If
     End Sub
     Public Function RoundRect(bounds As Rectangle, radius1 As Integer, radius2 As Integer, radius3 As Integer, radius4 As Integer) As GraphicsPath
         Dim diameter1 As Integer = radius1 * 2
@@ -107,9 +91,6 @@ Public Class StudentTimetablesPrint
         If conn.State = ConnectionState.Closed Then
             conn.Open()
         End If
-
-        ''ตางรางแรก''
-
         Dim TableNumber As Integer = 0
         Dim CurrentClassroom As String = "null"
 
@@ -178,56 +159,25 @@ Public Class StudentTimetablesPrint
         Dim widthOuter As Integer = 820
         Dim heightOuter As Integer = 310
 
-        Dim main As Integer = 100
-        Dim mainy As Integer = 130
-
-        Dim mainu As Integer = 100
-        Dim muinuu As Integer = 410
-
-        Dim yes As Integer = 210
-        Dim no As Integer = 360
-
-        Dim oh As Integer = 130
-        Dim ha As Integer = 410
-
-        For z As Integer = 0 To 2
-            Using penDimGray As Pen = New Pen(Color.DimGray, 0)
-                Dim outerRect As Rectangle = New Rectangle(15, main, widthOuter, heightOuter)
-                Using path As GraphicsPath = RoundRect(outerRect, 10, 10, 10, 10)
-                    g.DrawPath(penDimGray, path)
-                End Using
-
-                For zz As Integer = 0 To 2
-                    g.DrawLine(penDimGray, New PointF(60, mainy), New PointF(835, mainy))
-                    g.DrawLine(penDimGray, New PointF(60, mainy), New PointF(835, mainy))
-                    g.DrawLine(penDimGray, New PointF(15, mainy), New PointF(835, mainy))
-
-                    g.DrawLine(penDimGray, New PointF(60, mainu), New PointF(60, muinuu))
-                    mainy = mainy + 15
-                Next
-
-                For x As Integer = 130 To 820 Step +70
-                    g.DrawLine(penDimGray, New PointF(x, oh), New PointF(x, ha))
-                Next
-
-                For y As Integer = yes To no Step +50
-                    g.DrawLine(penDimGray, New PointF(15, y), New PointF(835, y))
-                Next
-
-                main = main + 330
-                mainy = mainy + 290
-
-                mainu = mainu + 330
-                muinuu = muinuu + 330
-
-                oh = oh + 335
-                ha = ha + 330
-
-                yes = yes + 330
-                no = no + 330
-
+        Using penDimGray As Pen = New Pen(Color.DimGray, 0)
+            Dim outerRect As Rectangle = New Rectangle(15, 100, widthOuter, heightOuter)
+            Using path As GraphicsPath = RoundRect(outerRect, 10, 10, 10, 10)
+                g.DrawPath(penDimGray, path)
             End Using
-        Next
+            g.DrawLine(penDimGray, New PointF(60, 130), New PointF(835, 130))
+            g.DrawLine(penDimGray, New PointF(60, 145), New PointF(835, 145))
+            g.DrawLine(penDimGray, New PointF(15, 160), New PointF(835, 160))
+
+            g.DrawLine(penDimGray, New PointF(60, 100), New PointF(60, 410))
+
+            For x As Integer = 130 To 820 Step +70
+                g.DrawLine(penDimGray, New PointF(x, 130), New PointF(x, 410))
+            Next
+
+            For y As Integer = 210 To 360 Step +50
+                g.DrawLine(penDimGray, New PointF(15, y), New PointF(835, y))
+            Next
+        End Using
 
         Using penBlack As Pen = New Pen(Color.Black, 7)
             Using fontArial9Bold As Font = New Font("Arial", 15, FontStyle.Bold)
@@ -275,6 +225,7 @@ Public Class StudentTimetablesPrint
 
         Using font As Font = New Font("Arial", 9, FontStyle.Regular)
             Using brush As SolidBrush = New SolidBrush(Color.Black)
+
                 XCoord = 65
                 YCoord = 165
                 For Day As Integer = 1 To 5
@@ -305,15 +256,12 @@ Public Class StudentTimetablesPrint
     End Sub
     Private Sub PrintStudentTimetables_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintStudentTimetables.PrintPage
         CreateProductLabel(e.Graphics)
-        'Dim mPageNumber As Integer = 1
-        'mPageNumber += 1
-        'e.HasMorePages = (mPageNumber <= 10)
     End Sub
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Close()
     End Sub
 
     Private Sub StudentTimetablesPrint_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        LoadCbo()
+
     End Sub
 End Class

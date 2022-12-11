@@ -180,7 +180,7 @@ Partial Class Teachers
         Me.lblSearch.BackColor = System.Drawing.Color.Transparent
         Me.lblSearch.Font = New System.Drawing.Font("Sylfaen", 20.0!)
         Me.lblSearch.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.lblSearch.Location = New System.Drawing.Point(745, 107)
+        Me.lblSearch.Location = New System.Drawing.Point(694, 109)
         Me.lblSearch.Name = "lblSearch"
         Me.lblSearch.Size = New System.Drawing.Size(70, 35)
         Me.lblSearch.TabIndex = 141
@@ -193,7 +193,7 @@ Partial Class Teachers
         Me.txtPR.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtPR.Font = New System.Drawing.Font("Arial", 22.0!)
         Me.txtPR.ForeColor = System.Drawing.Color.White
-        Me.txtPR.Location = New System.Drawing.Point(1171, 37)
+        Me.txtPR.Location = New System.Drawing.Point(1120, 39)
         Me.txtPR.MaxLength = 5
         Me.txtPR.Name = "txtPR"
         Me.txtPR.Size = New System.Drawing.Size(240, 34)
@@ -207,7 +207,7 @@ Partial Class Teachers
         Me.lblStatus.BackColor = System.Drawing.Color.Transparent
         Me.lblStatus.Font = New System.Drawing.Font("Microsoft Tai Le", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblStatus.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.lblStatus.Location = New System.Drawing.Point(914, 67)
+        Me.lblStatus.Location = New System.Drawing.Point(863, 69)
         Me.lblStatus.Name = "lblStatus"
         Me.lblStatus.Size = New System.Drawing.Size(177, 25)
         Me.lblStatus.TabIndex = 139
@@ -221,7 +221,7 @@ Partial Class Teachers
         Me.lblConnection.BackColor = System.Drawing.Color.Transparent
         Me.lblConnection.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblConnection.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.lblConnection.Location = New System.Drawing.Point(771, 65)
+        Me.lblConnection.Location = New System.Drawing.Point(720, 67)
         Me.lblConnection.Name = "lblConnection"
         Me.lblConnection.Size = New System.Drawing.Size(148, 26)
         Me.lblConnection.TabIndex = 138
@@ -234,9 +234,9 @@ Partial Class Teachers
         Me.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtSearch.Font = New System.Drawing.Font("Arial", 22.0!)
         Me.txtSearch.ForeColor = System.Drawing.Color.White
-        Me.txtSearch.Location = New System.Drawing.Point(821, 104)
+        Me.txtSearch.Location = New System.Drawing.Point(770, 106)
         Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(901, 34)
+        Me.txtSearch.Size = New System.Drawing.Size(775, 34)
         Me.txtSearch.TabIndex = 137
         '
         'DataGridView1
@@ -247,61 +247,60 @@ Partial Class Teachers
         Me.DataGridView1.AllowUserToResizeRows = False
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Arial Narrow", 13.0!)
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Arial Narrow", 20.0!)
         DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(60, Byte), Integer))
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.DataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText
         Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Sylfaen", 20.0!)
         DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(60, Byte), Integer))
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column5, Me.Column1, Me.Column2, Me.Column3, Me.Column4})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Arial Narrow", 13.0!)
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Arial Narrow", 20.0!)
         DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(60, Byte), Integer))
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.EnableHeadersVisualStyles = False
         Me.DataGridView1.GridColor = System.Drawing.Color.Black
         Me.DataGridView1.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.DataGridView1.Location = New System.Drawing.Point(751, 171)
+        Me.DataGridView1.Location = New System.Drawing.Point(700, 173)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(10)
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Arial Narrow", 13.0!)
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Arial Narrow", 20.0!)
         DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(60, Byte), Integer))
         DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.DataGridView1.RowHeadersVisible = False
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft
+        Me.DataGridView1.RowHeadersWidth = 50
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Arial Narrow", 13.0!)
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Arial Narrow", 20.0!)
         DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(60, Byte), Integer))
         DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle5
+        Me.DataGridView1.RowTemplate.Height = 40
+        Me.DataGridView1.RowTemplate.ReadOnly = True
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.ShowCellErrors = False
         Me.DataGridView1.ShowCellToolTips = False
@@ -323,7 +322,6 @@ Partial Class Teachers
         Me.Column1.HeaderText = "ชื่อจริง"
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
-        Me.Column1.Width = 80
         '
         'Column2
         '
@@ -331,7 +329,7 @@ Partial Class Teachers
         Me.Column2.HeaderText = "นามสกุล"
         Me.Column2.Name = "Column2"
         Me.Column2.ReadOnly = True
-        Me.Column2.Width = 94
+        Me.Column2.Width = 118
         '
         'Column3
         '

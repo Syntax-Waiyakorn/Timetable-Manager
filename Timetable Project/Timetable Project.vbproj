@@ -287,6 +287,10 @@
     <None Include="Resources\minimize-sign %281%29.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\wp9637329-no-copyright-wallpapers.jpg" />
+    <None Include="Resources\wp9409819-no-copyright-wallpapers.jpg" />
+    <None Include="Resources\wp9409819.jpg" />
+    <None Include="Resources\upload-b90915c0-568c-11e7-b970-035e84d68a35.png" />
     <None Include="Resources\TPN Phrakiaw.png" />
     <None Include="Resources\สกรีนช็อต 2022-11-26 140642.png" />
     <None Include="Resources\reading-book1.png" />

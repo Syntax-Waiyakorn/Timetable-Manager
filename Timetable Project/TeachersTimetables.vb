@@ -14,13 +14,6 @@ Public Class TeachersTimetables
             While dr.Read
                 cboTeachers.Items.Add(dr.GetString(0))
             End While
-
-            Dim cmd2 As New OleDb.OleDbCommand("Select YearNumber from Years", conn)
-            dr = cmd2.ExecuteReader
-            While dr.Read
-                txtYear.Text = CStr(dr.Item("YearNumber"))
-            End While
-
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
@@ -28,19 +21,6 @@ Public Class TeachersTimetables
                 conn.Close()
             End If
         End Try
-    End Sub
-    Sub status()
-        If cboTeachers.SelectedIndex = -1 Then
-            Connection_status.Text = "กรุณาเลือกครู"
-            lblCurrentDay.Text = "ว่าง"
-            lblCurrentPeriod.Text = "ว่าง"
-            Connection_status.ForeColor = Color.Red
-            lblCurrentDay.ForeColor = Color.Red
-            lblCurrentPeriod.ForeColor = Color.Red
-        Else
-            Connection_status.Text = "แสดงข้อมูล"
-            Connection_status.ForeColor = Color.Lime
-        End If
     End Sub
     Sub search(Table As String, Field1 As String, txtBox As TextBox, cboBox As ComboBox)
         Try
@@ -142,71 +122,22 @@ Public Class TeachersTimetables
             PLabel.Text = "ว่าง"
         End If
     End Sub
-    Sub Period_Click(sender As Label, e As EventArgs) Handles lblD1P1.Click, lblD1P2.Click, lblD1P3.Click, lblD1P4.Click, lblD1P5.Click, lblD1P6.Click, lblD1P7.Click, lblD1P8.Click, lblD1P9.Click, lblD1P10.Click, lblD1P11.Click,
-                                                              lblD2P1.Click, lblD2P2.Click, lblD2P3.Click, lblD2P4.Click, lblD2P5.Click, lblD2P6.Click, lblD2P7.Click, lblD2P8.Click, lblD2P9.Click, lblD2P10.Click, lblD2P11.Click,
-                                                              lblD3P1.Click, lblD3P2.Click, lblD3P3.Click, lblD3P4.Click, lblD3P5.Click, lblD3P6.Click, lblD3P7.Click, lblD3P8.Click, lblD3P9.Click, lblD3P10.Click, lblD3P11.Click,
-                                                              lblD4P1.Click, lblD4P2.Click, lblD4P3.Click, lblD4P4.Click, lblD4P5.Click, lblD4P6.Click, lblD4P7.Click, lblD4P8.Click, lblD4P9.Click, lblD4P10.Click, lblD4P11.Click,
-                                                              lblD5P1.Click, lblD5P2.Click, lblD5P3.Click, lblD5P4.Click, lblD5P5.Click, lblD5P6.Click, lblD5P7.Click, lblD5P8.Click, lblD5P9.Click, lblD5P10.Click, lblD5P11.Click
-        If Not cboTeachers.SelectedIndex = -1 Then
-            Try
-                If conn.State = ConnectionState.Closed Then
-                    conn.Open()
-                End If
-                Dim PLabelNameC As String = sender.Name
-                Dim PDayC As String = PLabelNameC.Chars(4)
-                Dim PPeriodC As String
-                Try
-                    PPeriodC = PLabelNameC.Chars(6) & PLabelNameC.Chars(7)
-                Catch
-                    PPeriodC = PLabelNameC.Chars(6)
-                End Try
-                lblCurrentDay.Tag = PDayC
-                lblCurrentPeriod.Tag = PPeriodC
-                Dim cmd1 As New OleDb.OleDbCommand("Select TOP 1 DayNumber, DayName from Days WHERE `DayNumber` like '%" & PDayC & "%' ", conn)
-                Dim cmd2 As New OleDb.OleDbCommand("Select TOP 1 PeriodNumber, PeriodName  from Periods WHERE `PeriodNumber` like '%" & PPeriodC & "%' ", conn)
-                dr = cmd1.ExecuteReader
-                While dr.Read
-                    lblCurrentDay.Text = dr.Item("DayName")
-                    lblCurrentDay.ForeColor = Color.Lime
-                End While
-                dr = cmd2.ExecuteReader
-                While dr.Read
-                    lblCurrentPeriod.Text = dr.Item("PeriodName")
-                    lblCurrentPeriod.ForeColor = Color.Lime
-                End While
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            Finally
-                If conn.State = ConnectionState.Open Then
-                    conn.Close()
-                End If
-            End Try
-        Else
-            MsgBox("เลือกครู", vbYes, "เเจ้งเตืน")
-        End If
-    End Sub
 
     Private Sub cboClassrooms_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboTeachers.SelectedIndexChanged
         Dim Teacher As String = cboTeachers.Text
         DisplayTeacherTable(Teacher)
-        status()
     End Sub
     Private Sub cboTeachersSubjects_SelectedIndexChanged(sender As Object, e As EventArgs)
         Me.agent.Focus()
-        status()
     End Sub
     Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
         search("Teachers", "TeacherFirstName", txtSearch, cboTeachers)
-        status()
     End Sub
     Private Sub StudentTimetables_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         InitializeTable()
-        txtYear.Text = Pass
-        status()
     End Sub
     Private Sub StudentTimetables_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
         LoadCbo()
-        status()
     End Sub
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
         Dim TeachersTimetablesFrom As New TeachersTimetablesPrint

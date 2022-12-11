@@ -7,7 +7,9 @@ Public Class Subjects
     Dim i As Integer
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            conn.Open()
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
             Connection_status.Text = "เชื่อมต่อแล้ว"
             Connection_status.ForeColor = Color.Lime
             Dim cmd As New OleDb.OleDbCommand("Select DepartmentName from Departments", conn)
@@ -48,7 +50,9 @@ Public Class Subjects
     Sub LoadGrid()
         Try
             DataGridView1.Rows.Clear()
-            conn.Open()
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
             Dim cmd As New OleDb.OleDbCommand("Select  SubjectID, SubjectCode, SubjectName, SubjectDepartment, SubjectPlace, SubjectSpecial, SubjectQuota from Subjects", conn)
             dr = cmd.ExecuteReader
             While dr.Read
@@ -74,7 +78,9 @@ Public Class Subjects
     Sub save()
         Try
             If MsgBox("คุณต้องการเพิ่มข้อมูลหรือไม่ ?", vbQuestion + vbYesNo, "เเจ้งเตือน") = vbYes Then
-                conn.Open()
+                If conn.State = ConnectionState.Closed Then
+                    conn.Open()
+                End If
                 Dim cmd As New OleDb.OleDbCommand("Insert into Subjects(`SubjectCode`,`SubjectName`,`SubjectDepartment`,`SubjectPlace`,`SubjectSpecial`,`SubjectQuota`) values(@SubjectCode,@SubjectName,@SubjectDepartment,@SubjectPlace,@SubjectSpecial,@SubjectQuota)", conn)
                 cmd.Parameters.Clear()
                 cmd.Parameters.AddWithValue("@SubjectCode", txtID.Text)
@@ -100,7 +106,9 @@ Public Class Subjects
     End Sub
     Sub edit()
         Try
-            conn.Open()
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
             Dim cmd As New OleDb.OleDbCommand("UPDATE Subjects SET `SubjectCode`=@SubjectCode,`SubjectName`=@SubjectName,`SubjectDepartment`=@SubjectDepartment,`SubjectSpecial`=@SubjectSpecial,`SubjectQuota`=@SubjectQuota Where SubjectID=@SubjectID ", conn)
             cmd.Parameters.Clear()
             cmd.Parameters.AddWithValue("@SubjectID", txtPR.Text)
@@ -126,7 +134,9 @@ Public Class Subjects
     Sub search()
         Try
             DataGridView1.Rows.Clear()
-            conn.Open()
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
             Dim cmd As New OleDb.OleDbCommand("Select SubjectID, SubjectCode, SubjectName, SubjectDepartment, SubjectPlace, SubjectQuota,SubjectSpecial from Subjects WHERE `SubjectName` like '%" & txtSearch.Text & "%' or `SubjectDepartment` like '%" & txtSearch.Text & "%'or `SubjectCode` like '%" & txtSearch.Text & "%'or `SubjectID` like '%" & txtSearch.Text & "%' ", conn)
             dr = cmd.ExecuteReader
             While dr.Read
@@ -141,7 +151,9 @@ Public Class Subjects
     Sub delete()
         Try
             If MsgBox("คุณต้องการลบหรือไม่ ?", vbQuestion + vbYesNo, "เเจ้งเตือน") = vbYes Then
-                conn.Open()
+                If conn.State = ConnectionState.Closed Then
+                    conn.Open()
+                End If
                 Dim cmd As New OleDb.OleDbCommand("Delete from Subjects WHERE SubjectCode=@SubjectCode", conn)
                 cmd.Parameters.Clear()
                 cmd.Parameters.AddWithValue("@SubjectCode", txtID.Text)

@@ -31,6 +31,7 @@ Partial Class StudentTimetablesPrint
         Me.btnSave = New System.Windows.Forms.Button()
         Me.PrintPreviewControl1 = New System.Windows.Forms.PrintPreviewControl()
         Me.classroom = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btnExit
@@ -75,7 +76,7 @@ Partial Class StudentTimetablesPrint
         Me.lblTitle.Font = New System.Drawing.Font("Sylfaen", 55.0!)
         Me.lblTitle.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblTitle.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblTitle.Location = New System.Drawing.Point(317, 38)
+        Me.lblTitle.Location = New System.Drawing.Point(306, 56)
         Me.lblTitle.Name = "lblTitle"
         Me.lblTitle.Padding = New System.Windows.Forms.Padding(10)
         Me.lblTitle.Size = New System.Drawing.Size(495, 118)
@@ -104,9 +105,9 @@ Partial Class StudentTimetablesPrint
         Me.PrintPreviewControl1.BackColor = System.Drawing.Color.Black
         Me.PrintPreviewControl1.Cursor = System.Windows.Forms.Cursors.Default
         Me.PrintPreviewControl1.Document = Me.PrintStudentTimetables
-        Me.PrintPreviewControl1.Location = New System.Drawing.Point(23, 179)
+        Me.PrintPreviewControl1.Location = New System.Drawing.Point(23, 207)
         Me.PrintPreviewControl1.Name = "PrintPreviewControl1"
-        Me.PrintPreviewControl1.Size = New System.Drawing.Size(1075, 642)
+        Me.PrintPreviewControl1.Size = New System.Drawing.Size(1075, 614)
         Me.PrintPreviewControl1.TabIndex = 37
         Me.PrintPreviewControl1.Zoom = 1.2R
         '
@@ -115,10 +116,23 @@ Partial Class StudentTimetablesPrint
         Me.classroom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.classroom.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.classroom.FormattingEnabled = True
-        Me.classroom.Location = New System.Drawing.Point(833, 140)
+        Me.classroom.Location = New System.Drawing.Point(859, 168)
         Me.classroom.Name = "classroom"
         Me.classroom.Size = New System.Drawing.Size(218, 33)
         Me.classroom.TabIndex = 380
+        '
+        'Label1
+        '
+        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label1.Font = New System.Drawing.Font("Sylfaen", 20.0!)
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Label1.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.Label1.Location = New System.Drawing.Point(900, 128)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(146, 37)
+        Me.Label1.TabIndex = 381
+        Me.Label1.Text = "เลือห้องเรียน"
         '
         'StudentTimetablesPrint
         '
@@ -126,6 +140,7 @@ Partial Class StudentTimetablesPrint
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(1139, 945)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.classroom)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.lblTitle)
@@ -149,4 +164,5 @@ Partial Class StudentTimetablesPrint
     Friend WithEvents PrintStudentTimetables As Printing.PrintDocument
     Friend WithEvents PrintPreviewControl1 As PrintPreviewControl
     Friend WithEvents classroom As ComboBox
+    Friend WithEvents Label1 As Label
 End Class

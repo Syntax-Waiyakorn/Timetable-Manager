@@ -150,7 +150,7 @@ Partial Class StudentTimetables
         Me.lblD5P11.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD5P11.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD5P11.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD5P11.Location = New System.Drawing.Point(1483, 737)
+        Me.lblD5P11.Location = New System.Drawing.Point(1520, 712)
         Me.lblD5P11.Name = "lblD5P11"
         Me.lblD5P11.Size = New System.Drawing.Size(123, 97)
         Me.lblD5P11.TabIndex = 358
@@ -164,7 +164,7 @@ Partial Class StudentTimetables
         Me.lblD5P10.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD5P10.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD5P10.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD5P10.Location = New System.Drawing.Point(1354, 842)
+        Me.lblD5P10.Location = New System.Drawing.Point(1391, 817)
         Me.lblD5P10.Name = "lblD5P10"
         Me.lblD5P10.Size = New System.Drawing.Size(123, 97)
         Me.lblD5P10.TabIndex = 357
@@ -178,7 +178,7 @@ Partial Class StudentTimetables
         Me.lblD5P9.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD5P9.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD5P9.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD5P9.Location = New System.Drawing.Point(1225, 842)
+        Me.lblD5P9.Location = New System.Drawing.Point(1262, 817)
         Me.lblD5P9.Name = "lblD5P9"
         Me.lblD5P9.Size = New System.Drawing.Size(123, 97)
         Me.lblD5P9.TabIndex = 356
@@ -192,7 +192,7 @@ Partial Class StudentTimetables
         Me.lblD5P8.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD5P8.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD5P8.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD5P8.Location = New System.Drawing.Point(1096, 842)
+        Me.lblD5P8.Location = New System.Drawing.Point(1133, 817)
         Me.lblD5P8.Name = "lblD5P8"
         Me.lblD5P8.Size = New System.Drawing.Size(123, 97)
         Me.lblD5P8.TabIndex = 355
@@ -206,7 +206,7 @@ Partial Class StudentTimetables
         Me.lblD5P7.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD5P7.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD5P7.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD5P7.Location = New System.Drawing.Point(967, 842)
+        Me.lblD5P7.Location = New System.Drawing.Point(1004, 817)
         Me.lblD5P7.Name = "lblD5P7"
         Me.lblD5P7.Size = New System.Drawing.Size(123, 97)
         Me.lblD5P7.TabIndex = 354
@@ -220,7 +220,7 @@ Partial Class StudentTimetables
         Me.lblD5P6.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD5P6.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD5P6.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD5P6.Location = New System.Drawing.Point(838, 842)
+        Me.lblD5P6.Location = New System.Drawing.Point(875, 817)
         Me.lblD5P6.Name = "lblD5P6"
         Me.lblD5P6.Size = New System.Drawing.Size(123, 97)
         Me.lblD5P6.TabIndex = 353
@@ -234,7 +234,7 @@ Partial Class StudentTimetables
         Me.lblD5P5.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD5P5.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD5P5.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD5P5.Location = New System.Drawing.Point(709, 842)
+        Me.lblD5P5.Location = New System.Drawing.Point(746, 817)
         Me.lblD5P5.Name = "lblD5P5"
         Me.lblD5P5.Size = New System.Drawing.Size(123, 97)
         Me.lblD5P5.TabIndex = 352
@@ -243,11 +243,11 @@ Partial Class StudentTimetables
         '
         'lbl11
         '
-        Me.lbl11.BackColor = System.Drawing.Color.Black
+        Me.lbl11.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.lbl11.Font = New System.Drawing.Font("Sylfaen", 18.0!)
         Me.lbl11.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lbl11.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lbl11.Location = New System.Drawing.Point(1483, 308)
+        Me.lbl11.Location = New System.Drawing.Point(1520, 283)
         Me.lbl11.Name = "lbl11"
         Me.lbl11.Size = New System.Drawing.Size(123, 60)
         Me.lbl11.TabIndex = 300
@@ -261,7 +261,7 @@ Partial Class StudentTimetables
         Me.lblD5P4.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD5P4.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD5P4.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD5P4.Location = New System.Drawing.Point(580, 842)
+        Me.lblD5P4.Location = New System.Drawing.Point(617, 817)
         Me.lblD5P4.Name = "lblD5P4"
         Me.lblD5P4.Size = New System.Drawing.Size(123, 97)
         Me.lblD5P4.TabIndex = 351
@@ -275,7 +275,7 @@ Partial Class StudentTimetables
         Me.lblD5P3.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD5P3.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD5P3.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD5P3.Location = New System.Drawing.Point(451, 842)
+        Me.lblD5P3.Location = New System.Drawing.Point(488, 817)
         Me.lblD5P3.Name = "lblD5P3"
         Me.lblD5P3.Size = New System.Drawing.Size(123, 97)
         Me.lblD5P3.TabIndex = 350
@@ -289,7 +289,7 @@ Partial Class StudentTimetables
         Me.lblD5P2.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD5P2.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD5P2.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD5P2.Location = New System.Drawing.Point(322, 842)
+        Me.lblD5P2.Location = New System.Drawing.Point(359, 817)
         Me.lblD5P2.Name = "lblD5P2"
         Me.lblD5P2.Size = New System.Drawing.Size(123, 97)
         Me.lblD5P2.TabIndex = 349
@@ -303,7 +303,7 @@ Partial Class StudentTimetables
         Me.lblD5P1.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD5P1.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD5P1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD5P1.Location = New System.Drawing.Point(192, 842)
+        Me.lblD5P1.Location = New System.Drawing.Point(229, 817)
         Me.lblD5P1.Name = "lblD5P1"
         Me.lblD5P1.Size = New System.Drawing.Size(123, 97)
         Me.lblD5P1.TabIndex = 348
@@ -317,7 +317,7 @@ Partial Class StudentTimetables
         Me.lblD4P11.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD4P11.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD4P11.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD4P11.Location = New System.Drawing.Point(1483, 632)
+        Me.lblD4P11.Location = New System.Drawing.Point(1520, 607)
         Me.lblD4P11.Name = "lblD4P11"
         Me.lblD4P11.Size = New System.Drawing.Size(123, 97)
         Me.lblD4P11.TabIndex = 347
@@ -331,7 +331,7 @@ Partial Class StudentTimetables
         Me.lblD4P10.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD4P10.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD4P10.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD4P10.Location = New System.Drawing.Point(1354, 737)
+        Me.lblD4P10.Location = New System.Drawing.Point(1391, 712)
         Me.lblD4P10.Name = "lblD4P10"
         Me.lblD4P10.Size = New System.Drawing.Size(123, 97)
         Me.lblD4P10.TabIndex = 346
@@ -345,7 +345,7 @@ Partial Class StudentTimetables
         Me.lblD4P9.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD4P9.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD4P9.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD4P9.Location = New System.Drawing.Point(1225, 737)
+        Me.lblD4P9.Location = New System.Drawing.Point(1262, 712)
         Me.lblD4P9.Name = "lblD4P9"
         Me.lblD4P9.Size = New System.Drawing.Size(123, 97)
         Me.lblD4P9.TabIndex = 345
@@ -359,7 +359,7 @@ Partial Class StudentTimetables
         Me.lblD4P8.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD4P8.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD4P8.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD4P8.Location = New System.Drawing.Point(1096, 737)
+        Me.lblD4P8.Location = New System.Drawing.Point(1133, 712)
         Me.lblD4P8.Name = "lblD4P8"
         Me.lblD4P8.Size = New System.Drawing.Size(123, 97)
         Me.lblD4P8.TabIndex = 344
@@ -373,7 +373,7 @@ Partial Class StudentTimetables
         Me.lblD4P7.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD4P7.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD4P7.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD4P7.Location = New System.Drawing.Point(967, 737)
+        Me.lblD4P7.Location = New System.Drawing.Point(1004, 712)
         Me.lblD4P7.Name = "lblD4P7"
         Me.lblD4P7.Size = New System.Drawing.Size(123, 97)
         Me.lblD4P7.TabIndex = 343
@@ -387,7 +387,7 @@ Partial Class StudentTimetables
         Me.lblD4P6.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD4P6.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD4P6.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD4P6.Location = New System.Drawing.Point(838, 737)
+        Me.lblD4P6.Location = New System.Drawing.Point(875, 712)
         Me.lblD4P6.Name = "lblD4P6"
         Me.lblD4P6.Size = New System.Drawing.Size(123, 97)
         Me.lblD4P6.TabIndex = 342
@@ -401,7 +401,7 @@ Partial Class StudentTimetables
         Me.lblD4P5.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD4P5.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD4P5.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD4P5.Location = New System.Drawing.Point(709, 737)
+        Me.lblD4P5.Location = New System.Drawing.Point(746, 712)
         Me.lblD4P5.Name = "lblD4P5"
         Me.lblD4P5.Size = New System.Drawing.Size(123, 97)
         Me.lblD4P5.TabIndex = 341
@@ -415,7 +415,7 @@ Partial Class StudentTimetables
         Me.lblD4P4.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD4P4.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD4P4.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD4P4.Location = New System.Drawing.Point(580, 737)
+        Me.lblD4P4.Location = New System.Drawing.Point(617, 712)
         Me.lblD4P4.Name = "lblD4P4"
         Me.lblD4P4.Size = New System.Drawing.Size(123, 97)
         Me.lblD4P4.TabIndex = 340
@@ -429,7 +429,7 @@ Partial Class StudentTimetables
         Me.lblD4P3.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD4P3.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD4P3.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD4P3.Location = New System.Drawing.Point(451, 737)
+        Me.lblD4P3.Location = New System.Drawing.Point(488, 712)
         Me.lblD4P3.Name = "lblD4P3"
         Me.lblD4P3.Size = New System.Drawing.Size(123, 97)
         Me.lblD4P3.TabIndex = 339
@@ -443,7 +443,7 @@ Partial Class StudentTimetables
         Me.lblD4P2.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD4P2.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD4P2.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD4P2.Location = New System.Drawing.Point(322, 737)
+        Me.lblD4P2.Location = New System.Drawing.Point(359, 712)
         Me.lblD4P2.Name = "lblD4P2"
         Me.lblD4P2.Size = New System.Drawing.Size(123, 97)
         Me.lblD4P2.TabIndex = 338
@@ -457,7 +457,7 @@ Partial Class StudentTimetables
         Me.lblD4P1.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD4P1.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD4P1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD4P1.Location = New System.Drawing.Point(193, 737)
+        Me.lblD4P1.Location = New System.Drawing.Point(230, 712)
         Me.lblD4P1.Name = "lblD4P1"
         Me.lblD4P1.Size = New System.Drawing.Size(123, 97)
         Me.lblD4P1.TabIndex = 337
@@ -471,7 +471,7 @@ Partial Class StudentTimetables
         Me.lblD3P11.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD3P11.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD3P11.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD3P11.Location = New System.Drawing.Point(1483, 528)
+        Me.lblD3P11.Location = New System.Drawing.Point(1520, 503)
         Me.lblD3P11.Name = "lblD3P11"
         Me.lblD3P11.Size = New System.Drawing.Size(123, 97)
         Me.lblD3P11.TabIndex = 336
@@ -485,7 +485,7 @@ Partial Class StudentTimetables
         Me.lblD3P10.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD3P10.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD3P10.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD3P10.Location = New System.Drawing.Point(1354, 632)
+        Me.lblD3P10.Location = New System.Drawing.Point(1391, 607)
         Me.lblD3P10.Name = "lblD3P10"
         Me.lblD3P10.Size = New System.Drawing.Size(123, 97)
         Me.lblD3P10.TabIndex = 335
@@ -499,7 +499,7 @@ Partial Class StudentTimetables
         Me.lblD3P9.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD3P9.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD3P9.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD3P9.Location = New System.Drawing.Point(1225, 632)
+        Me.lblD3P9.Location = New System.Drawing.Point(1262, 607)
         Me.lblD3P9.Name = "lblD3P9"
         Me.lblD3P9.Size = New System.Drawing.Size(123, 97)
         Me.lblD3P9.TabIndex = 334
@@ -513,7 +513,7 @@ Partial Class StudentTimetables
         Me.lblD3P8.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD3P8.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD3P8.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD3P8.Location = New System.Drawing.Point(1096, 632)
+        Me.lblD3P8.Location = New System.Drawing.Point(1133, 607)
         Me.lblD3P8.Name = "lblD3P8"
         Me.lblD3P8.Size = New System.Drawing.Size(123, 97)
         Me.lblD3P8.TabIndex = 333
@@ -527,7 +527,7 @@ Partial Class StudentTimetables
         Me.lblD3P7.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD3P7.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD3P7.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD3P7.Location = New System.Drawing.Point(967, 632)
+        Me.lblD3P7.Location = New System.Drawing.Point(1004, 607)
         Me.lblD3P7.Name = "lblD3P7"
         Me.lblD3P7.Size = New System.Drawing.Size(123, 97)
         Me.lblD3P7.TabIndex = 332
@@ -541,7 +541,7 @@ Partial Class StudentTimetables
         Me.lblD3P6.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD3P6.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD3P6.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD3P6.Location = New System.Drawing.Point(838, 632)
+        Me.lblD3P6.Location = New System.Drawing.Point(875, 607)
         Me.lblD3P6.Name = "lblD3P6"
         Me.lblD3P6.Size = New System.Drawing.Size(123, 97)
         Me.lblD3P6.TabIndex = 331
@@ -555,7 +555,7 @@ Partial Class StudentTimetables
         Me.lblD3P5.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD3P5.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD3P5.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD3P5.Location = New System.Drawing.Point(709, 632)
+        Me.lblD3P5.Location = New System.Drawing.Point(746, 607)
         Me.lblD3P5.Name = "lblD3P5"
         Me.lblD3P5.Size = New System.Drawing.Size(123, 97)
         Me.lblD3P5.TabIndex = 330
@@ -569,7 +569,7 @@ Partial Class StudentTimetables
         Me.lblD3P4.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD3P4.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD3P4.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD3P4.Location = New System.Drawing.Point(580, 632)
+        Me.lblD3P4.Location = New System.Drawing.Point(617, 607)
         Me.lblD3P4.Name = "lblD3P4"
         Me.lblD3P4.Size = New System.Drawing.Size(123, 97)
         Me.lblD3P4.TabIndex = 329
@@ -583,7 +583,7 @@ Partial Class StudentTimetables
         Me.lblD3P3.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD3P3.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD3P3.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD3P3.Location = New System.Drawing.Point(451, 632)
+        Me.lblD3P3.Location = New System.Drawing.Point(488, 607)
         Me.lblD3P3.Name = "lblD3P3"
         Me.lblD3P3.Size = New System.Drawing.Size(123, 97)
         Me.lblD3P3.TabIndex = 328
@@ -597,7 +597,7 @@ Partial Class StudentTimetables
         Me.lblD3P2.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD3P2.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD3P2.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD3P2.Location = New System.Drawing.Point(322, 632)
+        Me.lblD3P2.Location = New System.Drawing.Point(359, 607)
         Me.lblD3P2.Name = "lblD3P2"
         Me.lblD3P2.Size = New System.Drawing.Size(123, 97)
         Me.lblD3P2.TabIndex = 327
@@ -611,7 +611,7 @@ Partial Class StudentTimetables
         Me.lblD3P1.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD3P1.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD3P1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD3P1.Location = New System.Drawing.Point(193, 632)
+        Me.lblD3P1.Location = New System.Drawing.Point(230, 607)
         Me.lblD3P1.Name = "lblD3P1"
         Me.lblD3P1.Size = New System.Drawing.Size(123, 97)
         Me.lblD3P1.TabIndex = 326
@@ -625,7 +625,7 @@ Partial Class StudentTimetables
         Me.lblD2P11.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD2P11.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD2P11.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD2P11.Location = New System.Drawing.Point(1483, 424)
+        Me.lblD2P11.Location = New System.Drawing.Point(1520, 399)
         Me.lblD2P11.Name = "lblD2P11"
         Me.lblD2P11.Size = New System.Drawing.Size(123, 97)
         Me.lblD2P11.TabIndex = 325
@@ -639,7 +639,7 @@ Partial Class StudentTimetables
         Me.lblD2P10.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD2P10.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD2P10.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD2P10.Location = New System.Drawing.Point(1354, 528)
+        Me.lblD2P10.Location = New System.Drawing.Point(1391, 503)
         Me.lblD2P10.Name = "lblD2P10"
         Me.lblD2P10.Size = New System.Drawing.Size(123, 97)
         Me.lblD2P10.TabIndex = 324
@@ -653,7 +653,7 @@ Partial Class StudentTimetables
         Me.lblD2P9.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD2P9.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD2P9.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD2P9.Location = New System.Drawing.Point(1225, 528)
+        Me.lblD2P9.Location = New System.Drawing.Point(1262, 503)
         Me.lblD2P9.Name = "lblD2P9"
         Me.lblD2P9.Size = New System.Drawing.Size(123, 97)
         Me.lblD2P9.TabIndex = 323
@@ -667,7 +667,7 @@ Partial Class StudentTimetables
         Me.lblD2P8.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD2P8.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD2P8.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD2P8.Location = New System.Drawing.Point(1096, 528)
+        Me.lblD2P8.Location = New System.Drawing.Point(1133, 503)
         Me.lblD2P8.Name = "lblD2P8"
         Me.lblD2P8.Size = New System.Drawing.Size(123, 97)
         Me.lblD2P8.TabIndex = 322
@@ -681,7 +681,7 @@ Partial Class StudentTimetables
         Me.lblD2P7.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD2P7.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD2P7.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD2P7.Location = New System.Drawing.Point(967, 528)
+        Me.lblD2P7.Location = New System.Drawing.Point(1004, 503)
         Me.lblD2P7.Name = "lblD2P7"
         Me.lblD2P7.Size = New System.Drawing.Size(123, 97)
         Me.lblD2P7.TabIndex = 321
@@ -695,7 +695,7 @@ Partial Class StudentTimetables
         Me.lblD2P6.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD2P6.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD2P6.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD2P6.Location = New System.Drawing.Point(838, 528)
+        Me.lblD2P6.Location = New System.Drawing.Point(875, 503)
         Me.lblD2P6.Name = "lblD2P6"
         Me.lblD2P6.Size = New System.Drawing.Size(123, 97)
         Me.lblD2P6.TabIndex = 320
@@ -709,7 +709,7 @@ Partial Class StudentTimetables
         Me.lblD2P5.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD2P5.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD2P5.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD2P5.Location = New System.Drawing.Point(709, 528)
+        Me.lblD2P5.Location = New System.Drawing.Point(746, 503)
         Me.lblD2P5.Name = "lblD2P5"
         Me.lblD2P5.Size = New System.Drawing.Size(123, 97)
         Me.lblD2P5.TabIndex = 319
@@ -723,7 +723,7 @@ Partial Class StudentTimetables
         Me.lblD2P4.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD2P4.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD2P4.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD2P4.Location = New System.Drawing.Point(580, 528)
+        Me.lblD2P4.Location = New System.Drawing.Point(617, 503)
         Me.lblD2P4.Name = "lblD2P4"
         Me.lblD2P4.Size = New System.Drawing.Size(123, 97)
         Me.lblD2P4.TabIndex = 318
@@ -737,7 +737,7 @@ Partial Class StudentTimetables
         Me.lblD2P3.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD2P3.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD2P3.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD2P3.Location = New System.Drawing.Point(451, 528)
+        Me.lblD2P3.Location = New System.Drawing.Point(488, 503)
         Me.lblD2P3.Name = "lblD2P3"
         Me.lblD2P3.Size = New System.Drawing.Size(123, 97)
         Me.lblD2P3.TabIndex = 317
@@ -751,7 +751,7 @@ Partial Class StudentTimetables
         Me.lblD2P2.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD2P2.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD2P2.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD2P2.Location = New System.Drawing.Point(322, 528)
+        Me.lblD2P2.Location = New System.Drawing.Point(359, 503)
         Me.lblD2P2.Name = "lblD2P2"
         Me.lblD2P2.Size = New System.Drawing.Size(123, 97)
         Me.lblD2P2.TabIndex = 316
@@ -765,7 +765,7 @@ Partial Class StudentTimetables
         Me.lblD2P1.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD2P1.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD2P1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD2P1.Location = New System.Drawing.Point(193, 528)
+        Me.lblD2P1.Location = New System.Drawing.Point(230, 503)
         Me.lblD2P1.Name = "lblD2P1"
         Me.lblD2P1.Size = New System.Drawing.Size(123, 97)
         Me.lblD2P1.TabIndex = 315
@@ -779,7 +779,7 @@ Partial Class StudentTimetables
         Me.lblD1P11.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD1P11.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD1P11.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD1P11.Location = New System.Drawing.Point(1483, 842)
+        Me.lblD1P11.Location = New System.Drawing.Point(1520, 817)
         Me.lblD1P11.Name = "lblD1P11"
         Me.lblD1P11.Size = New System.Drawing.Size(123, 97)
         Me.lblD1P11.TabIndex = 314
@@ -793,7 +793,7 @@ Partial Class StudentTimetables
         Me.lblD1P10.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD1P10.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD1P10.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD1P10.Location = New System.Drawing.Point(1354, 424)
+        Me.lblD1P10.Location = New System.Drawing.Point(1391, 399)
         Me.lblD1P10.Name = "lblD1P10"
         Me.lblD1P10.Size = New System.Drawing.Size(123, 97)
         Me.lblD1P10.TabIndex = 313
@@ -807,7 +807,7 @@ Partial Class StudentTimetables
         Me.lblD1P9.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD1P9.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD1P9.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD1P9.Location = New System.Drawing.Point(1225, 424)
+        Me.lblD1P9.Location = New System.Drawing.Point(1262, 399)
         Me.lblD1P9.Name = "lblD1P9"
         Me.lblD1P9.Size = New System.Drawing.Size(123, 97)
         Me.lblD1P9.TabIndex = 312
@@ -821,7 +821,7 @@ Partial Class StudentTimetables
         Me.lblD1P8.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD1P8.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD1P8.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD1P8.Location = New System.Drawing.Point(1096, 424)
+        Me.lblD1P8.Location = New System.Drawing.Point(1133, 399)
         Me.lblD1P8.Name = "lblD1P8"
         Me.lblD1P8.Size = New System.Drawing.Size(123, 97)
         Me.lblD1P8.TabIndex = 311
@@ -835,7 +835,7 @@ Partial Class StudentTimetables
         Me.lblD1P7.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD1P7.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD1P7.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD1P7.Location = New System.Drawing.Point(967, 424)
+        Me.lblD1P7.Location = New System.Drawing.Point(1004, 399)
         Me.lblD1P7.Name = "lblD1P7"
         Me.lblD1P7.Size = New System.Drawing.Size(123, 97)
         Me.lblD1P7.TabIndex = 310
@@ -849,7 +849,7 @@ Partial Class StudentTimetables
         Me.lblD1P6.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD1P6.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD1P6.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD1P6.Location = New System.Drawing.Point(838, 424)
+        Me.lblD1P6.Location = New System.Drawing.Point(875, 399)
         Me.lblD1P6.Name = "lblD1P6"
         Me.lblD1P6.Size = New System.Drawing.Size(123, 97)
         Me.lblD1P6.TabIndex = 309
@@ -863,7 +863,7 @@ Partial Class StudentTimetables
         Me.lblD1P5.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD1P5.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD1P5.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD1P5.Location = New System.Drawing.Point(709, 424)
+        Me.lblD1P5.Location = New System.Drawing.Point(746, 399)
         Me.lblD1P5.Name = "lblD1P5"
         Me.lblD1P5.Size = New System.Drawing.Size(123, 97)
         Me.lblD1P5.TabIndex = 308
@@ -877,7 +877,7 @@ Partial Class StudentTimetables
         Me.lblD1P4.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD1P4.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD1P4.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD1P4.Location = New System.Drawing.Point(580, 424)
+        Me.lblD1P4.Location = New System.Drawing.Point(617, 399)
         Me.lblD1P4.Name = "lblD1P4"
         Me.lblD1P4.Size = New System.Drawing.Size(123, 97)
         Me.lblD1P4.TabIndex = 307
@@ -891,7 +891,7 @@ Partial Class StudentTimetables
         Me.lblD1P3.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD1P3.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD1P3.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD1P3.Location = New System.Drawing.Point(451, 424)
+        Me.lblD1P3.Location = New System.Drawing.Point(488, 399)
         Me.lblD1P3.Name = "lblD1P3"
         Me.lblD1P3.Size = New System.Drawing.Size(123, 97)
         Me.lblD1P3.TabIndex = 306
@@ -905,7 +905,7 @@ Partial Class StudentTimetables
         Me.lblD1P2.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD1P2.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD1P2.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD1P2.Location = New System.Drawing.Point(322, 424)
+        Me.lblD1P2.Location = New System.Drawing.Point(359, 399)
         Me.lblD1P2.Name = "lblD1P2"
         Me.lblD1P2.Size = New System.Drawing.Size(123, 97)
         Me.lblD1P2.TabIndex = 305
@@ -919,7 +919,7 @@ Partial Class StudentTimetables
         Me.lblD1P1.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD1P1.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD1P1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD1P1.Location = New System.Drawing.Point(193, 424)
+        Me.lblD1P1.Location = New System.Drawing.Point(230, 399)
         Me.lblD1P1.Name = "lblD1P1"
         Me.lblD1P1.Size = New System.Drawing.Size(123, 97)
         Me.lblD1P1.TabIndex = 299
@@ -928,11 +928,11 @@ Partial Class StudentTimetables
         '
         'lblTime11
         '
-        Me.lblTime11.BackColor = System.Drawing.Color.Black
+        Me.lblTime11.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.lblTime11.Font = New System.Drawing.Font("Sylfaen", 14.0!)
         Me.lblTime11.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblTime11.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblTime11.Location = New System.Drawing.Point(1483, 368)
+        Me.lblTime11.Location = New System.Drawing.Point(1520, 343)
         Me.lblTime11.Name = "lblTime11"
         Me.lblTime11.Size = New System.Drawing.Size(123, 46)
         Me.lblTime11.TabIndex = 301
@@ -941,11 +941,11 @@ Partial Class StudentTimetables
         '
         'lblTime10
         '
-        Me.lblTime10.BackColor = System.Drawing.Color.Black
+        Me.lblTime10.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.lblTime10.Font = New System.Drawing.Font("Sylfaen", 14.0!)
         Me.lblTime10.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblTime10.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblTime10.Location = New System.Drawing.Point(1354, 368)
+        Me.lblTime10.Location = New System.Drawing.Point(1391, 343)
         Me.lblTime10.Name = "lblTime10"
         Me.lblTime10.Size = New System.Drawing.Size(123, 46)
         Me.lblTime10.TabIndex = 298
@@ -954,11 +954,11 @@ Partial Class StudentTimetables
         '
         'lbl10
         '
-        Me.lbl10.BackColor = System.Drawing.Color.Black
+        Me.lbl10.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.lbl10.Font = New System.Drawing.Font("Sylfaen", 18.0!)
         Me.lbl10.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lbl10.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lbl10.Location = New System.Drawing.Point(1354, 308)
+        Me.lbl10.Location = New System.Drawing.Point(1391, 283)
         Me.lbl10.Name = "lbl10"
         Me.lbl10.Size = New System.Drawing.Size(123, 60)
         Me.lbl10.TabIndex = 297
@@ -967,11 +967,11 @@ Partial Class StudentTimetables
         '
         'lblTime9
         '
-        Me.lblTime9.BackColor = System.Drawing.Color.Black
+        Me.lblTime9.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.lblTime9.Font = New System.Drawing.Font("Sylfaen", 14.0!)
         Me.lblTime9.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblTime9.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblTime9.Location = New System.Drawing.Point(1225, 368)
+        Me.lblTime9.Location = New System.Drawing.Point(1262, 343)
         Me.lblTime9.Name = "lblTime9"
         Me.lblTime9.Size = New System.Drawing.Size(123, 46)
         Me.lblTime9.TabIndex = 296
@@ -980,11 +980,11 @@ Partial Class StudentTimetables
         '
         'lbl9
         '
-        Me.lbl9.BackColor = System.Drawing.Color.Black
+        Me.lbl9.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.lbl9.Font = New System.Drawing.Font("Sylfaen", 18.0!)
         Me.lbl9.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lbl9.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lbl9.Location = New System.Drawing.Point(1225, 308)
+        Me.lbl9.Location = New System.Drawing.Point(1262, 283)
         Me.lbl9.Name = "lbl9"
         Me.lbl9.Size = New System.Drawing.Size(123, 60)
         Me.lbl9.TabIndex = 295
@@ -993,11 +993,11 @@ Partial Class StudentTimetables
         '
         'lblTime8
         '
-        Me.lblTime8.BackColor = System.Drawing.Color.Black
+        Me.lblTime8.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.lblTime8.Font = New System.Drawing.Font("Sylfaen", 14.0!)
         Me.lblTime8.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblTime8.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblTime8.Location = New System.Drawing.Point(1096, 368)
+        Me.lblTime8.Location = New System.Drawing.Point(1133, 343)
         Me.lblTime8.Name = "lblTime8"
         Me.lblTime8.Size = New System.Drawing.Size(123, 46)
         Me.lblTime8.TabIndex = 294
@@ -1006,11 +1006,11 @@ Partial Class StudentTimetables
         '
         'lbl8
         '
-        Me.lbl8.BackColor = System.Drawing.Color.Black
+        Me.lbl8.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.lbl8.Font = New System.Drawing.Font("Sylfaen", 18.0!)
         Me.lbl8.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lbl8.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lbl8.Location = New System.Drawing.Point(1096, 308)
+        Me.lbl8.Location = New System.Drawing.Point(1133, 283)
         Me.lbl8.Name = "lbl8"
         Me.lbl8.Size = New System.Drawing.Size(123, 60)
         Me.lbl8.TabIndex = 293
@@ -1019,11 +1019,11 @@ Partial Class StudentTimetables
         '
         'lblTime7
         '
-        Me.lblTime7.BackColor = System.Drawing.Color.Black
+        Me.lblTime7.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.lblTime7.Font = New System.Drawing.Font("Sylfaen", 14.0!)
         Me.lblTime7.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblTime7.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblTime7.Location = New System.Drawing.Point(967, 368)
+        Me.lblTime7.Location = New System.Drawing.Point(1004, 343)
         Me.lblTime7.Name = "lblTime7"
         Me.lblTime7.Size = New System.Drawing.Size(123, 46)
         Me.lblTime7.TabIndex = 292
@@ -1032,11 +1032,11 @@ Partial Class StudentTimetables
         '
         'lbl7
         '
-        Me.lbl7.BackColor = System.Drawing.Color.Black
+        Me.lbl7.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.lbl7.Font = New System.Drawing.Font("Sylfaen", 18.0!)
         Me.lbl7.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lbl7.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lbl7.Location = New System.Drawing.Point(967, 308)
+        Me.lbl7.Location = New System.Drawing.Point(1004, 283)
         Me.lbl7.Name = "lbl7"
         Me.lbl7.Size = New System.Drawing.Size(123, 60)
         Me.lbl7.TabIndex = 291
@@ -1045,11 +1045,11 @@ Partial Class StudentTimetables
         '
         'lblTime6
         '
-        Me.lblTime6.BackColor = System.Drawing.Color.Black
+        Me.lblTime6.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.lblTime6.Font = New System.Drawing.Font("Sylfaen", 14.0!)
         Me.lblTime6.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblTime6.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblTime6.Location = New System.Drawing.Point(838, 368)
+        Me.lblTime6.Location = New System.Drawing.Point(875, 343)
         Me.lblTime6.Name = "lblTime6"
         Me.lblTime6.Size = New System.Drawing.Size(123, 46)
         Me.lblTime6.TabIndex = 290
@@ -1058,11 +1058,11 @@ Partial Class StudentTimetables
         '
         'lbl6
         '
-        Me.lbl6.BackColor = System.Drawing.Color.Black
+        Me.lbl6.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.lbl6.Font = New System.Drawing.Font("Sylfaen", 18.0!)
         Me.lbl6.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lbl6.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lbl6.Location = New System.Drawing.Point(838, 308)
+        Me.lbl6.Location = New System.Drawing.Point(875, 283)
         Me.lbl6.Name = "lbl6"
         Me.lbl6.Size = New System.Drawing.Size(123, 60)
         Me.lbl6.TabIndex = 289
@@ -1071,11 +1071,11 @@ Partial Class StudentTimetables
         '
         'lblTime5
         '
-        Me.lblTime5.BackColor = System.Drawing.Color.Black
+        Me.lblTime5.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.lblTime5.Font = New System.Drawing.Font("Sylfaen", 14.0!)
         Me.lblTime5.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblTime5.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblTime5.Location = New System.Drawing.Point(709, 368)
+        Me.lblTime5.Location = New System.Drawing.Point(746, 343)
         Me.lblTime5.Name = "lblTime5"
         Me.lblTime5.Size = New System.Drawing.Size(123, 46)
         Me.lblTime5.TabIndex = 288
@@ -1084,11 +1084,11 @@ Partial Class StudentTimetables
         '
         'lbl5
         '
-        Me.lbl5.BackColor = System.Drawing.Color.Black
+        Me.lbl5.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.lbl5.Font = New System.Drawing.Font("Sylfaen", 18.0!)
         Me.lbl5.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lbl5.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lbl5.Location = New System.Drawing.Point(709, 308)
+        Me.lbl5.Location = New System.Drawing.Point(746, 283)
         Me.lbl5.Name = "lbl5"
         Me.lbl5.Size = New System.Drawing.Size(123, 60)
         Me.lbl5.TabIndex = 287
@@ -1097,11 +1097,11 @@ Partial Class StudentTimetables
         '
         'lblTime4
         '
-        Me.lblTime4.BackColor = System.Drawing.Color.Black
+        Me.lblTime4.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.lblTime4.Font = New System.Drawing.Font("Sylfaen", 14.0!)
         Me.lblTime4.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblTime4.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblTime4.Location = New System.Drawing.Point(580, 368)
+        Me.lblTime4.Location = New System.Drawing.Point(617, 343)
         Me.lblTime4.Name = "lblTime4"
         Me.lblTime4.Size = New System.Drawing.Size(123, 46)
         Me.lblTime4.TabIndex = 286
@@ -1110,11 +1110,11 @@ Partial Class StudentTimetables
         '
         'lbl4
         '
-        Me.lbl4.BackColor = System.Drawing.Color.Black
+        Me.lbl4.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.lbl4.Font = New System.Drawing.Font("Sylfaen", 18.0!)
         Me.lbl4.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lbl4.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lbl4.Location = New System.Drawing.Point(580, 308)
+        Me.lbl4.Location = New System.Drawing.Point(617, 283)
         Me.lbl4.Name = "lbl4"
         Me.lbl4.Size = New System.Drawing.Size(123, 60)
         Me.lbl4.TabIndex = 285
@@ -1123,11 +1123,11 @@ Partial Class StudentTimetables
         '
         'lblTime3
         '
-        Me.lblTime3.BackColor = System.Drawing.Color.Black
+        Me.lblTime3.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.lblTime3.Font = New System.Drawing.Font("Sylfaen", 14.0!)
         Me.lblTime3.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblTime3.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblTime3.Location = New System.Drawing.Point(451, 368)
+        Me.lblTime3.Location = New System.Drawing.Point(488, 343)
         Me.lblTime3.Name = "lblTime3"
         Me.lblTime3.Size = New System.Drawing.Size(123, 46)
         Me.lblTime3.TabIndex = 284
@@ -1136,11 +1136,11 @@ Partial Class StudentTimetables
         '
         'lbl3
         '
-        Me.lbl3.BackColor = System.Drawing.Color.Black
+        Me.lbl3.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.lbl3.Font = New System.Drawing.Font("Sylfaen", 18.0!)
         Me.lbl3.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lbl3.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lbl3.Location = New System.Drawing.Point(451, 308)
+        Me.lbl3.Location = New System.Drawing.Point(488, 283)
         Me.lbl3.Name = "lbl3"
         Me.lbl3.Size = New System.Drawing.Size(123, 60)
         Me.lbl3.TabIndex = 283
@@ -1149,11 +1149,11 @@ Partial Class StudentTimetables
         '
         'lblTime2
         '
-        Me.lblTime2.BackColor = System.Drawing.Color.Black
+        Me.lblTime2.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.lblTime2.Font = New System.Drawing.Font("Sylfaen", 14.0!)
         Me.lblTime2.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblTime2.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblTime2.Location = New System.Drawing.Point(322, 368)
+        Me.lblTime2.Location = New System.Drawing.Point(359, 343)
         Me.lblTime2.Name = "lblTime2"
         Me.lblTime2.Size = New System.Drawing.Size(123, 46)
         Me.lblTime2.TabIndex = 282
@@ -1162,11 +1162,11 @@ Partial Class StudentTimetables
         '
         'lbl2
         '
-        Me.lbl2.BackColor = System.Drawing.Color.Black
+        Me.lbl2.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.lbl2.Font = New System.Drawing.Font("Sylfaen", 18.0!)
         Me.lbl2.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lbl2.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lbl2.Location = New System.Drawing.Point(322, 308)
+        Me.lbl2.Location = New System.Drawing.Point(359, 283)
         Me.lbl2.Name = "lbl2"
         Me.lbl2.Size = New System.Drawing.Size(123, 60)
         Me.lbl2.TabIndex = 281
@@ -1175,11 +1175,11 @@ Partial Class StudentTimetables
         '
         'lblTime1
         '
-        Me.lblTime1.BackColor = System.Drawing.Color.Black
+        Me.lblTime1.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.lblTime1.Font = New System.Drawing.Font("Sylfaen", 14.0!)
         Me.lblTime1.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblTime1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblTime1.Location = New System.Drawing.Point(193, 368)
+        Me.lblTime1.Location = New System.Drawing.Point(230, 343)
         Me.lblTime1.Name = "lblTime1"
         Me.lblTime1.Size = New System.Drawing.Size(123, 46)
         Me.lblTime1.TabIndex = 280
@@ -1188,11 +1188,11 @@ Partial Class StudentTimetables
         '
         'lbl1
         '
-        Me.lbl1.BackColor = System.Drawing.Color.Black
+        Me.lbl1.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.lbl1.Font = New System.Drawing.Font("Sylfaen", 18.0!)
         Me.lbl1.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lbl1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lbl1.Location = New System.Drawing.Point(193, 308)
+        Me.lbl1.Location = New System.Drawing.Point(230, 283)
         Me.lbl1.Name = "lbl1"
         Me.lbl1.Size = New System.Drawing.Size(123, 60)
         Me.lbl1.TabIndex = 279
@@ -1201,65 +1201,65 @@ Partial Class StudentTimetables
         '
         'lblDay5
         '
-        Me.lblDay5.BackColor = System.Drawing.Color.Black
+        Me.lblDay5.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.lblDay5.Font = New System.Drawing.Font("Sylfaen", 22.0!)
         Me.lblDay5.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblDay5.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblDay5.Location = New System.Drawing.Point(12, 842)
+        Me.lblDay5.Location = New System.Drawing.Point(72, 817)
         Me.lblDay5.Name = "lblDay5"
-        Me.lblDay5.Size = New System.Drawing.Size(174, 97)
+        Me.lblDay5.Size = New System.Drawing.Size(151, 97)
         Me.lblDay5.TabIndex = 278
         Me.lblDay5.Text = "วัน"
         Me.lblDay5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'lblDay4
         '
-        Me.lblDay4.BackColor = System.Drawing.Color.Black
+        Me.lblDay4.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.lblDay4.Font = New System.Drawing.Font("Sylfaen", 22.0!)
         Me.lblDay4.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblDay4.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblDay4.Location = New System.Drawing.Point(13, 737)
+        Me.lblDay4.Location = New System.Drawing.Point(73, 712)
         Me.lblDay4.Name = "lblDay4"
-        Me.lblDay4.Size = New System.Drawing.Size(174, 97)
+        Me.lblDay4.Size = New System.Drawing.Size(151, 97)
         Me.lblDay4.TabIndex = 277
         Me.lblDay4.Text = "วัน"
         Me.lblDay4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'lblDay3
         '
-        Me.lblDay3.BackColor = System.Drawing.Color.Black
+        Me.lblDay3.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.lblDay3.Font = New System.Drawing.Font("Sylfaen", 22.0!)
         Me.lblDay3.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblDay3.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblDay3.Location = New System.Drawing.Point(13, 632)
+        Me.lblDay3.Location = New System.Drawing.Point(73, 607)
         Me.lblDay3.Name = "lblDay3"
-        Me.lblDay3.Size = New System.Drawing.Size(174, 97)
+        Me.lblDay3.Size = New System.Drawing.Size(151, 97)
         Me.lblDay3.TabIndex = 276
         Me.lblDay3.Text = "วัน"
         Me.lblDay3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'lblDay2
         '
-        Me.lblDay2.BackColor = System.Drawing.Color.Black
+        Me.lblDay2.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.lblDay2.Font = New System.Drawing.Font("Sylfaen", 22.0!)
         Me.lblDay2.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblDay2.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblDay2.Location = New System.Drawing.Point(16, 528)
+        Me.lblDay2.Location = New System.Drawing.Point(76, 503)
         Me.lblDay2.Name = "lblDay2"
-        Me.lblDay2.Size = New System.Drawing.Size(174, 97)
+        Me.lblDay2.Size = New System.Drawing.Size(151, 97)
         Me.lblDay2.TabIndex = 275
         Me.lblDay2.Text = "วัน"
         Me.lblDay2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'lblDay1
         '
-        Me.lblDay1.BackColor = System.Drawing.Color.Black
+        Me.lblDay1.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.lblDay1.Font = New System.Drawing.Font("Sylfaen", 22.0!)
         Me.lblDay1.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblDay1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblDay1.Location = New System.Drawing.Point(13, 424)
+        Me.lblDay1.Location = New System.Drawing.Point(73, 399)
         Me.lblDay1.Name = "lblDay1"
-        Me.lblDay1.Size = New System.Drawing.Size(174, 97)
+        Me.lblDay1.Size = New System.Drawing.Size(151, 97)
         Me.lblDay1.TabIndex = 274
         Me.lblDay1.Text = "วัน"
         Me.lblDay1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -1284,9 +1284,9 @@ Partial Class StudentTimetables
         Me.Panel2.Controls.Add(Me.txtYear)
         Me.Panel2.Controls.Add(Me.lblYear)
         Me.Panel2.Controls.Add(Me.lblRoom)
-        Me.Panel2.Location = New System.Drawing.Point(95, 52)
+        Me.Panel2.Location = New System.Drawing.Point(49, 27)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(514, 242)
+        Me.Panel2.Size = New System.Drawing.Size(563, 242)
         Me.Panel2.TabIndex = 362
         '
         'BtnSave
@@ -1300,7 +1300,7 @@ Partial Class StudentTimetables
         Me.BtnSave.ForeColor = System.Drawing.Color.White
         Me.BtnSave.Location = New System.Drawing.Point(29, 154)
         Me.BtnSave.Name = "BtnSave"
-        Me.BtnSave.Size = New System.Drawing.Size(463, 60)
+        Me.BtnSave.Size = New System.Drawing.Size(497, 60)
         Me.BtnSave.TabIndex = 370
         Me.BtnSave.Text = "บันทึก"
         Me.BtnSave.UseVisualStyleBackColor = False
@@ -1316,7 +1316,7 @@ Partial Class StudentTimetables
         Me.cboClassrooms.IntegralHeight = False
         Me.cboClassrooms.Location = New System.Drawing.Point(246, 96)
         Me.cboClassrooms.Name = "cboClassrooms"
-        Me.cboClassrooms.Size = New System.Drawing.Size(246, 40)
+        Me.cboClassrooms.Size = New System.Drawing.Size(280, 40)
         Me.cboClassrooms.TabIndex = 382
         '
         'txtYear
@@ -1327,7 +1327,7 @@ Partial Class StudentTimetables
         Me.txtYear.ForeColor = System.Drawing.Color.White
         Me.txtYear.Location = New System.Drawing.Point(246, 20)
         Me.txtYear.Name = "txtYear"
-        Me.txtYear.Size = New System.Drawing.Size(246, 61)
+        Me.txtYear.Size = New System.Drawing.Size(280, 61)
         Me.txtYear.TabIndex = 369
         '
         'lblRoom
@@ -1355,7 +1355,7 @@ Partial Class StudentTimetables
         Me.Panel3.Controls.Add(Me.Label1)
         Me.Panel3.Controls.Add(Me.Connection)
         Me.Panel3.Controls.Add(Me.lblTeachers)
-        Me.Panel3.Location = New System.Drawing.Point(625, 52)
+        Me.Panel3.Location = New System.Drawing.Point(628, 27)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(649, 242)
         Me.Panel3.TabIndex = 367
@@ -1477,9 +1477,9 @@ Partial Class StudentTimetables
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.Panel1.Controls.Add(Me.btnPrint)
         Me.Panel1.Controls.Add(Me.btnEdit)
-        Me.Panel1.Location = New System.Drawing.Point(1292, 52)
+        Me.Panel1.Location = New System.Drawing.Point(1295, 27)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(357, 242)
+        Me.Panel1.Size = New System.Drawing.Size(391, 242)
         Me.Panel1.TabIndex = 196
         '
         'btnPrint
@@ -1491,9 +1491,9 @@ Partial Class StudentTimetables
         Me.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnPrint.Font = New System.Drawing.Font("Arial", 25.0!)
         Me.btnPrint.ForeColor = System.Drawing.Color.White
-        Me.btnPrint.Location = New System.Drawing.Point(29, 121)
+        Me.btnPrint.Location = New System.Drawing.Point(18, 121)
         Me.btnPrint.Name = "btnPrint"
-        Me.btnPrint.Size = New System.Drawing.Size(306, 101)
+        Me.btnPrint.Size = New System.Drawing.Size(358, 101)
         Me.btnPrint.TabIndex = 385
         Me.btnPrint.Text = "พิมพ์"
         Me.btnPrint.UseVisualStyleBackColor = False
@@ -1507,9 +1507,9 @@ Partial Class StudentTimetables
         Me.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEdit.Font = New System.Drawing.Font("Arial", 25.0!)
         Me.btnEdit.ForeColor = System.Drawing.Color.White
-        Me.btnEdit.Location = New System.Drawing.Point(29, 14)
+        Me.btnEdit.Location = New System.Drawing.Point(18, 14)
         Me.btnEdit.Name = "btnEdit"
-        Me.btnEdit.Size = New System.Drawing.Size(306, 101)
+        Me.btnEdit.Size = New System.Drawing.Size(358, 101)
         Me.btnEdit.TabIndex = 383
         Me.btnEdit.Text = "แก้ไข"
         Me.btnEdit.UseVisualStyleBackColor = False
@@ -1525,16 +1525,16 @@ Partial Class StudentTimetables
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.Panel5.Location = New System.Drawing.Point(12, 308)
+        Me.Panel5.Location = New System.Drawing.Point(49, 283)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(1637, 631)
+        Me.Panel5.Size = New System.Drawing.Size(1637, 658)
         Me.Panel5.TabIndex = 391
         '
         'StudentTimetables
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Black
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.BackgroundImage = Global.project.My.Resources.Resources.BGExtend
         Me.ClientSize = New System.Drawing.Size(1803, 1080)
         Me.Controls.Add(Me.agent)

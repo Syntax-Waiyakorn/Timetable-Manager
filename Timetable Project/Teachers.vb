@@ -5,7 +5,9 @@ Public Class Teachers
     Dim i As Integer
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            conn.Open()
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
             lblStatus.Text = "เชื่อมต่อแล้ว"
             lblStatus.ForeColor = Color.Lime
             Dim cmd As New OleDb.OleDbCommand("Select DepartmentName from Departments", conn)
@@ -25,7 +27,9 @@ Public Class Teachers
     Sub LoadGrid()
         Try
             DataGridView1.Rows.Clear()
-            conn.Open()
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
             Dim cmd As New OleDb.OleDbCommand("Select TeacherID, TeacherFirstName, TeacherLastName, TeacherDepartment, TeacherQuota from Teachers", conn)
             dr = cmd.ExecuteReader
             While dr.Read
@@ -54,7 +58,9 @@ Public Class Teachers
     Sub save()
         Try
             If MsgBox("คุณต้องการเพิ่มข้อมูลหรือไม่ ?", vbQuestion + vbYesNo, "เเจ้งเตือน") = vbYes Then
-                conn.Open()
+                If conn.State = ConnectionState.Closed Then
+                    conn.Open()
+                End If
                 Dim cmd As New OleDb.OleDbCommand("Insert into Teachers(`TeacherFirstName`,`TeacherLastName`,`TeacherDepartment`,`TeacherQuota`) values(@TeacherCode,@TeacherFirstName,@TeacherLastName,@TeacherDepartment,@TeacherQuota)", conn)
                 cmd.Parameters.Clear()
                 cmd.Parameters.AddWithValue("@TeacherFirstName", txtTeacherFirstName.Text)
@@ -78,7 +84,9 @@ Public Class Teachers
     End Sub
     Sub edit()
         Try
-            conn.Open()
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
             Dim cmd As New OleDb.OleDbCommand("UPDATE Teachers SET `TeacherFirstName`=@TeacherFirstName,`TeacherLastName`=@TeacherLastName,`TeacherDepartment`=@TeacherDepartment,`TeacherQuota`=@TeacherQuota Where TeacherID=@TeacherID ", conn)
             cmd.Parameters.Clear()
             cmd.Parameters.AddWithValue("@TeacherFirstName", txtTeacherFirstName.Text)
@@ -102,7 +110,9 @@ Public Class Teachers
     Sub search()
         Try
             DataGridView1.Rows.Clear()
-            conn.Open()
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
             Dim cmd As New OleDb.OleDbCommand("Select TeacherID, TeacherFirstName, TeacherLastName, TeacherDepartment, TeacherQuota from Teachers WHERE `TeacherFirstName` like '%" & txtSearch.Text & "%' or `TeacherLastName` like '%" & txtSearch.Text & "%' or `TeacherDepartment` like '%" & txtSearch.Text & "%' or `TeacherQuota` like '%" & txtSearch.Text & "%' or `TeacherID` like '%" & txtSearch.Text & "%' ", conn)
             dr = cmd.ExecuteReader
             While dr.Read
@@ -117,7 +127,9 @@ Public Class Teachers
     Sub delete()
         Try
             If MsgBox("คุณต้องการลบหรือไม่ ?", vbQuestion + vbYesNo, "เเจ้งเตือน") = vbYes Then
-                conn.Open()
+                If conn.State = ConnectionState.Closed Then
+                    conn.Open()
+                End If
                 Dim cmd As New OleDb.OleDbCommand("Delete from Teachers WHERE TeacherID=@TeacherID", conn)
                 cmd.Parameters.Clear()
                 cmd.Parameters.AddWithValue("@TeacherID", txtPR.Text)
