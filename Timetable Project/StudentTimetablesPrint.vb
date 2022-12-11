@@ -1,5 +1,7 @@
 ﻿Imports System.Data.OleDb
 Imports System.Drawing.Drawing2D
+Imports System.Drawing.Printing
+
 Public Class StudentTimetablesPrint
     Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\Timetable.accdb")
     Dim dr As OleDbDataReader
@@ -87,18 +89,20 @@ Public Class StudentTimetablesPrint
         path.CloseFigure()
         Return path
     End Function
+    Public Property TableNumbers As Integer
+
     Private Sub CreateProductLabel(g As Graphics)
         If conn.State = ConnectionState.Closed Then
             conn.Open()
         End If
-        Dim TableNumber As Integer = 0
+
+        Dim TableNumber As Integer = TableNumbers
         Dim CurrentClassroom As String = "null"
 
         Dim i As Integer = 0
         Dim XCoord As Integer = 0
         Dim YCoord As Integer = 0
 
-        Dim TimetableIndex As String = "null"
         Dim TeacherFirstName As String = "null"
         Dim SubjectCode As String = "null"
         Dim ClassroomCode As String = "null"
@@ -191,6 +195,7 @@ Public Class StudentTimetablesPrint
             End Using
         End Using
 
+
         CurrentClassroom = ClassroomNames(TableNumber)
 
         Using font As Font = New Font("Arial", 11, FontStyle.Regular)
@@ -200,7 +205,6 @@ Public Class StudentTimetablesPrint
         End Using
 
         For Each item In ClassroomNames
-            Console.WriteLine(item)
         Next
 
         Using font As Font = New Font("Arial", 7, FontStyle.Regular)
@@ -222,14 +226,19 @@ Public Class StudentTimetablesPrint
                 Next
             End Using
         End Using
+        conn.Close()
 
         Using font As Font = New Font("Arial", 9, FontStyle.Regular)
             Using brush As SolidBrush = New SolidBrush(Color.Black)
 
+                Dim TimetableIndex As String = "null"
                 XCoord = 65
                 YCoord = 165
                 For Day As Integer = 1 To 5
                     For Period As Integer = 1 To 11
+                        If conn.State = ConnectionState.Closed Then
+                            conn.Open()
+                        End If
                         TimetableIndex = CurrentClassroom & "$$" & Day & "$$" & Period
                         Dim cmdPeriod As New OleDb.OleDbCommand("SELECT TeacherFirstName, SubjectCode, ClassroomCode, SubjectPlace FROM TimetablesQuery WHERE TimetableIndex = '" + TimetableIndex + "'", conn)
                         dr = cmdPeriod.ExecuteReader
@@ -247,6 +256,8 @@ Public Class StudentTimetablesPrint
                     Next
                     XCoord = 65
                     YCoord = YCoord + 50
+                    conn.Close()
+
                 Next
             End Using
         End Using
@@ -259,9 +270,5 @@ Public Class StudentTimetablesPrint
     End Sub
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Close()
-    End Sub
-
-    Private Sub StudentTimetablesPrint_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
     End Sub
 End Class

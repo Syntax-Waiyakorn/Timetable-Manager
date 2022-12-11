@@ -307,7 +307,6 @@ Public Class StudentTimetables
                 conn.Close()
             End If
         End Try
-
     End Sub
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         If cboClassrooms.SelectedIndex = -1 Then
