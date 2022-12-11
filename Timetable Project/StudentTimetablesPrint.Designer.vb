@@ -103,6 +103,7 @@ Partial Class StudentTimetablesPrint
         Me.PrintPreviewControl1.BackColor = System.Drawing.Color.Black
         Me.PrintPreviewControl1.Cursor = System.Windows.Forms.Cursors.Default
         Me.PrintPreviewControl1.Document = Me.PrintStudentTimetables
+        Me.PrintPreviewControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.PrintPreviewControl1.Location = New System.Drawing.Point(23, 207)
         Me.PrintPreviewControl1.Name = "PrintPreviewControl1"
         Me.PrintPreviewControl1.Size = New System.Drawing.Size(1075, 614)

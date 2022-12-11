@@ -320,6 +320,29 @@ Public Class StudentTimetables
         End If
     End Sub
     Private Sub cboClassrooms_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboClassrooms.SelectedIndexChanged
+        Dim Timetables As Integer
+        conn.Open()
+        Dim cmd As New OleDb.OleDbCommand("Select ClassroomID from Classrooms where ClassroomName  = '" + cboClassrooms.Text + "'", conn)
+
+        dr = cmd.ExecuteReader
+        While dr.Read
+            Timetables = dr.Item("ClassroomID") - 1
+        End While
+        conn.Close()
+
+        Try
+            conn.Open()
+            Dim cmd1 As New OleDb.OleDbCommand("UPDATE Years SET `RoomID`=@RoomID ", conn)
+            cmd1.Parameters.Clear()
+            cmd1.Parameters.AddWithValue("@RoomID", Timetables)
+            cmd1.ExecuteNonQuery()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If conn.State = ConnectionState.Open Then
+                conn.Close()
+            End If
+        End Try
         Dim Classroom As String = CStr(cboClassrooms.Text)
         DisplayClassroomTable(Classroom)
         status()
@@ -341,8 +364,12 @@ Public Class StudentTimetables
         status()
     End Sub
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
-        Dim StudentTimetablesPrint As New StudentTimetablesPrint
-        StudentTimetablesPrint.Show()
+        If cboClassrooms.SelectedIndex = -1 Then
+            MsgBox("เลือกห้องก่อน", vbYes, "เเจ้งเตือน")
+        Else
+            Dim StudentTimetablesPrint As New StudentTimetablesPrint
+            StudentTimetablesPrint.Show()
+        End If
     End Sub
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
         Dim OBJ As New TeachersTimetables

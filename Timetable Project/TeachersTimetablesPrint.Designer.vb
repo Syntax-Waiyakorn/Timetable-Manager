@@ -108,7 +108,7 @@ Partial Class TeachersTimetablesPrint
         Me.PrintPreviewControl1.TabIndex = 385
         Me.PrintPreviewControl1.Zoom = 1.0R
         '
-        'TeachersTimetablesFrom
+        'TeachersTimetablesPrint
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -119,7 +119,7 @@ Partial Class TeachersTimetablesPrint
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.lblTitle)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "TeachersTimetablesFrom"
+        Me.Name = "TeachersTimetablesPrint"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "TeachersTimetablesFrom"
         Me.TopMost = True

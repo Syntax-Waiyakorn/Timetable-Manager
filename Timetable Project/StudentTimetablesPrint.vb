@@ -89,12 +89,17 @@ Public Class StudentTimetablesPrint
         path.CloseFigure()
         Return path
     End Function
-    Public Property TableNumbers As Integer
 
     Private Sub CreateProductLabel(g As Graphics)
         If conn.State = ConnectionState.Closed Then
             conn.Open()
         End If
+        Dim TableNumbers As Integer
+        Dim cmd As New OleDb.OleDbCommand("Select RoomID from Years", conn)
+        dr = cmd.ExecuteReader
+        While dr.Read
+            TableNumbers = dr.Item("RoomID")
+        End While
 
         Dim TableNumber As Integer = TableNumbers
         Dim CurrentClassroom As String = "null"
@@ -261,10 +266,12 @@ Public Class StudentTimetablesPrint
                 Next
             End Using
         End Using
+
     End Sub
     Private Sub TeachersTimetablesFrom_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
         FormRegionAndBorder(Me, borderRadius, e.Graphics, borderColor, borderSize)
     End Sub
+
     Private Sub PrintStudentTimetables_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintStudentTimetables.PrintPage
         CreateProductLabel(e.Graphics)
     End Sub
