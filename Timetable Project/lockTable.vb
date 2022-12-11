@@ -1,5 +1,5 @@
 ﻿Imports System.Data.OleDb
-Public Class lockTable
+Public Class LockTable
     Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\Timetable.accdb")
     Dim dr As OleDbDataReader
     Dim i As Integer

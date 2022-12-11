@@ -1461,6 +1461,7 @@ Partial Class TeachersTimetables
         '
         'Panel5
         '
+        Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.Panel5.Location = New System.Drawing.Point(23, 300)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(1626, 639)

@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class lockTable
+Partial Class LockTable
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -125,6 +125,7 @@ Partial Class lockTable
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.ChackClassrooms = New System.Windows.Forms.CheckedListBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Delete = New System.Windows.Forms.Button()
         Me.cboSubjectDepartment = New System.Windows.Forms.ComboBox()
@@ -146,7 +147,6 @@ Partial Class lockTable
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -1471,6 +1471,18 @@ Partial Class lockTable
         Me.ChackClassrooms.Size = New System.Drawing.Size(340, 169)
         Me.ChackClassrooms.TabIndex = 385
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Label4.Font = New System.Drawing.Font("Sylfaen", 20.0!)
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(37, 18)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(99, 35)
+        Me.Label4.TabIndex = 384
+        Me.Label4.Text = "ห้องเรียน"
+        '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
@@ -1766,22 +1778,11 @@ Partial Class lockTable
         '
         'Panel5
         '
+        Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.Panel5.Location = New System.Drawing.Point(398, 366)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(1335, 613)
         Me.Panel5.TabIndex = 390
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.Label4.Font = New System.Drawing.Font("Sylfaen", 20.0!)
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(37, 18)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(99, 35)
-        Me.Label4.TabIndex = 384
-        Me.Label4.Text = "ห้องเรียน"
         '
         'lockTable
         '
