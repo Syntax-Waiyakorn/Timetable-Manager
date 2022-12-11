@@ -13,7 +13,7 @@ Public Class lockTable
                 conn.Open()
             End If
             Dim cmd As New OleDb.OleDbCommand("Select ClassroomName from Classrooms", conn)
-            Dim cmd1 As New OleDb.OleDbCommand("Select SubjectName from Subjects where SubjectSpecial =@", conn)
+            Dim cmd1 As New OleDb.OleDbCommand("Select SubjectName from Subjects where SubjectSpecial =@SubjectSpecial", conn)
             cmd1.Parameters.Clear()
             cmd1.Parameters.AddWithValue("@SubjectSpecial", True)
             Dim cmd2 As New OleDb.OleDbCommand("Select YearNumber from Years", conn)
@@ -33,6 +33,11 @@ Public Class lockTable
             While dr.Read
                 ChackClassrooms.Items.Add(dr.GetString(0))
             End While
+            Dim cmd4 As New OleDb.OleDbCommand("Select DepartmentName from Departments", conn)
+            dr = cmd4.ExecuteReader
+            While dr.Read
+                cboSubjectDepartment.Items.Add(dr.GetString(0))
+            End While
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
@@ -40,7 +45,30 @@ Public Class lockTable
                 conn.Close()
             End If
         End Try
+        LoadGrid()
+        clear()
     End Sub
+
+    Sub cboteacherSubject()
+        Try
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
+            Dim cmd1 As New OleDb.OleDbCommand("Select SubjectName from Subjects where SubjectSpecial =@SubjectSpecial", conn)
+            cmd1.Parameters.Clear()
+            cmd1.Parameters.AddWithValue("@SubjectSpecial", True)
+            cboTeachersSubjects.Items.Clear()
+            dr = cmd1.ExecuteReader
+            While dr.Read
+                cboTeachersSubjects.Items.Add(dr.GetString(0))
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            conn.Close()
+        End Try
+    End Sub
+
     Sub status()
         If ChackClassrooms.SelectedIndex = -1 Then
             txtSearch.Enabled = False
@@ -191,90 +219,118 @@ Public Class lockTable
 
     End Sub
     Sub edit()
-        Try
-            If conn.State = ConnectionState.Closed Then
-                conn.Open()
-            End If
-            Dim Classroom As String = ChackClassrooms.Text
-            Dim TDay As String = lblCurrentDay.Tag
-            Dim TPeriod As String = lblCurrentPeriod.Tag
-            Dim cboText = cboTeachersSubjects.Text
-            Dim Separaters() = {" : "}
-            Dim cboTextSplit() As String = cboText.Split(Separaters, StringSplitOptions.RemoveEmptyEntries)
-            Dim TeacherFirstName = cboTextSplit(0)
-            Dim SubjectName = cboTextSplit(1)
-            Dim TimetableIndex As String = Classroom & "$$" & TDay & "$$" & TPeriod
-            Dim UserTeacherIndex As String = TeacherFirstName & "$$" & TDay & "$$" & TPeriod
-            Dim DayPeriodIndex As String = TDay & "$$" & TPeriod
-            Dim TeacherSubjectIndex As String = TeacherFirstName & "$$" & SubjectName
-            Dim TimetablePeriodID As String = "null"
-            Dim TeacherSubjectID As String = "null"
-            Dim TeacherIndex As String = "null"
-            Dim Occupied As Boolean = False
-            If cboText = "- : ว่าง" Then
-                Dim cmd1 As New OleDb.OleDbCommand("SELECT TimetablePeriodID FROM TimetablesQuery WHERE TimetableIndex = '" + TimetableIndex + "'", conn)
-                dr = cmd1.ExecuteReader
-                While dr.Read
-                    TimetablePeriodID = dr.Item("TimetablePeriodID")
-                End While
-                Dim cmd2 As New OleDb.OleDbCommand("SELECT TeacherSubjectID FROM TeachersSubjectsQuery WHERE TeacherSubjectIndex = '" + TeacherSubjectIndex + "'", conn)
-                dr = cmd2.ExecuteReader
-                While dr.Read
-                    TeacherSubjectID = dr.Item("TeacherSubjectID")
-                End While
-                Dim cmd3 As New OleDb.OleDbCommand("UPDATE TimetablesPeriods SET `TeacherSubjectID`=@TeacherSubjectID Where TimetablePeriodID=@TimetablePeriodID", conn)
-                cmd3.Parameters.Clear()
-                cmd3.Parameters.AddWithValue("@TeacherSubjectID", TeacherSubjectID)
-                cmd3.Parameters.AddWithValue("TimetablePeriodID", TimetablePeriodID)
-                If cmd3.ExecuteNonQuery > 0 Then
-                    MsgBox("แก้ไขแล้ว!", vbInformation)
-                Else
-                    MsgBox("ผิดพลาด", vbCritical)
-                End If
-                DisplayClassroomTable(Classroom)
-            Else
-                Dim cmd4 As New OleDb.OleDbCommand("SELECT TeacherIndex FROM TimetablesQuery WHERE DayPeriodIndex = '" + DayPeriodIndex + "' ", conn)
-                dr = cmd4.ExecuteReader
-                While dr.Read
-                    TeacherIndex = dr.Item("TeacherIndex")
-                    TeacherIndex.ToString()
-                    If TeacherIndex = UserTeacherIndex Then
-                        Occupied = True
-                    End If
-                End While
-                If Occupied = True Then
-                    MsgBox("มันซ้ำ ไปเปลี่ยน", vbInformation)
-                End If
-                If Occupied = False Then
-                    Dim cmd1 As New OleDb.OleDbCommand("SELECT TimetablePeriodID FROM TimetablesQuery WHERE TimetableIndex = '" + TimetableIndex + "'", conn)
-                    dr = cmd1.ExecuteReader
-                    While dr.Read
-                        TimetablePeriodID = dr.Item("TimetablePeriodID")
-                    End While
-                    Dim cmd2 As New OleDb.OleDbCommand("SELECT TeacherSubjectID FROM TeachersSubjectsQuery WHERE TeacherSubjectIndex = '" + TeacherSubjectIndex + "'", conn)
-                    dr = cmd2.ExecuteReader
-                    While dr.Read
-                        TeacherSubjectID = dr.Item("TeacherSubjectID")
-                    End While
-                    Dim cmd3 As New OleDb.OleDbCommand("UPDATE TimetablesPeriods SET `TeacherSubjectID`=@TeacherSubjectID Where TimetablePeriodID=@TimetablePeriodID", conn)
-                    cmd3.Parameters.Clear()
-                    cmd3.Parameters.AddWithValue("@TeacherSubjectID", TeacherSubjectID)
-                    cmd3.Parameters.AddWithValue("TimetablePeriodID", TimetablePeriodID)
-                    If cmd3.ExecuteNonQuery > 0 Then
-                        MsgBox("แก้ไขแล้ว!", vbInformation)
-                    Else
-                        MsgBox("ผิดพลาด", vbCritical)
-                    End If
-                    DisplayClassroomTable(Classroom)
-                End If
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        Finally
-            conn.Close()
-        End Try
+        Dim Testit As String = cboTeachersSubjects.SelectedItem
+        Console.WriteLine(Testit)
+        'Try
+        '    If conn.State = ConnectionState.Closed Then
+        '        conn.Open()
+        '    End If
+        '    Dim Classroom As String = ChackClassrooms.Text
+        '    Dim TDay As String = lblCurrentDay.Tag
+        '    Dim TPeriod As String = lblCurrentPeriod.Tag
+        '    Dim cboText = cboTeachersSubjects.Text
+        '    Dim Separaters() = {" : "}
+        '    Dim cboTextSplit() As String = cboText.Split(Separaters, StringSplitOptions.RemoveEmptyEntries)
+        '    Dim TeacherFirstName = cboTextSplit(0)
+        '    Dim SubjectName = cboTextSplit(1)
+        '    Dim TimetableIndex As String = Classroom & "$$" & TDay & "$$" & TPeriod
+        '    Dim UserTeacherIndex As String = TeacherFirstName & "$$" & TDay & "$$" & TPeriod
+        '    Dim DayPeriodIndex As String = TDay & "$$" & TPeriod
+        '    Dim TeacherSubjectIndex As String = TeacherFirstName & "$$" & SubjectName
+        '    Dim TimetablePeriodID As String = "null"
+        '    Dim TeacherSubjectID As String = "null"
+        '    Dim TeacherIndex As String = "null"
+        '    Dim Occupied As Boolean = False
+        '    If cboText = "- : ว่าง" Then
+        '        Dim cmd1 As New OleDb.OleDbCommand("SELECT TimetablePeriodID FROM TimetablesQuery WHERE TimetableIndex = '" + TimetableIndex + "'", conn)
+        '        dr = cmd1.ExecuteReader
+        '        While dr.Read
+        '            TimetablePeriodID = dr.Item("TimetablePeriodID")
+        '        End While
+        '        Dim cmd2 As New OleDb.OleDbCommand("SELECT TeacherSubjectID FROM TeachersSubjectsQuery WHERE TeacherSubjectIndex = '" + TeacherSubjectIndex + "'", conn)
+        '        dr = cmd2.ExecuteReader
+        '        While dr.Read
+        '            TeacherSubjectID = dr.Item("TeacherSubjectID")
+        '        End While
+        '        Dim cmd3 As New OleDb.OleDbCommand("UPDATE TimetablesPeriods SET `TeacherSubjectID`=@TeacherSubjectID Where TimetablePeriodID=@TimetablePeriodID", conn)
+        '        cmd3.Parameters.Clear()
+        '        cmd3.Parameters.AddWithValue("@TeacherSubjectID", TeacherSubjectID)
+        '        cmd3.Parameters.AddWithValue("TimetablePeriodID", TimetablePeriodID)
+        '        If cmd3.ExecuteNonQuery > 0 Then
+        '            MsgBox("แก้ไขแล้ว!", vbInformation)
+        '        Else
+        '            MsgBox("ผิดพลาด", vbCritical)
+        '        End If
+        '        DisplayClassroomTable(Classroom)
+        '    Else
+        '        Dim cmd4 As New OleDb.OleDbCommand("SELECT TeacherIndex FROM TimetablesQuery WHERE DayPeriodIndex = '" + DayPeriodIndex + "' ", conn)
+        '        dr = cmd4.ExecuteReader
+        '        While dr.Read
+        '            TeacherIndex = dr.Item("TeacherIndex")
+        '            TeacherIndex.ToString()
+        '            If TeacherIndex = UserTeacherIndex Then
+        '                Occupied = True
+        '            End If
+        '        End While
+        '        If Occupied = True Then
+        '            MsgBox("มันซ้ำ ไปเปลี่ยน", vbInformation)
+        '        End If
+        '        If Occupied = False Then
+        '            Dim cmd1 As New OleDb.OleDbCommand("SELECT TimetablePeriodID FROM TimetablesQuery WHERE TimetableIndex = '" + TimetableIndex + "'", conn)
+        '            dr = cmd1.ExecuteReader
+        '            While dr.Read
+        '                TimetablePeriodID = dr.Item("TimetablePeriodID")
+        '            End While
+        '            Dim cmd2 As New OleDb.OleDbCommand("SELECT TeacherSubjectID FROM TeachersSubjectsQuery WHERE TeacherSubjectIndex = '" + TeacherSubjectIndex + "'", conn)
+        '            dr = cmd2.ExecuteReader
+        '            While dr.Read
+        '                TeacherSubjectID = dr.Item("TeacherSubjectID")
+        '            End While
+        '            Dim cmd3 As New OleDb.OleDbCommand("UPDATE TimetablesPeriods SET `TeacherSubjectID`=@TeacherSubjectID Where TimetablePeriodID=@TimetablePeriodID", conn)
+        '            cmd3.Parameters.Clear()
+        '            cmd3.Parameters.AddWithValue("@TeacherSubjectID", TeacherSubjectID)
+        '            cmd3.Parameters.AddWithValue("TimetablePeriodID", TimetablePeriodID)
+        '            If cmd3.ExecuteNonQuery > 0 Then
+        '                MsgBox("แก้ไขแล้ว!", vbInformation)
+        '            Else
+        '                MsgBox("ผิดพลาด", vbCritical)
+        '            End If
+        '            DisplayClassroomTable(Classroom)
+        '        End If
+        '    End If
+        'Catch ex As Exception
+        '    MsgBox(ex.Message)
+        'Finally
+        '    conn.Close()
+        'End Try
     End Sub
 
+    Sub LoadGrid()
+        Try
+            DataGridView1.Rows.Clear()
+            conn.Open()
+            Dim cmd As New OleDb.OleDbCommand("Select  SubjectCode, SubjectName, SubjectDepartment, SubjectPlace from Subjects where SubjectSpecial =@SubjectSpecial ", conn)
+            cmd.Parameters.Clear()
+            cmd.Parameters.AddWithValue("@SubjectSpecial", True)
+            dr = cmd.ExecuteReader
+            While dr.Read
+                DataGridView1.Rows.Add(dr.Item("SubjectName"), dr.Item("SubjectCode"), dr.Item("SubjectDepartment"), dr.Item("SubjectPlace"))
+            End While
+            dr.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        conn.Close()
+    End Sub
+
+    Sub clear()
+        SubjectCodeBox.Clear()
+        SubjectNameBox.Clear()
+        SubjectPlaceBox.Clear()
+        cboSubjectDepartment.SelectedIndex = -1
+        SubjectPlacecheck.CheckState = False
+        SubjectPlaceBox.Clear()
+    End Sub
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         If ChackClassrooms.SelectedIndex = -1 Then
             MsgBox("เลือกห้องก่อน", vbYes, "เเจ้งเตือน")
@@ -326,6 +382,84 @@ Public Class lockTable
     End Sub
 
     Private Sub Label9_Click(sender As Object, e As EventArgs) Handles Label9.Click
+
+    End Sub
+
+    Private Sub SubjectPlacecheck_CheckedChanged(sender As Object, e As EventArgs) Handles SubjectPlacecheck.CheckedChanged
+        If SubjectPlacecheck.Checked = True Then
+            SubjectPlaceBox.Enabled = False
+            SubjectPlaceBox.Text = ("ห้องประจำ")
+        Else
+            SubjectPlaceBox.Enabled = True
+            SubjectPlaceBox.Clear()
+        End If
+    End Sub
+
+    Private Sub Save_Click(sender As Object, e As EventArgs) Handles Save.Click
+        Try
+            If MsgBox("คุณต้องการเพิ่มข้อมูลหรือไม่ ?", vbQuestion + vbYesNo, "เเจ้งเตือน") = vbYes Then
+                conn.Open()
+                Dim cmd As New OleDb.OleDbCommand("Insert into Subjects(`SubjectCode`,`SubjectName`,`SubjectDepartment`,`SubjectPlace`,`SubjectSpecial`,`SubjectQuota`) values(@SubjectCode,@SubjectName,@SubjectDepartment,@SubjectPlace,@SubjectSpecial,@SubjectQuota)", conn)
+                cmd.Parameters.Clear()
+                cmd.Parameters.AddWithValue("@SubjectCode", SubjectCodeBox.Text)
+                cmd.Parameters.AddWithValue("@SubjectName", SubjectNameBox.Text)
+                cmd.Parameters.AddWithValue("@SubjectDepartment", cboSubjectDepartment.Text)
+                cmd.Parameters.AddWithValue("@SubjectPlace", SubjectPlaceBox.Text)
+                cmd.Parameters.AddWithValue("@SubjectSpecial", True)
+                cmd.Parameters.AddWithValue("@SubjectQuota", 0)
+
+                i = cmd.ExecuteNonQuery
+                If i > 0 Then
+                    MsgBox("เพิ่มข้อมูลเเล้ว !", vbInformation)
+                Else
+                    MsgBox("ผิดพลาด", vbCritical)
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        conn.Close()
+        LoadGrid()
+        clear()
+        cboteacherSubject()
+    End Sub
+
+    Private Sub Delete_Click(sender As Object, e As EventArgs) Handles Delete.Click
+        Try
+            If MsgBox("คุณต้องการลบหรือไม่ ?", vbQuestion + vbYesNo, "เเจ้งเตือน") = vbYes Then
+                conn.Open()
+                Dim cmd As New OleDb.OleDbCommand("Delete from Subjects WHERE SubjectCode=@SubjectCode", conn)
+                cmd.Parameters.Clear()
+                cmd.Parameters.AddWithValue("@SubjectCode", SubjectCodeBox.Text)
+
+                i = cmd.ExecuteNonQuery
+                If i > 0 Then
+                    MsgBox("ลบสำเร็จ !", vbInformation)
+                Else
+                    MsgBox("ผิดพลาด", vbCritical)
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            conn.Close()
+        End Try
+        LoadGrid()
+        clear()
+        cboteacherSubject()
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+        SubjectNameBox.Text = DataGridView1.CurrentRow.Cells(0).Value
+        SubjectCodeBox.Text = DataGridView1.CurrentRow.Cells(1).Value
+        cboSubjectDepartment.Text = DataGridView1.CurrentRow.Cells(2).Value
+        If DataGridView1.CurrentRow.Cells(3).Value = "ห้องประจำ" Then
+            SubjectPlacecheck.Checked = True
+            SubjectPlaceBox.Enabled = False
+        Else
+            SubjectPlacecheck.Checked = False
+            SubjectPlaceBox.Text = DataGridView1.CurrentRow.Cells(3).Value
+        End If
 
     End Sub
 End Class

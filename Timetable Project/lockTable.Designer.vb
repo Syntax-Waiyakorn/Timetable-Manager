@@ -22,6 +22,11 @@ Partial Class lockTable
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.lblTeachers = New System.Windows.Forms.Label()
         Me.lblD5P11 = New System.Windows.Forms.Label()
         Me.lblD5P10 = New System.Windows.Forms.Label()
@@ -80,7 +85,6 @@ Partial Class lockTable
         Me.lblD1P2 = New System.Windows.Forms.Label()
         Me.lblD1P1 = New System.Windows.Forms.Label()
         Me.lblTime11 = New System.Windows.Forms.Label()
-        Me.lblTime10 = New System.Windows.Forms.Label()
         Me.lbl10 = New System.Windows.Forms.Label()
         Me.lblTime9 = New System.Windows.Forms.Label()
         Me.lbl9 = New System.Windows.Forms.Label()
@@ -121,13 +125,13 @@ Partial Class lockTable
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.ChackClassrooms = New System.Windows.Forms.CheckedListBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Delete = New System.Windows.Forms.Button()
+        Me.cboSubjectDepartment = New System.Windows.Forms.ComboBox()
         Me.Save = New System.Windows.Forms.Button()
         Me.SubjectPlacecheck = New System.Windows.Forms.CheckBox()
         Me.SubjectPlaceBox = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.KumsaraBox = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.SubjectCodeBox = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -135,12 +139,19 @@ Partial Class lockTable
         Me.SubjectNameBox = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.lblTime10 = New System.Windows.Forms.Label()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblTeachers
@@ -162,9 +173,9 @@ Partial Class lockTable
         Me.lblD5P11.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD5P11.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD5P11.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD5P11.Location = New System.Drawing.Point(1605, 737)
+        Me.lblD5P11.Location = New System.Drawing.Point(1606, 775)
         Me.lblD5P11.Name = "lblD5P11"
-        Me.lblD5P11.Size = New System.Drawing.Size(110, 80)
+        Me.lblD5P11.Size = New System.Drawing.Size(100, 80)
         Me.lblD5P11.TabIndex = 358
         Me.lblD5P11.Text = "ว่าง"
         Me.lblD5P11.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -176,9 +187,9 @@ Partial Class lockTable
         Me.lblD5P10.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD5P10.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD5P10.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD5P10.Location = New System.Drawing.Point(1489, 827)
+        Me.lblD5P10.Location = New System.Drawing.Point(1501, 865)
         Me.lblD5P10.Name = "lblD5P10"
-        Me.lblD5P10.Size = New System.Drawing.Size(110, 80)
+        Me.lblD5P10.Size = New System.Drawing.Size(100, 80)
         Me.lblD5P10.TabIndex = 357
         Me.lblD5P10.Text = "ว่าง"
         Me.lblD5P10.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -190,9 +201,9 @@ Partial Class lockTable
         Me.lblD5P9.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD5P9.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD5P9.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD5P9.Location = New System.Drawing.Point(1373, 827)
+        Me.lblD5P9.Location = New System.Drawing.Point(1395, 866)
         Me.lblD5P9.Name = "lblD5P9"
-        Me.lblD5P9.Size = New System.Drawing.Size(110, 80)
+        Me.lblD5P9.Size = New System.Drawing.Size(100, 80)
         Me.lblD5P9.TabIndex = 356
         Me.lblD5P9.Text = "ว่าง"
         Me.lblD5P9.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -204,9 +215,9 @@ Partial Class lockTable
         Me.lblD5P8.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD5P8.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD5P8.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD5P8.Location = New System.Drawing.Point(1257, 827)
+        Me.lblD5P8.Location = New System.Drawing.Point(1288, 865)
         Me.lblD5P8.Name = "lblD5P8"
-        Me.lblD5P8.Size = New System.Drawing.Size(110, 80)
+        Me.lblD5P8.Size = New System.Drawing.Size(100, 80)
         Me.lblD5P8.TabIndex = 355
         Me.lblD5P8.Text = "ว่าง"
         Me.lblD5P8.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -218,9 +229,9 @@ Partial Class lockTable
         Me.lblD5P7.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD5P7.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD5P7.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD5P7.Location = New System.Drawing.Point(1141, 827)
+        Me.lblD5P7.Location = New System.Drawing.Point(1182, 865)
         Me.lblD5P7.Name = "lblD5P7"
-        Me.lblD5P7.Size = New System.Drawing.Size(110, 80)
+        Me.lblD5P7.Size = New System.Drawing.Size(100, 80)
         Me.lblD5P7.TabIndex = 354
         Me.lblD5P7.Text = "ว่าง"
         Me.lblD5P7.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -232,9 +243,9 @@ Partial Class lockTable
         Me.lblD5P6.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD5P6.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD5P6.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD5P6.Location = New System.Drawing.Point(1025, 827)
+        Me.lblD5P6.Location = New System.Drawing.Point(1076, 865)
         Me.lblD5P6.Name = "lblD5P6"
-        Me.lblD5P6.Size = New System.Drawing.Size(110, 80)
+        Me.lblD5P6.Size = New System.Drawing.Size(100, 80)
         Me.lblD5P6.TabIndex = 353
         Me.lblD5P6.Text = "ว่าง"
         Me.lblD5P6.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -246,9 +257,9 @@ Partial Class lockTable
         Me.lblD5P5.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD5P5.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD5P5.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD5P5.Location = New System.Drawing.Point(909, 827)
+        Me.lblD5P5.Location = New System.Drawing.Point(971, 865)
         Me.lblD5P5.Name = "lblD5P5"
-        Me.lblD5P5.Size = New System.Drawing.Size(110, 80)
+        Me.lblD5P5.Size = New System.Drawing.Size(100, 80)
         Me.lblD5P5.TabIndex = 352
         Me.lblD5P5.Text = "ว่าง"
         Me.lblD5P5.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -259,9 +270,9 @@ Partial Class lockTable
         Me.lbl11.Font = New System.Drawing.Font("Sylfaen", 18.0!)
         Me.lbl11.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lbl11.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lbl11.Location = New System.Drawing.Point(1606, 359)
+        Me.lbl11.Location = New System.Drawing.Point(1607, 373)
         Me.lbl11.Name = "lbl11"
-        Me.lbl11.Size = New System.Drawing.Size(110, 50)
+        Me.lbl11.Size = New System.Drawing.Size(100, 50)
         Me.lbl11.TabIndex = 300
         Me.lbl11.Text = "0"
         Me.lbl11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -273,9 +284,9 @@ Partial Class lockTable
         Me.lblD5P4.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD5P4.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD5P4.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD5P4.Location = New System.Drawing.Point(793, 827)
+        Me.lblD5P4.Location = New System.Drawing.Point(865, 865)
         Me.lblD5P4.Name = "lblD5P4"
-        Me.lblD5P4.Size = New System.Drawing.Size(110, 80)
+        Me.lblD5P4.Size = New System.Drawing.Size(100, 80)
         Me.lblD5P4.TabIndex = 351
         Me.lblD5P4.Text = "ว่าง"
         Me.lblD5P4.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -287,9 +298,9 @@ Partial Class lockTable
         Me.lblD5P3.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD5P3.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD5P3.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD5P3.Location = New System.Drawing.Point(677, 827)
+        Me.lblD5P3.Location = New System.Drawing.Point(759, 865)
         Me.lblD5P3.Name = "lblD5P3"
-        Me.lblD5P3.Size = New System.Drawing.Size(110, 80)
+        Me.lblD5P3.Size = New System.Drawing.Size(100, 80)
         Me.lblD5P3.TabIndex = 350
         Me.lblD5P3.Text = "ว่าง"
         Me.lblD5P3.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -301,9 +312,9 @@ Partial Class lockTable
         Me.lblD5P2.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD5P2.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD5P2.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD5P2.Location = New System.Drawing.Point(561, 827)
+        Me.lblD5P2.Location = New System.Drawing.Point(652, 865)
         Me.lblD5P2.Name = "lblD5P2"
-        Me.lblD5P2.Size = New System.Drawing.Size(110, 80)
+        Me.lblD5P2.Size = New System.Drawing.Size(100, 80)
         Me.lblD5P2.TabIndex = 349
         Me.lblD5P2.Text = "ว่าง"
         Me.lblD5P2.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -315,9 +326,9 @@ Partial Class lockTable
         Me.lblD5P1.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD5P1.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD5P1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD5P1.Location = New System.Drawing.Point(444, 827)
+        Me.lblD5P1.Location = New System.Drawing.Point(545, 865)
         Me.lblD5P1.Name = "lblD5P1"
-        Me.lblD5P1.Size = New System.Drawing.Size(110, 80)
+        Me.lblD5P1.Size = New System.Drawing.Size(100, 80)
         Me.lblD5P1.TabIndex = 348
         Me.lblD5P1.Text = "ว่าง"
         Me.lblD5P1.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -329,9 +340,9 @@ Partial Class lockTable
         Me.lblD4P11.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD4P11.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD4P11.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD4P11.Location = New System.Drawing.Point(1606, 646)
+        Me.lblD4P11.Location = New System.Drawing.Point(1607, 684)
         Me.lblD4P11.Name = "lblD4P11"
-        Me.lblD4P11.Size = New System.Drawing.Size(110, 80)
+        Me.lblD4P11.Size = New System.Drawing.Size(100, 80)
         Me.lblD4P11.TabIndex = 347
         Me.lblD4P11.Text = "ว่าง"
         Me.lblD4P11.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -343,9 +354,9 @@ Partial Class lockTable
         Me.lblD4P10.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD4P10.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD4P10.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD4P10.Location = New System.Drawing.Point(1489, 737)
+        Me.lblD4P10.Location = New System.Drawing.Point(1501, 775)
         Me.lblD4P10.Name = "lblD4P10"
-        Me.lblD4P10.Size = New System.Drawing.Size(110, 80)
+        Me.lblD4P10.Size = New System.Drawing.Size(100, 80)
         Me.lblD4P10.TabIndex = 346
         Me.lblD4P10.Text = "ว่าง"
         Me.lblD4P10.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -357,9 +368,9 @@ Partial Class lockTable
         Me.lblD4P9.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD4P9.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD4P9.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD4P9.Location = New System.Drawing.Point(1373, 737)
+        Me.lblD4P9.Location = New System.Drawing.Point(1395, 776)
         Me.lblD4P9.Name = "lblD4P9"
-        Me.lblD4P9.Size = New System.Drawing.Size(110, 80)
+        Me.lblD4P9.Size = New System.Drawing.Size(100, 80)
         Me.lblD4P9.TabIndex = 345
         Me.lblD4P9.Text = "ว่าง"
         Me.lblD4P9.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -371,9 +382,9 @@ Partial Class lockTable
         Me.lblD4P8.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD4P8.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD4P8.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD4P8.Location = New System.Drawing.Point(1257, 737)
+        Me.lblD4P8.Location = New System.Drawing.Point(1288, 775)
         Me.lblD4P8.Name = "lblD4P8"
-        Me.lblD4P8.Size = New System.Drawing.Size(110, 80)
+        Me.lblD4P8.Size = New System.Drawing.Size(100, 80)
         Me.lblD4P8.TabIndex = 344
         Me.lblD4P8.Text = "ว่าง"
         Me.lblD4P8.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -385,9 +396,9 @@ Partial Class lockTable
         Me.lblD4P7.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD4P7.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD4P7.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD4P7.Location = New System.Drawing.Point(1141, 737)
+        Me.lblD4P7.Location = New System.Drawing.Point(1182, 775)
         Me.lblD4P7.Name = "lblD4P7"
-        Me.lblD4P7.Size = New System.Drawing.Size(110, 80)
+        Me.lblD4P7.Size = New System.Drawing.Size(100, 80)
         Me.lblD4P7.TabIndex = 343
         Me.lblD4P7.Text = "ว่าง"
         Me.lblD4P7.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -399,9 +410,9 @@ Partial Class lockTable
         Me.lblD4P6.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD4P6.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD4P6.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD4P6.Location = New System.Drawing.Point(1025, 737)
+        Me.lblD4P6.Location = New System.Drawing.Point(1076, 775)
         Me.lblD4P6.Name = "lblD4P6"
-        Me.lblD4P6.Size = New System.Drawing.Size(110, 80)
+        Me.lblD4P6.Size = New System.Drawing.Size(100, 80)
         Me.lblD4P6.TabIndex = 342
         Me.lblD4P6.Text = "ว่าง"
         Me.lblD4P6.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -413,9 +424,9 @@ Partial Class lockTable
         Me.lblD4P5.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD4P5.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD4P5.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD4P5.Location = New System.Drawing.Point(909, 737)
+        Me.lblD4P5.Location = New System.Drawing.Point(971, 775)
         Me.lblD4P5.Name = "lblD4P5"
-        Me.lblD4P5.Size = New System.Drawing.Size(110, 80)
+        Me.lblD4P5.Size = New System.Drawing.Size(100, 80)
         Me.lblD4P5.TabIndex = 341
         Me.lblD4P5.Text = "ว่าง"
         Me.lblD4P5.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -427,9 +438,9 @@ Partial Class lockTable
         Me.lblD4P4.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD4P4.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD4P4.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD4P4.Location = New System.Drawing.Point(793, 737)
+        Me.lblD4P4.Location = New System.Drawing.Point(865, 775)
         Me.lblD4P4.Name = "lblD4P4"
-        Me.lblD4P4.Size = New System.Drawing.Size(110, 80)
+        Me.lblD4P4.Size = New System.Drawing.Size(100, 80)
         Me.lblD4P4.TabIndex = 340
         Me.lblD4P4.Text = "ว่าง"
         Me.lblD4P4.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -441,9 +452,9 @@ Partial Class lockTable
         Me.lblD4P3.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD4P3.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD4P3.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD4P3.Location = New System.Drawing.Point(677, 737)
+        Me.lblD4P3.Location = New System.Drawing.Point(759, 775)
         Me.lblD4P3.Name = "lblD4P3"
-        Me.lblD4P3.Size = New System.Drawing.Size(110, 80)
+        Me.lblD4P3.Size = New System.Drawing.Size(100, 80)
         Me.lblD4P3.TabIndex = 339
         Me.lblD4P3.Text = "ว่าง"
         Me.lblD4P3.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -455,9 +466,9 @@ Partial Class lockTable
         Me.lblD4P2.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD4P2.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD4P2.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD4P2.Location = New System.Drawing.Point(561, 737)
+        Me.lblD4P2.Location = New System.Drawing.Point(652, 775)
         Me.lblD4P2.Name = "lblD4P2"
-        Me.lblD4P2.Size = New System.Drawing.Size(110, 80)
+        Me.lblD4P2.Size = New System.Drawing.Size(100, 80)
         Me.lblD4P2.TabIndex = 338
         Me.lblD4P2.Text = "ว่าง"
         Me.lblD4P2.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -469,9 +480,9 @@ Partial Class lockTable
         Me.lblD4P1.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD4P1.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD4P1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD4P1.Location = New System.Drawing.Point(445, 737)
+        Me.lblD4P1.Location = New System.Drawing.Point(546, 775)
         Me.lblD4P1.Name = "lblD4P1"
-        Me.lblD4P1.Size = New System.Drawing.Size(110, 80)
+        Me.lblD4P1.Size = New System.Drawing.Size(100, 80)
         Me.lblD4P1.TabIndex = 337
         Me.lblD4P1.Text = "ว่าง"
         Me.lblD4P1.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -483,9 +494,9 @@ Partial Class lockTable
         Me.lblD3P11.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD3P11.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD3P11.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD3P11.Location = New System.Drawing.Point(1606, 555)
+        Me.lblD3P11.Location = New System.Drawing.Point(1607, 593)
         Me.lblD3P11.Name = "lblD3P11"
-        Me.lblD3P11.Size = New System.Drawing.Size(110, 80)
+        Me.lblD3P11.Size = New System.Drawing.Size(100, 80)
         Me.lblD3P11.TabIndex = 336
         Me.lblD3P11.Text = "ว่าง"
         Me.lblD3P11.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -497,9 +508,9 @@ Partial Class lockTable
         Me.lblD3P10.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD3P10.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD3P10.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD3P10.Location = New System.Drawing.Point(1490, 646)
+        Me.lblD3P10.Location = New System.Drawing.Point(1502, 684)
         Me.lblD3P10.Name = "lblD3P10"
-        Me.lblD3P10.Size = New System.Drawing.Size(110, 80)
+        Me.lblD3P10.Size = New System.Drawing.Size(100, 80)
         Me.lblD3P10.TabIndex = 335
         Me.lblD3P10.Text = "ว่าง"
         Me.lblD3P10.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -511,9 +522,9 @@ Partial Class lockTable
         Me.lblD3P9.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD3P9.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD3P9.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD3P9.Location = New System.Drawing.Point(1374, 646)
+        Me.lblD3P9.Location = New System.Drawing.Point(1396, 685)
         Me.lblD3P9.Name = "lblD3P9"
-        Me.lblD3P9.Size = New System.Drawing.Size(110, 80)
+        Me.lblD3P9.Size = New System.Drawing.Size(100, 80)
         Me.lblD3P9.TabIndex = 334
         Me.lblD3P9.Text = "ว่าง"
         Me.lblD3P9.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -525,9 +536,9 @@ Partial Class lockTable
         Me.lblD3P8.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD3P8.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD3P8.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD3P8.Location = New System.Drawing.Point(1258, 646)
+        Me.lblD3P8.Location = New System.Drawing.Point(1289, 684)
         Me.lblD3P8.Name = "lblD3P8"
-        Me.lblD3P8.Size = New System.Drawing.Size(110, 80)
+        Me.lblD3P8.Size = New System.Drawing.Size(100, 80)
         Me.lblD3P8.TabIndex = 333
         Me.lblD3P8.Text = "ว่าง"
         Me.lblD3P8.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -539,9 +550,9 @@ Partial Class lockTable
         Me.lblD3P7.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD3P7.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD3P7.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD3P7.Location = New System.Drawing.Point(1142, 646)
+        Me.lblD3P7.Location = New System.Drawing.Point(1183, 684)
         Me.lblD3P7.Name = "lblD3P7"
-        Me.lblD3P7.Size = New System.Drawing.Size(110, 80)
+        Me.lblD3P7.Size = New System.Drawing.Size(100, 80)
         Me.lblD3P7.TabIndex = 332
         Me.lblD3P7.Text = "ว่าง"
         Me.lblD3P7.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -553,9 +564,9 @@ Partial Class lockTable
         Me.lblD3P6.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD3P6.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD3P6.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD3P6.Location = New System.Drawing.Point(1026, 646)
+        Me.lblD3P6.Location = New System.Drawing.Point(1077, 684)
         Me.lblD3P6.Name = "lblD3P6"
-        Me.lblD3P6.Size = New System.Drawing.Size(110, 80)
+        Me.lblD3P6.Size = New System.Drawing.Size(100, 80)
         Me.lblD3P6.TabIndex = 331
         Me.lblD3P6.Text = "ว่าง"
         Me.lblD3P6.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -567,9 +578,9 @@ Partial Class lockTable
         Me.lblD3P5.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD3P5.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD3P5.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD3P5.Location = New System.Drawing.Point(910, 646)
+        Me.lblD3P5.Location = New System.Drawing.Point(972, 684)
         Me.lblD3P5.Name = "lblD3P5"
-        Me.lblD3P5.Size = New System.Drawing.Size(110, 80)
+        Me.lblD3P5.Size = New System.Drawing.Size(100, 80)
         Me.lblD3P5.TabIndex = 330
         Me.lblD3P5.Text = "ว่าง"
         Me.lblD3P5.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -581,9 +592,9 @@ Partial Class lockTable
         Me.lblD3P4.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD3P4.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD3P4.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD3P4.Location = New System.Drawing.Point(794, 646)
+        Me.lblD3P4.Location = New System.Drawing.Point(866, 684)
         Me.lblD3P4.Name = "lblD3P4"
-        Me.lblD3P4.Size = New System.Drawing.Size(110, 80)
+        Me.lblD3P4.Size = New System.Drawing.Size(100, 80)
         Me.lblD3P4.TabIndex = 329
         Me.lblD3P4.Text = "ว่าง"
         Me.lblD3P4.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -595,9 +606,9 @@ Partial Class lockTable
         Me.lblD3P3.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD3P3.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD3P3.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD3P3.Location = New System.Drawing.Point(678, 646)
+        Me.lblD3P3.Location = New System.Drawing.Point(760, 684)
         Me.lblD3P3.Name = "lblD3P3"
-        Me.lblD3P3.Size = New System.Drawing.Size(110, 80)
+        Me.lblD3P3.Size = New System.Drawing.Size(100, 80)
         Me.lblD3P3.TabIndex = 328
         Me.lblD3P3.Text = "ว่าง"
         Me.lblD3P3.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -609,9 +620,9 @@ Partial Class lockTable
         Me.lblD3P2.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD3P2.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD3P2.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD3P2.Location = New System.Drawing.Point(562, 646)
+        Me.lblD3P2.Location = New System.Drawing.Point(653, 684)
         Me.lblD3P2.Name = "lblD3P2"
-        Me.lblD3P2.Size = New System.Drawing.Size(110, 80)
+        Me.lblD3P2.Size = New System.Drawing.Size(100, 80)
         Me.lblD3P2.TabIndex = 327
         Me.lblD3P2.Text = "ว่าง"
         Me.lblD3P2.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -623,9 +634,9 @@ Partial Class lockTable
         Me.lblD3P1.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD3P1.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD3P1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD3P1.Location = New System.Drawing.Point(446, 646)
+        Me.lblD3P1.Location = New System.Drawing.Point(547, 684)
         Me.lblD3P1.Name = "lblD3P1"
-        Me.lblD3P1.Size = New System.Drawing.Size(110, 80)
+        Me.lblD3P1.Size = New System.Drawing.Size(100, 80)
         Me.lblD3P1.TabIndex = 326
         Me.lblD3P1.Text = "ว่าง"
         Me.lblD3P1.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -637,9 +648,9 @@ Partial Class lockTable
         Me.lblD2P11.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD2P11.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD2P11.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD2P11.Location = New System.Drawing.Point(1606, 465)
+        Me.lblD2P11.Location = New System.Drawing.Point(1607, 503)
         Me.lblD2P11.Name = "lblD2P11"
-        Me.lblD2P11.Size = New System.Drawing.Size(110, 80)
+        Me.lblD2P11.Size = New System.Drawing.Size(100, 80)
         Me.lblD2P11.TabIndex = 325
         Me.lblD2P11.Text = "ว่าง"
         Me.lblD2P11.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -651,9 +662,9 @@ Partial Class lockTable
         Me.lblD2P10.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD2P10.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD2P10.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD2P10.Location = New System.Drawing.Point(1490, 555)
+        Me.lblD2P10.Location = New System.Drawing.Point(1502, 593)
         Me.lblD2P10.Name = "lblD2P10"
-        Me.lblD2P10.Size = New System.Drawing.Size(110, 80)
+        Me.lblD2P10.Size = New System.Drawing.Size(100, 80)
         Me.lblD2P10.TabIndex = 324
         Me.lblD2P10.Text = "ว่าง"
         Me.lblD2P10.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -665,9 +676,9 @@ Partial Class lockTable
         Me.lblD2P9.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD2P9.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD2P9.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD2P9.Location = New System.Drawing.Point(1374, 555)
+        Me.lblD2P9.Location = New System.Drawing.Point(1396, 594)
         Me.lblD2P9.Name = "lblD2P9"
-        Me.lblD2P9.Size = New System.Drawing.Size(110, 80)
+        Me.lblD2P9.Size = New System.Drawing.Size(100, 80)
         Me.lblD2P9.TabIndex = 323
         Me.lblD2P9.Text = "ว่าง"
         Me.lblD2P9.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -679,9 +690,9 @@ Partial Class lockTable
         Me.lblD2P8.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD2P8.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD2P8.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD2P8.Location = New System.Drawing.Point(1258, 555)
+        Me.lblD2P8.Location = New System.Drawing.Point(1289, 593)
         Me.lblD2P8.Name = "lblD2P8"
-        Me.lblD2P8.Size = New System.Drawing.Size(110, 80)
+        Me.lblD2P8.Size = New System.Drawing.Size(100, 80)
         Me.lblD2P8.TabIndex = 322
         Me.lblD2P8.Text = "ว่าง"
         Me.lblD2P8.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -693,9 +704,9 @@ Partial Class lockTable
         Me.lblD2P7.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD2P7.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD2P7.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD2P7.Location = New System.Drawing.Point(1142, 555)
+        Me.lblD2P7.Location = New System.Drawing.Point(1183, 593)
         Me.lblD2P7.Name = "lblD2P7"
-        Me.lblD2P7.Size = New System.Drawing.Size(110, 80)
+        Me.lblD2P7.Size = New System.Drawing.Size(100, 80)
         Me.lblD2P7.TabIndex = 321
         Me.lblD2P7.Text = "ว่าง"
         Me.lblD2P7.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -707,9 +718,9 @@ Partial Class lockTable
         Me.lblD2P6.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD2P6.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD2P6.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD2P6.Location = New System.Drawing.Point(1026, 555)
+        Me.lblD2P6.Location = New System.Drawing.Point(1077, 593)
         Me.lblD2P6.Name = "lblD2P6"
-        Me.lblD2P6.Size = New System.Drawing.Size(110, 80)
+        Me.lblD2P6.Size = New System.Drawing.Size(100, 80)
         Me.lblD2P6.TabIndex = 320
         Me.lblD2P6.Text = "ว่าง"
         Me.lblD2P6.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -721,9 +732,9 @@ Partial Class lockTable
         Me.lblD2P5.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD2P5.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD2P5.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD2P5.Location = New System.Drawing.Point(910, 555)
+        Me.lblD2P5.Location = New System.Drawing.Point(972, 593)
         Me.lblD2P5.Name = "lblD2P5"
-        Me.lblD2P5.Size = New System.Drawing.Size(110, 80)
+        Me.lblD2P5.Size = New System.Drawing.Size(100, 80)
         Me.lblD2P5.TabIndex = 319
         Me.lblD2P5.Text = "ว่าง"
         Me.lblD2P5.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -735,9 +746,9 @@ Partial Class lockTable
         Me.lblD2P4.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD2P4.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD2P4.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD2P4.Location = New System.Drawing.Point(794, 555)
+        Me.lblD2P4.Location = New System.Drawing.Point(866, 593)
         Me.lblD2P4.Name = "lblD2P4"
-        Me.lblD2P4.Size = New System.Drawing.Size(110, 80)
+        Me.lblD2P4.Size = New System.Drawing.Size(100, 80)
         Me.lblD2P4.TabIndex = 318
         Me.lblD2P4.Text = "ว่าง"
         Me.lblD2P4.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -749,9 +760,9 @@ Partial Class lockTable
         Me.lblD2P3.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD2P3.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD2P3.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD2P3.Location = New System.Drawing.Point(678, 555)
+        Me.lblD2P3.Location = New System.Drawing.Point(760, 593)
         Me.lblD2P3.Name = "lblD2P3"
-        Me.lblD2P3.Size = New System.Drawing.Size(110, 80)
+        Me.lblD2P3.Size = New System.Drawing.Size(100, 80)
         Me.lblD2P3.TabIndex = 317
         Me.lblD2P3.Text = "ว่าง"
         Me.lblD2P3.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -763,9 +774,9 @@ Partial Class lockTable
         Me.lblD2P2.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD2P2.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD2P2.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD2P2.Location = New System.Drawing.Point(562, 555)
+        Me.lblD2P2.Location = New System.Drawing.Point(653, 593)
         Me.lblD2P2.Name = "lblD2P2"
-        Me.lblD2P2.Size = New System.Drawing.Size(110, 80)
+        Me.lblD2P2.Size = New System.Drawing.Size(100, 80)
         Me.lblD2P2.TabIndex = 316
         Me.lblD2P2.Text = "ว่าง"
         Me.lblD2P2.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -777,9 +788,9 @@ Partial Class lockTable
         Me.lblD2P1.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD2P1.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD2P1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD2P1.Location = New System.Drawing.Point(446, 555)
+        Me.lblD2P1.Location = New System.Drawing.Point(547, 593)
         Me.lblD2P1.Name = "lblD2P1"
-        Me.lblD2P1.Size = New System.Drawing.Size(110, 80)
+        Me.lblD2P1.Size = New System.Drawing.Size(100, 80)
         Me.lblD2P1.TabIndex = 315
         Me.lblD2P1.Text = "ว่าง"
         Me.lblD2P1.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -791,9 +802,9 @@ Partial Class lockTable
         Me.lblD1P11.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD1P11.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD1P11.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD1P11.Location = New System.Drawing.Point(1605, 827)
+        Me.lblD1P11.Location = New System.Drawing.Point(1606, 865)
         Me.lblD1P11.Name = "lblD1P11"
-        Me.lblD1P11.Size = New System.Drawing.Size(110, 80)
+        Me.lblD1P11.Size = New System.Drawing.Size(100, 80)
         Me.lblD1P11.TabIndex = 314
         Me.lblD1P11.Text = "ว่าง"
         Me.lblD1P11.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -805,9 +816,9 @@ Partial Class lockTable
         Me.lblD1P10.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD1P10.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD1P10.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD1P10.Location = New System.Drawing.Point(1490, 465)
+        Me.lblD1P10.Location = New System.Drawing.Point(1502, 503)
         Me.lblD1P10.Name = "lblD1P10"
-        Me.lblD1P10.Size = New System.Drawing.Size(110, 80)
+        Me.lblD1P10.Size = New System.Drawing.Size(100, 80)
         Me.lblD1P10.TabIndex = 313
         Me.lblD1P10.Text = "ว่าง"
         Me.lblD1P10.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -819,9 +830,9 @@ Partial Class lockTable
         Me.lblD1P9.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD1P9.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD1P9.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD1P9.Location = New System.Drawing.Point(1374, 465)
+        Me.lblD1P9.Location = New System.Drawing.Point(1396, 504)
         Me.lblD1P9.Name = "lblD1P9"
-        Me.lblD1P9.Size = New System.Drawing.Size(110, 80)
+        Me.lblD1P9.Size = New System.Drawing.Size(100, 80)
         Me.lblD1P9.TabIndex = 312
         Me.lblD1P9.Text = "ว่าง"
         Me.lblD1P9.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -833,9 +844,9 @@ Partial Class lockTable
         Me.lblD1P8.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD1P8.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD1P8.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD1P8.Location = New System.Drawing.Point(1258, 465)
+        Me.lblD1P8.Location = New System.Drawing.Point(1289, 503)
         Me.lblD1P8.Name = "lblD1P8"
-        Me.lblD1P8.Size = New System.Drawing.Size(110, 80)
+        Me.lblD1P8.Size = New System.Drawing.Size(100, 80)
         Me.lblD1P8.TabIndex = 311
         Me.lblD1P8.Text = "ว่าง"
         Me.lblD1P8.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -847,9 +858,9 @@ Partial Class lockTable
         Me.lblD1P7.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD1P7.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD1P7.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD1P7.Location = New System.Drawing.Point(1142, 465)
+        Me.lblD1P7.Location = New System.Drawing.Point(1183, 503)
         Me.lblD1P7.Name = "lblD1P7"
-        Me.lblD1P7.Size = New System.Drawing.Size(110, 80)
+        Me.lblD1P7.Size = New System.Drawing.Size(100, 80)
         Me.lblD1P7.TabIndex = 310
         Me.lblD1P7.Text = "ว่าง"
         Me.lblD1P7.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -861,9 +872,9 @@ Partial Class lockTable
         Me.lblD1P6.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD1P6.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD1P6.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD1P6.Location = New System.Drawing.Point(1026, 465)
+        Me.lblD1P6.Location = New System.Drawing.Point(1077, 503)
         Me.lblD1P6.Name = "lblD1P6"
-        Me.lblD1P6.Size = New System.Drawing.Size(110, 80)
+        Me.lblD1P6.Size = New System.Drawing.Size(100, 80)
         Me.lblD1P6.TabIndex = 309
         Me.lblD1P6.Text = "ว่าง"
         Me.lblD1P6.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -875,9 +886,9 @@ Partial Class lockTable
         Me.lblD1P5.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD1P5.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD1P5.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD1P5.Location = New System.Drawing.Point(910, 465)
+        Me.lblD1P5.Location = New System.Drawing.Point(972, 503)
         Me.lblD1P5.Name = "lblD1P5"
-        Me.lblD1P5.Size = New System.Drawing.Size(110, 80)
+        Me.lblD1P5.Size = New System.Drawing.Size(100, 80)
         Me.lblD1P5.TabIndex = 308
         Me.lblD1P5.Text = "ว่าง"
         Me.lblD1P5.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -889,9 +900,9 @@ Partial Class lockTable
         Me.lblD1P4.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD1P4.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD1P4.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD1P4.Location = New System.Drawing.Point(794, 465)
+        Me.lblD1P4.Location = New System.Drawing.Point(866, 503)
         Me.lblD1P4.Name = "lblD1P4"
-        Me.lblD1P4.Size = New System.Drawing.Size(110, 80)
+        Me.lblD1P4.Size = New System.Drawing.Size(100, 80)
         Me.lblD1P4.TabIndex = 307
         Me.lblD1P4.Text = "ว่าง"
         Me.lblD1P4.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -903,9 +914,9 @@ Partial Class lockTable
         Me.lblD1P3.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD1P3.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD1P3.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD1P3.Location = New System.Drawing.Point(678, 465)
+        Me.lblD1P3.Location = New System.Drawing.Point(760, 503)
         Me.lblD1P3.Name = "lblD1P3"
-        Me.lblD1P3.Size = New System.Drawing.Size(110, 80)
+        Me.lblD1P3.Size = New System.Drawing.Size(100, 80)
         Me.lblD1P3.TabIndex = 306
         Me.lblD1P3.Text = "ว่าง"
         Me.lblD1P3.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -917,9 +928,9 @@ Partial Class lockTable
         Me.lblD1P2.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD1P2.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD1P2.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD1P2.Location = New System.Drawing.Point(562, 465)
+        Me.lblD1P2.Location = New System.Drawing.Point(653, 503)
         Me.lblD1P2.Name = "lblD1P2"
-        Me.lblD1P2.Size = New System.Drawing.Size(110, 80)
+        Me.lblD1P2.Size = New System.Drawing.Size(100, 80)
         Me.lblD1P2.TabIndex = 305
         Me.lblD1P2.Text = "ว่าง"
         Me.lblD1P2.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -931,9 +942,9 @@ Partial Class lockTable
         Me.lblD1P1.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD1P1.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD1P1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD1P1.Location = New System.Drawing.Point(446, 465)
+        Me.lblD1P1.Location = New System.Drawing.Point(547, 503)
         Me.lblD1P1.Name = "lblD1P1"
-        Me.lblD1P1.Size = New System.Drawing.Size(110, 80)
+        Me.lblD1P1.Size = New System.Drawing.Size(100, 80)
         Me.lblD1P1.TabIndex = 299
         Me.lblD1P1.Text = "ว่าง"
         Me.lblD1P1.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -941,28 +952,15 @@ Partial Class lockTable
         'lblTime11
         '
         Me.lblTime11.BackColor = System.Drawing.Color.Black
-        Me.lblTime11.Font = New System.Drawing.Font("Sylfaen", 14.0!)
+        Me.lblTime11.Font = New System.Drawing.Font("Sylfaen", 12.0!)
         Me.lblTime11.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblTime11.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblTime11.Location = New System.Drawing.Point(1606, 409)
+        Me.lblTime11.Location = New System.Drawing.Point(1607, 423)
         Me.lblTime11.Name = "lblTime11"
-        Me.lblTime11.Size = New System.Drawing.Size(110, 50)
+        Me.lblTime11.Size = New System.Drawing.Size(100, 50)
         Me.lblTime11.TabIndex = 301
         Me.lblTime11.Text = "00:00-00:00"
         Me.lblTime11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'lblTime10
-        '
-        Me.lblTime10.BackColor = System.Drawing.Color.Black
-        Me.lblTime10.Font = New System.Drawing.Font("Sylfaen", 14.0!)
-        Me.lblTime10.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.lblTime10.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblTime10.Location = New System.Drawing.Point(1490, 409)
-        Me.lblTime10.Name = "lblTime10"
-        Me.lblTime10.Size = New System.Drawing.Size(110, 50)
-        Me.lblTime10.TabIndex = 298
-        Me.lblTime10.Text = "00:00-00:00"
-        Me.lblTime10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lbl10
         '
@@ -970,9 +968,9 @@ Partial Class lockTable
         Me.lbl10.Font = New System.Drawing.Font("Sylfaen", 18.0!)
         Me.lbl10.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lbl10.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lbl10.Location = New System.Drawing.Point(1490, 359)
+        Me.lbl10.Location = New System.Drawing.Point(1501, 373)
         Me.lbl10.Name = "lbl10"
-        Me.lbl10.Size = New System.Drawing.Size(110, 50)
+        Me.lbl10.Size = New System.Drawing.Size(100, 53)
         Me.lbl10.TabIndex = 297
         Me.lbl10.Text = "0"
         Me.lbl10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -980,12 +978,12 @@ Partial Class lockTable
         'lblTime9
         '
         Me.lblTime9.BackColor = System.Drawing.Color.Black
-        Me.lblTime9.Font = New System.Drawing.Font("Sylfaen", 14.0!)
+        Me.lblTime9.Font = New System.Drawing.Font("Sylfaen", 12.0!)
         Me.lblTime9.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblTime9.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblTime9.Location = New System.Drawing.Point(1374, 409)
+        Me.lblTime9.Location = New System.Drawing.Point(1395, 424)
         Me.lblTime9.Name = "lblTime9"
-        Me.lblTime9.Size = New System.Drawing.Size(110, 50)
+        Me.lblTime9.Size = New System.Drawing.Size(100, 50)
         Me.lblTime9.TabIndex = 296
         Me.lblTime9.Text = "00:00-00:00"
         Me.lblTime9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -996,9 +994,9 @@ Partial Class lockTable
         Me.lbl9.Font = New System.Drawing.Font("Sylfaen", 18.0!)
         Me.lbl9.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lbl9.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lbl9.Location = New System.Drawing.Point(1374, 359)
+        Me.lbl9.Location = New System.Drawing.Point(1395, 374)
         Me.lbl9.Name = "lbl9"
-        Me.lbl9.Size = New System.Drawing.Size(110, 50)
+        Me.lbl9.Size = New System.Drawing.Size(100, 50)
         Me.lbl9.TabIndex = 295
         Me.lbl9.Text = "0"
         Me.lbl9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1006,12 +1004,12 @@ Partial Class lockTable
         'lblTime8
         '
         Me.lblTime8.BackColor = System.Drawing.Color.Black
-        Me.lblTime8.Font = New System.Drawing.Font("Sylfaen", 14.0!)
+        Me.lblTime8.Font = New System.Drawing.Font("Sylfaen", 12.0!)
         Me.lblTime8.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblTime8.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblTime8.Location = New System.Drawing.Point(1258, 409)
+        Me.lblTime8.Location = New System.Drawing.Point(1289, 423)
         Me.lblTime8.Name = "lblTime8"
-        Me.lblTime8.Size = New System.Drawing.Size(110, 50)
+        Me.lblTime8.Size = New System.Drawing.Size(100, 50)
         Me.lblTime8.TabIndex = 294
         Me.lblTime8.Text = "00:00-00:00"
         Me.lblTime8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1022,9 +1020,9 @@ Partial Class lockTable
         Me.lbl8.Font = New System.Drawing.Font("Sylfaen", 18.0!)
         Me.lbl8.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lbl8.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lbl8.Location = New System.Drawing.Point(1258, 359)
+        Me.lbl8.Location = New System.Drawing.Point(1289, 373)
         Me.lbl8.Name = "lbl8"
-        Me.lbl8.Size = New System.Drawing.Size(110, 50)
+        Me.lbl8.Size = New System.Drawing.Size(100, 50)
         Me.lbl8.TabIndex = 293
         Me.lbl8.Text = "0"
         Me.lbl8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1032,12 +1030,12 @@ Partial Class lockTable
         'lblTime7
         '
         Me.lblTime7.BackColor = System.Drawing.Color.Black
-        Me.lblTime7.Font = New System.Drawing.Font("Sylfaen", 14.0!)
+        Me.lblTime7.Font = New System.Drawing.Font("Sylfaen", 12.0!)
         Me.lblTime7.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblTime7.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblTime7.Location = New System.Drawing.Point(1142, 409)
+        Me.lblTime7.Location = New System.Drawing.Point(1183, 423)
         Me.lblTime7.Name = "lblTime7"
-        Me.lblTime7.Size = New System.Drawing.Size(110, 50)
+        Me.lblTime7.Size = New System.Drawing.Size(100, 50)
         Me.lblTime7.TabIndex = 292
         Me.lblTime7.Text = "00:00-00:00"
         Me.lblTime7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1048,9 +1046,9 @@ Partial Class lockTable
         Me.lbl7.Font = New System.Drawing.Font("Sylfaen", 18.0!)
         Me.lbl7.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lbl7.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lbl7.Location = New System.Drawing.Point(1142, 359)
+        Me.lbl7.Location = New System.Drawing.Point(1183, 373)
         Me.lbl7.Name = "lbl7"
-        Me.lbl7.Size = New System.Drawing.Size(110, 50)
+        Me.lbl7.Size = New System.Drawing.Size(100, 50)
         Me.lbl7.TabIndex = 291
         Me.lbl7.Text = "0"
         Me.lbl7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1058,12 +1056,12 @@ Partial Class lockTable
         'lblTime6
         '
         Me.lblTime6.BackColor = System.Drawing.Color.Black
-        Me.lblTime6.Font = New System.Drawing.Font("Sylfaen", 14.0!)
+        Me.lblTime6.Font = New System.Drawing.Font("Sylfaen", 12.0!)
         Me.lblTime6.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblTime6.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblTime6.Location = New System.Drawing.Point(1026, 409)
+        Me.lblTime6.Location = New System.Drawing.Point(1077, 423)
         Me.lblTime6.Name = "lblTime6"
-        Me.lblTime6.Size = New System.Drawing.Size(110, 50)
+        Me.lblTime6.Size = New System.Drawing.Size(100, 50)
         Me.lblTime6.TabIndex = 290
         Me.lblTime6.Text = "00:00-00:00"
         Me.lblTime6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1074,9 +1072,9 @@ Partial Class lockTable
         Me.lbl6.Font = New System.Drawing.Font("Sylfaen", 18.0!)
         Me.lbl6.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lbl6.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lbl6.Location = New System.Drawing.Point(1026, 359)
+        Me.lbl6.Location = New System.Drawing.Point(1077, 373)
         Me.lbl6.Name = "lbl6"
-        Me.lbl6.Size = New System.Drawing.Size(110, 50)
+        Me.lbl6.Size = New System.Drawing.Size(100, 50)
         Me.lbl6.TabIndex = 289
         Me.lbl6.Text = "0"
         Me.lbl6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1084,12 +1082,12 @@ Partial Class lockTable
         'lblTime5
         '
         Me.lblTime5.BackColor = System.Drawing.Color.Black
-        Me.lblTime5.Font = New System.Drawing.Font("Sylfaen", 14.0!)
+        Me.lblTime5.Font = New System.Drawing.Font("Sylfaen", 12.0!)
         Me.lblTime5.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblTime5.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblTime5.Location = New System.Drawing.Point(910, 409)
+        Me.lblTime5.Location = New System.Drawing.Point(971, 423)
         Me.lblTime5.Name = "lblTime5"
-        Me.lblTime5.Size = New System.Drawing.Size(110, 50)
+        Me.lblTime5.Size = New System.Drawing.Size(100, 50)
         Me.lblTime5.TabIndex = 288
         Me.lblTime5.Text = "00:00-00:00"
         Me.lblTime5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1100,9 +1098,9 @@ Partial Class lockTable
         Me.lbl5.Font = New System.Drawing.Font("Sylfaen", 18.0!)
         Me.lbl5.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lbl5.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lbl5.Location = New System.Drawing.Point(910, 359)
+        Me.lbl5.Location = New System.Drawing.Point(971, 373)
         Me.lbl5.Name = "lbl5"
-        Me.lbl5.Size = New System.Drawing.Size(110, 50)
+        Me.lbl5.Size = New System.Drawing.Size(100, 50)
         Me.lbl5.TabIndex = 287
         Me.lbl5.Text = "0"
         Me.lbl5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1110,12 +1108,12 @@ Partial Class lockTable
         'lblTime4
         '
         Me.lblTime4.BackColor = System.Drawing.Color.Black
-        Me.lblTime4.Font = New System.Drawing.Font("Sylfaen", 14.0!)
+        Me.lblTime4.Font = New System.Drawing.Font("Sylfaen", 12.0!)
         Me.lblTime4.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblTime4.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblTime4.Location = New System.Drawing.Point(794, 409)
+        Me.lblTime4.Location = New System.Drawing.Point(865, 423)
         Me.lblTime4.Name = "lblTime4"
-        Me.lblTime4.Size = New System.Drawing.Size(110, 50)
+        Me.lblTime4.Size = New System.Drawing.Size(100, 50)
         Me.lblTime4.TabIndex = 286
         Me.lblTime4.Text = "00:00-00:00"
         Me.lblTime4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1126,9 +1124,9 @@ Partial Class lockTable
         Me.lbl4.Font = New System.Drawing.Font("Sylfaen", 18.0!)
         Me.lbl4.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lbl4.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lbl4.Location = New System.Drawing.Point(794, 359)
+        Me.lbl4.Location = New System.Drawing.Point(865, 373)
         Me.lbl4.Name = "lbl4"
-        Me.lbl4.Size = New System.Drawing.Size(110, 50)
+        Me.lbl4.Size = New System.Drawing.Size(100, 50)
         Me.lbl4.TabIndex = 285
         Me.lbl4.Text = "0"
         Me.lbl4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1136,12 +1134,12 @@ Partial Class lockTable
         'lblTime3
         '
         Me.lblTime3.BackColor = System.Drawing.Color.Black
-        Me.lblTime3.Font = New System.Drawing.Font("Sylfaen", 14.0!)
+        Me.lblTime3.Font = New System.Drawing.Font("Sylfaen", 12.0!)
         Me.lblTime3.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblTime3.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblTime3.Location = New System.Drawing.Point(678, 409)
+        Me.lblTime3.Location = New System.Drawing.Point(759, 423)
         Me.lblTime3.Name = "lblTime3"
-        Me.lblTime3.Size = New System.Drawing.Size(110, 50)
+        Me.lblTime3.Size = New System.Drawing.Size(100, 50)
         Me.lblTime3.TabIndex = 284
         Me.lblTime3.Text = "00:00-00:00"
         Me.lblTime3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1152,9 +1150,9 @@ Partial Class lockTable
         Me.lbl3.Font = New System.Drawing.Font("Sylfaen", 18.0!)
         Me.lbl3.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lbl3.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lbl3.Location = New System.Drawing.Point(678, 359)
+        Me.lbl3.Location = New System.Drawing.Point(759, 373)
         Me.lbl3.Name = "lbl3"
-        Me.lbl3.Size = New System.Drawing.Size(110, 50)
+        Me.lbl3.Size = New System.Drawing.Size(100, 50)
         Me.lbl3.TabIndex = 283
         Me.lbl3.Text = "0"
         Me.lbl3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1162,12 +1160,12 @@ Partial Class lockTable
         'lblTime2
         '
         Me.lblTime2.BackColor = System.Drawing.Color.Black
-        Me.lblTime2.Font = New System.Drawing.Font("Sylfaen", 14.0!)
+        Me.lblTime2.Font = New System.Drawing.Font("Sylfaen", 12.0!)
         Me.lblTime2.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblTime2.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblTime2.Location = New System.Drawing.Point(562, 409)
+        Me.lblTime2.Location = New System.Drawing.Point(653, 423)
         Me.lblTime2.Name = "lblTime2"
-        Me.lblTime2.Size = New System.Drawing.Size(110, 50)
+        Me.lblTime2.Size = New System.Drawing.Size(100, 50)
         Me.lblTime2.TabIndex = 282
         Me.lblTime2.Text = "00:00-00:00"
         Me.lblTime2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1178,9 +1176,9 @@ Partial Class lockTable
         Me.lbl2.Font = New System.Drawing.Font("Sylfaen", 18.0!)
         Me.lbl2.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lbl2.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lbl2.Location = New System.Drawing.Point(562, 359)
+        Me.lbl2.Location = New System.Drawing.Point(653, 373)
         Me.lbl2.Name = "lbl2"
-        Me.lbl2.Size = New System.Drawing.Size(110, 50)
+        Me.lbl2.Size = New System.Drawing.Size(100, 50)
         Me.lbl2.TabIndex = 281
         Me.lbl2.Text = "0"
         Me.lbl2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1188,12 +1186,12 @@ Partial Class lockTable
         'lblTime1
         '
         Me.lblTime1.BackColor = System.Drawing.Color.Black
-        Me.lblTime1.Font = New System.Drawing.Font("Sylfaen", 14.0!)
+        Me.lblTime1.Font = New System.Drawing.Font("Sylfaen", 12.0!)
         Me.lblTime1.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblTime1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblTime1.Location = New System.Drawing.Point(446, 409)
+        Me.lblTime1.Location = New System.Drawing.Point(547, 423)
         Me.lblTime1.Name = "lblTime1"
-        Me.lblTime1.Size = New System.Drawing.Size(110, 50)
+        Me.lblTime1.Size = New System.Drawing.Size(100, 50)
         Me.lblTime1.TabIndex = 280
         Me.lblTime1.Text = "00:00-00:00"
         Me.lblTime1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1204,9 +1202,9 @@ Partial Class lockTable
         Me.lbl1.Font = New System.Drawing.Font("Sylfaen", 18.0!)
         Me.lbl1.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lbl1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lbl1.Location = New System.Drawing.Point(446, 359)
+        Me.lbl1.Location = New System.Drawing.Point(547, 373)
         Me.lbl1.Name = "lbl1"
-        Me.lbl1.Size = New System.Drawing.Size(110, 50)
+        Me.lbl1.Size = New System.Drawing.Size(100, 50)
         Me.lbl1.TabIndex = 279
         Me.lbl1.Text = "0"
         Me.lbl1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1214,12 +1212,12 @@ Partial Class lockTable
         'lblDay5
         '
         Me.lblDay5.BackColor = System.Drawing.Color.Black
-        Me.lblDay5.Font = New System.Drawing.Font("Sylfaen", 22.0!)
+        Me.lblDay5.Font = New System.Drawing.Font("Sylfaen", 20.0!)
         Me.lblDay5.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblDay5.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblDay5.Location = New System.Drawing.Point(285, 827)
+        Me.lblDay5.Location = New System.Drawing.Point(399, 865)
         Me.lblDay5.Name = "lblDay5"
-        Me.lblDay5.Size = New System.Drawing.Size(150, 80)
+        Me.lblDay5.Size = New System.Drawing.Size(140, 80)
         Me.lblDay5.TabIndex = 278
         Me.lblDay5.Text = "วัน"
         Me.lblDay5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -1227,12 +1225,12 @@ Partial Class lockTable
         'lblDay4
         '
         Me.lblDay4.BackColor = System.Drawing.Color.Black
-        Me.lblDay4.Font = New System.Drawing.Font("Sylfaen", 22.0!)
+        Me.lblDay4.Font = New System.Drawing.Font("Sylfaen", 20.0!)
         Me.lblDay4.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblDay4.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblDay4.Location = New System.Drawing.Point(286, 737)
+        Me.lblDay4.Location = New System.Drawing.Point(400, 775)
         Me.lblDay4.Name = "lblDay4"
-        Me.lblDay4.Size = New System.Drawing.Size(150, 80)
+        Me.lblDay4.Size = New System.Drawing.Size(140, 80)
         Me.lblDay4.TabIndex = 277
         Me.lblDay4.Text = "วัน"
         Me.lblDay4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -1240,12 +1238,12 @@ Partial Class lockTable
         'lblDay3
         '
         Me.lblDay3.BackColor = System.Drawing.Color.Black
-        Me.lblDay3.Font = New System.Drawing.Font("Sylfaen", 22.0!)
+        Me.lblDay3.Font = New System.Drawing.Font("Sylfaen", 20.0!)
         Me.lblDay3.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblDay3.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblDay3.Location = New System.Drawing.Point(287, 646)
+        Me.lblDay3.Location = New System.Drawing.Point(401, 684)
         Me.lblDay3.Name = "lblDay3"
-        Me.lblDay3.Size = New System.Drawing.Size(150, 80)
+        Me.lblDay3.Size = New System.Drawing.Size(140, 80)
         Me.lblDay3.TabIndex = 276
         Me.lblDay3.Text = "วัน"
         Me.lblDay3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -1253,12 +1251,12 @@ Partial Class lockTable
         'lblDay2
         '
         Me.lblDay2.BackColor = System.Drawing.Color.Black
-        Me.lblDay2.Font = New System.Drawing.Font("Sylfaen", 22.0!)
+        Me.lblDay2.Font = New System.Drawing.Font("Sylfaen", 20.0!)
         Me.lblDay2.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblDay2.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblDay2.Location = New System.Drawing.Point(286, 555)
+        Me.lblDay2.Location = New System.Drawing.Point(400, 593)
         Me.lblDay2.Name = "lblDay2"
-        Me.lblDay2.Size = New System.Drawing.Size(150, 80)
+        Me.lblDay2.Size = New System.Drawing.Size(140, 80)
         Me.lblDay2.TabIndex = 275
         Me.lblDay2.Text = "วัน"
         Me.lblDay2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -1266,12 +1264,12 @@ Partial Class lockTable
         'lblDay1
         '
         Me.lblDay1.BackColor = System.Drawing.Color.Black
-        Me.lblDay1.Font = New System.Drawing.Font("Sylfaen", 22.0!)
+        Me.lblDay1.Font = New System.Drawing.Font("Sylfaen", 20.0!)
         Me.lblDay1.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblDay1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblDay1.Location = New System.Drawing.Point(287, 465)
+        Me.lblDay1.Location = New System.Drawing.Point(401, 503)
         Me.lblDay1.Name = "lblDay1"
-        Me.lblDay1.Size = New System.Drawing.Size(150, 80)
+        Me.lblDay1.Size = New System.Drawing.Size(140, 80)
         Me.lblDay1.TabIndex = 274
         Me.lblDay1.Text = "วัน"
         Me.lblDay1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -1289,7 +1287,7 @@ Partial Class lockTable
         Me.Panel3.Controls.Add(Me.Label1)
         Me.Panel3.Controls.Add(Me.Connection)
         Me.Panel3.Controls.Add(Me.lblTeachers)
-        Me.Panel3.Location = New System.Drawing.Point(625, 52)
+        Me.Panel3.Location = New System.Drawing.Point(718, 52)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(649, 277)
         Me.Panel3.TabIndex = 367
@@ -1410,9 +1408,9 @@ Partial Class lockTable
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.Panel1.Controls.Add(Me.btnEdit)
-        Me.Panel1.Location = New System.Drawing.Point(1292, 52)
+        Me.Panel1.Location = New System.Drawing.Point(1373, 52)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(357, 277)
+        Me.Panel1.Size = New System.Drawing.Size(360, 277)
         Me.Panel1.TabIndex = 196
         '
         'btnEdit
@@ -1424,9 +1422,9 @@ Partial Class lockTable
         Me.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEdit.Font = New System.Drawing.Font("Arial", 25.0!)
         Me.btnEdit.ForeColor = System.Drawing.Color.White
-        Me.btnEdit.Location = New System.Drawing.Point(23, 22)
+        Me.btnEdit.Location = New System.Drawing.Point(22, 20)
         Me.btnEdit.Name = "btnEdit"
-        Me.btnEdit.Size = New System.Drawing.Size(322, 235)
+        Me.btnEdit.Size = New System.Drawing.Size(325, 235)
         Me.btnEdit.TabIndex = 383
         Me.btnEdit.Text = "แก้ไข"
         Me.btnEdit.UseVisualStyleBackColor = False
@@ -1445,9 +1443,9 @@ Partial Class lockTable
         Me.Panel4.Controls.Add(Me.Label5)
         Me.Panel4.Controls.Add(Me.ChackClassrooms)
         Me.Panel4.Controls.Add(Me.Label4)
-        Me.Panel4.Location = New System.Drawing.Point(12, 52)
+        Me.Panel4.Location = New System.Drawing.Point(16, 724)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(193, 277)
+        Me.Panel4.Size = New System.Drawing.Size(376, 255)
         Me.Panel4.TabIndex = 383
         '
         'Label5
@@ -1468,31 +1466,20 @@ Partial Class lockTable
         Me.ChackClassrooms.Cursor = System.Windows.Forms.Cursors.AppStarting
         Me.ChackClassrooms.ForeColor = System.Drawing.Color.Snow
         Me.ChackClassrooms.FormattingEnabled = True
-        Me.ChackClassrooms.Location = New System.Drawing.Point(12, 50)
+        Me.ChackClassrooms.Location = New System.Drawing.Point(20, 67)
         Me.ChackClassrooms.Name = "ChackClassrooms"
-        Me.ChackClassrooms.Size = New System.Drawing.Size(168, 214)
+        Me.ChackClassrooms.Size = New System.Drawing.Size(340, 169)
         Me.ChackClassrooms.TabIndex = 385
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.Label4.Font = New System.Drawing.Font("Sylfaen", 20.0!)
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(47, 6)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(99, 35)
-        Me.Label4.TabIndex = 384
-        Me.Label4.Text = "ห้องเรียน"
         '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.Delete)
+        Me.Panel2.Controls.Add(Me.cboSubjectDepartment)
         Me.Panel2.Controls.Add(Me.Save)
         Me.Panel2.Controls.Add(Me.SubjectPlacecheck)
         Me.Panel2.Controls.Add(Me.SubjectPlaceBox)
         Me.Panel2.Controls.Add(Me.Label11)
-        Me.Panel2.Controls.Add(Me.KumsaraBox)
         Me.Panel2.Controls.Add(Me.Label10)
         Me.Panel2.Controls.Add(Me.SubjectCodeBox)
         Me.Panel2.Controls.Add(Me.Label9)
@@ -1500,25 +1487,54 @@ Partial Class lockTable
         Me.Panel2.Controls.Add(Me.SubjectNameBox)
         Me.Panel2.Controls.Add(Me.Label6)
         Me.Panel2.Controls.Add(Me.Label7)
-        Me.Panel2.Location = New System.Drawing.Point(232, 52)
+        Me.Panel2.Location = New System.Drawing.Point(16, 366)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(376, 277)
+        Me.Panel2.Size = New System.Drawing.Size(376, 352)
         Me.Panel2.TabIndex = 388
+        '
+        'Delete
+        '
+        Me.Delete.BackColor = System.Drawing.Color.Black
+        Me.Delete.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Delete.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed
+        Me.Delete.FlatAppearance.BorderSize = 2
+        Me.Delete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Delete.Font = New System.Drawing.Font("Arial", 15.0!)
+        Me.Delete.ForeColor = System.Drawing.Color.White
+        Me.Delete.Location = New System.Drawing.Point(200, 270)
+        Me.Delete.Name = "Delete"
+        Me.Delete.Size = New System.Drawing.Size(163, 66)
+        Me.Delete.TabIndex = 398
+        Me.Delete.Text = "ลบ"
+        Me.Delete.UseVisualStyleBackColor = True
+        '
+        'cboSubjectDepartment
+        '
+        Me.cboSubjectDepartment.BackColor = System.Drawing.Color.Black
+        Me.cboSubjectDepartment.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
+        Me.cboSubjectDepartment.ForeColor = System.Drawing.Color.White
+        Me.cboSubjectDepartment.FormattingEnabled = True
+        Me.cboSubjectDepartment.Location = New System.Drawing.Point(113, 147)
+        Me.cboSubjectDepartment.Name = "cboSubjectDepartment"
+        Me.cboSubjectDepartment.Size = New System.Drawing.Size(250, 33)
+        Me.cboSubjectDepartment.TabIndex = 397
         '
         'Save
         '
         Me.Save.BackColor = System.Drawing.Color.Black
-        Me.Save.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed
+        Me.Save.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Save.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.Save.FlatAppearance.BorderSize = 2
         Me.Save.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Save.Font = New System.Drawing.Font("Arial", 15.0!)
-        Me.Save.ForeColor = System.Drawing.Color.White
-        Me.Save.Location = New System.Drawing.Point(13, 227)
+        Me.Save.ForeColor = System.Drawing.Color.FloralWhite
+        Me.Save.Location = New System.Drawing.Point(24, 270)
         Me.Save.Name = "Save"
-        Me.Save.Size = New System.Drawing.Size(123, 37)
+        Me.Save.Size = New System.Drawing.Size(163, 66)
         Me.Save.TabIndex = 384
-        Me.Save.Text = "เพิ่ม"
+        Me.Save.Text = "บันทึก"
         Me.Save.UseVisualStyleBackColor = False
         '
         'SubjectPlacecheck
@@ -1537,9 +1553,10 @@ Partial Class lockTable
         '
         Me.SubjectPlaceBox.BackColor = System.Drawing.SystemColors.InfoText
         Me.SubjectPlaceBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
-        Me.SubjectPlaceBox.Location = New System.Drawing.Point(142, 227)
+        Me.SubjectPlaceBox.ForeColor = System.Drawing.Color.White
+        Me.SubjectPlaceBox.Location = New System.Drawing.Point(113, 227)
         Me.SubjectPlaceBox.Name = "SubjectPlaceBox"
-        Me.SubjectPlaceBox.Size = New System.Drawing.Size(221, 30)
+        Me.SubjectPlaceBox.Size = New System.Drawing.Size(250, 30)
         Me.SubjectPlaceBox.TabIndex = 395
         '
         'Label11
@@ -1553,15 +1570,6 @@ Partial Class lockTable
         Me.Label11.Size = New System.Drawing.Size(129, 35)
         Me.Label11.TabIndex = 394
         Me.Label11.Text = "สถานที่เรียน"
-        '
-        'KumsaraBox
-        '
-        Me.KumsaraBox.BackColor = System.Drawing.SystemColors.InfoText
-        Me.KumsaraBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
-        Me.KumsaraBox.Location = New System.Drawing.Point(113, 149)
-        Me.KumsaraBox.Name = "KumsaraBox"
-        Me.KumsaraBox.Size = New System.Drawing.Size(250, 30)
-        Me.KumsaraBox.TabIndex = 393
         '
         'Label10
         '
@@ -1579,6 +1587,7 @@ Partial Class lockTable
         '
         Me.SubjectCodeBox.BackColor = System.Drawing.SystemColors.InfoText
         Me.SubjectCodeBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
+        Me.SubjectCodeBox.ForeColor = System.Drawing.Color.White
         Me.SubjectCodeBox.Location = New System.Drawing.Point(113, 100)
         Me.SubjectCodeBox.Name = "SubjectCodeBox"
         Me.SubjectCodeBox.Size = New System.Drawing.Size(250, 30)
@@ -1612,6 +1621,7 @@ Partial Class lockTable
         '
         Me.SubjectNameBox.BackColor = System.Drawing.SystemColors.InfoText
         Me.SubjectNameBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
+        Me.SubjectNameBox.ForeColor = System.Drawing.Color.White
         Me.SubjectNameBox.Location = New System.Drawing.Point(113, 56)
         Me.SubjectNameBox.Name = "SubjectNameBox"
         Me.SubjectNameBox.Size = New System.Drawing.Size(250, 30)
@@ -1634,19 +1644,144 @@ Partial Class lockTable
         Me.Label7.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.Label7.Font = New System.Drawing.Font("Sylfaen", 25.0!)
         Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(16, 0)
+        Me.Label7.Location = New System.Drawing.Point(24, 7)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(229, 44)
         Me.Label7.TabIndex = 384
         Me.Label7.Text = "เพิ่มรายวิชาพิเศษ"
         '
-        'DataGridView2
+        'lblTime10
         '
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Location = New System.Drawing.Point(12, 359)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.Size = New System.Drawing.Size(240, 548)
-        Me.DataGridView2.TabIndex = 390
+        Me.lblTime10.BackColor = System.Drawing.Color.Black
+        Me.lblTime10.Font = New System.Drawing.Font("Sylfaen", 12.0!)
+        Me.lblTime10.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.lblTime10.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.lblTime10.Location = New System.Drawing.Point(1501, 420)
+        Me.lblTime10.Name = "lblTime10"
+        Me.lblTime10.Size = New System.Drawing.Size(100, 56)
+        Me.lblTime10.TabIndex = 298
+        Me.lblTime10.Text = "00:00-00:00"
+        Me.lblTime10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.AllowUserToResizeColumns = False
+        Me.DataGridView1.AllowUserToResizeRows = False
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Arial Narrow", 13.0!)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(60, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.DataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
+        Me.DataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText
+        Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(60, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column4, Me.Column2, Me.Column3})
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Arial Narrow", 13.0!)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(60, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle3
+        Me.DataGridView1.EnableHeadersVisualStyles = False
+        Me.DataGridView1.GridColor = System.Drawing.Color.White
+        Me.DataGridView1.ImeMode = System.Windows.Forms.ImeMode.[On]
+        Me.DataGridView1.Location = New System.Drawing.Point(16, 52)
+        Me.DataGridView1.MultiSelect = False
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.DataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Arial Narrow", 13.0!)
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(60, Byte), Integer))
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        Me.DataGridView1.RowHeadersVisible = False
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Arial Narrow", 13.0!)
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(60, Byte), Integer))
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle5
+        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridView1.ShowCellErrors = False
+        Me.DataGridView1.ShowCellToolTips = False
+        Me.DataGridView1.ShowEditingIcon = False
+        Me.DataGridView1.ShowRowErrors = False
+        Me.DataGridView1.Size = New System.Drawing.Size(696, 277)
+        Me.DataGridView1.TabIndex = 389
+        '
+        'Column1
+        '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column1.HeaderText = "รหัสวิชา"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 91
+        '
+        'Column4
+        '
+        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column4.HeaderText = "ชื่อวิชา"
+        Me.Column4.MinimumWidth = 70
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column2.HeaderText = "กลุ่มสาระ"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.Width = 97
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "ห้อง"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        '
+        'Panel5
+        '
+        Me.Panel5.Location = New System.Drawing.Point(398, 366)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(1335, 613)
+        Me.Panel5.TabIndex = 390
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Label4.Font = New System.Drawing.Font("Sylfaen", 20.0!)
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(37, 18)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(99, 35)
+        Me.Label4.TabIndex = 384
+        Me.Label4.Text = "ห้องเรียน"
         '
         'lockTable
         '
@@ -1655,7 +1790,7 @@ Partial Class lockTable
         Me.BackColor = System.Drawing.Color.Black
         Me.BackgroundImage = Global.project.My.Resources.Resources.BGExtend
         Me.ClientSize = New System.Drawing.Size(1803, 1080)
-        Me.Controls.Add(Me.DataGridView2)
+        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.agent)
@@ -1743,6 +1878,7 @@ Partial Class lockTable
         Me.Controls.Add(Me.lblDay2)
         Me.Controls.Add(Me.lblDay1)
         Me.Controls.Add(Me.Panel3)
+        Me.Controls.Add(Me.Panel5)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "lockTable"
@@ -1754,7 +1890,7 @@ Partial Class lockTable
         Me.Panel4.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1817,7 +1953,6 @@ Partial Class lockTable
     Friend WithEvents lblD1P2 As Label
     Friend WithEvents lblD1P1 As Label
     Friend WithEvents lblTime11 As Label
-    Friend WithEvents lblTime10 As Label
     Friend WithEvents lbl10 As Label
     Friend WithEvents lblTime9 As Label
     Friend WithEvents lbl9 As Label
@@ -1857,7 +1992,6 @@ Partial Class lockTable
     Friend WithEvents btnEdit As Button
     Friend WithEvents Panel4 As Panel
     Friend WithEvents ChackClassrooms As CheckedListBox
-    Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label6 As Label
@@ -1866,11 +2000,19 @@ Partial Class lockTable
     Friend WithEvents SubjectCodeBox As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
-    Friend WithEvents KumsaraBox As TextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents Save As Button
     Friend WithEvents SubjectPlacecheck As CheckBox
     Friend WithEvents SubjectPlaceBox As TextBox
     Friend WithEvents Label11 As Label
-    Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents cboSubjectDepartment As ComboBox
+    Friend WithEvents lblTime10 As Label
+    Friend WithEvents Delete As Button
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents Label4 As Label
 End Class

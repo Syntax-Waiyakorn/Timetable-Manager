@@ -125,6 +125,7 @@ Partial Class StudentTimetables
         Me.btnPrint = New System.Windows.Forms.Button()
         Me.btnEdit = New System.Windows.Forms.Button()
         Me.agent = New System.Windows.Forms.Label()
+        Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -1521,6 +1522,13 @@ Partial Class StudentTimetables
         Me.agent.Size = New System.Drawing.Size(0, 13)
         Me.agent.TabIndex = 369
         '
+        'Panel5
+        '
+        Me.Panel5.Location = New System.Drawing.Point(12, 308)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(1637, 631)
+        Me.Panel5.TabIndex = 391
+        '
         'StudentTimetables
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1614,6 +1622,7 @@ Partial Class StudentTimetables
         Me.Controls.Add(Me.lblDay2)
         Me.Controls.Add(Me.lblDay1)
         Me.Controls.Add(Me.Panel3)
+        Me.Controls.Add(Me.Panel5)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "StudentTimetables"
@@ -1730,4 +1739,5 @@ Partial Class StudentTimetables
     Friend WithEvents txtSearch As TextBox
     Friend WithEvents btnPrint As Button
     Friend WithEvents btnEdit As Button
+    Friend WithEvents Panel5 As Panel
 End Class

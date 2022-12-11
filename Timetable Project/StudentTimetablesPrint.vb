@@ -88,11 +88,66 @@ Public Class StudentTimetablesPrint
         Return path
     End Function
     Private Sub CreateProductLabel(g As Graphics)
-        Dim cmd As New OleDb.OleDbCommand("SELECT Dayname FROM Days ", conn)
-        Dim cmd1 As New OleDb.OleDbCommand("Select PeriodNumber, PeriodName, PeriodTimeStart, PeriodTimeEnd from Periods WHERE ", conn)
-        Dim cmd2 As New OleDb.OleDbCommand("SELECT ClassroomCode, TeacherFirstName, SubjectCode FROM TimetablesQuery ", conn)
-        Dim cmd3 As New OleDb.OleDbCommand("SELECT ClassroomCode, TeacherFirstName, SubjectCode FROM TimetablesQuery ", conn)
-        Dim cmd4 As New OleDb.OleDbCommand("SELECT YearNumber FROM Years ", conn)
+        conn.Open()
+        Dim TableNumber As Integer = 0
+        Dim CurrentClassroom As String = "null"
+
+        Dim i As Integer = 0
+        Dim XCoord As Integer = 0
+        Dim YCoord As Integer = 0
+
+        Dim TimetableIndex As String = "null"
+        Dim TeacherFirstName As String = "null"
+        Dim SubjectCode As String = "null"
+        Dim ClassroomCode As String = "null"
+        Dim SubjectPlace As String = "null"
+
+        Dim DayAcronyms(6) As String
+        Dim PeriodNames(10) As String
+        Dim PeriodTimes(10) As String
+        Dim Year As String = "null"
+        Dim ClassroomNames(0) As String
+        Dim ClassroomCodes(0) As String
+
+        Dim cmdDay As New OleDb.OleDbCommand("SELECT DayAcronym FROM Days", conn)
+        dr = cmdDay.ExecuteReader
+        i = 0
+        While dr.Read
+            DayAcronyms(i) = dr.Item("DayAcronym")
+            i = i + 1
+        End While
+        dr.Close()
+
+        Dim cmdTime As New OleDb.OleDbCommand("SELECT PeriodNumber, PeriodName, PeriodTimeStart, PeriodTimeEnd FROM Periods", conn)
+        i = 0
+        dr = cmdTime.ExecuteReader
+        While dr.Read
+            PeriodNames(i) = dr.Item("PeriodName")
+            PeriodTimes(i) = dr.Item("PeriodTimeStart") & "-" & dr.Item("PeriodTimeEnd")
+            i = i + 1
+        End While
+        dr.Close()
+
+        Dim cmdYear As New OleDb.OleDbCommand("SELECT YearNumber FROM Years", conn)
+        dr = cmdYear.ExecuteReader
+        While dr.Read
+            Year = dr.Item("YearNumber")
+        End While
+        dr.Close()
+
+        Dim cmdClassrooms As New OleDb.OleDbCommand("SELECT ClassroomName, ClassroomCode FROM Classrooms", conn)
+        i = 0
+        dr = cmdClassrooms.ExecuteReader
+        While dr.Read
+            ClassroomNames(i) = dr.Item("ClassroomName")
+            ClassroomCodes(i) = dr.Item("ClassroomCode")
+            Array.Resize(ClassroomNames, i + 2)
+            Array.Resize(ClassroomCodes, i + 2)
+            i = i + 1
+        End While
+        Array.Resize(ClassroomNames, i)
+        Array.Resize(ClassroomCodes, i)
+
         Dim labelFont As New Font("Arial", 9, FontStyle.Regular)
         Dim textFont As New Font("Arial", 11, FontStyle.Regular)
         Dim headerFont As New Font("Arial", 30, FontStyle.Bold)
@@ -113,19 +168,19 @@ Public Class StudentTimetablesPrint
 
             g.DrawLine(penDimGray, New PointF(60, 100), New PointF(60, 410))
 
-            For XCoord As Integer = 130 To 820 Step +70
-                g.DrawLine(penDimGray, New PointF(XCoord, 130), New PointF(XCoord, 410))
+            For x As Integer = 130 To 820 Step +70
+                g.DrawLine(penDimGray, New PointF(x, 130), New PointF(x, 410))
             Next
 
-            For YCoord As Integer = 210 To 360 Step +50
-                g.DrawLine(penDimGray, New PointF(15, YCoord), New PointF(835, YCoord))
+            For y As Integer = 210 To 360 Step +50
+                g.DrawLine(penDimGray, New PointF(15, y), New PointF(835, y))
             Next
         End Using
 
         Using penBlack As Pen = New Pen(Color.Black, 7)
             Using fontArial9Bold As Font = New Font("Arial", 15, FontStyle.Bold)
                 Using brush As SolidBrush = New SolidBrush(Color.Black)
-                    Dim XCoord = 90
+                    XCoord = 90
                     For PeriodNumber As Integer = 0 To 10
                         g.DrawString(CStr(PeriodNumber), labelFont, brush, XCoord, 130)
                         XCoord = XCoord + 70
@@ -134,106 +189,64 @@ Public Class StudentTimetablesPrint
             End Using
         End Using
 
+        CurrentClassroom = ClassroomNames(TableNumber)
+
         Using font As Font = New Font("Arial", 11, FontStyle.Regular)
             Using brush As SolidBrush = New SolidBrush(Color.Black)
-                g.DrawString("ชั้น ม. *** ห้องประจำ *** ภาคเรียนที่ ******", font, brush, 300, 107)
+                g.DrawString("ชั้น ม." & CurrentClassroom & " ห้องประจำ " & ClassroomCodes(TableNumber) & " ภาคเรียนที่ " & Year, font, brush, 300, 107)
             End Using
         End Using
+
+        For Each item In ClassroomNames
+            Console.WriteLine(item)
+        Next
 
         Using font As Font = New Font("Arial", 7, FontStyle.Regular)
             Using brush As SolidBrush = New SolidBrush(Color.Black)
-                g.DrawString("07:30-08:20", font, brush, 70, 150)
-                g.DrawString("07:30-08:20", font, brush, 140, 150)
-                g.DrawString("07:30-08:20", font, brush, 210, 150)
-                g.DrawString("07:30-08:20", font, brush, 280, 150)
-                g.DrawString("07:30-08:20", font, brush, 350, 150)
-                g.DrawString("07:30-08:20", font, brush, 420, 150)
-                g.DrawString("07:30-08:20", font, brush, 490, 150)
-                g.DrawString("07:30-08:20", font, brush, 560, 150)
-                g.DrawString("07:30-08:20", font, brush, 630, 150)
-                g.DrawString("07:30-08:20", font, brush, 700, 150)
-                g.DrawString("07:30-08:20", font, brush, 770, 150)
+                i = 70
+                For index As Integer = 0 To 10
+                    g.DrawString(PeriodTimes(index), font, brush, i, 150)
+                    i = i + 70
+                Next
             End Using
         End Using
 
         Using font As Font = New Font("Arial", 11, FontStyle.Regular)
             Using brush As SolidBrush = New SolidBrush(Color.Black)
-                g.DrawString("จ.", font, brush, 15, 170)
-                g.DrawString("จ.", font, brush, 15, 220)
-                g.DrawString("จ.", font, brush, 15, 270)
-                g.DrawString("จ.", font, brush, 15, 320)
-                g.DrawString("จ.", font, brush, 15, 370)
+                i = 170
+                For index As Integer = 0 To 4
+                    g.DrawString(DayAcronyms(index), font, brush, 15, i)
+                    i = i + 50
+                Next
             End Using
         End Using
 
         Using font As Font = New Font("Arial", 9, FontStyle.Regular)
             Using brush As SolidBrush = New SolidBrush(Color.Black)
-                'Day 1
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 65, 165)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 135, 165)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 205, 165)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 275, 165)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 345, 165)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 415, 165)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 485, 165)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 555, 165)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 625, 165)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 695, 165)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 765, 165)
 
-                'Day 2
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 65, 215)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 135, 215)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 205, 215)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 275, 215)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 345, 215)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 415, 215)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 485, 215)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 555, 215)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 625, 215)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 695, 215)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 765, 215)
-
-
-                'Day 3
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 65, 265)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 135, 265)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 205, 265)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 275, 265)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 345, 265)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 415, 265)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 485, 265)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 555, 265)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 625, 265)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 695, 265)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 765, 265)
-
-                'Day 4
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 65, 315)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 135, 315)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 205, 315)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 275, 315)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 345, 315)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 415, 315)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 485, 315)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 555, 315)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 625, 315)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 695, 315)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 765, 315)
-
-
-                'Day 5
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 65, 365)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 135, 365)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 205, 365)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 275, 365)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 345, 365)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 415, 365)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 485, 365)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 555, 365)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 625, 365)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 695, 365)
-                g.DrawString("จ." & vbCrLf & "จ." & vbCrLf & "จ.", font, brush, 765, 365)
+                XCoord = 65
+                YCoord = 165
+                For Day As Integer = 1 To 5
+                    For Period As Integer = 1 To 11
+                        TimetableIndex = CurrentClassroom & "$$" & Day & "$$" & Period
+                        Console.WriteLine(TimetableIndex)
+                        Dim cmdPeriod As New OleDb.OleDbCommand("SELECT TeacherFirstName, SubjectCode, ClassroomCode, SubjectPlace FROM TimetablesQuery WHERE TimetableIndex = '" + TimetableIndex + "'", conn)
+                        dr = cmdPeriod.ExecuteReader
+                        While dr.Read
+                            TeacherFirstName = dr.Item("TeacherFirstName")
+                            SubjectCode = dr.Item("SubjectCode")
+                            ClassroomCode = dr.Item("ClassroomCode")
+                            SubjectPlace = dr.Item("SubjectPlace")
+                        End While
+                        If SubjectPlace = "ห้องประจำ" Then
+                            SubjectPlace = ClassroomCode
+                        End If
+                        g.DrawString(TeacherFirstName & vbCrLf & SubjectCode & vbCrLf & SubjectPlace, font, brush, XCoord, YCoord)
+                        XCoord = XCoord + 70
+                    Next
+                    XCoord = 65
+                    YCoord = YCoord + 50
+                Next
             End Using
         End Using
     End Sub

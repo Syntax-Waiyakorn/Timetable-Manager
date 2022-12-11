@@ -123,6 +123,7 @@ Partial Class TeachersTimetables
         Me.btnPrint = New System.Windows.Forms.Button()
         Me.agent = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -1190,9 +1191,9 @@ Partial Class TeachersTimetables
         Me.lblDay5.Font = New System.Drawing.Font("Sylfaen", 22.0!)
         Me.lblDay5.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblDay5.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblDay5.Location = New System.Drawing.Point(12, 842)
+        Me.lblDay5.Location = New System.Drawing.Point(33, 842)
         Me.lblDay5.Name = "lblDay5"
-        Me.lblDay5.Size = New System.Drawing.Size(174, 97)
+        Me.lblDay5.Size = New System.Drawing.Size(153, 97)
         Me.lblDay5.TabIndex = 278
         Me.lblDay5.Text = "วัน"
         Me.lblDay5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -1203,9 +1204,9 @@ Partial Class TeachersTimetables
         Me.lblDay4.Font = New System.Drawing.Font("Sylfaen", 22.0!)
         Me.lblDay4.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblDay4.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblDay4.Location = New System.Drawing.Point(13, 737)
+        Me.lblDay4.Location = New System.Drawing.Point(33, 737)
         Me.lblDay4.Name = "lblDay4"
-        Me.lblDay4.Size = New System.Drawing.Size(174, 97)
+        Me.lblDay4.Size = New System.Drawing.Size(154, 97)
         Me.lblDay4.TabIndex = 277
         Me.lblDay4.Text = "วัน"
         Me.lblDay4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -1216,9 +1217,9 @@ Partial Class TeachersTimetables
         Me.lblDay3.Font = New System.Drawing.Font("Sylfaen", 22.0!)
         Me.lblDay3.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblDay3.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblDay3.Location = New System.Drawing.Point(13, 632)
+        Me.lblDay3.Location = New System.Drawing.Point(26, 632)
         Me.lblDay3.Name = "lblDay3"
-        Me.lblDay3.Size = New System.Drawing.Size(174, 97)
+        Me.lblDay3.Size = New System.Drawing.Size(161, 97)
         Me.lblDay3.TabIndex = 276
         Me.lblDay3.Text = "วัน"
         Me.lblDay3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -1229,9 +1230,9 @@ Partial Class TeachersTimetables
         Me.lblDay2.Font = New System.Drawing.Font("Sylfaen", 22.0!)
         Me.lblDay2.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblDay2.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblDay2.Location = New System.Drawing.Point(16, 528)
+        Me.lblDay2.Location = New System.Drawing.Point(26, 528)
         Me.lblDay2.Name = "lblDay2"
-        Me.lblDay2.Size = New System.Drawing.Size(174, 97)
+        Me.lblDay2.Size = New System.Drawing.Size(164, 97)
         Me.lblDay2.TabIndex = 275
         Me.lblDay2.Text = "วัน"
         Me.lblDay2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -1242,9 +1243,9 @@ Partial Class TeachersTimetables
         Me.lblDay1.Font = New System.Drawing.Font("Sylfaen", 22.0!)
         Me.lblDay1.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblDay1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblDay1.Location = New System.Drawing.Point(13, 424)
+        Me.lblDay1.Location = New System.Drawing.Point(26, 424)
         Me.lblDay1.Name = "lblDay1"
-        Me.lblDay1.Size = New System.Drawing.Size(174, 97)
+        Me.lblDay1.Size = New System.Drawing.Size(161, 97)
         Me.lblDay1.TabIndex = 274
         Me.lblDay1.Text = "วัน"
         Me.lblDay1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -1458,6 +1459,13 @@ Partial Class TeachersTimetables
         Me.agent.Size = New System.Drawing.Size(0, 13)
         Me.agent.TabIndex = 369
         '
+        'Panel5
+        '
+        Me.Panel5.Location = New System.Drawing.Point(23, 300)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(1626, 639)
+        Me.Panel5.TabIndex = 391
+        '
         'TeachersTimetables
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1551,6 +1559,7 @@ Partial Class TeachersTimetables
         Me.Controls.Add(Me.lblDay2)
         Me.Controls.Add(Me.lblDay1)
         Me.Controls.Add(Me.Panel3)
+        Me.Controls.Add(Me.Panel5)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "TeachersTimetables"
@@ -1664,4 +1673,5 @@ Partial Class TeachersTimetables
     Friend WithEvents txtSearch As TextBox
     Friend WithEvents btnPrint As Button
     Friend WithEvents txtYear As Label
+    Friend WithEvents Panel5 As Panel
 End Class
