@@ -102,11 +102,11 @@ Partial Class TeachersTimetablesPrint
         Me.PrintPreviewControl1.AutoZoom = False
         Me.PrintPreviewControl1.BackColor = System.Drawing.Color.Black
         Me.PrintPreviewControl1.Document = Me.PrintTeachersTimetables
-        Me.PrintPreviewControl1.Location = New System.Drawing.Point(68, 156)
+        Me.PrintPreviewControl1.Location = New System.Drawing.Point(56, 146)
         Me.PrintPreviewControl1.Name = "PrintPreviewControl1"
-        Me.PrintPreviewControl1.Size = New System.Drawing.Size(981, 665)
+        Me.PrintPreviewControl1.Size = New System.Drawing.Size(1023, 665)
         Me.PrintPreviewControl1.TabIndex = 385
-        Me.PrintPreviewControl1.Zoom = 1.0R
+        Me.PrintPreviewControl1.Zoom = 1.2R
         '
         'TeachersTimetablesPrint
         '
