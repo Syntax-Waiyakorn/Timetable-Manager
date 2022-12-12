@@ -320,15 +320,9 @@ Public Class StudentTimetables
         End If
     End Sub
     Private Sub cboClassrooms_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboClassrooms.SelectedIndexChanged
-        Dim Timetables As Integer
-        conn.Open()
-        Dim cmd As New OleDb.OleDbCommand("Select ClassroomID from Classrooms where ClassroomName  = '" + cboClassrooms.Text + "'", conn)
+        Dim Timetables As String
+        Timetables = cboClassrooms.Text
 
-        dr = cmd.ExecuteReader
-        While dr.Read
-            Timetables = dr.Item("ClassroomID") - 1
-        End While
-        conn.Close()
 
         Try
             conn.Open()

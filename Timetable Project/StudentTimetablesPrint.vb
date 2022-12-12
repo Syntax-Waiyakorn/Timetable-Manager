@@ -89,19 +89,25 @@ Public Class StudentTimetablesPrint
         path.CloseFigure()
         Return path
     End Function
-
+    Dim ClassroomNames As String
+    Dim ClassroomCodes As String
     Private Sub CreateProductLabel(g As Graphics)
         If conn.State = ConnectionState.Closed Then
             conn.Open()
         End If
-        Dim TableNumbers As Integer
         Dim cmd As New OleDb.OleDbCommand("Select RoomID from Years", conn)
         dr = cmd.ExecuteReader
         While dr.Read
-            TableNumbers = dr.Item("RoomID")
+            ClassroomNames = dr.Item("RoomID")
         End While
 
-        Dim TableNumber As Integer = TableNumbers
+        Dim cmd1 As New OleDb.OleDbCommand("Select ClassroomCode from Classrooms where ClassroomName = '" + ClassroomNames + "'", conn)
+        dr = cmd1.ExecuteReader
+        While dr.Read
+            ClassroomCodes = dr.Item("ClassroomCode")
+
+        End While
+
         Dim CurrentClassroom As String = "null"
 
         Dim i As Integer = 0
@@ -117,8 +123,7 @@ Public Class StudentTimetablesPrint
         Dim PeriodNames(10) As String
         Dim PeriodTimes(10) As String
         Dim Year As String = "null"
-        Dim ClassroomNames(0) As String
-        Dim ClassroomCodes(0) As String
+
 
         Dim cmdDay As New OleDb.OleDbCommand("SELECT DayAcronym FROM Days", conn)
         dr = cmdDay.ExecuteReader
@@ -145,19 +150,6 @@ Public Class StudentTimetablesPrint
             Year = dr.Item("YearNumber")
         End While
         dr.Close()
-
-        Dim cmdClassrooms As New OleDb.OleDbCommand("SELECT ClassroomName, ClassroomCode FROM Classrooms", conn)
-        i = 0
-        dr = cmdClassrooms.ExecuteReader
-        While dr.Read
-            ClassroomNames(i) = dr.Item("ClassroomName")
-            ClassroomCodes(i) = dr.Item("ClassroomCode")
-            Array.Resize(ClassroomNames, i + 2)
-            Array.Resize(ClassroomCodes, i + 2)
-            i = i + 1
-        End While
-        Array.Resize(ClassroomNames, i)
-        Array.Resize(ClassroomCodes, i)
 
         Dim labelFont As New Font("Arial", 9, FontStyle.Regular)
         Dim textFont As New Font("Arial", 11, FontStyle.Regular)
@@ -201,16 +193,12 @@ Public Class StudentTimetablesPrint
         End Using
 
 
-        CurrentClassroom = ClassroomNames(TableNumber)
-
         Using font As Font = New Font("Arial", 11, FontStyle.Regular)
             Using brush As SolidBrush = New SolidBrush(Color.Black)
-                g.DrawString("ชั้น ม." & CurrentClassroom & " ห้องประจำ " & ClassroomCodes(TableNumber) & " ภาคเรียนที่ " & Year, font, brush, 300, 107)
+                g.DrawString("ชั้น ม." & ClassroomNames & " ห้องประจำ " & ClassroomCodes & " ภาคเรียนที่ " & Year, font, brush, 300, 107)
             End Using
         End Using
 
-        For Each item In ClassroomNames
-        Next
 
         Using font As Font = New Font("Arial", 7, FontStyle.Regular)
             Using brush As SolidBrush = New SolidBrush(Color.Black)
@@ -244,7 +232,7 @@ Public Class StudentTimetablesPrint
                         If conn.State = ConnectionState.Closed Then
                             conn.Open()
                         End If
-                        TimetableIndex = CurrentClassroom & "$$" & Day & "$$" & Period
+                        TimetableIndex = ClassroomNames & "$$" & Day & "$$" & Period
                         Dim cmdPeriod As New OleDb.OleDbCommand("SELECT TeacherFirstName, SubjectCode, ClassroomCode, SubjectPlace FROM TimetablesQuery WHERE TimetableIndex = '" + TimetableIndex + "'", conn)
                         dr = cmdPeriod.ExecuteReader
                         While dr.Read
@@ -271,7 +259,6 @@ Public Class StudentTimetablesPrint
     Private Sub TeachersTimetablesFrom_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
         FormRegionAndBorder(Me, borderRadius, e.Graphics, borderColor, borderSize)
     End Sub
-
     Private Sub PrintStudentTimetables_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintStudentTimetables.PrintPage
         CreateProductLabel(e.Graphics)
     End Sub
