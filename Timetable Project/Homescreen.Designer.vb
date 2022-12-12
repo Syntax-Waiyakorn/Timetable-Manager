@@ -263,8 +263,8 @@ Partial Class Homescreen
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.BackgroundImage = Global.project.My.Resources.Resources.wp9409819_no_copyright_wallpapers
-        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BackgroundImage = Global.project.My.Resources.Resources.wp9637312_no_copyright_wallpapers
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1803, 1080)
         Me.Controls.Add(Me.PictureBox4)
         Me.Controls.Add(Me.Label7)

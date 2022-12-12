@@ -287,6 +287,14 @@
     <None Include="Resources\minimize-sign %281%29.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\wp9637312-no-copyright-wallpapers.jpg" />
+    <None Include="Resources\wp9409819-no-copyright-wallpapers3.jpg" />
+    <None Include="Resources\repository-open-graph-template.png" />
+    <None Include="Resources\wp9637329-no-copyright-wallpapers2.jpg" />
+    <None Include="Resources\wp9637343-no-copyright-wallpapers.jpg" />
+    <None Include="Resources\wp9409819-no-copyright-wallpapers2.jpg" />
+    <None Include="Resources\wp9409819-no-copyright-wallpapers1.jpg" />
+    <None Include="Resources\wp9637329-no-copyright-wallpapers1.jpg" />
     <None Include="Resources\wp9637329-no-copyright-wallpapers.jpg" />
     <None Include="Resources\wp9409819-no-copyright-wallpapers.jpg" />
     <None Include="Resources\wp9409819.jpg" />

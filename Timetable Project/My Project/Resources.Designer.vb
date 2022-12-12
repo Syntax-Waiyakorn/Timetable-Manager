@@ -503,6 +503,16 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property repository_open_graph_template() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("repository-open-graph-template", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property study_tools() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("study-tools", resourceCulture)
@@ -653,9 +663,79 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property wp9409819_no_copyright_wallpapers1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("wp9409819-no-copyright-wallpapers1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property wp9409819_no_copyright_wallpapers2() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("wp9409819-no-copyright-wallpapers2", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property wp9409819_no_copyright_wallpapers3() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("wp9409819-no-copyright-wallpapers3", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property wp9637312_no_copyright_wallpapers() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("wp9637312-no-copyright-wallpapers", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property wp9637329_no_copyright_wallpapers() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("wp9637329-no-copyright-wallpapers", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property wp9637329_no_copyright_wallpapers1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("wp9637329-no-copyright-wallpapers1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property wp9637329_no_copyright_wallpapers2() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("wp9637329-no-copyright-wallpapers2", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property wp9637343_no_copyright_wallpapers() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("wp9637343-no-copyright-wallpapers", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
