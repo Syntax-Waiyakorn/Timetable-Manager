@@ -396,6 +396,7 @@ Public Class LockTable
     End Sub
 
     Private Sub Save_Click(sender As Object, e As EventArgs) Handles Save.Click
+        Dim SubjectID As Integer
         Try
             If MsgBox("คุณต้องการเพิ่มข้อมูลหรือไม่ ?", vbQuestion + vbYesNo, "เเจ้งเตือน") = vbYes Then
                 conn.Open()
@@ -407,6 +408,13 @@ Public Class LockTable
                 cmd.Parameters.AddWithValue("@SubjectPlace", SubjectPlaceBox.Text)
                 cmd.Parameters.AddWithValue("@SubjectSpecial", True)
                 cmd.Parameters.AddWithValue("@SubjectQuota", 0)
+
+                Dim cmd1 As New OleDb.OleDbCommand("SELECT SubjectID FROM Subjects WHERE SubjectCode = '" + SubjectCodeBox.Text + "' ", conn)
+                dr = cmd1.ExecuteReader
+                While dr.Read
+                    SubjectID = dr.Item("SubjectID")
+                    Console.WriteLine(SubjectID)
+                End While
 
                 i = cmd.ExecuteNonQuery
                 If i > 0 Then
