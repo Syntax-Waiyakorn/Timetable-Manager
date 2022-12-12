@@ -89,9 +89,34 @@ Public Class StudentTimetablesPrint
         path.CloseFigure()
         Return path
     End Function
-    Dim ClassroomNames As String
-    Dim ClassroomCodes As String
+
     Private Sub CreateProductLabel(g As Graphics)
+
+        Dim ClassroomNames As String
+        Dim ClassroomCodes As String
+        Dim i As Integer = 0
+        Dim XCoord As Integer = 0
+        Dim YCoord As Integer = 0
+
+        Dim TeacherFirstName As String = "null"
+        Dim SubjectCode As String = "null"
+        Dim ClassroomCode As String = "null"
+        Dim SubjectPlace As String = "null"
+
+        Dim DayAcronyms(6) As String
+        Dim PeriodNames(10) As String
+        Dim PeriodTimes(10) As String
+        Dim Year As String = "null"
+
+        Dim labelFont As New Font("Arial", 9, FontStyle.Regular)
+        Dim textFont As New Font("Arial", 11, FontStyle.Regular)
+        Dim headerFont As New Font("Arial", 30, FontStyle.Bold)
+        Dim sizeProductionDate As SizeF = New SizeF() 'initialize
+        Dim sizeShipper As SizeF = New SizeF() 'initialize
+        Dim sizeCosigner As SizeF = New SizeF() 'initialize
+        Dim widthOuter As Integer = 820
+        Dim heightOuter As Integer = 310
+
         If conn.State = ConnectionState.Closed Then
             conn.Open()
         End If
@@ -107,23 +132,6 @@ Public Class StudentTimetablesPrint
             ClassroomCodes = dr.Item("ClassroomCode")
 
         End While
-
-        Dim CurrentClassroom As String = "null"
-
-        Dim i As Integer = 0
-        Dim XCoord As Integer = 0
-        Dim YCoord As Integer = 0
-
-        Dim TeacherFirstName As String = "null"
-        Dim SubjectCode As String = "null"
-        Dim ClassroomCode As String = "null"
-        Dim SubjectPlace As String = "null"
-
-        Dim DayAcronyms(6) As String
-        Dim PeriodNames(10) As String
-        Dim PeriodTimes(10) As String
-        Dim Year As String = "null"
-
 
         Dim cmdDay As New OleDb.OleDbCommand("SELECT DayAcronym FROM Days", conn)
         dr = cmdDay.ExecuteReader
@@ -150,15 +158,6 @@ Public Class StudentTimetablesPrint
             Year = dr.Item("YearNumber")
         End While
         dr.Close()
-
-        Dim labelFont As New Font("Arial", 9, FontStyle.Regular)
-        Dim textFont As New Font("Arial", 11, FontStyle.Regular)
-        Dim headerFont As New Font("Arial", 30, FontStyle.Bold)
-        Dim sizeProductionDate As SizeF = New SizeF() 'initialize
-        Dim sizeShipper As SizeF = New SizeF() 'initialize
-        Dim sizeCosigner As SizeF = New SizeF() 'initialize
-        Dim widthOuter As Integer = 820
-        Dim heightOuter As Integer = 310
 
         Using penDimGray As Pen = New Pen(Color.DimGray, 0)
             Dim outerRect As Rectangle = New Rectangle(15, 100, widthOuter, heightOuter)
@@ -195,7 +194,7 @@ Public Class StudentTimetablesPrint
 
         Using font As Font = New Font("Arial", 11, FontStyle.Regular)
             Using brush As SolidBrush = New SolidBrush(Color.Black)
-                g.DrawString("ชั้น ม." & ClassroomNames & " ห้องประจำ " & ClassroomCodes & " ภาคเรียนที่ " & Year, font, brush, 300, 107)
+                g.DrawString("ชั้น ม." & ClassroomNames & " ห้องประจำ " & ClassroomCodes & " ภาคเรียนที่ " & Year(), font, brush, 300, 107)
             End Using
         End Using
 
