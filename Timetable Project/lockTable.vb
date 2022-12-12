@@ -394,7 +394,7 @@ Public Class LockTable
             SubjectPlaceBox.Clear()
         End If
     End Sub
-
+    'ผีหลอก
     Private Sub Save_Click(sender As Object, e As EventArgs) Handles Save.Click
         Dim SubjectID As Integer
         Try
