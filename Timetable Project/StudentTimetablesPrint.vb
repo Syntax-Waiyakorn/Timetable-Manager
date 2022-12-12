@@ -92,8 +92,8 @@ Public Class StudentTimetablesPrint
 
     Private Sub CreateProductLabel(g As Graphics)
 
-        Dim ClassroomNames As String
-        Dim ClassroomCodes As String
+        Dim ClassroomNames As String = "null"
+        Dim ClassroomCodes As String = "null"
         Dim i As Integer = 0
         Dim XCoord As Integer = 0
         Dim YCoord As Integer = 0
@@ -194,7 +194,7 @@ Public Class StudentTimetablesPrint
 
         Using font As Font = New Font("Arial", 11, FontStyle.Regular)
             Using brush As SolidBrush = New SolidBrush(Color.Black)
-                g.DrawString("ชั้น ม." & ClassroomNames & " ห้องประจำ " & ClassroomCodes & " ภาคเรียนที่ " & Year(), font, brush, 300, 107)
+                g.DrawString("ชั้น ม." & ClassroomNames & " ห้องประจำ " & ClassroomCodes & " ภาคเรียนที่ " & Year, font, brush, 300, 107)
             End Using
         End Using
 
@@ -253,6 +253,7 @@ Public Class StudentTimetablesPrint
                 Next
             End Using
         End Using
+
 
     End Sub
     Private Sub TeachersTimetablesFrom_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint

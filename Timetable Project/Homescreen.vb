@@ -55,5 +55,6 @@ Public Class Homescreen
             Me.BackgroundImage = project.My.Resources.Resources.wp9409819_no_copyright_wallpapers
         End If
         conn.Close()
+
     End Sub
 End Class
