@@ -215,8 +215,6 @@ Public Class LockTable
         Finally
             conn.Close()
         End Try
-
-
     End Sub
     Sub edit()
         Dim Testit As String = cboTeachersSubjects.SelectedItem

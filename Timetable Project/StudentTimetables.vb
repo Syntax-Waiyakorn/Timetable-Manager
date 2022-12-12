@@ -13,22 +13,21 @@ Public Class StudentTimetables
                 conn.Open()
             End If
             Dim cmd As New OleDb.OleDbCommand("Select ClassroomName from Classrooms", conn)
-            Dim cmd1 As New OleDb.OleDbCommand("Select TeacherSubjectDisplay from TeachersSubjectsQuery", conn)
-            Dim cmd2 As New OleDb.OleDbCommand("Select YearNumber from Years", conn)
             cboClassrooms.Items.Clear()
             dr = cmd.ExecuteReader
             While dr.Read
                 cboClassrooms.Items.Add(dr.GetString(0))
             End While
-            cboTeachersSubjects.Items.Clear()
-            dr = cmd1.ExecuteReader
-            While dr.Read
-                cboTeachersSubjects.Items.Add(dr.GetString(0))
-            End While
+
+
+
+
+            Dim cmd2 As New OleDb.OleDbCommand("Select YearNumber from Years", conn)
             dr = cmd2.ExecuteReader
             While dr.Read
                 txtYear.Text = CStr(dr.Item("YearNumber"))
             End While
+
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
@@ -322,14 +321,12 @@ Public Class StudentTimetables
     Private Sub cboClassrooms_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboClassrooms.SelectedIndexChanged
         Dim Timetables As String
         Timetables = cboClassrooms.Text
-
-
         Try
             conn.Open()
-            Dim cmd1 As New OleDb.OleDbCommand("UPDATE Years SET `RoomID`=@RoomID ", conn)
-            cmd1.Parameters.Clear()
-            cmd1.Parameters.AddWithValue("@RoomID", Timetables)
-            cmd1.ExecuteNonQuery()
+            Dim cmd As New OleDb.OleDbCommand("UPDATE Years SET `RoomID`=@RoomID ", conn)
+            cmd.Parameters.Clear()
+            cmd.Parameters.AddWithValue("@RoomID", Timetables)
+            cmd.ExecuteNonQuery()
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
@@ -337,6 +334,24 @@ Public Class StudentTimetables
                 conn.Close()
             End If
         End Try
+
+        Try
+            conn.Open()
+            Dim cmd1 As New OleDb.OleDbCommand("Select TeacherSubjectDisplay from TSClassroomsQuery where ClassroomName = @ClassroomName", conn)
+            cboTeachersSubjects.Items.Clear()
+            cmd1.Parameters.AddWithValue("@ClassroomName", cboClassrooms.Text)
+            dr = cmd1.ExecuteReader
+            While dr.Read
+                cboTeachersSubjects.Items.Add(dr.GetString(0))
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If conn.State = ConnectionState.Open Then
+                conn.Close()
+            End If
+        End Try
+
         Dim Classroom As String = CStr(cboClassrooms.Text)
         DisplayClassroomTable(Classroom)
         status()
