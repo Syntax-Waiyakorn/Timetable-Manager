@@ -1,8 +1,9 @@
 ﻿Imports System.Data.OleDb
 Public Class TeachersTimetables
-    Public Property Pass As String
     Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\Timetable.accdb")
     Dim dr As OleDbDataReader
+    Dim i As Integer
+
     Sub LoadCbo()
         Try
             If conn.State = ConnectionState.Closed Then
@@ -51,6 +52,7 @@ Public Class TeachersTimetables
                 conn.Open()
             End If
             For i As Integer = 1 To 5
+
                 Dim cmd As New OleDb.OleDbCommand("SELECT DayName FROM Days WHERE DayNumber = @DayNumber", conn)
                 cmd.Parameters.Clear()
                 cmd.Parameters.AddWithValue("@DayNumber", i)
@@ -105,6 +107,7 @@ Public Class TeachersTimetables
                 Dim cmd As New OleDb.OleDbCommand("SELECT SubjectCode, ClassroomName, ClassroomCode FROM TimetablesQuery WHERE TeacherIndex = '" + TeacherIndex + "'", conn)
                 dr = cmd.ExecuteReader
                 While dr.Read
+
                     If PLabel.Text = "ว่าง" Then
                         PLabel.Text = CStr(dr.Item("SubjectCode")) & vbCrLf & CStr(dr.Item("ClassroomName")) & vbCrLf & CStr(dr.Item("ClassroomCode"))
                     Else
@@ -122,8 +125,6 @@ Public Class TeachersTimetables
             PLabel.Text = "ว่าง"
         End If
     End Sub
-    Dim i As Integer
-
     Private Sub cboClassrooms_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboTeachers.SelectedIndexChanged
         Dim Teacher As String = cboTeachers.Text
         DisplayTeacherTable(Teacher)
@@ -131,7 +132,9 @@ Public Class TeachersTimetables
         Dim Timetables As String
         Timetables = cboTeachers.Text
         Try
-            conn.Open()
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
             Dim cmd As New OleDb.OleDbCommand("UPDATE Pass SET `TeacherFirstName`=@TeacherFirstName ", conn)
             cmd.Parameters.Clear()
             cmd.Parameters.AddWithValue("@TeacherFirstName", Timetables)
@@ -159,11 +162,9 @@ Public Class TeachersTimetables
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
         Dim OBJ As New TeachersTimetablesPrint
         Dim TeachersTimetablesFrom As New TeachersTimetablesPrint
-
         If cboTeachers.SelectedIndex = -1 Then
             MsgBox("เลือกครูก่อน", vbYes, "เเจ้งเตือน")
         Else
-            OBJ.TeacherNamePass = cboTeachers.Text
             TeachersTimetablesFrom.Show()
         End If
     End Sub

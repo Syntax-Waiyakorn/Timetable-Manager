@@ -3,9 +3,6 @@ Imports System.Drawing.Drawing2D
 Public Class TeachersTimetablesPrint
     Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\Timetable.accdb")
     Dim dr As OleDbDataReader
-
-    Public Property TeacherNamePass As String
-
     Private borderRadius As Integer = 30
     Private borderSize As Integer = 5
     Private borderColor As Color = Color.IndianRed
@@ -231,7 +228,6 @@ Public Class TeachersTimetablesPrint
                         End If
 
                         TeacherIndex = TeacherFirstName & "$$" & Day & "$$" & Period
-                        Console.WriteLine(TeacherIndex)
 
                         Dim cmdPeriod As New OleDb.OleDbCommand("SELECT TeacherFirstName, SubjectCode, ClassroomName, ClassroomCode, SubjectPlace FROM TimetablesQuery WHERE TeacherIndex = '" + TeacherIndex + "'", conn)
                         dr = cmdPeriod.ExecuteReader

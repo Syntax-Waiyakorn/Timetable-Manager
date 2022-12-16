@@ -39,13 +39,7 @@ Public Class Subjects
             chkDefaultClass.Checked = False
             txtSubjectPlace.Text = DataGridView1.CurrentRow.Cells(4).Value
         End If
-        If DataGridView1.CurrentRow.Cells(5).Value = "True" Then
-            chkSubjectSpecial.Checked = True
-            txtSubjectQuota.Enabled = False
-        Else
-            chkSubjectSpecial.Checked = False
-            txtSubjectQuota.Text = DataGridView1.CurrentRow.Cells(6).Value
-        End If
+
     End Sub
     Sub LoadGrid()
         Try
@@ -53,10 +47,10 @@ Public Class Subjects
             If conn.State = ConnectionState.Closed Then
                 conn.Open()
             End If
-            Dim cmd As New OleDb.OleDbCommand("Select  SubjectID, SubjectCode, SubjectName, SubjectDepartment, SubjectPlace, SubjectSpecial, SubjectQuota from Subjects", conn)
+            Dim cmd As New OleDb.OleDbCommand("Select  SubjectID, SubjectCode, SubjectName, SubjectDepartment, SubjectPlace from Subjects", conn)
             dr = cmd.ExecuteReader
             While dr.Read
-                DataGridView1.Rows.Add(dr.Item("SubjectID"), dr.Item("SubjectCode"), dr.Item("SubjectName"), dr.Item("SubjectDepartment"), dr.Item("SubjectPlace"), dr.Item("SubjectSpecial"), dr.Item("SubjectQuota"))
+                DataGridView1.Rows.Add(dr.Item("SubjectID"), dr.Item("SubjectCode"), dr.Item("SubjectName"), dr.Item("SubjectDepartment"), dr.Item("SubjectPlace"))
             End While
             dr.Close()
         Catch ex As Exception
@@ -71,8 +65,7 @@ Public Class Subjects
         txtSubjectPlace.Clear()
         cboDepartment.SelectedIndex = -1
         chkDefaultClass.CheckState = False
-        txtSubjectQuota.Clear()
-        chkSubjectSpecial.CheckState = False
+
 
     End Sub
     Sub save()
@@ -81,15 +74,12 @@ Public Class Subjects
                 If conn.State = ConnectionState.Closed Then
                     conn.Open()
                 End If
-                Dim cmd As New OleDb.OleDbCommand("Insert into Subjects(`SubjectCode`,`SubjectName`,`SubjectDepartment`,`SubjectPlace`,`SubjectSpecial`,`SubjectQuota`) values(@SubjectCode,@SubjectName,@SubjectDepartment,@SubjectPlace,@SubjectSpecial,@SubjectQuota)", conn)
+                Dim cmd As New OleDb.OleDbCommand("Insert into Subjects(`SubjectCode`,`SubjectName`,`SubjectDepartment`,`SubjectPlace`) values(@SubjectCode,@SubjectName,@SubjectDepartment,@SubjectPlace)", conn)
                 cmd.Parameters.Clear()
                 cmd.Parameters.AddWithValue("@SubjectCode", txtID.Text)
                 cmd.Parameters.AddWithValue("@SubjectName", txtName.Text)
                 cmd.Parameters.AddWithValue("@SubjectDepartment", cboDepartment.Text)
                 cmd.Parameters.AddWithValue("@SubjectPlace", txtSubjectPlace.Text)
-                cmd.Parameters.AddWithValue("@SubjectSpecial", chkSubjectSpecial.Checked)
-                cmd.Parameters.AddWithValue("@SubjectQuota", txtSubjectQuota.Text)
-
                 i = cmd.ExecuteNonQuery
                 If i > 0 Then
                     MsgBox("เพิ่มข้อมูลเเล้ว !", vbInformation)
@@ -109,15 +99,13 @@ Public Class Subjects
             If conn.State = ConnectionState.Closed Then
                 conn.Open()
             End If
-            Dim cmd As New OleDb.OleDbCommand("UPDATE Subjects SET `SubjectCode`=@SubjectCode,`SubjectName`=@SubjectName,`SubjectDepartment`=@SubjectDepartment,`SubjectSpecial`=@SubjectSpecial,`SubjectQuota`=@SubjectQuota Where SubjectID=@SubjectID ", conn)
+            Dim cmd As New OleDb.OleDbCommand("UPDATE Subjects SET `SubjectCode`=@SubjectCode,`SubjectName`=@SubjectName,`SubjectDepartment`=@SubjectDepartment,`SubjectPlace`=@SubjectPlace Where SubjectID=@SubjectID", conn)
             cmd.Parameters.Clear()
-            cmd.Parameters.AddWithValue("@SubjectID", txtPR.Text)
             cmd.Parameters.AddWithValue("@SubjectCode", txtID.Text)
             cmd.Parameters.AddWithValue("@SubjectName", txtName.Text)
             cmd.Parameters.AddWithValue("@SubjectDepartment", cboDepartment.Text)
             cmd.Parameters.AddWithValue("@SubjectPlace", txtSubjectPlace.Text)
-            cmd.Parameters.AddWithValue("@SubjectSpecial", chkSubjectSpecial.Checked)
-            cmd.Parameters.AddWithValue("@SubjectQuota", txtSubjectQuota.Text)
+            cmd.Parameters.AddWithValue("@SubjectID", txtPR.Text)
             i = cmd.ExecuteNonQuery
             If i > 0 Then
                 MsgBox("แก้ไขแล้ว !", vbInformation)
@@ -137,10 +125,10 @@ Public Class Subjects
             If conn.State = ConnectionState.Closed Then
                 conn.Open()
             End If
-            Dim cmd As New OleDb.OleDbCommand("Select SubjectID, SubjectCode, SubjectName, SubjectDepartment, SubjectPlace, SubjectQuota,SubjectSpecial from Subjects WHERE `SubjectName` like '%" & txtSearch.Text & "%' or `SubjectDepartment` like '%" & txtSearch.Text & "%'or `SubjectCode` like '%" & txtSearch.Text & "%'or `SubjectID` like '%" & txtSearch.Text & "%' ", conn)
+            Dim cmd As New OleDb.OleDbCommand("Select SubjectID, SubjectCode, SubjectName, SubjectDepartment, SubjectPlace from Subjects WHERE `SubjectName` like '%" & txtSearch.Text & "%' or `SubjectDepartment` like '%" & txtSearch.Text & "%'or `SubjectCode` like '%" & txtSearch.Text & "%'or `SubjectID` like '%" & txtSearch.Text & "%' ", conn)
             dr = cmd.ExecuteReader
             While dr.Read
-                DataGridView1.Rows.Add(dr.Item("SubjectID"), dr.Item("SubjectCode"), dr.Item("SubjectName"), dr.Item("SubjectDepartment"), dr.Item("SubjectPlace"), dr.Item("SubjectSpecial"), dr.Item("SubjectQuota"))
+                DataGridView1.Rows.Add(dr.Item("SubjectID"), dr.Item("SubjectCode"), dr.Item("SubjectName"), dr.Item("SubjectDepartment"), dr.Item("SubjectPlace"))
             End While
             dr.Close()
         Catch ex As Exception
@@ -180,15 +168,6 @@ Public Class Subjects
         Else
             txtSubjectPlace.Enabled = True
             txtSubjectPlace.Clear()
-        End If
-    End Sub
-    Private Sub chkSubjectSpecial_CheckedChanged(sender As Object, e As EventArgs) Handles chkSubjectSpecial.CheckedChanged
-        If chkSubjectSpecial.Checked = True Then
-            txtSubjectQuota.Enabled = False
-            txtSubjectQuota.Text = ("0")
-        Else
-            txtSubjectQuota.Enabled = True
-            txtSubjectQuota.Clear()
         End If
     End Sub
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click

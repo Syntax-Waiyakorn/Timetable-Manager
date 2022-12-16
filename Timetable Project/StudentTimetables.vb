@@ -385,7 +385,6 @@ Public Class StudentTimetables
     End Sub
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
         Dim OBJ As New TeachersTimetables
-        OBJ.Pass = txtYear.Text
         Year()
     End Sub
 End Class

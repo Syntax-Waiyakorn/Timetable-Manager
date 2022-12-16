@@ -1,7 +1,5 @@
 ﻿Imports System.Data.OleDb
 Imports System.Drawing.Drawing2D
-Imports System.Drawing.Printing
-
 Public Class StudentTimetablesPrint
     Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\Timetable.accdb")
     Dim dr As OleDbDataReader
@@ -259,8 +257,6 @@ Public Class StudentTimetablesPrint
                 Next
             End Using
         End Using
-
-
     End Sub
     Private Sub TeachersTimetablesFrom_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
         FormRegionAndBorder(Me, borderRadius, e.Graphics, borderColor, borderSize)
