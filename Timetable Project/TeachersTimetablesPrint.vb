@@ -101,6 +101,8 @@ Public Class TeachersTimetablesPrint
         Dim SubjectCode As String = "null"
         Dim ClassroomCode As String = "null"
         Dim SubjectPlace As String = "null"
+        Dim Year As String = "null"
+
 
         Dim DayAcronyms(6) As String
         Dim PeriodNames(10) As String
@@ -138,6 +140,20 @@ Public Class TeachersTimetablesPrint
         End While
         dr.Close()
 
+        Dim cmdYear As New OleDb.OleDbCommand("SELECT YearNumber FROM Years", conn)
+        dr = cmdYear.ExecuteReader
+        While dr.Read
+            Year = dr.Item("YearNumber")
+        End While
+        dr.Close()
+
+        Dim cmdT As New OleDb.OleDbCommand("SELECT TeacherID FROM Years", conn)
+        dr = cmdT.ExecuteReader
+        While dr.Read
+            TeacherFirstName = dr.Item("TeacherID")
+        End While
+        dr.Close()
+
         Using penDimGray As Pen = New Pen(Color.DimGray, 0)
             Dim outerRect As Rectangle = New Rectangle(15, 100, widthOuter, heightOuter)
             Using path As GraphicsPath = RoundRect(outerRect, 10, 10, 10, 10)
@@ -150,11 +166,11 @@ Public Class TeachersTimetablesPrint
             g.DrawLine(penDimGray, New PointF(60, 100), New PointF(60, 410))
 
             For x As Integer = 130 To 820 Step +70
-                g.DrawLine(penDimGray, New PointF(XCoord, 130), New PointF(XCoord, 410))
+                g.DrawLine(penDimGray, New PointF(x, 130), New PointF(x, 410))
             Next
 
             For y As Integer = 210 To 360 Step +50
-                g.DrawLine(penDimGray, New PointF(15, YCoord), New PointF(835, YCoord))
+                g.DrawLine(penDimGray, New PointF(15, y), New PointF(835, y))
             Next
         End Using
 
@@ -172,7 +188,7 @@ Public Class TeachersTimetablesPrint
 
         Using font As Font = New Font("Arial", 11, FontStyle.Regular)
             Using brush As SolidBrush = New SolidBrush(Color.Black)
-                g.DrawString("ครู ************* ภาคเรียนที่ ******", font, brush, 300, 107)
+                g.DrawString(" ครู " & TeacherFirstName & " ภาคเรียนที่ " & Year, font, brush, 300, 107)
             End Using
         End Using
 
