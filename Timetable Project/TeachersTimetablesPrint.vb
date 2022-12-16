@@ -221,12 +221,21 @@ Public Class TeachersTimetablesPrint
                 YCoord = 165
                 For Day As Integer = 1 To 5
                     For Period As Integer = 1 To 11
+                        ClassroomName = "null"
+                        SubjectCode = "null"
+                        ClassroomCode = "null"
+                        SubjectPlace = "null"
+
                         If conn.State = ConnectionState.Closed Then
                             conn.Open()
                         End If
+
                         TeacherIndex = TeacherFirstName & "$$" & Day & "$$" & Period
+                        Console.WriteLine(TeacherIndex)
+
                         Dim cmdPeriod As New OleDb.OleDbCommand("SELECT TeacherFirstName, SubjectCode, ClassroomName, ClassroomCode, SubjectPlace FROM TimetablesQuery WHERE TeacherIndex = '" + TeacherIndex + "'", conn)
                         dr = cmdPeriod.ExecuteReader
+
                         While dr.Read
                             TeacherFirstNameT = dr.Item("TeacherFirstName")
                             SubjectCode = dr.Item("SubjectCode")
@@ -244,10 +253,10 @@ Public Class TeachersTimetablesPrint
                             g.DrawString(SubjectCode & vbCrLf & ClassroomName & vbCrLf & SubjectPlace, font, brush, XCoord, YCoord)
                             XCoord = XCoord + 70
                         End If
-
                     Next
                     XCoord = 65
                     YCoord = YCoord + 50
+
                     conn.Close()
 
                 Next
