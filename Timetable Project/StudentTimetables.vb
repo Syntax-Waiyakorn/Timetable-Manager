@@ -19,10 +19,7 @@ Public Class StudentTimetables
                 cboClassrooms.Items.Add(dr.GetString(0))
             End While
 
-
-
-
-            Dim cmd2 As New OleDb.OleDbCommand("Select YearNumber from Years", conn)
+            Dim cmd2 As New OleDb.OleDbCommand("Select YearNumber from Pass", conn)
             dr = cmd2.ExecuteReader
             While dr.Read
                 txtYear.Text = CStr(dr.Item("YearNumber"))
@@ -289,7 +286,7 @@ Public Class StudentTimetables
         Try
             If MsgBox("คุณต้องบันทึกปีการฯศึกษาหรือไม่ ?", vbQuestion + vbYesNo, "เเจ้งเตือน") = vbYes Then
                 conn.Open()
-                Dim cmd As New OleDb.OleDbCommand("UPDATE Years SET `YearNumber`=@YearNumber ", conn)
+                Dim cmd As New OleDb.OleDbCommand("UPDATE Pass SET `YearNumber`=@YearNumber ", conn)
                 cmd.Parameters.Clear()
                 cmd.Parameters.AddWithValue("@YearNumber", txtYear.Text)
                 i = cmd.ExecuteNonQuery
@@ -323,9 +320,9 @@ Public Class StudentTimetables
         Timetables = cboClassrooms.Text
         Try
             conn.Open()
-            Dim cmd As New OleDb.OleDbCommand("UPDATE Years SET `RoomID`=@RoomID ", conn)
+            Dim cmd As New OleDb.OleDbCommand("UPDATE Pass SET `RoomName`=@RoomName ", conn)
             cmd.Parameters.Clear()
-            cmd.Parameters.AddWithValue("@RoomID", Timetables)
+            cmd.Parameters.AddWithValue("@RoomName", Timetables)
             cmd.ExecuteNonQuery()
         Catch ex As Exception
             MsgBox(ex.Message)

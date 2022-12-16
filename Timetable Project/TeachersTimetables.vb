@@ -122,10 +122,27 @@ Public Class TeachersTimetables
             PLabel.Text = "ว่าง"
         End If
     End Sub
+    Dim i As Integer
 
     Private Sub cboClassrooms_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboTeachers.SelectedIndexChanged
         Dim Teacher As String = cboTeachers.Text
         DisplayTeacherTable(Teacher)
+
+        Dim Timetables As String
+        Timetables = cboTeachers.Text
+        Try
+            conn.Open()
+            Dim cmd As New OleDb.OleDbCommand("UPDATE Pass SET `TeacherFirstName`=@TeacherFirstName ", conn)
+            cmd.Parameters.Clear()
+            cmd.Parameters.AddWithValue("@TeacherFirstName", Timetables)
+            cmd.ExecuteNonQuery()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If conn.State = ConnectionState.Open Then
+                conn.Close()
+            End If
+        End Try
     End Sub
     Private Sub cboTeachersSubjects_SelectedIndexChanged(sender As Object, e As EventArgs)
         Me.agent.Focus()
@@ -141,8 +158,13 @@ Public Class TeachersTimetables
     End Sub
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
         Dim OBJ As New TeachersTimetablesPrint
-        OBJ.TeacherNamePass = cboTeachers.Text
         Dim TeachersTimetablesFrom As New TeachersTimetablesPrint
-        TeachersTimetablesFrom.Show()
+
+        If cboTeachers.SelectedIndex = -1 Then
+            MsgBox("เลือกห้องก่อน", vbYes, "เเจ้งเตือน")
+        Else
+            OBJ.TeacherNamePass = cboTeachers.Text
+            TeachersTimetablesFrom.Show()
+        End If
     End Sub
 End Class

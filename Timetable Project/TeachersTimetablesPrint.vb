@@ -91,7 +91,7 @@ Public Class TeachersTimetablesPrint
         Return path
     End Function
     Private Sub CreateProductLabel(g As Graphics)
-        Dim TeacherFirstName As String = TeacherNamePass
+        Dim TeacherFirstName As String = "null"
 
         Dim i As Integer = 0
         Dim XCoord As Integer = 0
@@ -140,17 +140,17 @@ Public Class TeachersTimetablesPrint
         End While
         dr.Close()
 
-        Dim cmdYear As New OleDb.OleDbCommand("SELECT YearNumber FROM Years", conn)
+        Dim cmdYear As New OleDb.OleDbCommand("SELECT YearNumber FROM Pass", conn)
         dr = cmdYear.ExecuteReader
         While dr.Read
             Year = dr.Item("YearNumber")
         End While
         dr.Close()
 
-        Dim cmdT As New OleDb.OleDbCommand("SELECT TeacherID FROM Years", conn)
+        Dim cmdT As New OleDb.OleDbCommand("SELECT TeacherFirstName FROM Pass", conn)
         dr = cmdT.ExecuteReader
         While dr.Read
-            TeacherFirstName = dr.Item("TeacherID")
+            TeacherFirstName = dr.Item("TeacherFirstName")
         End While
         dr.Close()
 
@@ -225,7 +225,6 @@ Public Class TeachersTimetablesPrint
                             conn.Open()
                         End If
                         TeacherIndex = TeacherFirstName & "$$" & Day & "$$" & Period
-                        Console.WriteLine(TeacherIndex)
                         Dim cmdPeriod As New OleDb.OleDbCommand("SELECT SubjectCode, ClassroomName, ClassroomCode, SubjectPlace FROM TimetablesQuery WHERE TeacherIndex = '" + TeacherIndex + "'", conn)
                         dr = cmdPeriod.ExecuteReader
                         While dr.Read

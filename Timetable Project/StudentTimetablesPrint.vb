@@ -120,10 +120,10 @@ Public Class StudentTimetablesPrint
         If conn.State = ConnectionState.Closed Then
             conn.Open()
         End If
-        Dim cmd As New OleDb.OleDbCommand("Select RoomID from Years", conn)
+        Dim cmd As New OleDb.OleDbCommand("Select RoomName from Pass", conn)
         dr = cmd.ExecuteReader
         While dr.Read
-            ClassroomNames = dr.Item("RoomID")
+            ClassroomNames = dr.Item("RoomName")
         End While
 
         Dim cmd1 As New OleDb.OleDbCommand("Select ClassroomCode from Classrooms where ClassroomName = '" + ClassroomNames + "'", conn)
@@ -151,7 +151,7 @@ Public Class StudentTimetablesPrint
         End While
         dr.Close()
 
-        Dim cmdYear As New OleDb.OleDbCommand("SELECT YearNumber FROM Years", conn)
+        Dim cmdYear As New OleDb.OleDbCommand("SELECT YearNumber FROM Pass", conn)
         dr = cmdYear.ExecuteReader
         While dr.Read
             Year = dr.Item("YearNumber")
