@@ -285,7 +285,9 @@ Public Class StudentTimetables
     Sub Year()
         Try
             If MsgBox("คุณต้องบันทึกปีการฯศึกษาหรือไม่ ?", vbQuestion + vbYesNo, "เเจ้งเตือน") = vbYes Then
-                conn.Open()
+                If conn.State = ConnectionState.Closed Then
+                    conn.Open()
+                End If
                 Dim cmd As New OleDb.OleDbCommand("UPDATE Pass SET `YearNumber`=@YearNumber ", conn)
                 cmd.Parameters.Clear()
                 cmd.Parameters.AddWithValue("@YearNumber", txtYear.Text)
@@ -319,7 +321,9 @@ Public Class StudentTimetables
         Dim Timetables As String
         Timetables = cboClassrooms.Text
         Try
-            conn.Open()
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
             Dim cmd As New OleDb.OleDbCommand("UPDATE Pass SET `RoomName`=@RoomName ", conn)
             cmd.Parameters.Clear()
             cmd.Parameters.AddWithValue("@RoomName", Timetables)
@@ -333,7 +337,9 @@ Public Class StudentTimetables
         End Try
 
         Try
-            conn.Open()
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
             Dim cmd1 As New OleDb.OleDbCommand("Select TeacherSubjectDisplay from TSClassroomsQuery where ClassroomName = @ClassroomName", conn)
             cboTeachersSubjects.Items.Clear()
             cmd1.Parameters.AddWithValue("@ClassroomName", cboClassrooms.Text)

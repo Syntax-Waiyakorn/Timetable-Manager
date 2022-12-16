@@ -215,7 +215,7 @@ Public Class TeachersTimetablesPrint
 
         Using font As Font = New Font("Arial", 9, FontStyle.Regular)
             Using brush As SolidBrush = New SolidBrush(Color.Black)
-
+                Dim TeacherFirstNameT As String = "null"
                 Dim TeacherIndex As String = "null"
                 XCoord = 65
                 YCoord = 165
@@ -225,9 +225,10 @@ Public Class TeachersTimetablesPrint
                             conn.Open()
                         End If
                         TeacherIndex = TeacherFirstName & "$$" & Day & "$$" & Period
-                        Dim cmdPeriod As New OleDb.OleDbCommand("SELECT SubjectCode, ClassroomName, ClassroomCode, SubjectPlace FROM TimetablesQuery WHERE TeacherIndex = '" + TeacherIndex + "'", conn)
+                        Dim cmdPeriod As New OleDb.OleDbCommand("SELECT TeacherFirstName, SubjectCode, ClassroomName, ClassroomCode, SubjectPlace FROM TimetablesQuery WHERE TeacherIndex = '" + TeacherIndex + "'", conn)
                         dr = cmdPeriod.ExecuteReader
                         While dr.Read
+                            TeacherFirstNameT = dr.Item("TeacherFirstName")
                             SubjectCode = dr.Item("SubjectCode")
                             ClassroomName = dr.Item("ClassroomName")
                             ClassroomCode = dr.Item("ClassroomCode")
@@ -236,6 +237,7 @@ Public Class TeachersTimetablesPrint
                         If SubjectPlace = "ห้องประจำ" Then
                             SubjectPlace = ClassroomCode
                         End If
+
                         g.DrawString(SubjectCode & vbCrLf & ClassroomName & vbCrLf & SubjectPlace, font, brush, XCoord, YCoord)
                         XCoord = XCoord + 70
                     Next
