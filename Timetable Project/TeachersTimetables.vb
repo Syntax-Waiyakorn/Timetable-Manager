@@ -161,7 +161,7 @@ Public Class TeachersTimetables
         Dim TeachersTimetablesFrom As New TeachersTimetablesPrint
 
         If cboTeachers.SelectedIndex = -1 Then
-            MsgBox("เลือกห้องก่อน", vbYes, "เเจ้งเตือน")
+            MsgBox("เลือกครูก่อน", vbYes, "เเจ้งเตือน")
         Else
             OBJ.TeacherNamePass = cboTeachers.Text
             TeachersTimetablesFrom.Show()
