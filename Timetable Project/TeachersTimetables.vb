@@ -140,6 +140,8 @@ Public Class TeachersTimetables
         LoadCbo()
     End Sub
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
+        Dim OBJ As New TeachersTimetablesPrint
+        OBJ.TeacherNamePass = cboTeachers.Text
         Dim TeachersTimetablesFrom As New TeachersTimetablesPrint
         TeachersTimetablesFrom.Show()
     End Sub

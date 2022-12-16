@@ -130,7 +130,6 @@ Public Class StudentTimetablesPrint
         dr = cmd1.ExecuteReader
         While dr.Read
             ClassroomCodes = dr.Item("ClassroomCode")
-
         End While
 
         Dim cmdDay As New OleDb.OleDbCommand("SELECT DayAcronym FROM Days", conn)
