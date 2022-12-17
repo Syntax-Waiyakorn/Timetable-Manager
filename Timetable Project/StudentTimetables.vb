@@ -286,10 +286,12 @@ Public Class StudentTimetables
                     While dr.Read
                         TeacherSubjectID = dr.Item("TeacherSubjectID")
                     End While
+
                     Dim cmd3 As New OleDb.OleDbCommand("UPDATE TimetablesPeriods SET `TeacherSubjectID`=@TeacherSubjectID Where TimetablePeriodID=@TimetablePeriodID", conn)
                     cmd3.Parameters.Clear()
                     cmd3.Parameters.AddWithValue("@TeacherSubjectID", TeacherSubjectID)
                     cmd3.Parameters.AddWithValue("TimetablePeriodID", TimetablePeriodID)
+
                     If cmd3.ExecuteNonQuery > 0 Then
                         MsgBox("แก้ไขแล้ว!", vbInformation)
                     Else
