@@ -7,6 +7,7 @@ Public Class LockTable
     Dim PDay As String = "null"
     Dim PPeriod As String = "null"
     Dim TimetableIndex As String = "null"
+    Dim SubjectID As Integer
     Sub LoadCbo()
         Try
             If conn.State = ConnectionState.Closed Then
@@ -49,7 +50,6 @@ Public Class LockTable
         LoadGrid()
         clear()
     End Sub
-
     Sub cboteacherSubject()
         Try
             If conn.State = ConnectionState.Closed Then
@@ -69,7 +69,6 @@ Public Class LockTable
             conn.Close()
         End Try
     End Sub
-
     Sub status()
         If ChackClassrooms.SelectedIndex = -1 Then
             txtSearch.Enabled = False
@@ -92,18 +91,21 @@ Public Class LockTable
             End If
         End If
     End Sub
-    Sub search(Table As String, Field1 As String, Field2 As String, txtBox As TextBox, cboBox As ComboBox)
+    Sub search(Table As String, Field1 As String, txtBox As TextBox, cboBox As ComboBox)
         Try
             cboBox.Items.Clear()
             If conn.State = ConnectionState.Closed Then
                 conn.Open()
+                Dim cmd1 As New OleDb.OleDbCommand("Select " & Field1 & " from " & Table & " WHERE `SubjectName` like '%" & txtSearch.Text & "%' and SubjectSpecial=@SubjectSpecial", conn)
+                cmd1.Parameters.Clear()
+                cmd1.Parameters.AddWithValue("@SubjectSpecial", True)
+
+                dr = cmd1.ExecuteReader
+                While dr.Read
+                    cboBox.Items.Add(dr.Item(Field1))
+                End While
+                dr.Close()
             End If
-            Dim cmd1 As New OleDb.OleDbCommand("Select  " & Field1 & ", " & Field2 & " from " & Table & " WHERE " & Field1 & " like '%" & txtBox.Text & "%' or " & Field2 & " like '%" & txtBox.Text & "%'", conn)
-            dr = cmd1.ExecuteReader
-            While dr.Read
-                cboBox.Items.Add(dr.Item(Field1) & " : " & dr.Item(Field2))
-            End While
-            dr.Close()
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
@@ -169,7 +171,7 @@ Public Class LockTable
             Catch
                 PPeriod = PLabelName.Chars(6)
             End Try
-            PLabel.Text = "แสดดงไม่ได้"
+            PLabel.Text = "ว่าง"
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
@@ -224,7 +226,11 @@ Public Class LockTable
             conn.Close()
         End Try
     End Sub
-    Sub edit()
+    Sub Savelook()
+        Dim selectedItems As String() = ChackClassrooms.CheckedItems.OfType(Of String)().ToArray()
+        Dim itemsString As String = String.Join(vbCrLf, selectedItems)
+        Console.WriteLine(itemsString)
+
         Try
             If conn.State = ConnectionState.Closed Then
                 conn.Open()
@@ -268,7 +274,6 @@ Public Class LockTable
             cmd3.Parameters.AddWithValue("@TeacherSubjectID", TeacherSubjectID)
             cmd3.Parameters.AddWithValue("TimetablePeriodID", TimetablePeriodID)
 
-
             If cmd3.ExecuteNonQuery > 0 Then
                 MsgBox("แก้ไขแล้ว!", vbInformation)
             Else
@@ -282,7 +287,6 @@ Public Class LockTable
             conn.Close()
         End Try
     End Sub
-
     Sub LoadGrid()
         Try
             DataGridView1.Rows.Clear()
@@ -300,7 +304,22 @@ Public Class LockTable
         End Try
         conn.Close()
     End Sub
+    Sub ID()
+        Dim SubjectID As Integer
 
+        Dim cmd1 As New OleDb.OleDbCommand("SELECT SubjectID FROM Subjects WHERE SubjectCode = '" + SubjectCodeBox.Text + "' ", conn)
+        dr = cmd1.ExecuteReader
+        While dr.Read
+            SubjectID = dr.Item("SubjectID")
+        End While
+        dr.Close()
+
+        Dim cmd3 As New OleDb.OleDbCommand("Insert into TeachersSubjects(`TeacherID`,`SubjectID`) values(@TeacherID,@SubjectID)", conn)
+        cmd3.Parameters.Clear()
+        cmd3.Parameters.AddWithValue("@TeacherID", 1)
+        cmd3.Parameters.AddWithValue("@SubjectID", SubjectID)
+        cmd3.ExecuteNonQuery()
+    End Sub
     Sub clear()
         SubjectCodeBox.Clear()
         SubjectNameBox.Clear()
@@ -313,33 +332,10 @@ Public Class LockTable
             If lblCurrentDay.Text = "ว่าง" Then
                 MsgBox("เลือกวันเเละคาบก่อน", vbYes, "เเจ้งเตือน")
             Else
-                edit()
+                Savelook()
             End If
         End If
     End Sub
-    Private Sub cboClassrooms_SelectedIndexChanged(sender As Object, e As EventArgs)
-
-    End Sub
-    Private Sub cboTeachersSubjects_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboTeachersSubjects.SelectedIndexChanged
-        Me.agent.Focus()
-        status()
-    End Sub
-    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
-        search("TeachersSubjectsQuery", "TeacherFirstName", "SubjectCode", txtSearch, cboTeachersSubjects)
-        status()
-    End Sub
-    Private Sub StudentTimetables_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        InitializeTable()
-        status()
-    End Sub
-    Private Sub StudentTimetables_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
-        LoadCbo()
-        status()
-    End Sub
-    Private Sub ChackClassrooms_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ChackClassrooms.SelectedIndexChanged
-        status()
-    End Sub
-    Dim SubjectID As Integer
     Private Sub Save_Click(sender As Object, e As EventArgs) Handles Save.Click
         Try
             If MsgBox("คุณต้องการเพิ่มข้อมูลหรือไม่ ?", vbQuestion + vbYesNo, "เเจ้งเตือน") = vbYes Then
@@ -359,7 +355,7 @@ Public Class LockTable
                 Else
                     MsgBox("ผิดพลาด", vbCritical)
                 End If
-                saves()
+                ID()
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -368,25 +364,6 @@ Public Class LockTable
         LoadGrid()
         clear()
         cboteacherSubject()
-    End Sub
-    Sub saves()
-        Dim SubjectID As Integer
-
-        Console.WriteLine(SubjectCodeBox.Text)
-
-        Dim cmd1 As New OleDb.OleDbCommand("SELECT SubjectID FROM Subjects WHERE SubjectCode = '" + SubjectCodeBox.Text + "' ", conn)
-        dr = cmd1.ExecuteReader
-        While dr.Read
-            SubjectID = dr.Item("SubjectID")
-        End While
-        dr.Close()
-
-        Console.WriteLine(SubjectID)
-        Dim cmd3 As New OleDb.OleDbCommand("Insert into TeachersSubjects(`TeacherID`,`SubjectID`) values(@TeacherID,@SubjectID)", conn)
-        cmd3.Parameters.Clear()
-        cmd3.Parameters.AddWithValue("@TeacherID", 1)
-        cmd3.Parameters.AddWithValue("@SubjectID", SubjectID)
-        cmd3.ExecuteNonQuery()
     End Sub
     Private Sub Delete_Click(sender As Object, e As EventArgs) Handles Delete.Click
         Try
@@ -412,15 +389,28 @@ Public Class LockTable
         clear()
         cboteacherSubject()
     End Sub
-
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
         SubjectCodeBox.Text = DataGridView1.CurrentRow.Cells(0).Value
         SubjectNameBox.Text = DataGridView1.CurrentRow.Cells(1).Value
         cboSubjectDepartment.Text = DataGridView1.CurrentRow.Cells(2).Value
     End Sub
-
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Dim checkedItems As CheckedListBox.CheckedItemCollection = ChackClassrooms.CheckedItems
-        Console.WriteLine(checkedItems)
+    Private Sub cboTeachersSubjects_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboTeachersSubjects.SelectedIndexChanged
+        Me.agent.Focus()
+        status()
+    End Sub
+    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
+        search("Subjects", "SubjectName", txtSearch, cboTeachersSubjects)
+        status()
+    End Sub
+    Private Sub StudentTimetables_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        LoadCbo()
+        InitializeTable()
+        status()
+    End Sub
+    Private Sub StudentTimetables_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
+        status()
+    End Sub
+    Private Sub ChackClassrooms_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ChackClassrooms.SelectedIndexChanged
+        status()
     End Sub
 End Class

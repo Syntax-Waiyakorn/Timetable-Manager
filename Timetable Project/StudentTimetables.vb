@@ -209,8 +209,9 @@ Public Class StudentTimetables
                     lblCurrentPeriod.Text = dr.Item("PeriodName")
                     lblCurrentPeriod.ForeColor = Color.Lime
                 End While
-            Catch ex As Exception
-                MsgBox(ex.Message)
+            Catch
+                MsgBox("วิชา ล็อก อยู่", vbCritical)
+
             Finally
                 If conn.State = ConnectionState.Open Then
                     conn.Close()

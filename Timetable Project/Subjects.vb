@@ -65,8 +65,6 @@ Public Class Subjects
         txtSubjectPlace.Clear()
         cboDepartment.SelectedIndex = -1
         chkDefaultClass.CheckState = False
-
-
     End Sub
     Sub save()
         Try
