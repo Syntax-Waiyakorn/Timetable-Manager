@@ -418,4 +418,9 @@ Public Class LockTable
         SubjectNameBox.Text = DataGridView1.CurrentRow.Cells(1).Value
         cboSubjectDepartment.Text = DataGridView1.CurrentRow.Cells(2).Value
     End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim checkedItems As CheckedListBox.CheckedItemCollection = ChackClassrooms.CheckedItems
+        Console.WriteLine(checkedItems)
+    End Sub
 End Class
