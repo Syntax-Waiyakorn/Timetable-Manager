@@ -96,16 +96,16 @@ Public Class LockTable
             cboBox.Items.Clear()
             If conn.State = ConnectionState.Closed Then
                 conn.Open()
-                Dim cmd1 As New OleDb.OleDbCommand("Select " & Field1 & " from " & Table & " WHERE `SubjectName` like '%" & txtSearch.Text & "%' and SubjectSpecial=@SubjectSpecial", conn)
-                cmd1.Parameters.Clear()
-                cmd1.Parameters.AddWithValue("@SubjectSpecial", True)
-
-                dr = cmd1.ExecuteReader
-                While dr.Read
-                    cboBox.Items.Add(dr.Item(Field1))
-                End While
-                dr.Close()
             End If
+            Dim cmd1 As New OleDb.OleDbCommand("Select " & Field1 & " from " & Table & " WHERE `SubjectName` like '%" & txtSearch.Text & "%' and SubjectSpecial=@SubjectSpecial", conn)
+            cmd1.Parameters.Clear()
+            cmd1.Parameters.AddWithValue("@SubjectSpecial", True)
+
+            dr = cmd1.ExecuteReader
+            While dr.Read
+                cboBox.Items.Add(dr.Item(Field1))
+            End While
+            dr.Close()
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
@@ -290,7 +290,9 @@ Public Class LockTable
     Sub LoadGrid()
         Try
             DataGridView1.Rows.Clear()
-            conn.Open()
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
             Dim cmd As New OleDb.OleDbCommand("Select  SubjectCode, SubjectName, SubjectDepartment, SubjectPlace from Subjects where SubjectSpecial =@SubjectSpecial ", conn)
             cmd.Parameters.Clear()
             cmd.Parameters.AddWithValue("@SubjectSpecial", True)
@@ -305,20 +307,28 @@ Public Class LockTable
         conn.Close()
     End Sub
     Sub ID()
-        Dim SubjectID As Integer
+        Try
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
+            Dim SubjectID As Integer
+            Dim cmd1 As New OleDb.OleDbCommand("SELECT SubjectID FROM Subjects WHERE SubjectCode = '" + SubjectCodeBox.Text + "' ", conn)
+            dr = cmd1.ExecuteReader
+            While dr.Read
+                SubjectID = dr.Item("SubjectID")
+            End While
+            dr.Close()
 
-        Dim cmd1 As New OleDb.OleDbCommand("SELECT SubjectID FROM Subjects WHERE SubjectCode = '" + SubjectCodeBox.Text + "' ", conn)
-        dr = cmd1.ExecuteReader
-        While dr.Read
-            SubjectID = dr.Item("SubjectID")
-        End While
-        dr.Close()
-
-        Dim cmd3 As New OleDb.OleDbCommand("Insert into TeachersSubjects(`TeacherID`,`SubjectID`) values(@TeacherID,@SubjectID)", conn)
-        cmd3.Parameters.Clear()
-        cmd3.Parameters.AddWithValue("@TeacherID", 1)
-        cmd3.Parameters.AddWithValue("@SubjectID", SubjectID)
-        cmd3.ExecuteNonQuery()
+            Dim cmd3 As New OleDb.OleDbCommand("Insert into TeachersSubjects(`TeacherID`,`SubjectID`) values(@TeacherID,@SubjectID)", conn)
+            cmd3.Parameters.Clear()
+            cmd3.Parameters.AddWithValue("@TeacherID", 1)
+            cmd3.Parameters.AddWithValue("@SubjectID", SubjectID)
+            cmd3.ExecuteNonQuery()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            conn.Close()
+        End Try
     End Sub
     Sub clear()
         SubjectCodeBox.Clear()
@@ -339,7 +349,9 @@ Public Class LockTable
     Private Sub Save_Click(sender As Object, e As EventArgs) Handles Save.Click
         Try
             If MsgBox("คุณต้องการเพิ่มข้อมูลหรือไม่ ?", vbQuestion + vbYesNo, "เเจ้งเตือน") = vbYes Then
-                conn.Open()
+                If conn.State = ConnectionState.Closed Then
+                    conn.Open()
+                End If
                 Dim cmd As New OleDb.OleDbCommand("Insert into Subjects(`SubjectCode`,`SubjectName`,`SubjectDepartment`,`SubjectPlace`,`SubjectSpecial`,`SubjectQuota`) values(@SubjectCode,@SubjectName,@SubjectDepartment,@SubjectPlace,@SubjectSpecial,@SubjectQuota)", conn)
                 cmd.Parameters.Clear()
 
@@ -368,7 +380,9 @@ Public Class LockTable
     Private Sub Delete_Click(sender As Object, e As EventArgs) Handles Delete.Click
         Try
             If MsgBox("คุณต้องการลบหรือไม่ ?", vbQuestion + vbYesNo, "เเจ้งเตือน") = vbYes Then
-                conn.Open()
+                If conn.State = ConnectionState.Closed Then
+                    conn.Open()
+                End If
                 Dim cmd As New OleDb.OleDbCommand("Delete from Subjects WHERE SubjectCode=@SubjectCode", conn)
                 cmd.Parameters.Clear()
                 cmd.Parameters.AddWithValue("@SubjectCode", SubjectCodeBox.Text)
