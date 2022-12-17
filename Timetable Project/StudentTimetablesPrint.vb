@@ -109,9 +109,9 @@ Public Class StudentTimetablesPrint
         Dim labelFont As New Font("Arial", 9, FontStyle.Regular)
         Dim textFont As New Font("Arial", 11, FontStyle.Regular)
         Dim headerFont As New Font("Arial", 30, FontStyle.Bold)
-        Dim sizeProductionDate As SizeF = New SizeF() 'initialize
-        Dim sizeShipper As SizeF = New SizeF() 'initialize
-        Dim sizeCosigner As SizeF = New SizeF() 'initialize
+        Dim sizeProductionDate As SizeF = New SizeF()
+        Dim sizeShipper As SizeF = New SizeF()
+        Dim sizeCosigner As SizeF = New SizeF()
         Dim widthOuter As Integer = 820
         Dim heightOuter As Integer = 310
 
@@ -219,7 +219,6 @@ Public Class StudentTimetablesPrint
 
         Using font As Font = New Font("Arial", 9, FontStyle.Regular)
             Using brush As SolidBrush = New SolidBrush(Color.Black)
-
                 Dim TimetableIndex As String = "null"
                 XCoord = 65
                 YCoord = 165
@@ -242,6 +241,9 @@ Public Class StudentTimetablesPrint
                         End If
 
                         If TeacherFirstName = "-" Then
+                            TeacherFirstName = ""
+                        End If
+                        If SubjectCode = "ว่าง" Then
                             g.DrawString("ว่าง", font, brush, XCoord, YCoord)
                             XCoord = XCoord + 70
                         Else

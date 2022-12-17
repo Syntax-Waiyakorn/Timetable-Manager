@@ -121,6 +121,12 @@ Public Class StudentTimetables
         Next
     End Sub
     Sub DisplayPeriod(Classroom As String, PLabel As Label)
+        Dim ClassroomCodes As String = "null"
+        Dim SubjectPlaces As String = "null"
+        Dim ClassroomCode As String = "null"
+        Dim TeacherFirstName As String = "null"
+        Dim TeacherFirstNames As String = "null"
+
         Try
             If conn.State = ConnectionState.Closed Then
                 conn.Open()
@@ -133,10 +139,26 @@ Public Class StudentTimetables
                 PPeriod = PLabelName.Chars(6)
             End Try
             TimetableIndex = CStr(Classroom) & "$$" & PDay & "$$" & PPeriod
+            Dim cmd1 As New OleDb.OleDbCommand("SELECT  TeacherFirstName, SubjectPlace, ClassroomCode FROM TimetablesQuery WHERE TimetableIndex = '" + TimetableIndex + "'", conn)
+            dr = cmd1.ExecuteReader
+            While dr.Read
+                SubjectPlaces = dr.Item("SubjectPlace")
+                ClassroomCodes = dr.Item("ClassroomCode")
+                TeacherFirstNames = dr.Item("TeacherFirstName")
+            End While
+
+            If SubjectPlaces = "ห้องประจำ" Then
+                ClassroomCode = ClassroomCodes
+                TeacherFirstName = TeacherFirstNames
+            Else
+                ClassroomCode = ""
+                TeacherFirstName = ""
+            End If
+
             Dim cmd As New OleDb.OleDbCommand("SELECT ClassroomCode, TeacherFirstName, SubjectCode FROM TimetablesQuery WHERE TimetableIndex = '" + TimetableIndex + "'", conn)
             dr = cmd.ExecuteReader
             While dr.Read
-                PLabel.Text = CStr(dr.Item("TeacherFirstName")) & vbCrLf & CStr(dr.Item("SubjectCode")) & vbCrLf & CStr(dr.Item("ClassroomCode"))
+                PLabel.Text = TeacherFirstName & vbCrLf & CStr(dr.Item("SubjectCode")) & vbCrLf & ClassroomCode
             End While
         Catch ex As Exception
             MsgBox(ex.Message)
