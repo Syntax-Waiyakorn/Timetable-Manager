@@ -165,4 +165,8 @@ Public Class Teachers
     Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
         search()
     End Sub
+
+    Private Sub lblTitle_Click(sender As Object, e As EventArgs) Handles lblTitle.Click
+
+    End Sub
 End Class

@@ -403,7 +403,7 @@ Public Class LockTable
         clear()
         cboteacherSubject()
     End Sub
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+    Private Sub DataGridView1_Click(sender As Object, e As EventArgs) Handles DataGridView1.Click
         SubjectCodeBox.Text = DataGridView1.CurrentRow.Cells(0).Value
         SubjectNameBox.Text = DataGridView1.CurrentRow.Cells(1).Value
         cboSubjectDepartment.Text = DataGridView1.CurrentRow.Cells(2).Value

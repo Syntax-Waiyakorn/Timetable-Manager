@@ -341,6 +341,7 @@
     <None Include="Resources\books1.png" />
     <None Include="Resources\BG.png" />
     <None Include="Resources\BGExtend.png" />
+    <None Include="Resources\bgggggg.png" />
     <Content Include="Resources\pencil.ico" />
   </ItemGroup>
   <ItemGroup>

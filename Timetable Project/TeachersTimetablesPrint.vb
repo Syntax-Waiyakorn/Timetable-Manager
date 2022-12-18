@@ -243,7 +243,7 @@ Public Class TeachersTimetablesPrint
                             SubjectPlace = ClassroomCode
                         End If
                         If SubjectCode = "null" Then
-                            g.DrawString("ว่าง", font, brush, XCoord, YCoord)
+                            g.DrawString("", font, brush, XCoord, YCoord)
                             XCoord = XCoord + 70
                         Else
                             g.DrawString(SubjectCode & vbCrLf & ClassroomName & vbCrLf & SubjectPlace, font, brush, XCoord, YCoord)

@@ -244,7 +244,7 @@ Public Class StudentTimetablesPrint
                             TeacherFirstName = ""
                         End If
                         If SubjectCode = "ว่าง" Then
-                            g.DrawString("ว่าง", font, brush, XCoord, YCoord)
+                            g.DrawString("", font, brush, XCoord, YCoord)
                             XCoord = XCoord + 70
                         Else
                             g.DrawString(TeacherFirstName & vbCrLf & SubjectCode & vbCrLf & SubjectPlace, font, brush, XCoord, YCoord)

@@ -166,10 +166,10 @@ Partial Class Classrooms
         Me.lblTitle.Font = New System.Drawing.Font("Sylfaen", 60.0!)
         Me.lblTitle.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblTitle.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblTitle.Location = New System.Drawing.Point(110, 50)
+        Me.lblTitle.Location = New System.Drawing.Point(38, 50)
         Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Padding = New System.Windows.Forms.Padding(10)
-        Me.lblTitle.Size = New System.Drawing.Size(510, 125)
+        Me.lblTitle.Padding = New System.Windows.Forms.Padding(70, 10, 70, 10)
+        Me.lblTitle.Size = New System.Drawing.Size(630, 125)
         Me.lblTitle.TabIndex = 132
         Me.lblTitle.Text = "เเก้ไขข้อมูลห้อง"
         '

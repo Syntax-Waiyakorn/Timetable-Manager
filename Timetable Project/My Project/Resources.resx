@@ -148,6 +148,9 @@
   <data name="classroom-2-512" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\classroom-2-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="repository-open-graph-template" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\repository-open-graph-template.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="wp9637329-no-copyright-wallpapers" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wp9637329-no-copyright-wallpapers.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -159,6 +162,9 @@
   </data>
   <data name="classroom-512" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\classroom-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wp9637329-no-copyright-wallpapers2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wp9637329-no-copyright-wallpapers2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="minimize-sign (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minimize-sign (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,11 +196,14 @@
   <data name="classroomGray" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\classroomGray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minimize-sign" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minimize-sign.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="classroom-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\classroom-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="teacher1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\teacher1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wp9409819-no-copyright-wallpapers3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wp9409819-no-copyright-wallpapers3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="553e9750160831.58c8ff8bc2909-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\553e9750160831.58c8ff8bc2909-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,8 +223,8 @@
   <data name="text-books (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\text-books (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="grid-two-upgray" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\grid-two-upgray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BGExtend1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BGExtend.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BGExtend2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BGExtend2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -244,6 +253,9 @@
   <data name="add-user-xxl" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add-user-xxl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="grid-two-upgray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\grid-two-upgray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="homeGray" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\homeGray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -271,11 +283,11 @@
   <data name="teacher-512" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\teacher-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="minimize-sign" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minimize-sign.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="wp9637343-no-copyright-wallpapers" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wp9637343-no-copyright-wallpapers.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="classroom-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\classroom-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="gear-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gear-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -298,11 +310,11 @@
   <data name="teacher (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\teacher (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="wp9637312-no-copyright-wallpapers" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wp9637312-no-copyright-wallpapers.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BGExtend1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BGExtend.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="wp9409819" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wp9409819.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -313,16 +325,7 @@
   <data name="books1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\books1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="wp9637329-no-copyright-wallpapers2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\wp9637329-no-copyright-wallpapers2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="repository-open-graph-template" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\repository-open-graph-template.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="wp9409819-no-copyright-wallpapers3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\wp9409819-no-copyright-wallpapers3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="wp9637312-no-copyright-wallpapers" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\wp9637312-no-copyright-wallpapers.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bgggggg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bgggggg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
