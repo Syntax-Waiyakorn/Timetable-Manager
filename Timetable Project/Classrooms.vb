@@ -20,9 +20,13 @@ Public Class Classrooms
         txtPR.Enabled = False
     End Sub
     Private Sub DataGridView1_Click(sender As Object, e As EventArgs) Handles DataGridView1.Click
-        txtPR.Text = DataGridView1.CurrentRow.Cells(0).Value
-        txtID.Text = DataGridView1.CurrentRow.Cells(1).Value
-        txtName.Text = DataGridView1.CurrentRow.Cells(2).Value
+        Try
+            txtPR.Text = DataGridView1.CurrentRow.Cells(0).Value
+            txtID.Text = DataGridView1.CurrentRow.Cells(1).Value
+            txtName.Text = DataGridView1.CurrentRow.Cells(2).Value
+        Catch
+            MsgBox("ข้อมูลขาดหาย", vbOKOnly, "เเจ้งเตือน")
+        End Try
     End Sub
     Sub LoadGrid()
         Try
@@ -63,8 +67,8 @@ Public Class Classrooms
                     MsgBox("ผิดพลาด", vbCritical)
                 End If
             End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
+        Catch
+            MsgBox("กรอกข้อมูลไม่ครบ", vbOKOnly, "เเจ้งเตือน")
         End Try
         conn.Close()
         LoadGrid()
@@ -86,8 +90,8 @@ Public Class Classrooms
             Else
                 MsgBox("ผิดพลาด", vbCritical)
             End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
+        Catch
+            MsgBox("ข้อมูลขาดหาย", vbOKOnly, "เเจ้งเตือน")
         End Try
         conn.Close()
         LoadGrid()

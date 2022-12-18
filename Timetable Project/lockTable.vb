@@ -212,13 +212,14 @@ Public Class LockTable
                 lblCurrentPeriod.Text = lblPeriod / 10 - 1
                 lblCurrentPeriod.ForeColor = Color.Lime
             End Try
+
             Try
                 PPeriodC = PLabelNameC.Chars(6) & PLabelNameC.Chars(7)
             Catch
                 PPeriodC = PLabelNameC.Chars(6)
             End Try
             lblCurrentDay.Tag = PDayC
-            lblCurrentPeriod.Tag = PPeriodC
+            lblCurrentPeriod.Tag = lblPeriod
 
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -229,8 +230,6 @@ Public Class LockTable
     Sub Savelock()
         Dim selectedItems As String() = ChackClassrooms.CheckedItems.OfType(Of String)().ToArray()
         Dim itemsString As String = String.Join(vbCrLf, selectedItems)
-        Console.WriteLine(itemsString)
-
         Try
             For Each CurrentClassroom In selectedItems
                 If conn.State = ConnectionState.Closed Then
@@ -274,8 +273,14 @@ Public Class LockTable
                 cmd3.Parameters.Clear()
                 cmd3.Parameters.AddWithValue("@TeacherSubjectID", TeacherSubjectID)
                 cmd3.Parameters.AddWithValue("TimetablePeriodID", TimetablePeriodID)
+                i = cmd3.ExecuteNonQuery
             Next
             DisplayClassroomTable(selectedItems(0))
+            If i > 0 Then
+                MsgBox("เพิ่มข้อมูลเเล้ว !", vbInformation)
+            Else
+                MsgBox("ผิดพลาด", vbCritical)
+            End If
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
@@ -313,7 +318,6 @@ Public Class LockTable
                 SubjectID = dr.Item("SubjectID")
             End While
             dr.Close()
-
             Dim cmd3 As New OleDb.OleDbCommand("Insert into TeachersSubjects(`TeacherID`,`SubjectID`) values(@TeacherID,@SubjectID)", conn)
             cmd3.Parameters.Clear()
             cmd3.Parameters.AddWithValue("@TeacherID", 1)
@@ -349,7 +353,6 @@ Public Class LockTable
                 End If
                 Dim cmd As New OleDb.OleDbCommand("Insert into Subjects(`SubjectCode`,`SubjectName`,`SubjectDepartment`,`SubjectPlace`,`SubjectSpecial`,`SubjectQuota`) values(@SubjectCode,@SubjectName,@SubjectDepartment,@SubjectPlace,@SubjectSpecial,@SubjectQuota)", conn)
                 cmd.Parameters.Clear()
-
                 cmd.Parameters.AddWithValue("@SubjectCode", SubjectCodeBox.Text)
                 cmd.Parameters.AddWithValue("@SubjectName", SubjectNameBox.Text)
                 cmd.Parameters.AddWithValue("@SubjectDepartment", cboSubjectDepartment.Text)
@@ -381,7 +384,6 @@ Public Class LockTable
                 Dim cmd As New OleDb.OleDbCommand("Delete from Subjects WHERE SubjectCode=@SubjectCode", conn)
                 cmd.Parameters.Clear()
                 cmd.Parameters.AddWithValue("@SubjectCode", SubjectCodeBox.Text)
-
                 i = cmd.ExecuteNonQuery
                 If i > 0 Then
                     MsgBox("ลบสำเร็จ !", vbInformation)

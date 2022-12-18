@@ -42,11 +42,15 @@ Public Class Teachers
         conn.Close()
     End Sub
     Private Sub DataGridView1_Click(sender As Object, e As EventArgs) Handles DataGridView1.Click
-        txtPR.Text = DataGridView1.CurrentRow.Cells(0).Value
-        txtTeacherFirstName.Text = DataGridView1.CurrentRow.Cells(1).Value
-        txtTeacherLastName.Text = DataGridView1.CurrentRow.Cells(2).Value
-        cboTeacherDepartment.Text = DataGridView1.CurrentRow.Cells(3).Value
-        txtTeacherQuota.Text = DataGridView1.CurrentRow.Cells(4).Value
+        Try
+            txtPR.Text = DataGridView1.CurrentRow.Cells(0).Value
+            txtTeacherFirstName.Text = DataGridView1.CurrentRow.Cells(1).Value
+            txtTeacherLastName.Text = DataGridView1.CurrentRow.Cells(2).Value
+            cboTeacherDepartment.Text = DataGridView1.CurrentRow.Cells(3).Value
+            txtTeacherQuota.Text = DataGridView1.CurrentRow.Cells(4).Value
+        Catch
+            MsgBox("ข้อมูลขาดหาย", vbOKOnly, "เเจ้งเตือน")
+        End Try
     End Sub
     Sub clear()
         txtPR.Text = "[AUTO]"
@@ -74,10 +78,9 @@ Public Class Teachers
                     MsgBox("ผิดพลาด", vbCritical)
                 End If
             End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
+        Catch
+            MsgBox("กรอกข้อมูลไม่ครบ", vbOKOnly, "เเจ้งเตือน")
         End Try
-
         conn.Close()
         LoadGrid()
         clear()
@@ -100,8 +103,8 @@ Public Class Teachers
             Else
                 MsgBox("ผิดพลาด", vbCritical)
             End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
+        Catch
+            MsgBox("ข้อมูลขาดหาย", vbOKOnly, "เเจ้งเตือน")
         End Try
         conn.Close()
         LoadGrid()

@@ -28,18 +28,21 @@ Public Class Subjects
         txtSubjectPlace.Enabled = True
     End Sub
     Private Sub DataGridView1_Click(sender As Object, e As EventArgs) Handles DataGridView1.Click
-        txtPR.Text = DataGridView1.CurrentRow.Cells(0).Value
-        txtID.Text = DataGridView1.CurrentRow.Cells(1).Value
-        txtName.Text = DataGridView1.CurrentRow.Cells(2).Value
-        cboDepartment.Text = DataGridView1.CurrentRow.Cells(3).Value
-        If DataGridView1.CurrentRow.Cells(4).Value = "ห้องประจำ" Then
-            chkDefaultClass.Checked = True
-            txtSubjectPlace.Enabled = False
-        Else
-            chkDefaultClass.Checked = False
-            txtSubjectPlace.Text = DataGridView1.CurrentRow.Cells(4).Value
-        End If
-
+        Try
+            txtPR.Text = DataGridView1.CurrentRow.Cells(0).Value
+            txtID.Text = DataGridView1.CurrentRow.Cells(1).Value
+            txtName.Text = DataGridView1.CurrentRow.Cells(2).Value
+            cboDepartment.Text = DataGridView1.CurrentRow.Cells(3).Value
+            If DataGridView1.CurrentRow.Cells(4).Value = "ห้องประจำ" Then
+                chkDefaultClass.Checked = True
+                txtSubjectPlace.Enabled = False
+            Else
+                chkDefaultClass.Checked = False
+                txtSubjectPlace.Text = DataGridView1.CurrentRow.Cells(4).Value
+            End If
+        Catch
+            MsgBox("ข้อมูลขาดหาย", vbOKOnly, "เเจ้งเตือน")
+        End Try
     End Sub
     Sub LoadGrid()
         Try
@@ -85,8 +88,8 @@ Public Class Subjects
                     MsgBox("ผิดพลาด", vbCritical)
                 End If
             End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
+        Catch
+            MsgBox("กรอกข้อมูลไม่ครบ", vbOKOnly, "เเจ้งเตือน")
         End Try
         conn.Close()
         LoadGrid()
@@ -110,8 +113,8 @@ Public Class Subjects
             Else
                 MsgBox("ผิดพลาด", vbCritical)
             End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
+        Catch
+            MsgBox("ข้อมูลขาดหาย", vbOKOnly, "เเจ้งเตือน")
         End Try
         conn.Close()
         LoadGrid()
