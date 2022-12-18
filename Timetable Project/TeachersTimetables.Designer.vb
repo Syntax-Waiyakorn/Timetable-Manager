@@ -115,8 +115,11 @@ Partial Class TeachersTimetables
         Me.agent = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Connection_status = New System.Windows.Forms.Label()
+        Me.Connection = New System.Windows.Forms.Label()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        Me.Panel5.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblD5P11
@@ -126,7 +129,7 @@ Partial Class TeachersTimetables
         Me.lblD5P11.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD5P11.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD5P11.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD5P11.Location = New System.Drawing.Point(1510, 724)
+        Me.lblD5P11.Location = New System.Drawing.Point(1460, 542)
         Me.lblD5P11.Name = "lblD5P11"
         Me.lblD5P11.Size = New System.Drawing.Size(123, 97)
         Me.lblD5P11.TabIndex = 358
@@ -293,7 +296,7 @@ Partial Class TeachersTimetables
         Me.lblD4P11.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD4P11.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD4P11.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD4P11.Location = New System.Drawing.Point(1510, 619)
+        Me.lblD4P11.Location = New System.Drawing.Point(1460, 437)
         Me.lblD4P11.Name = "lblD4P11"
         Me.lblD4P11.Size = New System.Drawing.Size(123, 97)
         Me.lblD4P11.TabIndex = 347
@@ -447,7 +450,7 @@ Partial Class TeachersTimetables
         Me.lblD3P11.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD3P11.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD3P11.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD3P11.Location = New System.Drawing.Point(1510, 515)
+        Me.lblD3P11.Location = New System.Drawing.Point(1460, 332)
         Me.lblD3P11.Name = "lblD3P11"
         Me.lblD3P11.Size = New System.Drawing.Size(123, 97)
         Me.lblD3P11.TabIndex = 336
@@ -601,7 +604,7 @@ Partial Class TeachersTimetables
         Me.lblD2P11.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD2P11.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD2P11.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD2P11.Location = New System.Drawing.Point(1510, 411)
+        Me.lblD2P11.Location = New System.Drawing.Point(1460, 228)
         Me.lblD2P11.Name = "lblD2P11"
         Me.lblD2P11.Size = New System.Drawing.Size(123, 97)
         Me.lblD2P11.TabIndex = 325
@@ -755,7 +758,7 @@ Partial Class TeachersTimetables
         Me.lblD1P11.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD1P11.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD1P11.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD1P11.Location = New System.Drawing.Point(1510, 829)
+        Me.lblD1P11.Location = New System.Drawing.Point(1460, 124)
         Me.lblD1P11.Name = "lblD1P11"
         Me.lblD1P11.Size = New System.Drawing.Size(123, 97)
         Me.lblD1P11.TabIndex = 314
@@ -1249,9 +1252,9 @@ Partial Class TeachersTimetables
         Me.cboTeachers.ForeColor = System.Drawing.Color.White
         Me.cboTeachers.FormattingEnabled = True
         Me.cboTeachers.IntegralHeight = False
-        Me.cboTeachers.Location = New System.Drawing.Point(277, 132)
+        Me.cboTeachers.Location = New System.Drawing.Point(233, 132)
         Me.cboTeachers.Name = "cboTeachers"
-        Me.cboTeachers.Size = New System.Drawing.Size(891, 68)
+        Me.cboTeachers.Size = New System.Drawing.Size(941, 68)
         Me.cboTeachers.TabIndex = 382
         '
         'lblRoom
@@ -1260,7 +1263,7 @@ Partial Class TeachersTimetables
         Me.lblRoom.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.lblRoom.Font = New System.Drawing.Font("Sylfaen", 25.0!)
         Me.lblRoom.ForeColor = System.Drawing.Color.White
-        Me.lblRoom.Location = New System.Drawing.Point(63, 138)
+        Me.lblRoom.Location = New System.Drawing.Point(23, 132)
         Me.lblRoom.Name = "lblRoom"
         Me.lblRoom.Size = New System.Drawing.Size(178, 44)
         Me.lblRoom.TabIndex = 361
@@ -1269,6 +1272,8 @@ Partial Class TeachersTimetables
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.Connection_status)
+        Me.Panel3.Controls.Add(Me.Connection)
         Me.Panel3.Controls.Add(Me.txtSearch)
         Me.Panel3.Controls.Add(Me.cboTeachers)
         Me.Panel3.Controls.Add(Me.lblRoom)
@@ -1284,9 +1289,9 @@ Partial Class TeachersTimetables
         Me.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtSearch.Font = New System.Drawing.Font("Arial", 40.0!)
         Me.txtSearch.ForeColor = System.Drawing.Color.White
-        Me.txtSearch.Location = New System.Drawing.Point(277, 43)
+        Me.txtSearch.Location = New System.Drawing.Point(223, 30)
         Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(891, 69)
+        Me.txtSearch.Size = New System.Drawing.Size(586, 69)
         Me.txtSearch.TabIndex = 376
         '
         'Label1
@@ -1295,7 +1300,7 @@ Partial Class TeachersTimetables
         Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.Label1.Font = New System.Drawing.Font("Sylfaen", 25.0!)
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(151, 55)
+        Me.Label1.Location = New System.Drawing.Point(111, 47)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(90, 44)
         Me.Label1.TabIndex = 366
@@ -1337,10 +1342,40 @@ Partial Class TeachersTimetables
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Panel5.Controls.Add(Me.lblD5P11)
+        Me.Panel5.Controls.Add(Me.lblD4P11)
+        Me.Panel5.Controls.Add(Me.lblD3P11)
+        Me.Panel5.Controls.Add(Me.lblD2P11)
+        Me.Panel5.Controls.Add(Me.lblD1P11)
         Me.Panel5.Location = New System.Drawing.Point(50, 287)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(1626, 661)
         Me.Panel5.TabIndex = 391
+        '
+        'Connection_status
+        '
+        Me.Connection_status.AutoSize = True
+        Me.Connection_status.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Connection_status.Font = New System.Drawing.Font("Microsoft Tai Le", 25.0!)
+        Me.Connection_status.ForeColor = System.Drawing.Color.Red
+        Me.Connection_status.Location = New System.Drawing.Point(956, 47)
+        Me.Connection_status.Name = "Connection_status"
+        Me.Connection_status.Size = New System.Drawing.Size(177, 44)
+        Me.Connection_status.TabIndex = 384
+        Me.Connection_status.Text = "กรุณาเลือกครู"
+        '
+        'Connection
+        '
+        Me.Connection.AllowDrop = True
+        Me.Connection.AutoSize = True
+        Me.Connection.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Connection.Font = New System.Drawing.Font("Sylfaen", 25.0!)
+        Me.Connection.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Connection.Location = New System.Drawing.Point(835, 45)
+        Me.Connection.Name = "Connection"
+        Me.Connection.Size = New System.Drawing.Size(115, 44)
+        Me.Connection.TabIndex = 383
+        Me.Connection.Text = "สถานะ :"
         '
         'TeachersTimetables
         '
@@ -1351,7 +1386,6 @@ Partial Class TeachersTimetables
         Me.ClientSize = New System.Drawing.Size(1803, 1021)
         Me.Controls.Add(Me.agent)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.lblD5P11)
         Me.Controls.Add(Me.lblD5P10)
         Me.Controls.Add(Me.lblD5P9)
         Me.Controls.Add(Me.lblD5P8)
@@ -1363,7 +1397,6 @@ Partial Class TeachersTimetables
         Me.Controls.Add(Me.lblD5P3)
         Me.Controls.Add(Me.lblD5P2)
         Me.Controls.Add(Me.lblD5P1)
-        Me.Controls.Add(Me.lblD4P11)
         Me.Controls.Add(Me.lblD4P10)
         Me.Controls.Add(Me.lblD4P9)
         Me.Controls.Add(Me.lblD4P8)
@@ -1374,7 +1407,6 @@ Partial Class TeachersTimetables
         Me.Controls.Add(Me.lblD4P3)
         Me.Controls.Add(Me.lblD4P2)
         Me.Controls.Add(Me.lblD4P1)
-        Me.Controls.Add(Me.lblD3P11)
         Me.Controls.Add(Me.lblD3P10)
         Me.Controls.Add(Me.lblD3P9)
         Me.Controls.Add(Me.lblD3P8)
@@ -1385,7 +1417,6 @@ Partial Class TeachersTimetables
         Me.Controls.Add(Me.lblD3P3)
         Me.Controls.Add(Me.lblD3P2)
         Me.Controls.Add(Me.lblD3P1)
-        Me.Controls.Add(Me.lblD2P11)
         Me.Controls.Add(Me.lblD2P10)
         Me.Controls.Add(Me.lblD2P9)
         Me.Controls.Add(Me.lblD2P8)
@@ -1396,7 +1427,6 @@ Partial Class TeachersTimetables
         Me.Controls.Add(Me.lblD2P3)
         Me.Controls.Add(Me.lblD2P2)
         Me.Controls.Add(Me.lblD2P1)
-        Me.Controls.Add(Me.lblD1P11)
         Me.Controls.Add(Me.lblD1P10)
         Me.Controls.Add(Me.lblD1P9)
         Me.Controls.Add(Me.lblD1P8)
@@ -1442,6 +1472,7 @@ Partial Class TeachersTimetables
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         Me.Panel1.ResumeLayout(False)
+        Me.Panel5.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1538,4 +1569,6 @@ Partial Class TeachersTimetables
     Friend WithEvents txtSearch As TextBox
     Friend WithEvents btnPrint As Button
     Friend WithEvents Panel5 As Panel
+    Friend WithEvents Connection_status As Label
+    Friend WithEvents Connection As Label
 End Class

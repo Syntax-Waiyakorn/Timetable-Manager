@@ -3,7 +3,15 @@ Public Class TeachersTimetables
     Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\Timetable.accdb")
     Dim dr As OleDbDataReader
     Dim i As Integer
-
+    Sub status()
+        If cboTeachers.SelectedIndex = -1 Then
+            Connection_status.Text = "กรุณาเลือกครู"
+            Connection_status.ForeColor = Color.Red
+        Else
+            Connection_status.Text = "แสดงครู " & cboTeachers.Text & ""
+            Connection_status.ForeColor = Color.Lime
+        End If
+    End Sub
     Sub LoadCbo()
         Try
             If conn.State = ConnectionState.Closed Then
@@ -146,6 +154,16 @@ Public Class TeachersTimetables
                 conn.Close()
             End If
         End Try
+        status()
+    End Sub
+    Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
+        Dim OBJ As New TeachersTimetablesPrint
+        Dim TeachersTimetablesFrom As New TeachersTimetablesPrint
+        If cboTeachers.SelectedIndex = -1 Then
+            MsgBox("เลือกครูก่อน", vbYes, "เเจ้งเตือน")
+        Else
+            TeachersTimetablesFrom.Show()
+        End If
     End Sub
     Private Sub cboTeachersSubjects_SelectedIndexChanged(sender As Object, e As EventArgs)
         Me.agent.Focus()
@@ -158,14 +176,5 @@ Public Class TeachersTimetables
     End Sub
     Private Sub StudentTimetables_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
         LoadCbo()
-    End Sub
-    Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
-        Dim OBJ As New TeachersTimetablesPrint
-        Dim TeachersTimetablesFrom As New TeachersTimetablesPrint
-        If cboTeachers.SelectedIndex = -1 Then
-            MsgBox("เลือกครูก่อน", vbYes, "เเจ้งเตือน")
-        Else
-            TeachersTimetablesFrom.Show()
-        End If
     End Sub
 End Class

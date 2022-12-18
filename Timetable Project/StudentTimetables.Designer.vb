@@ -129,6 +129,7 @@ Partial Class StudentTimetables
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        Me.Panel5.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblTeachers
@@ -150,7 +151,7 @@ Partial Class StudentTimetables
         Me.lblD5P11.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD5P11.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD5P11.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD5P11.Location = New System.Drawing.Point(1520, 712)
+        Me.lblD5P11.Location = New System.Drawing.Point(1471, 534)
         Me.lblD5P11.Name = "lblD5P11"
         Me.lblD5P11.Size = New System.Drawing.Size(123, 97)
         Me.lblD5P11.TabIndex = 358
@@ -317,7 +318,7 @@ Partial Class StudentTimetables
         Me.lblD4P11.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD4P11.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD4P11.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD4P11.Location = New System.Drawing.Point(1520, 607)
+        Me.lblD4P11.Location = New System.Drawing.Point(1471, 429)
         Me.lblD4P11.Name = "lblD4P11"
         Me.lblD4P11.Size = New System.Drawing.Size(123, 97)
         Me.lblD4P11.TabIndex = 347
@@ -471,7 +472,7 @@ Partial Class StudentTimetables
         Me.lblD3P11.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD3P11.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD3P11.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD3P11.Location = New System.Drawing.Point(1520, 503)
+        Me.lblD3P11.Location = New System.Drawing.Point(1471, 324)
         Me.lblD3P11.Name = "lblD3P11"
         Me.lblD3P11.Size = New System.Drawing.Size(123, 97)
         Me.lblD3P11.TabIndex = 336
@@ -625,7 +626,7 @@ Partial Class StudentTimetables
         Me.lblD2P11.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD2P11.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD2P11.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD2P11.Location = New System.Drawing.Point(1520, 399)
+        Me.lblD2P11.Location = New System.Drawing.Point(1471, 220)
         Me.lblD2P11.Name = "lblD2P11"
         Me.lblD2P11.Size = New System.Drawing.Size(123, 97)
         Me.lblD2P11.TabIndex = 325
@@ -779,7 +780,7 @@ Partial Class StudentTimetables
         Me.lblD1P11.Font = New System.Drawing.Font("Sylfaen", 15.0!)
         Me.lblD1P11.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblD1P11.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblD1P11.Location = New System.Drawing.Point(1520, 817)
+        Me.lblD1P11.Location = New System.Drawing.Point(1471, 116)
         Me.lblD1P11.Name = "lblD1P11"
         Me.lblD1P11.Size = New System.Drawing.Size(123, 97)
         Me.lblD1P11.TabIndex = 314
@@ -1525,6 +1526,11 @@ Partial Class StudentTimetables
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Panel5.Controls.Add(Me.lblD1P11)
+        Me.Panel5.Controls.Add(Me.lblD5P11)
+        Me.Panel5.Controls.Add(Me.lblD4P11)
+        Me.Panel5.Controls.Add(Me.lblD3P11)
+        Me.Panel5.Controls.Add(Me.lblD2P11)
         Me.Panel5.Location = New System.Drawing.Point(49, 283)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(1637, 658)
@@ -1540,7 +1546,6 @@ Partial Class StudentTimetables
         Me.Controls.Add(Me.agent)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.lblD5P11)
         Me.Controls.Add(Me.lblD5P10)
         Me.Controls.Add(Me.lblD5P9)
         Me.Controls.Add(Me.lblD5P8)
@@ -1552,7 +1557,6 @@ Partial Class StudentTimetables
         Me.Controls.Add(Me.lblD5P3)
         Me.Controls.Add(Me.lblD5P2)
         Me.Controls.Add(Me.lblD5P1)
-        Me.Controls.Add(Me.lblD4P11)
         Me.Controls.Add(Me.lblD4P10)
         Me.Controls.Add(Me.lblD4P9)
         Me.Controls.Add(Me.lblD4P8)
@@ -1563,7 +1567,6 @@ Partial Class StudentTimetables
         Me.Controls.Add(Me.lblD4P3)
         Me.Controls.Add(Me.lblD4P2)
         Me.Controls.Add(Me.lblD4P1)
-        Me.Controls.Add(Me.lblD3P11)
         Me.Controls.Add(Me.lblD3P10)
         Me.Controls.Add(Me.lblD3P9)
         Me.Controls.Add(Me.lblD3P8)
@@ -1574,7 +1577,6 @@ Partial Class StudentTimetables
         Me.Controls.Add(Me.lblD3P3)
         Me.Controls.Add(Me.lblD3P2)
         Me.Controls.Add(Me.lblD3P1)
-        Me.Controls.Add(Me.lblD2P11)
         Me.Controls.Add(Me.lblD2P10)
         Me.Controls.Add(Me.lblD2P9)
         Me.Controls.Add(Me.lblD2P8)
@@ -1585,7 +1587,6 @@ Partial Class StudentTimetables
         Me.Controls.Add(Me.lblD2P3)
         Me.Controls.Add(Me.lblD2P2)
         Me.Controls.Add(Me.lblD2P1)
-        Me.Controls.Add(Me.lblD1P11)
         Me.Controls.Add(Me.lblD1P10)
         Me.Controls.Add(Me.lblD1P9)
         Me.Controls.Add(Me.lblD1P8)
@@ -1633,6 +1634,7 @@ Partial Class StudentTimetables
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         Me.Panel1.ResumeLayout(False)
+        Me.Panel5.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
