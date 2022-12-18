@@ -226,61 +226,56 @@ Public Class LockTable
             conn.Close()
         End Try
     End Sub
-    Sub Savelook()
+    Sub Savelock()
         Dim selectedItems As String() = ChackClassrooms.CheckedItems.OfType(Of String)().ToArray()
         Dim itemsString As String = String.Join(vbCrLf, selectedItems)
         Console.WriteLine(itemsString)
 
         Try
-            If conn.State = ConnectionState.Closed Then
-                conn.Open()
-            End If
-            Dim SubjectCode As String = "null"
-            Dim Classroom As String = ChackClassrooms.Text
-            Dim TDay As String = lblCurrentDay.Tag
-            Dim TPeriod As String = lblCurrentPeriod.Tag
-            Dim cboText As String = cboTeachersSubjects.Text
-            Dim TeacherFirstName As String = "-"
-            Dim SubjectName = cboText
-            Dim TimetableIndex As String = Classroom & "$$" & TDay & "$$" & TPeriod
-            Dim UserTeacherIndex As String = TeacherFirstName & "$$" & TDay & "$$" & TPeriod
-            Dim DayPeriodIndex As String = TDay & "$$" & TPeriod
-            Dim TimetablePeriodID As String = "null"
+            For Each CurrentClassroom In selectedItems
+                If conn.State = ConnectionState.Closed Then
+                    conn.Open()
+                End If
+                Dim SubjectCode As String = "null"
+                Dim Classroom As String = CurrentClassroom
+                Dim TDay As String = lblCurrentDay.Tag
+                Dim TPeriod As String = lblCurrentPeriod.Tag
+                Dim cboText As String = cboTeachersSubjects.Text
+                Dim TeacherFirstName As String = "-"
+                Dim SubjectName = cboText
+                Dim TimetableIndex As String = Classroom & "$$" & TDay & "$$" & TPeriod
+                Dim UserTeacherIndex As String = TeacherFirstName & "$$" & TDay & "$$" & TPeriod
+                Dim DayPeriodIndex As String = TDay & "$$" & TPeriod
+                Dim TimetablePeriodID As String = "null"
 
-            Dim cmd As New OleDb.OleDbCommand("SELECT SubjectCode FROM Subjects WHERE SubjectName = '" + SubjectName + "'", conn)
-            dr = cmd.ExecuteReader
-            While dr.Read
-                SubjectCode = dr.Item("SubjectCode")
-            End While
+                Dim cmd As New OleDb.OleDbCommand("SELECT SubjectCode FROM Subjects WHERE SubjectName = '" + SubjectName + "'", conn)
+                dr = cmd.ExecuteReader
+                While dr.Read
+                    SubjectCode = dr.Item("SubjectCode")
+                End While
 
-            Dim TeacherSubjectIndex As String = TeacherFirstName & "$$" & SubjectCode
-            Dim TeacherSubjectID As String = "null"
-            Dim TeacherIndex As String = "null"
+                Dim TeacherSubjectIndex As String = TeacherFirstName & "$$" & SubjectCode
+                Dim TeacherSubjectID As String = "null"
+                Dim TeacherIndex As String = "null"
 
-            Dim cmd1 As New OleDb.OleDbCommand("SELECT TimetablePeriodID FROM TimetablesQuery WHERE TimetableIndex = '" + TimetableIndex + "'", conn)
-            dr = cmd1.ExecuteReader
-            While dr.Read
-                TimetablePeriodID = dr.Item("TimetablePeriodID")
-            End While
+                Dim cmd1 As New OleDb.OleDbCommand("SELECT TimetablePeriodID FROM TimetablesQuery WHERE TimetableIndex = '" + TimetableIndex + "'", conn)
+                dr = cmd1.ExecuteReader
+                While dr.Read
+                    TimetablePeriodID = dr.Item("TimetablePeriodID")
+                End While
 
-            Dim cmd2 As New OleDb.OleDbCommand("SELECT TeacherSubjectID FROM TeachersSubjectsQuery WHERE TeacherSubjectIndex = '" + TeacherSubjectIndex + "'", conn)
-            dr = cmd2.ExecuteReader
-            While dr.Read
-                TeacherSubjectID = dr.Item("TeacherSubjectID")
-            End While
+                Dim cmd2 As New OleDb.OleDbCommand("SELECT TeacherSubjectID FROM TeachersSubjectsQuery WHERE TeacherSubjectIndex = '" + TeacherSubjectIndex + "'", conn)
+                dr = cmd2.ExecuteReader
+                While dr.Read
+                    TeacherSubjectID = dr.Item("TeacherSubjectID")
+                End While
 
-            Dim cmd3 As New OleDb.OleDbCommand("UPDATE TimetablesPeriods SET `TeacherSubjectID`=@TeacherSubjectID Where TimetablePeriodID=@TimetablePeriodID", conn)
-            cmd3.Parameters.Clear()
-            cmd3.Parameters.AddWithValue("@TeacherSubjectID", TeacherSubjectID)
-            cmd3.Parameters.AddWithValue("TimetablePeriodID", TimetablePeriodID)
-
-            If cmd3.ExecuteNonQuery > 0 Then
-                MsgBox("แก้ไขแล้ว!", vbInformation)
-            Else
-                MsgBox("ผิดพลาด", vbCritical)
-            End If
-            DisplayClassroomTable(Classroom)
-
+                Dim cmd3 As New OleDb.OleDbCommand("UPDATE TimetablesPeriods SET `TeacherSubjectID`=@TeacherSubjectID Where TimetablePeriodID=@TimetablePeriodID", conn)
+                cmd3.Parameters.Clear()
+                cmd3.Parameters.AddWithValue("@TeacherSubjectID", TeacherSubjectID)
+                cmd3.Parameters.AddWithValue("TimetablePeriodID", TimetablePeriodID)
+            Next
+            DisplayClassroomTable(selectedItems(0))
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
@@ -342,7 +337,7 @@ Public Class LockTable
             If lblCurrentDay.Text = "ว่าง" Then
                 MsgBox("เลือกวันเเละคาบก่อน", vbYes, "เเจ้งเตือน")
             Else
-                Savelook()
+                Savelock()
             End If
         End If
     End Sub
