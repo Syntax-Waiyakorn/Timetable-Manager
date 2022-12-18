@@ -1,4 +1,5 @@
-﻿Imports System.Data.OleDb
+﻿Imports System.Collections.Specialized
+Imports System.Data.OleDb
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Public Class Subjects
@@ -33,6 +34,16 @@ Public Class Subjects
             txtID.Text = DataGridView1.CurrentRow.Cells(1).Value
             txtName.Text = DataGridView1.CurrentRow.Cells(2).Value
             cboDepartment.Text = DataGridView1.CurrentRow.Cells(3).Value
+            txtSubjectQuota.Text = DataGridView1.CurrentRow.Cells(5).Value
+            txtSubjectNextRequire.Text = DataGridView1.CurrentRow.Cells(7).Value
+
+
+            If DataGridView1.CurrentRow.Cells(6).Value = "Yes" Then
+                chkSubjectNextRequire.Checked = True
+            Else
+                chkSubjectNextRequire.Checked = False
+            End If
+
             If DataGridView1.CurrentRow.Cells(4).Value = "ห้องประจำ" Then
                 chkDefaultClass.Checked = True
                 txtSubjectPlace.Enabled = False
@@ -50,10 +61,10 @@ Public Class Subjects
             If conn.State = ConnectionState.Closed Then
                 conn.Open()
             End If
-            Dim cmd As New OleDb.OleDbCommand("Select  SubjectID, SubjectCode, SubjectName, SubjectDepartment, SubjectPlace from Subjects", conn)
+            Dim cmd As New OleDb.OleDbCommand("Select  SubjectID, SubjectCode, SubjectName, SubjectDepartment, SubjectPlace, SubjectQuota, SubjectNextRequire, SubjectNextSelfMax from Subjects", conn)
             dr = cmd.ExecuteReader
             While dr.Read
-                DataGridView1.Rows.Add(dr.Item("SubjectID"), dr.Item("SubjectCode"), dr.Item("SubjectName"), dr.Item("SubjectDepartment"), dr.Item("SubjectPlace"))
+                DataGridView1.Rows.Add(dr.Item("SubjectID"), dr.Item("SubjectCode"), dr.Item("SubjectName"), dr.Item("SubjectDepartment"), dr.Item("SubjectPlace"), dr.Item("SubjectQuota"), dr.Item("SubjectNextRequire"), dr.Item("SubjectNextSelfMax"))
             End While
             dr.Close()
         Catch ex As Exception
@@ -66,21 +77,36 @@ Public Class Subjects
         txtID.Clear()
         txtName.Clear()
         txtSubjectPlace.Clear()
+        txtSubjectQuota.Clear()
+        txtSubjectNextRequire.Clear()
         cboDepartment.SelectedIndex = -1
         chkDefaultClass.CheckState = False
+        chkSubjectNextRequire.CheckState = False
     End Sub
+    Dim chack As String
+
     Sub save()
+        If chkSubjectNextRequire.Checked = True Then
+            chack = "Yes"
+        Else
+            chack = "No"
+        End If
         Try
             If MsgBox("คุณต้องการเพิ่มข้อมูลหรือไม่ ?", vbQuestion + vbYesNo, "เเจ้งเตือน") = vbYes Then
                 If conn.State = ConnectionState.Closed Then
                     conn.Open()
                 End If
-                Dim cmd As New OleDb.OleDbCommand("Insert into Subjects(`SubjectCode`,`SubjectName`,`SubjectDepartment`,`SubjectPlace`) values(@SubjectCode,@SubjectName,@SubjectDepartment,@SubjectPlace)", conn)
+                Dim cmd As New OleDb.OleDbCommand("Insert into Subjects(`SubjectCode`,`SubjectName`,`SubjectDepartment`,`SubjectPlace`, `SubjectQuota`, `SubjectNextRequire`, `SubjectNextSelfMax`) values(@SubjectCode,@SubjectName,@SubjectDepartment,@SubjectPlace,@SubjectQuota,@SubjectNextRequire,@SubjectNextSelfMax)", conn)
                 cmd.Parameters.Clear()
                 cmd.Parameters.AddWithValue("@SubjectCode", txtID.Text)
                 cmd.Parameters.AddWithValue("@SubjectName", txtName.Text)
                 cmd.Parameters.AddWithValue("@SubjectDepartment", cboDepartment.Text)
                 cmd.Parameters.AddWithValue("@SubjectPlace", txtSubjectPlace.Text)
+
+                cmd.Parameters.AddWithValue("@SubjectQuota", txtSubjectQuota.Text)
+                cmd.Parameters.AddWithValue("@SubjectNextRequire", chack)
+                cmd.Parameters.AddWithValue("@SubjectNextSelfMax", txtSubjectNextRequire.Text)
+
                 i = cmd.ExecuteNonQuery
                 If i > 0 Then
                     MsgBox("เพิ่มข้อมูลเเล้ว !", vbInformation)
@@ -88,25 +114,34 @@ Public Class Subjects
                     MsgBox("ผิดพลาด", vbCritical)
                 End If
             End If
-        Catch
-            MsgBox("กรอกข้อมูลไม่ครบ", vbOKOnly, "เเจ้งเตือน")
+        Finally
         End Try
         conn.Close()
         LoadGrid()
         clear()
     End Sub
     Sub edit()
+
+        If chkSubjectNextRequire.Checked = True Then
+            chack = "Yes"
+        Else
+            chack = "No"
+        End If
         Try
             If conn.State = ConnectionState.Closed Then
                 conn.Open()
             End If
-            Dim cmd As New OleDb.OleDbCommand("UPDATE Subjects SET `SubjectCode`=@SubjectCode,`SubjectName`=@SubjectName,`SubjectDepartment`=@SubjectDepartment,`SubjectPlace`=@SubjectPlace Where SubjectID=@SubjectID", conn)
+            Dim cmd As New OleDb.OleDbCommand("UPDATE Subjects SET `SubjectCode`=@SubjectCode,`SubjectName`=@SubjectName,`SubjectDepartment`=@SubjectDepartment,`SubjectPlace`=@SubjectPlace,`SubjectQuota`=@SubjectQuota,`SubjectNextRequire`=@SubjectNextRequire,`SubjectNextSelfMax`=@SubjectNextSelfMax Where SubjectID=@SubjectID", conn)
             cmd.Parameters.Clear()
             cmd.Parameters.AddWithValue("@SubjectCode", txtID.Text)
             cmd.Parameters.AddWithValue("@SubjectName", txtName.Text)
             cmd.Parameters.AddWithValue("@SubjectDepartment", cboDepartment.Text)
             cmd.Parameters.AddWithValue("@SubjectPlace", txtSubjectPlace.Text)
             cmd.Parameters.AddWithValue("@SubjectID", txtPR.Text)
+
+            cmd.Parameters.AddWithValue("@SubjectQuota", txtSubjectQuota.Text)
+            cmd.Parameters.AddWithValue("@SubjectNextRequire", chack)
+            cmd.Parameters.AddWithValue("@SubjectNextSelfMax", txtSubjectNextRequire.Text)
             i = cmd.ExecuteNonQuery
             If i > 0 Then
                 MsgBox("แก้ไขแล้ว !", vbInformation)
@@ -182,6 +217,8 @@ Public Class Subjects
     End Sub
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         edit()
+
+        Console.WriteLine(chack)
     End Sub
     Private Sub Text_search_TextChanged_1(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
         search()
@@ -189,4 +226,17 @@ Public Class Subjects
     Private Sub cboDepartment_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboDepartment.SelectedIndexChanged
         Me.agent.Focus()
     End Sub
+    Private Sub txtSubjectNextRequire_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSubjectNextRequire.KeyPress
+        Dim chr As Char = e.KeyChar
+        If Not Char.IsDigit(chr) AndAlso Asc(chr) <> 8 Then
+            e.Handled = True
+        End If
+    End Sub
+    Private Sub txtSubjectQuota_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSubjectQuota.KeyPress
+        Dim chr As Char = e.KeyChar
+        If Not Char.IsDigit(chr) AndAlso Asc(chr) <> 8 Then
+            e.Handled = True
+        End If
+    End Sub
+
 End Class
