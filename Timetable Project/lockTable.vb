@@ -229,7 +229,7 @@ Public Class LockTable
     Sub Savelock()
         Dim selectedItems As String() = ChackClassrooms.CheckedItems.OfType(Of String)().ToArray()
         Dim itemsString As String = String.Join(vbCrLf, selectedItems)
-        Console.WriteLine(itemsString)
+
 
         Try
             For Each CurrentClassroom In selectedItems
@@ -274,8 +274,14 @@ Public Class LockTable
                 cmd3.Parameters.Clear()
                 cmd3.Parameters.AddWithValue("@TeacherSubjectID", TeacherSubjectID)
                 cmd3.Parameters.AddWithValue("TimetablePeriodID", TimetablePeriodID)
+                i = cmd3.ExecuteNonQuery
             Next
             DisplayClassroomTable(selectedItems(0))
+            If i > 0 Then
+                MsgBox("เพิ่มข้อมูลเเล้ว !", vbInformation)
+            Else
+                MsgBox("ผิดพลาด", vbCritical)
+            End If
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
