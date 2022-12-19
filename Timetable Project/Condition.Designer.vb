@@ -35,6 +35,8 @@ Partial Class Condition
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.btnTSDelete = New System.Windows.Forms.Button()
         Me.btnTSSave = New System.Windows.Forms.Button()
         Me.txtSearchS = New System.Windows.Forms.TextBox()
@@ -54,6 +56,8 @@ Partial Class Condition
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.btnTSCDelete = New System.Windows.Forms.Button()
         Me.btnTSCSave = New System.Windows.Forms.Button()
         Me.txtSearchC = New System.Windows.Forms.TextBox()
@@ -76,7 +80,7 @@ Partial Class Condition
         Me.Label2.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.Label2.Font = New System.Drawing.Font("Sylfaen", 25.0!)
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(76, 14)
+        Me.Label2.Location = New System.Drawing.Point(23, 64)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(123, 44)
         Me.Label2.TabIndex = 367
@@ -88,7 +92,7 @@ Partial Class Condition
         Me.Label6.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.Label6.Font = New System.Drawing.Font("Sylfaen", 25.0!)
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(76, 69)
+        Me.Label6.Location = New System.Drawing.Point(23, 126)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(118, 44)
         Me.Label6.TabIndex = 369
@@ -97,6 +101,8 @@ Partial Class Condition
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Label8)
+        Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.btnTSDelete)
         Me.Panel1.Controls.Add(Me.btnTSSave)
         Me.Panel1.Controls.Add(Me.txtSearchS)
@@ -105,10 +111,34 @@ Partial Class Condition
         Me.Panel1.Controls.Add(Me.cboTeachers)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label6)
-        Me.Panel1.Location = New System.Drawing.Point(63, 154)
+        Me.Panel1.Location = New System.Drawing.Point(63, 140)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(791, 264)
+        Me.Panel1.Size = New System.Drawing.Size(791, 327)
         Me.Panel1.TabIndex = 371
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Label8.Font = New System.Drawing.Font("Sylfaen", 25.0!)
+        Me.Label8.ForeColor = System.Drawing.Color.White
+        Me.Label8.Location = New System.Drawing.Point(256, 13)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(173, 44)
+        Me.Label8.TabIndex = 389
+        Me.Label8.Text = "เลือกรายการ"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Label7.Font = New System.Drawing.Font("Sylfaen", 25.0!)
+        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.Location = New System.Drawing.Point(602, 13)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(90, 44)
+        Me.Label7.TabIndex = 388
+        Me.Label7.Text = "ค้นหา"
         '
         'btnTSDelete
         '
@@ -119,9 +149,9 @@ Partial Class Condition
         Me.btnTSDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnTSDelete.Font = New System.Drawing.Font("Arial", 20.0!)
         Me.btnTSDelete.ForeColor = System.Drawing.Color.White
-        Me.btnTSDelete.Location = New System.Drawing.Point(242, 198)
+        Me.btnTSDelete.Location = New System.Drawing.Point(152, 251)
         Me.btnTSDelete.Name = "btnTSDelete"
-        Me.btnTSDelete.Size = New System.Drawing.Size(526, 55)
+        Me.btnTSDelete.Size = New System.Drawing.Size(376, 55)
         Me.btnTSDelete.TabIndex = 387
         Me.btnTSDelete.Text = "เลิกสอน"
         Me.btnTSDelete.UseVisualStyleBackColor = False
@@ -135,9 +165,9 @@ Partial Class Condition
         Me.btnTSSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnTSSave.Font = New System.Drawing.Font("Arial", 20.0!)
         Me.btnTSSave.ForeColor = System.Drawing.Color.White
-        Me.btnTSSave.Location = New System.Drawing.Point(242, 137)
+        Me.btnTSSave.Location = New System.Drawing.Point(152, 190)
         Me.btnTSSave.Name = "btnTSSave"
-        Me.btnTSSave.Size = New System.Drawing.Size(526, 55)
+        Me.btnTSSave.Size = New System.Drawing.Size(376, 55)
         Me.btnTSSave.TabIndex = 386
         Me.btnTSSave.Text = "สอน"
         Me.btnTSSave.UseVisualStyleBackColor = False
@@ -148,9 +178,9 @@ Partial Class Condition
         Me.txtSearchS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtSearchS.Font = New System.Drawing.Font("Arial", 30.0!)
         Me.txtSearchS.ForeColor = System.Drawing.Color.DarkGray
-        Me.txtSearchS.Location = New System.Drawing.Point(582, 70)
+        Me.txtSearchS.Location = New System.Drawing.Point(534, 126)
         Me.txtSearchS.Name = "txtSearchS"
-        Me.txtSearchS.Size = New System.Drawing.Size(186, 53)
+        Me.txtSearchS.Size = New System.Drawing.Size(234, 53)
         Me.txtSearchS.TabIndex = 385
         '
         'txtSearchT
@@ -159,9 +189,9 @@ Partial Class Condition
         Me.txtSearchT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtSearchT.Font = New System.Drawing.Font("Arial", 30.0!)
         Me.txtSearchT.ForeColor = System.Drawing.Color.DarkGray
-        Me.txtSearchT.Location = New System.Drawing.Point(582, 14)
+        Me.txtSearchT.Location = New System.Drawing.Point(534, 64)
         Me.txtSearchT.Name = "txtSearchT"
-        Me.txtSearchT.Size = New System.Drawing.Size(186, 53)
+        Me.txtSearchT.Size = New System.Drawing.Size(234, 53)
         Me.txtSearchT.TabIndex = 384
         '
         'cboSubjects
@@ -173,9 +203,9 @@ Partial Class Condition
         Me.cboSubjects.ForeColor = System.Drawing.Color.White
         Me.cboSubjects.FormattingEnabled = True
         Me.cboSubjects.IntegralHeight = False
-        Me.cboSubjects.Location = New System.Drawing.Point(242, 75)
+        Me.cboSubjects.Location = New System.Drawing.Point(152, 130)
         Me.cboSubjects.Name = "cboSubjects"
-        Me.cboSubjects.Size = New System.Drawing.Size(334, 40)
+        Me.cboSubjects.Size = New System.Drawing.Size(376, 40)
         Me.cboSubjects.TabIndex = 383
         '
         'cboTeachers
@@ -187,9 +217,9 @@ Partial Class Condition
         Me.cboTeachers.ForeColor = System.Drawing.Color.White
         Me.cboTeachers.FormattingEnabled = True
         Me.cboTeachers.IntegralHeight = False
-        Me.cboTeachers.Location = New System.Drawing.Point(242, 18)
+        Me.cboTeachers.Location = New System.Drawing.Point(152, 68)
         Me.cboTeachers.Name = "cboTeachers"
-        Me.cboTeachers.Size = New System.Drawing.Size(334, 40)
+        Me.cboTeachers.Size = New System.Drawing.Size(376, 40)
         Me.cboTeachers.TabIndex = 382
         '
         'DataGridView1
@@ -233,7 +263,7 @@ Partial Class Condition
         Me.DataGridView1.EnableHeadersVisualStyles = False
         Me.DataGridView1.GridColor = System.Drawing.Color.Black
         Me.DataGridView1.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.DataGridView1.Location = New System.Drawing.Point(63, 424)
+        Me.DataGridView1.Location = New System.Drawing.Point(63, 473)
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
@@ -260,7 +290,7 @@ Partial Class Condition
         Me.DataGridView1.ShowCellToolTips = False
         Me.DataGridView1.ShowEditingIcon = False
         Me.DataGridView1.ShowRowErrors = False
-        Me.DataGridView1.Size = New System.Drawing.Size(791, 505)
+        Me.DataGridView1.Size = New System.Drawing.Size(791, 456)
         Me.DataGridView1.TabIndex = 372
         '
         'Column6
@@ -308,10 +338,10 @@ Partial Class Condition
         Me.lblTitle.Font = New System.Drawing.Font("Sylfaen", 55.0!)
         Me.lblTitle.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lblTitle.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblTitle.Location = New System.Drawing.Point(78, 21)
+        Me.lblTitle.Location = New System.Drawing.Point(62, 21)
         Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Padding = New System.Windows.Forms.Padding(130, 10, 130, 10)
-        Me.lblTitle.Size = New System.Drawing.Size(762, 116)
+        Me.lblTitle.Padding = New System.Windows.Forms.Padding(145, 10, 145, 10)
+        Me.lblTitle.Size = New System.Drawing.Size(792, 116)
         Me.lblTitle.TabIndex = 375
         Me.lblTitle.Text = "เชื่อมวิชาที่ครูสอน"
         '
@@ -322,10 +352,10 @@ Partial Class Condition
         Me.Label1.Font = New System.Drawing.Font("Sylfaen", 55.0!)
         Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Label1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label1.Location = New System.Drawing.Point(884, 25)
+        Me.Label1.Location = New System.Drawing.Point(869, 21)
         Me.Label1.Name = "Label1"
-        Me.Label1.Padding = New System.Windows.Forms.Padding(250, 10, 250, 10)
-        Me.Label1.Size = New System.Drawing.Size(778, 116)
+        Me.Label1.Padding = New System.Windows.Forms.Padding(260, 10, 255, 10)
+        Me.Label1.Size = New System.Drawing.Size(793, 116)
         Me.Label1.TabIndex = 379
         Me.Label1.Text = "เชื่อมห้อง"
         '
@@ -378,7 +408,7 @@ Partial Class Condition
         Me.DataGridView2.EnableHeadersVisualStyles = False
         Me.DataGridView2.GridColor = System.Drawing.Color.Black
         Me.DataGridView2.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.DataGridView2.Location = New System.Drawing.Point(869, 424)
+        Me.DataGridView2.Location = New System.Drawing.Point(869, 473)
         Me.DataGridView2.MultiSelect = False
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.ReadOnly = True
@@ -405,7 +435,7 @@ Partial Class Condition
         Me.DataGridView2.ShowCellToolTips = False
         Me.DataGridView2.ShowEditingIcon = False
         Me.DataGridView2.ShowRowErrors = False
-        Me.DataGridView2.Size = New System.Drawing.Size(793, 505)
+        Me.DataGridView2.Size = New System.Drawing.Size(793, 456)
         Me.DataGridView2.TabIndex = 377
         '
         'Column4
@@ -425,6 +455,8 @@ Partial Class Condition
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.Label10)
+        Me.Panel2.Controls.Add(Me.Label9)
         Me.Panel2.Controls.Add(Me.btnTSCDelete)
         Me.Panel2.Controls.Add(Me.btnTSCSave)
         Me.Panel2.Controls.Add(Me.txtSearchC)
@@ -433,10 +465,34 @@ Partial Class Condition
         Me.Panel2.Controls.Add(Me.cboTeachersSubjects)
         Me.Panel2.Controls.Add(Me.Label4)
         Me.Panel2.Controls.Add(Me.Label5)
-        Me.Panel2.Location = New System.Drawing.Point(869, 147)
+        Me.Panel2.Location = New System.Drawing.Point(869, 140)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(793, 271)
+        Me.Panel2.Size = New System.Drawing.Size(793, 327)
         Me.Panel2.TabIndex = 376
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Label10.Font = New System.Drawing.Font("Sylfaen", 25.0!)
+        Me.Label10.ForeColor = System.Drawing.Color.White
+        Me.Label10.Location = New System.Drawing.Point(600, 13)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(90, 44)
+        Me.Label10.TabIndex = 390
+        Me.Label10.Text = "ค้นหา"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Label9.Font = New System.Drawing.Font("Sylfaen", 25.0!)
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(253, 13)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(173, 44)
+        Me.Label9.TabIndex = 390
+        Me.Label9.Text = "เลือกรายการ"
         '
         'btnTSCDelete
         '
@@ -447,9 +503,9 @@ Partial Class Condition
         Me.btnTSCDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnTSCDelete.Font = New System.Drawing.Font("Arial", 20.0!)
         Me.btnTSCDelete.ForeColor = System.Drawing.Color.White
-        Me.btnTSCDelete.Location = New System.Drawing.Point(225, 205)
+        Me.btnTSCDelete.Location = New System.Drawing.Point(175, 244)
         Me.btnTSCDelete.Name = "btnTSCDelete"
-        Me.btnTSCDelete.Size = New System.Drawing.Size(548, 55)
+        Me.btnTSCDelete.Size = New System.Drawing.Size(341, 55)
         Me.btnTSCDelete.TabIndex = 387
         Me.btnTSCDelete.Text = "ยกเลิก"
         Me.btnTSCDelete.UseVisualStyleBackColor = False
@@ -463,9 +519,9 @@ Partial Class Condition
         Me.btnTSCSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnTSCSave.Font = New System.Drawing.Font("Arial", 20.0!)
         Me.btnTSCSave.ForeColor = System.Drawing.Color.White
-        Me.btnTSCSave.Location = New System.Drawing.Point(225, 141)
+        Me.btnTSCSave.Location = New System.Drawing.Point(175, 183)
         Me.btnTSCSave.Name = "btnTSCSave"
-        Me.btnTSCSave.Size = New System.Drawing.Size(548, 55)
+        Me.btnTSCSave.Size = New System.Drawing.Size(341, 55)
         Me.btnTSCSave.TabIndex = 386
         Me.btnTSCSave.Text = "เชื่อม"
         Me.btnTSCSave.UseVisualStyleBackColor = False
@@ -476,9 +532,9 @@ Partial Class Condition
         Me.txtSearchC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtSearchC.Font = New System.Drawing.Font("Arial", 30.0!)
         Me.txtSearchC.ForeColor = System.Drawing.Color.DarkGray
-        Me.txtSearchC.Location = New System.Drawing.Point(582, 82)
+        Me.txtSearchC.Location = New System.Drawing.Point(522, 119)
         Me.txtSearchC.Name = "txtSearchC"
-        Me.txtSearchC.Size = New System.Drawing.Size(191, 53)
+        Me.txtSearchC.Size = New System.Drawing.Size(251, 53)
         Me.txtSearchC.TabIndex = 385
         '
         'txtSearchTS
@@ -487,9 +543,9 @@ Partial Class Condition
         Me.txtSearchTS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtSearchTS.Font = New System.Drawing.Font("Arial", 30.0!)
         Me.txtSearchTS.ForeColor = System.Drawing.Color.White
-        Me.txtSearchTS.Location = New System.Drawing.Point(582, 16)
+        Me.txtSearchTS.Location = New System.Drawing.Point(522, 60)
         Me.txtSearchTS.Name = "txtSearchTS"
-        Me.txtSearchTS.Size = New System.Drawing.Size(191, 53)
+        Me.txtSearchTS.Size = New System.Drawing.Size(251, 53)
         Me.txtSearchTS.TabIndex = 384
         '
         'cboClassrooms
@@ -501,7 +557,7 @@ Partial Class Condition
         Me.cboClassrooms.ForeColor = System.Drawing.Color.White
         Me.cboClassrooms.FormattingEnabled = True
         Me.cboClassrooms.IntegralHeight = False
-        Me.cboClassrooms.Location = New System.Drawing.Point(225, 86)
+        Me.cboClassrooms.Location = New System.Drawing.Point(175, 123)
         Me.cboClassrooms.Name = "cboClassrooms"
         Me.cboClassrooms.Size = New System.Drawing.Size(341, 40)
         Me.cboClassrooms.TabIndex = 383
@@ -515,7 +571,7 @@ Partial Class Condition
         Me.cboTeachersSubjects.ForeColor = System.Drawing.Color.White
         Me.cboTeachersSubjects.FormattingEnabled = True
         Me.cboTeachersSubjects.IntegralHeight = False
-        Me.cboTeachersSubjects.Location = New System.Drawing.Point(225, 25)
+        Me.cboTeachersSubjects.Location = New System.Drawing.Point(175, 66)
         Me.cboTeachersSubjects.Name = "cboTeachersSubjects"
         Me.cboTeachersSubjects.Size = New System.Drawing.Size(341, 40)
         Me.cboTeachersSubjects.TabIndex = 382
@@ -526,7 +582,7 @@ Partial Class Condition
         Me.Label4.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.Label4.Font = New System.Drawing.Font("Sylfaen", 25.0!)
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(87, 21)
+        Me.Label4.Location = New System.Drawing.Point(42, 57)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(113, 44)
         Me.Label4.TabIndex = 367
@@ -538,7 +594,7 @@ Partial Class Condition
         Me.Label5.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.Label5.Font = New System.Drawing.Font("Sylfaen", 25.0!)
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(133, 76)
+        Me.Label5.Location = New System.Drawing.Point(88, 119)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(67, 44)
         Me.Label5.TabIndex = 369
@@ -551,7 +607,7 @@ Partial Class Condition
         Me.txtPR.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtPR.Font = New System.Drawing.Font("Arial", 22.0!)
         Me.txtPR.ForeColor = System.Drawing.Color.White
-        Me.txtPR.Location = New System.Drawing.Point(861, 67)
+        Me.txtPR.Location = New System.Drawing.Point(1686, 38)
         Me.txtPR.MaxLength = 5
         Me.txtPR.Name = "txtPR"
         Me.txtPR.Size = New System.Drawing.Size(90, 34)
@@ -565,7 +621,7 @@ Partial Class Condition
         Me.txtId.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtId.Font = New System.Drawing.Font("Arial", 22.0!)
         Me.txtId.ForeColor = System.Drawing.Color.White
-        Me.txtId.Location = New System.Drawing.Point(861, 107)
+        Me.txtId.Location = New System.Drawing.Point(1405, 443)
         Me.txtId.MaxLength = 5
         Me.txtId.Name = "txtId"
         Me.txtId.Size = New System.Drawing.Size(90, 34)
@@ -636,4 +692,8 @@ Partial Class Condition
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label9 As Label
 End Class

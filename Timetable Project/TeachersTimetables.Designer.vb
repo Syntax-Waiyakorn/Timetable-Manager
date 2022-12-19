@@ -108,6 +108,8 @@ Partial Class TeachersTimetables
         Me.cboTeachers = New System.Windows.Forms.ComboBox()
         Me.lblRoom = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Connection_status = New System.Windows.Forms.Label()
+        Me.Connection = New System.Windows.Forms.Label()
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -115,8 +117,6 @@ Partial Class TeachersTimetables
         Me.agent = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Connection_status = New System.Windows.Forms.Label()
-        Me.Connection = New System.Windows.Forms.Label()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel5.SuspendLayout()
@@ -1283,15 +1283,40 @@ Partial Class TeachersTimetables
         Me.Panel3.Size = New System.Drawing.Size(1216, 242)
         Me.Panel3.TabIndex = 367
         '
+        'Connection_status
+        '
+        Me.Connection_status.AutoSize = True
+        Me.Connection_status.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Connection_status.Font = New System.Drawing.Font("Microsoft Tai Le", 25.0!)
+        Me.Connection_status.ForeColor = System.Drawing.Color.Red
+        Me.Connection_status.Location = New System.Drawing.Point(956, 47)
+        Me.Connection_status.Name = "Connection_status"
+        Me.Connection_status.Size = New System.Drawing.Size(177, 44)
+        Me.Connection_status.TabIndex = 384
+        Me.Connection_status.Text = "กรุณาเลือกครู"
+        '
+        'Connection
+        '
+        Me.Connection.AllowDrop = True
+        Me.Connection.AutoSize = True
+        Me.Connection.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Connection.Font = New System.Drawing.Font("Sylfaen", 25.0!)
+        Me.Connection.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Connection.Location = New System.Drawing.Point(835, 45)
+        Me.Connection.Name = "Connection"
+        Me.Connection.Size = New System.Drawing.Size(115, 44)
+        Me.Connection.TabIndex = 383
+        Me.Connection.Text = "สถานะ :"
+        '
         'txtSearch
         '
         Me.txtSearch.BackColor = System.Drawing.Color.Black
         Me.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtSearch.Font = New System.Drawing.Font("Arial", 40.0!)
         Me.txtSearch.ForeColor = System.Drawing.Color.White
-        Me.txtSearch.Location = New System.Drawing.Point(223, 30)
+        Me.txtSearch.Location = New System.Drawing.Point(233, 30)
         Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(586, 69)
+        Me.txtSearch.Size = New System.Drawing.Size(576, 69)
         Me.txtSearch.TabIndex = 376
         '
         'Label1
@@ -1351,31 +1376,6 @@ Partial Class TeachersTimetables
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(1626, 661)
         Me.Panel5.TabIndex = 391
-        '
-        'Connection_status
-        '
-        Me.Connection_status.AutoSize = True
-        Me.Connection_status.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.Connection_status.Font = New System.Drawing.Font("Microsoft Tai Le", 25.0!)
-        Me.Connection_status.ForeColor = System.Drawing.Color.Red
-        Me.Connection_status.Location = New System.Drawing.Point(956, 47)
-        Me.Connection_status.Name = "Connection_status"
-        Me.Connection_status.Size = New System.Drawing.Size(177, 44)
-        Me.Connection_status.TabIndex = 384
-        Me.Connection_status.Text = "กรุณาเลือกครู"
-        '
-        'Connection
-        '
-        Me.Connection.AllowDrop = True
-        Me.Connection.AutoSize = True
-        Me.Connection.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.Connection.Font = New System.Drawing.Font("Sylfaen", 25.0!)
-        Me.Connection.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Connection.Location = New System.Drawing.Point(835, 45)
-        Me.Connection.Name = "Connection"
-        Me.Connection.Size = New System.Drawing.Size(115, 44)
-        Me.Connection.TabIndex = 383
-        Me.Connection.Text = "สถานะ :"
         '
         'TeachersTimetables
         '

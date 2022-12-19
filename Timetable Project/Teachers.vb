@@ -172,4 +172,11 @@ Public Class Teachers
     Private Sub lblTitle_Click(sender As Object, e As EventArgs) Handles lblTitle.Click
 
     End Sub
+
+    Private Sub txtTeacherQuota_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtTeacherQuota.KeyPress
+        Dim chr As Char = e.KeyChar
+        If Not Char.IsDigit(chr) AndAlso Asc(chr) <> 8 Then
+            e.Handled = True
+        End If
+    End Sub
 End Class

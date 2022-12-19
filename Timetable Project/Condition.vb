@@ -320,4 +320,5 @@ Public Class Condition
     Private Sub btnTSCDelete_Click(sender As Object, e As EventArgs) Handles btnTSCDelete.Click
         TSCdelete()
     End Sub
+
 End Class

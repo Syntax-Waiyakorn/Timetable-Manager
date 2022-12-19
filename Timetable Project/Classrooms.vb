@@ -154,4 +154,10 @@ Public Class Classrooms
     Private Sub btnSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
         search()
     End Sub
+    Private Sub txtID_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtID.KeyPress
+        Dim chr As Char = e.KeyChar
+        If Not Char.IsDigit(chr) AndAlso Asc(chr) <> 8 Then
+            e.Handled = True
+        End If
+    End Sub
 End Class
