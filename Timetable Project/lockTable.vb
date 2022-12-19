@@ -186,7 +186,7 @@ Public Class LockTable
                                                               lblD5P1.Click, lblD5P2.Click, lblD5P3.Click, lblD5P4.Click, lblD5P5.Click, lblD5P6.Click, lblD5P7.Click, lblD5P8.Click, lblD5P9.Click, lblD5P10.Click, lblD5P11.Click
         Try
             Dim lblName As String = sender.Name
-            Dim lblPeriod As Integer
+            Dim lblPeriod As String
             Dim lblDay As String = lblName.Chars(4)
             Dim lblDayName As String = "null"
             Dim PLabelNameC As String = sender.Name
@@ -208,8 +208,8 @@ Public Class LockTable
                 lblCurrentPeriod.Text = lblPeriod - 1
                 lblCurrentPeriod.ForeColor = Color.Lime
             Catch ex As Exception
-                lblPeriod = lblName.Chars(6) & Int(0)
-                lblCurrentPeriod.Text = lblPeriod / 10 - 1
+                lblPeriod = lblName.Chars(6)
+                lblCurrentPeriod.Text = lblPeriod - 1
                 lblCurrentPeriod.ForeColor = Color.Lime
             End Try
 
@@ -256,7 +256,7 @@ Public Class LockTable
                 Dim TeacherSubjectIndex As String = TeacherFirstName & "$$" & SubjectCode
                 Dim TeacherSubjectID As String = "null"
                 Dim TeacherIndex As String = "null"
-
+                Console.WriteLine(TimetableIndex)
                 Dim cmd1 As New OleDb.OleDbCommand("SELECT TimetablePeriodID FROM TimetablesQuery WHERE TimetableIndex = '" + TimetableIndex + "'", conn)
                 dr = cmd1.ExecuteReader
                 While dr.Read
