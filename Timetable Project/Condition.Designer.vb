@@ -147,7 +147,7 @@ Partial Class Condition
         Me.txtSearchS.BackColor = System.Drawing.Color.Black
         Me.txtSearchS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtSearchS.Font = New System.Drawing.Font("Arial", 30.0!)
-        Me.txtSearchS.ForeColor = System.Drawing.Color.White
+        Me.txtSearchS.ForeColor = System.Drawing.Color.DarkGray
         Me.txtSearchS.Location = New System.Drawing.Point(582, 70)
         Me.txtSearchS.Name = "txtSearchS"
         Me.txtSearchS.Size = New System.Drawing.Size(186, 53)
@@ -158,7 +158,7 @@ Partial Class Condition
         Me.txtSearchT.BackColor = System.Drawing.Color.Black
         Me.txtSearchT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtSearchT.Font = New System.Drawing.Font("Arial", 30.0!)
-        Me.txtSearchT.ForeColor = System.Drawing.Color.White
+        Me.txtSearchT.ForeColor = System.Drawing.Color.DarkGray
         Me.txtSearchT.Location = New System.Drawing.Point(582, 14)
         Me.txtSearchT.Name = "txtSearchT"
         Me.txtSearchT.Size = New System.Drawing.Size(186, 53)
@@ -475,7 +475,7 @@ Partial Class Condition
         Me.txtSearchC.BackColor = System.Drawing.Color.Black
         Me.txtSearchC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtSearchC.Font = New System.Drawing.Font("Arial", 30.0!)
-        Me.txtSearchC.ForeColor = System.Drawing.Color.White
+        Me.txtSearchC.ForeColor = System.Drawing.Color.DarkGray
         Me.txtSearchC.Location = New System.Drawing.Point(582, 82)
         Me.txtSearchC.Name = "txtSearchC"
         Me.txtSearchC.Size = New System.Drawing.Size(191, 53)

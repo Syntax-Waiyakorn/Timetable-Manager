@@ -227,30 +227,31 @@ Public Class LockTable
             conn.Close()
         End Try
     End Sub
-    'Sub EditS()
-    '    Try
-    '        If conn.State = ConnectionState.Closed Then
-    '            conn.Open()
-    '        End If
-    '        Dim cmd As New OleDb.OleDbCommand("UPDATE Subjects SET `SubjectCode`=@SubjectCode, `SubjectName`=@SubjectName, `SubjectDepartment`=@SubjectDepartment Where SubjectID=@SubjectID", conn)
-    '        cmd.Parameters.Clear()
-    '        cmd.Parameters.AddWithValue("@SubjectID", txtPR.Text)
-    '        cmd.Parameters.AddWithValue("@SubjectCode", SubjectCodeBox.Text)
-    '        cmd.Parameters.AddWithValue("@SubjectName", SubjectNameBox.Text)
-    '        cmd.Parameters.AddWithValue("@SubjectDepartment", cboSubjectDepartment.Text)
-    '        i = cmd.ExecuteNonQuery
-    '        If i > 0 Then
-    '            MsgBox("แก้ไขเเล้ว !", vbInformation)
-    '        Else
-    '            MsgBox("ผิดพลาด", vbCritical)
-    '        End If
-    '        LoadGrid()
-    '    Catch ex As Exception
-    '        MsgBox(ex.Message)
-    '    Finally
-    '        conn.Close()
-    '    End Try
-    'End Sub
+    Sub EditS()
+        Try
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
+            Dim cmd As New OleDb.OleDbCommand("UPDATE Subjects SET `SubjectCode`=@SubjectCode, `SubjectName`=@SubjectName, `SubjectDepartment`=@SubjectDepartment where SubjectID=@SubjectID", conn)
+            cmd.Parameters.Clear()
+            cmd.Parameters.AddWithValue("@SubjectCode", SubjectCodeBox.Text)
+            cmd.Parameters.AddWithValue("@SubjectName", SubjectNameBox.Text)
+            cmd.Parameters.AddWithValue("@SubjectDepartment", cboSubjectDepartment.Text)
+            cmd.Parameters.AddWithValue("SubjectID", txtPR.Text)
+
+            i = cmd.ExecuteNonQuery
+            If i > 0 Then
+                MsgBox("แก้ไขเเล้ว !", vbInformation)
+            Else
+                MsgBox("ผิดพลาด", vbCritical)
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            conn.Close()
+        End Try
+        LoadGrid()
+    End Sub
     Sub Savelock()
         Dim selectedItems As String() = ChackClassrooms.CheckedItems.OfType(Of String)().ToArray()
         Dim itemsString As String = String.Join(vbCrLf, selectedItems)
@@ -450,6 +451,6 @@ Public Class LockTable
         status()
     End Sub
     Private Sub btnEditS_Click(sender As Object, e As EventArgs) Handles btnEditS.Click
-        'EditS()
+        EditS()
     End Sub
 End Class

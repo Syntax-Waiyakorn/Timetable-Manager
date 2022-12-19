@@ -116,11 +116,11 @@ Public Class StudentTimetables
     Sub DisplayClassroomTable(Classroom As String)
         Dim PDay = 1
         Dim PPeriod = 1
-        Dim lblDaysPeriods() As Label = {lblD1P01, lblD1P02, lblD1P03, lblD1P04, lblD1P05, lblD1P06, lblD1P07, lblD1P08, lblD1P09, lblD1P10, lblD1P11,
-                                         lblD2P01, lblD2P02, lblD2P03, lblD2P04, lblD2P05, lblD2P06, lblD2P07, lblD2P08, lblD2P09, lblD2P10, lblD2P11,
-                                         lblD3P01, lblD3P02, lblD3P03, lblD3P04, lblD3P05, lblD3P06, lblD3P07, lblD3P08, lblD3P09, lblD3P10, lblD3P11,
-                                         lblD4P01, lblD4P02, lblD4P03, lblD4P04, lblD4P05, lblD4P06, lblD4P07, lblD4P08, lblD4P09, lblD4P10, lblD4P11,
-                                         lblD5P01, lblD5P02, lblD5P03, lblD5P04, lblD5P05, lblD5P06, lblD5P07, lblD5P08, lblD5P09, lblD5P10, lblD5P11}
+        Dim lblDaysPeriods() As Label = {lblD1P1, lblD1P2, lblD1P3, lblD1P4, lblD1P5, lblD1P6, lblD1P7, lblD1P8, lblD1P9, lblD1P10, lblD1P11,
+                                         lblD2P1, lblD2P2, lblD2P3, lblD2P4, lblD2P5, lblD2P6, lblD2P7, lblD2P8, lblD2P9, lblD2P10, lblD2P11,
+                                         lblD3P1, lblD3P2, lblD3P3, lblD3P4, lblD3P5, lblD3P6, lblD3P7, lblD3P8, lblD3P09, lblD3P10, lblD3P11,
+                                         lblD4P1, lblD4P2, lblD4P3, lblD4P4, lblD4P5, lblD4P6, lblD4P7, lblD4P8, lblD4P9, lblD4P10, lblD4P11,
+                                         lblD5P1, lblD5P2, lblD5P3, lblD5P4, lblD5P5, lblD5P6, lblD5P7, lblD5P8, lblD5P9, lblD5P10, lblD5P11}
         For Each PLabel As Label In lblDaysPeriods
             DisplayPeriod(Classroom, PLabel, CStr(PDay), CStr(PPeriod))
             If PPeriod = 11 Then
@@ -170,11 +170,11 @@ Public Class StudentTimetables
         End Try
     End Sub
 
-    Sub Period_Click(sender As Label, e As EventArgs) Handles lblD1P01.Click, lblD1P02.Click, lblD1P03.Click, lblD1P04.Click, lblD1P05.Click, lblD1P06.Click, lblD1P07.Click, lblD1P08.Click, lblD1P09.Click, lblD1P10.Click, lblD1P11.Click,
-                                                              lblD2P01.Click, lblD2P02.Click, lblD2P03.Click, lblD2P04.Click, lblD2P05.Click, lblD2P06.Click, lblD2P07.Click, lblD2P08.Click, lblD2P09.Click, lblD2P10.Click, lblD2P11.Click,
-                                                              lblD3P01.Click, lblD3P02.Click, lblD3P03.Click, lblD3P04.Click, lblD3P05.Click, lblD3P06.Click, lblD3P07.Click, lblD3P08.Click, lblD3P09.Click, lblD3P10.Click, lblD3P11.Click,
-                                                              lblD4P01.Click, lblD4P02.Click, lblD4P03.Click, lblD4P04.Click, lblD4P05.Click, lblD4P06.Click, lblD4P07.Click, lblD4P08.Click, lblD4P09.Click, lblD4P10.Click, lblD4P11.Click,
-                                                              lblD5P01.Click, lblD5P02.Click, lblD5P03.Click, lblD5P04.Click, lblD5P05.Click, lblD5P06.Click, lblD5P07.Click, lblD5P08.Click, lblD5P09.Click, lblD5P10.Click, lblD5P11.Click
+    Sub Period_Click(sender As Label, e As EventArgs) Handles lblD1P1.Click, lblD1P2.Click, lblD1P3.Click, lblD1P4.Click, lblD1P5.Click, lblD1P6.Click, lblD1P7.Click, lblD1P8.Click, lblD1P9.Click, lblD1P10.Click, lblD1P11.Click,
+                                                              lblD2P1.Click, lblD2P2.Click, lblD2P3.Click, lblD2P4.Click, lblD2P5.Click, lblD2P6.Click, lblD2P7.Click, lblD2P8.Click, lblD2P9.Click, lblD2P10.Click, lblD2P11.Click,
+                                                              lblD3P1.Click, lblD3P2.Click, lblD3P3.Click, lblD3P4.Click, lblD3P5.Click, lblD3P6.Click, lblD3P7.Click, lblD3P8.Click, lblD3P09.Click, lblD3P10.Click, lblD3P11.Click,
+                                                              lblD4P1.Click, lblD4P2.Click, lblD4P3.Click, lblD4P4.Click, lblD4P5.Click, lblD4P6.Click, lblD4P7.Click, lblD4P8.Click, lblD4P9.Click, lblD4P10.Click, lblD4P11.Click,
+                                                              lblD5P1.Click, lblD5P2.Click, lblD5P3.Click, lblD5P4.Click, lblD5P5.Click, lblD5P6.Click, lblD5P7.Click, lblD5P8.Click, lblD5P9.Click, lblD5P10.Click, lblD5P11.Click
         If Not cboClassrooms.SelectedIndex = -1 Then
             Try
                 If conn.State = ConnectionState.Closed Then
@@ -422,5 +422,9 @@ Public Class StudentTimetables
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
         Dim OBJ As New TeachersTimetables
         Year()
+    End Sub
+
+    Private Sub Period_Click(sender As Object, e As EventArgs) Handles lblD5P11.Click, lblD5P10.Click, lblD5P9.Click, lblD5P8.Click, lblD5P7.Click, lblD5P6.Click, lblD5P5.Click, lblD5P4.Click, lblD5P3.Click, lblD5P2.Click, lblD5P1.Click, lblD4P11.Click, lblD4P10.Click, lblD4P9.Click, lblD4P8.Click, lblD4P7.Click, lblD4P6.Click, lblD4P5.Click, lblD4P4.Click, lblD4P3.Click, lblD4P2.Click, lblD4P1.Click, lblD3P11.Click, lblD3P10.Click, lblD3P09.Click, lblD3P8.Click, lblD3P7.Click, lblD3P6.Click, lblD3P5.Click, lblD3P4.Click, lblD3P3.Click, lblD3P2.Click, lblD3P1.Click, lblD2P11.Click, lblD2P10.Click, lblD2P9.Click, lblD2P8.Click, lblD2P7.Click, lblD2P6.Click, lblD2P5.Click, lblD2P4.Click, lblD2P3.Click, lblD2P2.Click, lblD2P1.Click, lblD1P9.Click, lblD1P8.Click, lblD1P7.Click, lblD1P6.Click, lblD1P5.Click, lblD1P4.Click, lblD1P3.Click, lblD1P2.Click, lblD1P11.Click, lblD1P10.Click, lblD1P1.Click
+
     End Sub
 End Class
