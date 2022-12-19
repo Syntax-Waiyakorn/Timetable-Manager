@@ -153,9 +153,13 @@ Public Class StudentTimetables
             End While
             dr.Close()
 
+            If TeacherFirstName = "-" Then
+                TeacherFirstName = ""
+            End If
             If Not SubjectPlace = "ห้องประจำ" Then
                 ClassroomCode = SubjectPlace
             End If
+
             PLabel.Text = TeacherFirstName & vbCrLf & SubjectCode & vbCrLf & ClassroomCode
         Catch ex As Exception
             MsgBox(ex.Message)
