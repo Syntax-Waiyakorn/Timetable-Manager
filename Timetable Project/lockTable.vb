@@ -227,6 +227,30 @@ Public Class LockTable
             conn.Close()
         End Try
     End Sub
+    'Sub EditS()
+    '    Try
+    '        If conn.State = ConnectionState.Closed Then
+    '            conn.Open()
+    '        End If
+    '        Dim cmd As New OleDb.OleDbCommand("UPDATE Subjects SET `SubjectCode`=@SubjectCode, `SubjectName`=@SubjectName, `SubjectDepartment`=@SubjectDepartment Where SubjectID=@SubjectID", conn)
+    '        cmd.Parameters.Clear()
+    '        cmd.Parameters.AddWithValue("@SubjectID", txtPR.Text)
+    '        cmd.Parameters.AddWithValue("@SubjectCode", SubjectCodeBox.Text)
+    '        cmd.Parameters.AddWithValue("@SubjectName", SubjectNameBox.Text)
+    '        cmd.Parameters.AddWithValue("@SubjectDepartment", cboSubjectDepartment.Text)
+    '        i = cmd.ExecuteNonQuery
+    '        If i > 0 Then
+    '            MsgBox("แก้ไขเเล้ว !", vbInformation)
+    '        Else
+    '            MsgBox("ผิดพลาด", vbCritical)
+    '        End If
+    '        LoadGrid()
+    '    Catch ex As Exception
+    '        MsgBox(ex.Message)
+    '    Finally
+    '        conn.Close()
+    '    End Try
+    'End Sub
     Sub Savelock()
         Dim selectedItems As String() = ChackClassrooms.CheckedItems.OfType(Of String)().ToArray()
         Dim itemsString As String = String.Join(vbCrLf, selectedItems)
@@ -293,12 +317,12 @@ Public Class LockTable
             If conn.State = ConnectionState.Closed Then
                 conn.Open()
             End If
-            Dim cmd As New OleDb.OleDbCommand("Select  SubjectCode, SubjectName, SubjectDepartment, SubjectPlace from Subjects where SubjectSpecial =@SubjectSpecial ", conn)
+            Dim cmd As New OleDb.OleDbCommand("Select  SubjectID, SubjectCode, SubjectName, SubjectDepartment, SubjectPlace from Subjects where SubjectSpecial =@SubjectSpecial ", conn)
             cmd.Parameters.Clear()
             cmd.Parameters.AddWithValue("@SubjectSpecial", True)
             dr = cmd.ExecuteReader
             While dr.Read
-                DataGridView1.Rows.Add(dr.Item("SubjectCode"), dr.Item("SubjectName"), dr.Item("SubjectDepartment"), dr.Item("SubjectPlace"))
+                DataGridView1.Rows.Add(dr.Item("SubjectID"), dr.Item("SubjectCode"), dr.Item("SubjectName"), dr.Item("SubjectDepartment"), dr.Item("SubjectPlace"))
             End While
             dr.Close()
         Catch ex As Exception
@@ -381,9 +405,9 @@ Public Class LockTable
                 If conn.State = ConnectionState.Closed Then
                     conn.Open()
                 End If
-                Dim cmd As New OleDb.OleDbCommand("Delete from Subjects WHERE SubjectCode=@SubjectCode", conn)
+                Dim cmd As New OleDb.OleDbCommand("Delete from Subjects WHERE SubjectID = @SubjectID", conn)
                 cmd.Parameters.Clear()
-                cmd.Parameters.AddWithValue("@SubjectCode", SubjectCodeBox.Text)
+                cmd.Parameters.AddWithValue("@SubjectID", txtPR.Text)
                 i = cmd.ExecuteNonQuery
                 If i > 0 Then
                     MsgBox("ลบสำเร็จ !", vbInformation)
@@ -401,9 +425,10 @@ Public Class LockTable
         cboteacherSubject()
     End Sub
     Private Sub DataGridView1_Click(sender As Object, e As EventArgs) Handles DataGridView1.Click
-        SubjectCodeBox.Text = DataGridView1.CurrentRow.Cells(0).Value
-        SubjectNameBox.Text = DataGridView1.CurrentRow.Cells(1).Value
-        cboSubjectDepartment.Text = DataGridView1.CurrentRow.Cells(2).Value
+        txtPR.Text = DataGridView1.CurrentRow.Cells(0).Value
+        SubjectCodeBox.Text = DataGridView1.CurrentRow.Cells(1).Value
+        SubjectNameBox.Text = DataGridView1.CurrentRow.Cells(2).Value
+        cboSubjectDepartment.Text = DataGridView1.CurrentRow.Cells(3).Value
     End Sub
     Private Sub cboTeachersSubjects_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboTeachersSubjects.SelectedIndexChanged
         Me.agent.Focus()
@@ -423,5 +448,8 @@ Public Class LockTable
     End Sub
     Private Sub ChackClassrooms_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ChackClassrooms.SelectedIndexChanged
         status()
+    End Sub
+    Private Sub btnEditS_Click(sender As Object, e As EventArgs) Handles btnEditS.Click
+        'EditS()
     End Sub
 End Class

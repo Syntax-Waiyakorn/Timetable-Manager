@@ -25,60 +25,60 @@ Partial Class StudentTimetables
 		Me.lblTeachers = New System.Windows.Forms.Label()
 		Me.lblD5P11 = New System.Windows.Forms.Label()
 		Me.lblD5P10 = New System.Windows.Forms.Label()
-		Me.lblD5P9 = New System.Windows.Forms.Label()
-		Me.lblD5P8 = New System.Windows.Forms.Label()
-		Me.lblD5P7 = New System.Windows.Forms.Label()
-		Me.lblD5P6 = New System.Windows.Forms.Label()
-		Me.lblD5P5 = New System.Windows.Forms.Label()
+		Me.lblD5P09 = New System.Windows.Forms.Label()
+		Me.lblD5P08 = New System.Windows.Forms.Label()
+		Me.lblD5P07 = New System.Windows.Forms.Label()
+		Me.lblD5P06 = New System.Windows.Forms.Label()
+		Me.lblD5P05 = New System.Windows.Forms.Label()
 		Me.lbl11 = New System.Windows.Forms.Label()
-		Me.lblD5P4 = New System.Windows.Forms.Label()
-		Me.lblD5P3 = New System.Windows.Forms.Label()
-		Me.lblD5P2 = New System.Windows.Forms.Label()
-		Me.lblD5P1 = New System.Windows.Forms.Label()
+		Me.lblD5P04 = New System.Windows.Forms.Label()
+		Me.lblD5P03 = New System.Windows.Forms.Label()
+		Me.lblD5P02 = New System.Windows.Forms.Label()
+		Me.lblD5P01 = New System.Windows.Forms.Label()
 		Me.lblD4P11 = New System.Windows.Forms.Label()
 		Me.lblD4P10 = New System.Windows.Forms.Label()
-		Me.lblD4P9 = New System.Windows.Forms.Label()
-		Me.lblD4P8 = New System.Windows.Forms.Label()
-		Me.lblD4P7 = New System.Windows.Forms.Label()
-		Me.lblD4P6 = New System.Windows.Forms.Label()
-		Me.lblD4P5 = New System.Windows.Forms.Label()
-		Me.lblD4P4 = New System.Windows.Forms.Label()
-		Me.lblD4P3 = New System.Windows.Forms.Label()
-		Me.lblD4P2 = New System.Windows.Forms.Label()
-		Me.lblD4P1 = New System.Windows.Forms.Label()
+		Me.lblD4P09 = New System.Windows.Forms.Label()
+		Me.lblD4P08 = New System.Windows.Forms.Label()
+		Me.lblD4P07 = New System.Windows.Forms.Label()
+		Me.lblD4P06 = New System.Windows.Forms.Label()
+		Me.lblD4P05 = New System.Windows.Forms.Label()
+		Me.lblD4P04 = New System.Windows.Forms.Label()
+		Me.lblD4P03 = New System.Windows.Forms.Label()
+		Me.lblD4P02 = New System.Windows.Forms.Label()
+		Me.lblD4P01 = New System.Windows.Forms.Label()
 		Me.lblD3P11 = New System.Windows.Forms.Label()
 		Me.lblD3P10 = New System.Windows.Forms.Label()
-		Me.lblD3P9 = New System.Windows.Forms.Label()
-		Me.lblD3P8 = New System.Windows.Forms.Label()
-		Me.lblD3P7 = New System.Windows.Forms.Label()
-		Me.lblD3P6 = New System.Windows.Forms.Label()
-		Me.lblD3P5 = New System.Windows.Forms.Label()
-		Me.lblD3P4 = New System.Windows.Forms.Label()
-		Me.lblD3P3 = New System.Windows.Forms.Label()
-		Me.lblD3P2 = New System.Windows.Forms.Label()
-		Me.lblD3P1 = New System.Windows.Forms.Label()
+		Me.lblD3P09 = New System.Windows.Forms.Label()
+		Me.lblD3P08 = New System.Windows.Forms.Label()
+		Me.lblD3P07 = New System.Windows.Forms.Label()
+		Me.lblD3P06 = New System.Windows.Forms.Label()
+		Me.lblD3P05 = New System.Windows.Forms.Label()
+		Me.lblD3P04 = New System.Windows.Forms.Label()
+		Me.lblD3P03 = New System.Windows.Forms.Label()
+		Me.lblD3P02 = New System.Windows.Forms.Label()
+		Me.lblD3P01 = New System.Windows.Forms.Label()
 		Me.lblD2P11 = New System.Windows.Forms.Label()
 		Me.lblD2P10 = New System.Windows.Forms.Label()
-		Me.lblD2P9 = New System.Windows.Forms.Label()
-		Me.lblD2P8 = New System.Windows.Forms.Label()
-		Me.lblD2P7 = New System.Windows.Forms.Label()
-		Me.lblD2P6 = New System.Windows.Forms.Label()
-		Me.lblD2P5 = New System.Windows.Forms.Label()
-		Me.lblD2P4 = New System.Windows.Forms.Label()
-		Me.lblD2P3 = New System.Windows.Forms.Label()
-		Me.lblD2P2 = New System.Windows.Forms.Label()
-		Me.lblD2P1 = New System.Windows.Forms.Label()
+		Me.lblD2P09 = New System.Windows.Forms.Label()
+		Me.lblD2P08 = New System.Windows.Forms.Label()
+		Me.lblD2P07 = New System.Windows.Forms.Label()
+		Me.lblD2P06 = New System.Windows.Forms.Label()
+		Me.lblD2P05 = New System.Windows.Forms.Label()
+		Me.lblD2P04 = New System.Windows.Forms.Label()
+		Me.lblD2P03 = New System.Windows.Forms.Label()
+		Me.lblD2P02 = New System.Windows.Forms.Label()
+		Me.lblD2P01 = New System.Windows.Forms.Label()
 		Me.lblD1P11 = New System.Windows.Forms.Label()
 		Me.lblD1P10 = New System.Windows.Forms.Label()
-		Me.lblD1P9 = New System.Windows.Forms.Label()
-		Me.lblD1P8 = New System.Windows.Forms.Label()
-		Me.lblD1P7 = New System.Windows.Forms.Label()
-		Me.lblD1P6 = New System.Windows.Forms.Label()
-		Me.lblD1P5 = New System.Windows.Forms.Label()
-		Me.lblD1P4 = New System.Windows.Forms.Label()
-		Me.lblD1P3 = New System.Windows.Forms.Label()
-		Me.lblD1P2 = New System.Windows.Forms.Label()
-		Me.lblD1P1 = New System.Windows.Forms.Label()
+		Me.lblD1P09 = New System.Windows.Forms.Label()
+		Me.lblD1P08 = New System.Windows.Forms.Label()
+		Me.lblD1P07 = New System.Windows.Forms.Label()
+		Me.lblD1P06 = New System.Windows.Forms.Label()
+		Me.lblD1P05 = New System.Windows.Forms.Label()
+		Me.lblD1P04 = New System.Windows.Forms.Label()
+		Me.lblD1P03 = New System.Windows.Forms.Label()
+		Me.lblD1P02 = New System.Windows.Forms.Label()
+		Me.lblD1P01 = New System.Windows.Forms.Label()
 		Me.lblTime11 = New System.Windows.Forms.Label()
 		Me.lblTime10 = New System.Windows.Forms.Label()
 		Me.lbl10 = New System.Windows.Forms.Label()
@@ -172,75 +172,75 @@ Partial Class StudentTimetables
 		Me.lblD5P10.Text = "ว่าง"
 		Me.lblD5P10.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD5P9
+		'lblD5P09
 		'
-		Me.lblD5P9.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD5P9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD5P9.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD5P9.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD5P9.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD5P9.Location = New System.Drawing.Point(1262, 817)
-		Me.lblD5P9.Name = "lblD5P9"
-		Me.lblD5P9.Size = New System.Drawing.Size(123, 97)
-		Me.lblD5P9.TabIndex = 356
-		Me.lblD5P9.Text = "ว่าง"
-		Me.lblD5P9.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD5P09.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD5P09.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD5P09.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD5P09.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD5P09.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD5P09.Location = New System.Drawing.Point(1262, 817)
+		Me.lblD5P09.Name = "lblD5P09"
+		Me.lblD5P09.Size = New System.Drawing.Size(123, 97)
+		Me.lblD5P09.TabIndex = 356
+		Me.lblD5P09.Text = "ว่าง"
+		Me.lblD5P09.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD5P8
+		'lblD5P08
 		'
-		Me.lblD5P8.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD5P8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD5P8.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD5P8.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD5P8.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD5P8.Location = New System.Drawing.Point(1133, 817)
-		Me.lblD5P8.Name = "lblD5P8"
-		Me.lblD5P8.Size = New System.Drawing.Size(123, 97)
-		Me.lblD5P8.TabIndex = 355
-		Me.lblD5P8.Text = "ว่าง"
-		Me.lblD5P8.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD5P08.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD5P08.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD5P08.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD5P08.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD5P08.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD5P08.Location = New System.Drawing.Point(1133, 817)
+		Me.lblD5P08.Name = "lblD5P08"
+		Me.lblD5P08.Size = New System.Drawing.Size(123, 97)
+		Me.lblD5P08.TabIndex = 355
+		Me.lblD5P08.Text = "ว่าง"
+		Me.lblD5P08.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD5P7
+		'lblD5P07
 		'
-		Me.lblD5P7.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD5P7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD5P7.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD5P7.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD5P7.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD5P7.Location = New System.Drawing.Point(1004, 817)
-		Me.lblD5P7.Name = "lblD5P7"
-		Me.lblD5P7.Size = New System.Drawing.Size(123, 97)
-		Me.lblD5P7.TabIndex = 354
-		Me.lblD5P7.Text = "ว่าง"
-		Me.lblD5P7.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD5P07.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD5P07.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD5P07.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD5P07.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD5P07.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD5P07.Location = New System.Drawing.Point(1004, 817)
+		Me.lblD5P07.Name = "lblD5P07"
+		Me.lblD5P07.Size = New System.Drawing.Size(123, 97)
+		Me.lblD5P07.TabIndex = 354
+		Me.lblD5P07.Text = "ว่าง"
+		Me.lblD5P07.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD5P6
+		'lblD5P06
 		'
-		Me.lblD5P6.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD5P6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD5P6.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD5P6.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD5P6.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD5P6.Location = New System.Drawing.Point(875, 817)
-		Me.lblD5P6.Name = "lblD5P6"
-		Me.lblD5P6.Size = New System.Drawing.Size(123, 97)
-		Me.lblD5P6.TabIndex = 353
-		Me.lblD5P6.Text = "ว่าง"
-		Me.lblD5P6.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD5P06.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD5P06.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD5P06.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD5P06.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD5P06.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD5P06.Location = New System.Drawing.Point(875, 817)
+		Me.lblD5P06.Name = "lblD5P06"
+		Me.lblD5P06.Size = New System.Drawing.Size(123, 97)
+		Me.lblD5P06.TabIndex = 353
+		Me.lblD5P06.Text = "ว่าง"
+		Me.lblD5P06.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD5P5
+		'lblD5P05
 		'
-		Me.lblD5P5.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD5P5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD5P5.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD5P5.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD5P5.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD5P5.Location = New System.Drawing.Point(746, 817)
-		Me.lblD5P5.Name = "lblD5P5"
-		Me.lblD5P5.Size = New System.Drawing.Size(123, 97)
-		Me.lblD5P5.TabIndex = 352
-		Me.lblD5P5.Text = "ว่าง"
-		Me.lblD5P5.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD5P05.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD5P05.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD5P05.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD5P05.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD5P05.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD5P05.Location = New System.Drawing.Point(746, 817)
+		Me.lblD5P05.Name = "lblD5P05"
+		Me.lblD5P05.Size = New System.Drawing.Size(123, 97)
+		Me.lblD5P05.TabIndex = 352
+		Me.lblD5P05.Text = "ว่าง"
+		Me.lblD5P05.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
 		'lbl11
 		'
@@ -255,61 +255,61 @@ Partial Class StudentTimetables
 		Me.lbl11.Text = "0"
 		Me.lbl11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		'
-		'lblD5P4
+		'lblD5P04
 		'
-		Me.lblD5P4.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD5P4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD5P4.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD5P4.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD5P4.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD5P4.Location = New System.Drawing.Point(617, 817)
-		Me.lblD5P4.Name = "lblD5P4"
-		Me.lblD5P4.Size = New System.Drawing.Size(123, 97)
-		Me.lblD5P4.TabIndex = 351
-		Me.lblD5P4.Text = "ว่าง"
-		Me.lblD5P4.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD5P04.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD5P04.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD5P04.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD5P04.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD5P04.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD5P04.Location = New System.Drawing.Point(617, 817)
+		Me.lblD5P04.Name = "lblD5P04"
+		Me.lblD5P04.Size = New System.Drawing.Size(123, 97)
+		Me.lblD5P04.TabIndex = 351
+		Me.lblD5P04.Text = "ว่าง"
+		Me.lblD5P04.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD5P3
+		'lblD5P03
 		'
-		Me.lblD5P3.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD5P3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD5P3.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD5P3.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD5P3.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD5P3.Location = New System.Drawing.Point(488, 817)
-		Me.lblD5P3.Name = "lblD5P3"
-		Me.lblD5P3.Size = New System.Drawing.Size(123, 97)
-		Me.lblD5P3.TabIndex = 350
-		Me.lblD5P3.Text = "ว่าง"
-		Me.lblD5P3.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD5P03.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD5P03.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD5P03.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD5P03.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD5P03.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD5P03.Location = New System.Drawing.Point(488, 817)
+		Me.lblD5P03.Name = "lblD5P03"
+		Me.lblD5P03.Size = New System.Drawing.Size(123, 97)
+		Me.lblD5P03.TabIndex = 350
+		Me.lblD5P03.Text = "ว่าง"
+		Me.lblD5P03.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD5P2
+		'lblD5P02
 		'
-		Me.lblD5P2.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD5P2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD5P2.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD5P2.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD5P2.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD5P2.Location = New System.Drawing.Point(359, 817)
-		Me.lblD5P2.Name = "lblD5P2"
-		Me.lblD5P2.Size = New System.Drawing.Size(123, 97)
-		Me.lblD5P2.TabIndex = 349
-		Me.lblD5P2.Text = "ว่าง"
-		Me.lblD5P2.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD5P02.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD5P02.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD5P02.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD5P02.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD5P02.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD5P02.Location = New System.Drawing.Point(359, 817)
+		Me.lblD5P02.Name = "lblD5P02"
+		Me.lblD5P02.Size = New System.Drawing.Size(123, 97)
+		Me.lblD5P02.TabIndex = 349
+		Me.lblD5P02.Text = "ว่าง"
+		Me.lblD5P02.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD5P1
+		'lblD5P01
 		'
-		Me.lblD5P1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD5P1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD5P1.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD5P1.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD5P1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD5P1.Location = New System.Drawing.Point(229, 817)
-		Me.lblD5P1.Name = "lblD5P1"
-		Me.lblD5P1.Size = New System.Drawing.Size(123, 97)
-		Me.lblD5P1.TabIndex = 348
-		Me.lblD5P1.Text = "ว่าง"
-		Me.lblD5P1.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD5P01.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD5P01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD5P01.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD5P01.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD5P01.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD5P01.Location = New System.Drawing.Point(229, 817)
+		Me.lblD5P01.Name = "lblD5P01"
+		Me.lblD5P01.Size = New System.Drawing.Size(123, 97)
+		Me.lblD5P01.TabIndex = 348
+		Me.lblD5P01.Text = "ว่าง"
+		Me.lblD5P01.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
 		'lblD4P11
 		'
@@ -339,131 +339,131 @@ Partial Class StudentTimetables
 		Me.lblD4P10.Text = "ว่าง"
 		Me.lblD4P10.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD4P9
+		'lblD4P09
 		'
-		Me.lblD4P9.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD4P9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD4P9.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD4P9.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD4P9.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD4P9.Location = New System.Drawing.Point(1262, 712)
-		Me.lblD4P9.Name = "lblD4P9"
-		Me.lblD4P9.Size = New System.Drawing.Size(123, 97)
-		Me.lblD4P9.TabIndex = 345
-		Me.lblD4P9.Text = "ว่าง"
-		Me.lblD4P9.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD4P09.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD4P09.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD4P09.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD4P09.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD4P09.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD4P09.Location = New System.Drawing.Point(1262, 712)
+		Me.lblD4P09.Name = "lblD4P09"
+		Me.lblD4P09.Size = New System.Drawing.Size(123, 97)
+		Me.lblD4P09.TabIndex = 345
+		Me.lblD4P09.Text = "ว่าง"
+		Me.lblD4P09.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD4P8
+		'lblD4P08
 		'
-		Me.lblD4P8.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD4P8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD4P8.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD4P8.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD4P8.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD4P8.Location = New System.Drawing.Point(1133, 712)
-		Me.lblD4P8.Name = "lblD4P8"
-		Me.lblD4P8.Size = New System.Drawing.Size(123, 97)
-		Me.lblD4P8.TabIndex = 344
-		Me.lblD4P8.Text = "ว่าง"
-		Me.lblD4P8.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD4P08.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD4P08.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD4P08.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD4P08.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD4P08.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD4P08.Location = New System.Drawing.Point(1133, 712)
+		Me.lblD4P08.Name = "lblD4P08"
+		Me.lblD4P08.Size = New System.Drawing.Size(123, 97)
+		Me.lblD4P08.TabIndex = 344
+		Me.lblD4P08.Text = "ว่าง"
+		Me.lblD4P08.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD4P7
+		'lblD4P07
 		'
-		Me.lblD4P7.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD4P7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD4P7.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD4P7.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD4P7.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD4P7.Location = New System.Drawing.Point(1004, 712)
-		Me.lblD4P7.Name = "lblD4P7"
-		Me.lblD4P7.Size = New System.Drawing.Size(123, 97)
-		Me.lblD4P7.TabIndex = 343
-		Me.lblD4P7.Text = "ว่าง"
-		Me.lblD4P7.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD4P07.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD4P07.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD4P07.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD4P07.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD4P07.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD4P07.Location = New System.Drawing.Point(1004, 712)
+		Me.lblD4P07.Name = "lblD4P07"
+		Me.lblD4P07.Size = New System.Drawing.Size(123, 97)
+		Me.lblD4P07.TabIndex = 343
+		Me.lblD4P07.Text = "ว่าง"
+		Me.lblD4P07.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD4P6
+		'lblD4P06
 		'
-		Me.lblD4P6.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD4P6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD4P6.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD4P6.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD4P6.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD4P6.Location = New System.Drawing.Point(875, 712)
-		Me.lblD4P6.Name = "lblD4P6"
-		Me.lblD4P6.Size = New System.Drawing.Size(123, 97)
-		Me.lblD4P6.TabIndex = 342
-		Me.lblD4P6.Text = "ว่าง"
-		Me.lblD4P6.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD4P06.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD4P06.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD4P06.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD4P06.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD4P06.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD4P06.Location = New System.Drawing.Point(875, 712)
+		Me.lblD4P06.Name = "lblD4P06"
+		Me.lblD4P06.Size = New System.Drawing.Size(123, 97)
+		Me.lblD4P06.TabIndex = 342
+		Me.lblD4P06.Text = "ว่าง"
+		Me.lblD4P06.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD4P5
+		'lblD4P05
 		'
-		Me.lblD4P5.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD4P5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD4P5.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD4P5.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD4P5.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD4P5.Location = New System.Drawing.Point(746, 712)
-		Me.lblD4P5.Name = "lblD4P5"
-		Me.lblD4P5.Size = New System.Drawing.Size(123, 97)
-		Me.lblD4P5.TabIndex = 341
-		Me.lblD4P5.Text = "ว่าง"
-		Me.lblD4P5.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD4P05.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD4P05.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD4P05.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD4P05.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD4P05.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD4P05.Location = New System.Drawing.Point(746, 712)
+		Me.lblD4P05.Name = "lblD4P05"
+		Me.lblD4P05.Size = New System.Drawing.Size(123, 97)
+		Me.lblD4P05.TabIndex = 341
+		Me.lblD4P05.Text = "ว่าง"
+		Me.lblD4P05.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD4P4
+		'lblD4P04
 		'
-		Me.lblD4P4.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD4P4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD4P4.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD4P4.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD4P4.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD4P4.Location = New System.Drawing.Point(617, 712)
-		Me.lblD4P4.Name = "lblD4P4"
-		Me.lblD4P4.Size = New System.Drawing.Size(123, 97)
-		Me.lblD4P4.TabIndex = 340
-		Me.lblD4P4.Text = "ว่าง"
-		Me.lblD4P4.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD4P04.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD4P04.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD4P04.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD4P04.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD4P04.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD4P04.Location = New System.Drawing.Point(617, 712)
+		Me.lblD4P04.Name = "lblD4P04"
+		Me.lblD4P04.Size = New System.Drawing.Size(123, 97)
+		Me.lblD4P04.TabIndex = 340
+		Me.lblD4P04.Text = "ว่าง"
+		Me.lblD4P04.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD4P3
+		'lblD4P03
 		'
-		Me.lblD4P3.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD4P3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD4P3.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD4P3.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD4P3.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD4P3.Location = New System.Drawing.Point(488, 712)
-		Me.lblD4P3.Name = "lblD4P3"
-		Me.lblD4P3.Size = New System.Drawing.Size(123, 97)
-		Me.lblD4P3.TabIndex = 339
-		Me.lblD4P3.Text = "ว่าง"
-		Me.lblD4P3.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD4P03.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD4P03.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD4P03.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD4P03.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD4P03.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD4P03.Location = New System.Drawing.Point(488, 712)
+		Me.lblD4P03.Name = "lblD4P03"
+		Me.lblD4P03.Size = New System.Drawing.Size(123, 97)
+		Me.lblD4P03.TabIndex = 339
+		Me.lblD4P03.Text = "ว่าง"
+		Me.lblD4P03.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD4P2
+		'lblD4P02
 		'
-		Me.lblD4P2.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD4P2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD4P2.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD4P2.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD4P2.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD4P2.Location = New System.Drawing.Point(359, 712)
-		Me.lblD4P2.Name = "lblD4P2"
-		Me.lblD4P2.Size = New System.Drawing.Size(123, 97)
-		Me.lblD4P2.TabIndex = 338
-		Me.lblD4P2.Text = "ว่าง"
-		Me.lblD4P2.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD4P02.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD4P02.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD4P02.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD4P02.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD4P02.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD4P02.Location = New System.Drawing.Point(359, 712)
+		Me.lblD4P02.Name = "lblD4P02"
+		Me.lblD4P02.Size = New System.Drawing.Size(123, 97)
+		Me.lblD4P02.TabIndex = 338
+		Me.lblD4P02.Text = "ว่าง"
+		Me.lblD4P02.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD4P1
+		'lblD4P01
 		'
-		Me.lblD4P1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD4P1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD4P1.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD4P1.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD4P1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD4P1.Location = New System.Drawing.Point(230, 712)
-		Me.lblD4P1.Name = "lblD4P1"
-		Me.lblD4P1.Size = New System.Drawing.Size(123, 97)
-		Me.lblD4P1.TabIndex = 337
-		Me.lblD4P1.Text = "ว่าง"
-		Me.lblD4P1.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD4P01.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD4P01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD4P01.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD4P01.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD4P01.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD4P01.Location = New System.Drawing.Point(230, 712)
+		Me.lblD4P01.Name = "lblD4P01"
+		Me.lblD4P01.Size = New System.Drawing.Size(123, 97)
+		Me.lblD4P01.TabIndex = 337
+		Me.lblD4P01.Text = "ว่าง"
+		Me.lblD4P01.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
 		'lblD3P11
 		'
@@ -493,131 +493,131 @@ Partial Class StudentTimetables
 		Me.lblD3P10.Text = "ว่าง"
 		Me.lblD3P10.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD3P9
+		'lblD3P09
 		'
-		Me.lblD3P9.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD3P9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD3P9.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD3P9.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD3P9.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD3P9.Location = New System.Drawing.Point(1262, 607)
-		Me.lblD3P9.Name = "lblD3P9"
-		Me.lblD3P9.Size = New System.Drawing.Size(123, 97)
-		Me.lblD3P9.TabIndex = 334
-		Me.lblD3P9.Text = "ว่าง"
-		Me.lblD3P9.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD3P09.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD3P09.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD3P09.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD3P09.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD3P09.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD3P09.Location = New System.Drawing.Point(1262, 607)
+		Me.lblD3P09.Name = "lblD3P09"
+		Me.lblD3P09.Size = New System.Drawing.Size(123, 97)
+		Me.lblD3P09.TabIndex = 334
+		Me.lblD3P09.Text = "ว่าง"
+		Me.lblD3P09.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD3P8
+		'lblD3P08
 		'
-		Me.lblD3P8.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD3P8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD3P8.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD3P8.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD3P8.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD3P8.Location = New System.Drawing.Point(1133, 607)
-		Me.lblD3P8.Name = "lblD3P8"
-		Me.lblD3P8.Size = New System.Drawing.Size(123, 97)
-		Me.lblD3P8.TabIndex = 333
-		Me.lblD3P8.Text = "ว่าง"
-		Me.lblD3P8.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD3P08.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD3P08.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD3P08.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD3P08.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD3P08.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD3P08.Location = New System.Drawing.Point(1133, 607)
+		Me.lblD3P08.Name = "lblD3P08"
+		Me.lblD3P08.Size = New System.Drawing.Size(123, 97)
+		Me.lblD3P08.TabIndex = 333
+		Me.lblD3P08.Text = "ว่าง"
+		Me.lblD3P08.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD3P7
+		'lblD3P07
 		'
-		Me.lblD3P7.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD3P7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD3P7.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD3P7.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD3P7.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD3P7.Location = New System.Drawing.Point(1004, 607)
-		Me.lblD3P7.Name = "lblD3P7"
-		Me.lblD3P7.Size = New System.Drawing.Size(123, 97)
-		Me.lblD3P7.TabIndex = 332
-		Me.lblD3P7.Text = "ว่าง"
-		Me.lblD3P7.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD3P07.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD3P07.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD3P07.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD3P07.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD3P07.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD3P07.Location = New System.Drawing.Point(1004, 607)
+		Me.lblD3P07.Name = "lblD3P07"
+		Me.lblD3P07.Size = New System.Drawing.Size(123, 97)
+		Me.lblD3P07.TabIndex = 332
+		Me.lblD3P07.Text = "ว่าง"
+		Me.lblD3P07.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD3P6
+		'lblD3P06
 		'
-		Me.lblD3P6.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD3P6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD3P6.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD3P6.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD3P6.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD3P6.Location = New System.Drawing.Point(875, 607)
-		Me.lblD3P6.Name = "lblD3P6"
-		Me.lblD3P6.Size = New System.Drawing.Size(123, 97)
-		Me.lblD3P6.TabIndex = 331
-		Me.lblD3P6.Text = "ว่าง"
-		Me.lblD3P6.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD3P06.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD3P06.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD3P06.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD3P06.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD3P06.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD3P06.Location = New System.Drawing.Point(875, 607)
+		Me.lblD3P06.Name = "lblD3P06"
+		Me.lblD3P06.Size = New System.Drawing.Size(123, 97)
+		Me.lblD3P06.TabIndex = 331
+		Me.lblD3P06.Text = "ว่าง"
+		Me.lblD3P06.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD3P5
+		'lblD3P05
 		'
-		Me.lblD3P5.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD3P5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD3P5.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD3P5.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD3P5.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD3P5.Location = New System.Drawing.Point(746, 607)
-		Me.lblD3P5.Name = "lblD3P5"
-		Me.lblD3P5.Size = New System.Drawing.Size(123, 97)
-		Me.lblD3P5.TabIndex = 330
-		Me.lblD3P5.Text = "ว่าง"
-		Me.lblD3P5.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD3P05.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD3P05.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD3P05.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD3P05.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD3P05.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD3P05.Location = New System.Drawing.Point(746, 607)
+		Me.lblD3P05.Name = "lblD3P05"
+		Me.lblD3P05.Size = New System.Drawing.Size(123, 97)
+		Me.lblD3P05.TabIndex = 330
+		Me.lblD3P05.Text = "ว่าง"
+		Me.lblD3P05.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD3P4
+		'lblD3P04
 		'
-		Me.lblD3P4.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD3P4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD3P4.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD3P4.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD3P4.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD3P4.Location = New System.Drawing.Point(617, 607)
-		Me.lblD3P4.Name = "lblD3P4"
-		Me.lblD3P4.Size = New System.Drawing.Size(123, 97)
-		Me.lblD3P4.TabIndex = 329
-		Me.lblD3P4.Text = "ว่าง"
-		Me.lblD3P4.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD3P04.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD3P04.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD3P04.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD3P04.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD3P04.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD3P04.Location = New System.Drawing.Point(617, 607)
+		Me.lblD3P04.Name = "lblD3P04"
+		Me.lblD3P04.Size = New System.Drawing.Size(123, 97)
+		Me.lblD3P04.TabIndex = 329
+		Me.lblD3P04.Text = "ว่าง"
+		Me.lblD3P04.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD3P3
+		'lblD3P03
 		'
-		Me.lblD3P3.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD3P3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD3P3.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD3P3.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD3P3.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD3P3.Location = New System.Drawing.Point(488, 607)
-		Me.lblD3P3.Name = "lblD3P3"
-		Me.lblD3P3.Size = New System.Drawing.Size(123, 97)
-		Me.lblD3P3.TabIndex = 328
-		Me.lblD3P3.Text = "ว่าง"
-		Me.lblD3P3.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD3P03.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD3P03.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD3P03.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD3P03.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD3P03.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD3P03.Location = New System.Drawing.Point(488, 607)
+		Me.lblD3P03.Name = "lblD3P03"
+		Me.lblD3P03.Size = New System.Drawing.Size(123, 97)
+		Me.lblD3P03.TabIndex = 328
+		Me.lblD3P03.Text = "ว่าง"
+		Me.lblD3P03.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD3P2
+		'lblD3P02
 		'
-		Me.lblD3P2.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD3P2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD3P2.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD3P2.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD3P2.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD3P2.Location = New System.Drawing.Point(359, 607)
-		Me.lblD3P2.Name = "lblD3P2"
-		Me.lblD3P2.Size = New System.Drawing.Size(123, 97)
-		Me.lblD3P2.TabIndex = 327
-		Me.lblD3P2.Text = "ว่าง"
-		Me.lblD3P2.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD3P02.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD3P02.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD3P02.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD3P02.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD3P02.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD3P02.Location = New System.Drawing.Point(359, 607)
+		Me.lblD3P02.Name = "lblD3P02"
+		Me.lblD3P02.Size = New System.Drawing.Size(123, 97)
+		Me.lblD3P02.TabIndex = 327
+		Me.lblD3P02.Text = "ว่าง"
+		Me.lblD3P02.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD3P1
+		'lblD3P01
 		'
-		Me.lblD3P1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD3P1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD3P1.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD3P1.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD3P1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD3P1.Location = New System.Drawing.Point(230, 607)
-		Me.lblD3P1.Name = "lblD3P1"
-		Me.lblD3P1.Size = New System.Drawing.Size(123, 97)
-		Me.lblD3P1.TabIndex = 326
-		Me.lblD3P1.Text = "ว่าง"
-		Me.lblD3P1.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD3P01.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD3P01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD3P01.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD3P01.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD3P01.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD3P01.Location = New System.Drawing.Point(230, 607)
+		Me.lblD3P01.Name = "lblD3P01"
+		Me.lblD3P01.Size = New System.Drawing.Size(123, 97)
+		Me.lblD3P01.TabIndex = 326
+		Me.lblD3P01.Text = "ว่าง"
+		Me.lblD3P01.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
 		'lblD2P11
 		'
@@ -647,131 +647,131 @@ Partial Class StudentTimetables
 		Me.lblD2P10.Text = "ว่าง"
 		Me.lblD2P10.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD2P9
+		'lblD2P09
 		'
-		Me.lblD2P9.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD2P9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD2P9.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD2P9.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD2P9.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD2P9.Location = New System.Drawing.Point(1262, 503)
-		Me.lblD2P9.Name = "lblD2P9"
-		Me.lblD2P9.Size = New System.Drawing.Size(123, 97)
-		Me.lblD2P9.TabIndex = 323
-		Me.lblD2P9.Text = "ว่าง"
-		Me.lblD2P9.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD2P09.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD2P09.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD2P09.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD2P09.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD2P09.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD2P09.Location = New System.Drawing.Point(1262, 503)
+		Me.lblD2P09.Name = "lblD2P09"
+		Me.lblD2P09.Size = New System.Drawing.Size(123, 97)
+		Me.lblD2P09.TabIndex = 323
+		Me.lblD2P09.Text = "ว่าง"
+		Me.lblD2P09.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD2P8
+		'lblD2P08
 		'
-		Me.lblD2P8.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD2P8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD2P8.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD2P8.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD2P8.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD2P8.Location = New System.Drawing.Point(1133, 503)
-		Me.lblD2P8.Name = "lblD2P8"
-		Me.lblD2P8.Size = New System.Drawing.Size(123, 97)
-		Me.lblD2P8.TabIndex = 322
-		Me.lblD2P8.Text = "ว่าง"
-		Me.lblD2P8.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD2P08.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD2P08.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD2P08.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD2P08.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD2P08.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD2P08.Location = New System.Drawing.Point(1133, 503)
+		Me.lblD2P08.Name = "lblD2P08"
+		Me.lblD2P08.Size = New System.Drawing.Size(123, 97)
+		Me.lblD2P08.TabIndex = 322
+		Me.lblD2P08.Text = "ว่าง"
+		Me.lblD2P08.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD2P7
+		'lblD2P07
 		'
-		Me.lblD2P7.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD2P7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD2P7.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD2P7.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD2P7.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD2P7.Location = New System.Drawing.Point(1004, 503)
-		Me.lblD2P7.Name = "lblD2P7"
-		Me.lblD2P7.Size = New System.Drawing.Size(123, 97)
-		Me.lblD2P7.TabIndex = 321
-		Me.lblD2P7.Text = "ว่าง"
-		Me.lblD2P7.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD2P07.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD2P07.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD2P07.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD2P07.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD2P07.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD2P07.Location = New System.Drawing.Point(1004, 503)
+		Me.lblD2P07.Name = "lblD2P07"
+		Me.lblD2P07.Size = New System.Drawing.Size(123, 97)
+		Me.lblD2P07.TabIndex = 321
+		Me.lblD2P07.Text = "ว่าง"
+		Me.lblD2P07.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD2P6
+		'lblD2P06
 		'
-		Me.lblD2P6.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD2P6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD2P6.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD2P6.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD2P6.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD2P6.Location = New System.Drawing.Point(875, 503)
-		Me.lblD2P6.Name = "lblD2P6"
-		Me.lblD2P6.Size = New System.Drawing.Size(123, 97)
-		Me.lblD2P6.TabIndex = 320
-		Me.lblD2P6.Text = "ว่าง"
-		Me.lblD2P6.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD2P06.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD2P06.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD2P06.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD2P06.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD2P06.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD2P06.Location = New System.Drawing.Point(875, 503)
+		Me.lblD2P06.Name = "lblD2P06"
+		Me.lblD2P06.Size = New System.Drawing.Size(123, 97)
+		Me.lblD2P06.TabIndex = 320
+		Me.lblD2P06.Text = "ว่าง"
+		Me.lblD2P06.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD2P5
+		'lblD2P05
 		'
-		Me.lblD2P5.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD2P5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD2P5.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD2P5.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD2P5.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD2P5.Location = New System.Drawing.Point(746, 503)
-		Me.lblD2P5.Name = "lblD2P5"
-		Me.lblD2P5.Size = New System.Drawing.Size(123, 97)
-		Me.lblD2P5.TabIndex = 319
-		Me.lblD2P5.Text = "ว่าง"
-		Me.lblD2P5.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD2P05.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD2P05.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD2P05.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD2P05.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD2P05.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD2P05.Location = New System.Drawing.Point(746, 503)
+		Me.lblD2P05.Name = "lblD2P05"
+		Me.lblD2P05.Size = New System.Drawing.Size(123, 97)
+		Me.lblD2P05.TabIndex = 319
+		Me.lblD2P05.Text = "ว่าง"
+		Me.lblD2P05.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD2P4
+		'lblD2P04
 		'
-		Me.lblD2P4.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD2P4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD2P4.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD2P4.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD2P4.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD2P4.Location = New System.Drawing.Point(617, 503)
-		Me.lblD2P4.Name = "lblD2P4"
-		Me.lblD2P4.Size = New System.Drawing.Size(123, 97)
-		Me.lblD2P4.TabIndex = 318
-		Me.lblD2P4.Text = "ว่าง"
-		Me.lblD2P4.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD2P04.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD2P04.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD2P04.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD2P04.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD2P04.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD2P04.Location = New System.Drawing.Point(617, 503)
+		Me.lblD2P04.Name = "lblD2P04"
+		Me.lblD2P04.Size = New System.Drawing.Size(123, 97)
+		Me.lblD2P04.TabIndex = 318
+		Me.lblD2P04.Text = "ว่าง"
+		Me.lblD2P04.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD2P3
+		'lblD2P03
 		'
-		Me.lblD2P3.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD2P3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD2P3.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD2P3.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD2P3.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD2P3.Location = New System.Drawing.Point(488, 503)
-		Me.lblD2P3.Name = "lblD2P3"
-		Me.lblD2P3.Size = New System.Drawing.Size(123, 97)
-		Me.lblD2P3.TabIndex = 317
-		Me.lblD2P3.Text = "ว่าง"
-		Me.lblD2P3.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD2P03.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD2P03.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD2P03.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD2P03.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD2P03.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD2P03.Location = New System.Drawing.Point(488, 503)
+		Me.lblD2P03.Name = "lblD2P03"
+		Me.lblD2P03.Size = New System.Drawing.Size(123, 97)
+		Me.lblD2P03.TabIndex = 317
+		Me.lblD2P03.Text = "ว่าง"
+		Me.lblD2P03.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD2P2
+		'lblD2P02
 		'
-		Me.lblD2P2.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD2P2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD2P2.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD2P2.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD2P2.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD2P2.Location = New System.Drawing.Point(359, 503)
-		Me.lblD2P2.Name = "lblD2P2"
-		Me.lblD2P2.Size = New System.Drawing.Size(123, 97)
-		Me.lblD2P2.TabIndex = 316
-		Me.lblD2P2.Text = "ว่าง"
-		Me.lblD2P2.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD2P02.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD2P02.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD2P02.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD2P02.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD2P02.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD2P02.Location = New System.Drawing.Point(359, 503)
+		Me.lblD2P02.Name = "lblD2P02"
+		Me.lblD2P02.Size = New System.Drawing.Size(123, 97)
+		Me.lblD2P02.TabIndex = 316
+		Me.lblD2P02.Text = "ว่าง"
+		Me.lblD2P02.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD2P1
+		'lblD2P01
 		'
-		Me.lblD2P1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD2P1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD2P1.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD2P1.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD2P1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD2P1.Location = New System.Drawing.Point(230, 503)
-		Me.lblD2P1.Name = "lblD2P1"
-		Me.lblD2P1.Size = New System.Drawing.Size(123, 97)
-		Me.lblD2P1.TabIndex = 315
-		Me.lblD2P1.Text = "ว่าง"
-		Me.lblD2P1.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD2P01.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD2P01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD2P01.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD2P01.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD2P01.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD2P01.Location = New System.Drawing.Point(230, 503)
+		Me.lblD2P01.Name = "lblD2P01"
+		Me.lblD2P01.Size = New System.Drawing.Size(123, 97)
+		Me.lblD2P01.TabIndex = 315
+		Me.lblD2P01.Text = "ว่าง"
+		Me.lblD2P01.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
 		'lblD1P11
 		'
@@ -801,131 +801,131 @@ Partial Class StudentTimetables
 		Me.lblD1P10.Text = "ว่าง"
 		Me.lblD1P10.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD1P9
+		'lblD1P09
 		'
-		Me.lblD1P9.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD1P9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD1P9.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD1P9.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD1P9.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD1P9.Location = New System.Drawing.Point(1262, 399)
-		Me.lblD1P9.Name = "lblD1P9"
-		Me.lblD1P9.Size = New System.Drawing.Size(123, 97)
-		Me.lblD1P9.TabIndex = 312
-		Me.lblD1P9.Text = "ว่าง"
-		Me.lblD1P9.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD1P09.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD1P09.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD1P09.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD1P09.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD1P09.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD1P09.Location = New System.Drawing.Point(1262, 399)
+		Me.lblD1P09.Name = "lblD1P09"
+		Me.lblD1P09.Size = New System.Drawing.Size(123, 97)
+		Me.lblD1P09.TabIndex = 312
+		Me.lblD1P09.Text = "ว่าง"
+		Me.lblD1P09.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD1P8
+		'lblD1P08
 		'
-		Me.lblD1P8.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD1P8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD1P8.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD1P8.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD1P8.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD1P8.Location = New System.Drawing.Point(1133, 399)
-		Me.lblD1P8.Name = "lblD1P8"
-		Me.lblD1P8.Size = New System.Drawing.Size(123, 97)
-		Me.lblD1P8.TabIndex = 311
-		Me.lblD1P8.Text = "ว่าง"
-		Me.lblD1P8.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD1P08.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD1P08.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD1P08.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD1P08.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD1P08.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD1P08.Location = New System.Drawing.Point(1133, 399)
+		Me.lblD1P08.Name = "lblD1P08"
+		Me.lblD1P08.Size = New System.Drawing.Size(123, 97)
+		Me.lblD1P08.TabIndex = 311
+		Me.lblD1P08.Text = "ว่าง"
+		Me.lblD1P08.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD1P7
+		'lblD1P07
 		'
-		Me.lblD1P7.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD1P7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD1P7.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD1P7.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD1P7.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD1P7.Location = New System.Drawing.Point(1004, 399)
-		Me.lblD1P7.Name = "lblD1P7"
-		Me.lblD1P7.Size = New System.Drawing.Size(123, 97)
-		Me.lblD1P7.TabIndex = 310
-		Me.lblD1P7.Text = "ว่าง"
-		Me.lblD1P7.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD1P07.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD1P07.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD1P07.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD1P07.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD1P07.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD1P07.Location = New System.Drawing.Point(1004, 399)
+		Me.lblD1P07.Name = "lblD1P07"
+		Me.lblD1P07.Size = New System.Drawing.Size(123, 97)
+		Me.lblD1P07.TabIndex = 310
+		Me.lblD1P07.Text = "ว่าง"
+		Me.lblD1P07.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD1P6
+		'lblD1P06
 		'
-		Me.lblD1P6.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD1P6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD1P6.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD1P6.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD1P6.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD1P6.Location = New System.Drawing.Point(875, 399)
-		Me.lblD1P6.Name = "lblD1P6"
-		Me.lblD1P6.Size = New System.Drawing.Size(123, 97)
-		Me.lblD1P6.TabIndex = 309
-		Me.lblD1P6.Text = "ว่าง"
-		Me.lblD1P6.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD1P06.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD1P06.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD1P06.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD1P06.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD1P06.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD1P06.Location = New System.Drawing.Point(875, 399)
+		Me.lblD1P06.Name = "lblD1P06"
+		Me.lblD1P06.Size = New System.Drawing.Size(123, 97)
+		Me.lblD1P06.TabIndex = 309
+		Me.lblD1P06.Text = "ว่าง"
+		Me.lblD1P06.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD1P5
+		'lblD1P05
 		'
-		Me.lblD1P5.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD1P5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD1P5.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD1P5.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD1P5.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD1P5.Location = New System.Drawing.Point(746, 399)
-		Me.lblD1P5.Name = "lblD1P5"
-		Me.lblD1P5.Size = New System.Drawing.Size(123, 97)
-		Me.lblD1P5.TabIndex = 308
-		Me.lblD1P5.Text = "ว่าง"
-		Me.lblD1P5.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD1P05.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD1P05.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD1P05.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD1P05.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD1P05.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD1P05.Location = New System.Drawing.Point(746, 399)
+		Me.lblD1P05.Name = "lblD1P05"
+		Me.lblD1P05.Size = New System.Drawing.Size(123, 97)
+		Me.lblD1P05.TabIndex = 308
+		Me.lblD1P05.Text = "ว่าง"
+		Me.lblD1P05.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD1P4
+		'lblD1P04
 		'
-		Me.lblD1P4.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD1P4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD1P4.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD1P4.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD1P4.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD1P4.Location = New System.Drawing.Point(617, 399)
-		Me.lblD1P4.Name = "lblD1P4"
-		Me.lblD1P4.Size = New System.Drawing.Size(123, 97)
-		Me.lblD1P4.TabIndex = 307
-		Me.lblD1P4.Text = "ว่าง"
-		Me.lblD1P4.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD1P04.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD1P04.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD1P04.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD1P04.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD1P04.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD1P04.Location = New System.Drawing.Point(617, 399)
+		Me.lblD1P04.Name = "lblD1P04"
+		Me.lblD1P04.Size = New System.Drawing.Size(123, 97)
+		Me.lblD1P04.TabIndex = 307
+		Me.lblD1P04.Text = "ว่าง"
+		Me.lblD1P04.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD1P3
+		'lblD1P03
 		'
-		Me.lblD1P3.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD1P3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD1P3.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD1P3.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD1P3.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD1P3.Location = New System.Drawing.Point(488, 399)
-		Me.lblD1P3.Name = "lblD1P3"
-		Me.lblD1P3.Size = New System.Drawing.Size(123, 97)
-		Me.lblD1P3.TabIndex = 306
-		Me.lblD1P3.Text = "ว่าง"
-		Me.lblD1P3.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD1P03.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD1P03.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD1P03.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD1P03.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD1P03.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD1P03.Location = New System.Drawing.Point(488, 399)
+		Me.lblD1P03.Name = "lblD1P03"
+		Me.lblD1P03.Size = New System.Drawing.Size(123, 97)
+		Me.lblD1P03.TabIndex = 306
+		Me.lblD1P03.Text = "ว่าง"
+		Me.lblD1P03.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD1P2
+		'lblD1P02
 		'
-		Me.lblD1P2.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD1P2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD1P2.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD1P2.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD1P2.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD1P2.Location = New System.Drawing.Point(359, 399)
-		Me.lblD1P2.Name = "lblD1P2"
-		Me.lblD1P2.Size = New System.Drawing.Size(123, 97)
-		Me.lblD1P2.TabIndex = 305
-		Me.lblD1P2.Text = "ว่าง"
-		Me.lblD1P2.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD1P02.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD1P02.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD1P02.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD1P02.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD1P02.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD1P02.Location = New System.Drawing.Point(359, 399)
+		Me.lblD1P02.Name = "lblD1P02"
+		Me.lblD1P02.Size = New System.Drawing.Size(123, 97)
+		Me.lblD1P02.TabIndex = 305
+		Me.lblD1P02.Text = "ว่าง"
+		Me.lblD1P02.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
-		'lblD1P1
+		'lblD1P01
 		'
-		Me.lblD1P1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		Me.lblD1P1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.lblD1P1.Font = New System.Drawing.Font("Sylfaen", 15.0!)
-		Me.lblD1P1.ForeColor = System.Drawing.SystemColors.ButtonFace
-		Me.lblD1P1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-		Me.lblD1P1.Location = New System.Drawing.Point(230, 399)
-		Me.lblD1P1.Name = "lblD1P1"
-		Me.lblD1P1.Size = New System.Drawing.Size(123, 97)
-		Me.lblD1P1.TabIndex = 299
-		Me.lblD1P1.Text = "ว่าง"
-		Me.lblD1P1.TextAlign = System.Drawing.ContentAlignment.TopCenter
+		Me.lblD1P01.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.lblD1P01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.lblD1P01.Font = New System.Drawing.Font("Sylfaen", 15.0!)
+		Me.lblD1P01.ForeColor = System.Drawing.SystemColors.ButtonFace
+		Me.lblD1P01.ImeMode = System.Windows.Forms.ImeMode.NoControl
+		Me.lblD1P01.Location = New System.Drawing.Point(230, 399)
+		Me.lblD1P01.Name = "lblD1P01"
+		Me.lblD1P01.Size = New System.Drawing.Size(123, 97)
+		Me.lblD1P01.TabIndex = 299
+		Me.lblD1P01.Text = "ว่าง"
+		Me.lblD1P01.TextAlign = System.Drawing.ContentAlignment.TopCenter
 		'
 		'lblTime11
 		'
@@ -1547,56 +1547,56 @@ Partial Class StudentTimetables
 		Me.Controls.Add(Me.Panel1)
 		Me.Controls.Add(Me.Panel2)
 		Me.Controls.Add(Me.lblD5P10)
-		Me.Controls.Add(Me.lblD5P9)
-		Me.Controls.Add(Me.lblD5P8)
-		Me.Controls.Add(Me.lblD5P7)
-		Me.Controls.Add(Me.lblD5P6)
-		Me.Controls.Add(Me.lblD5P5)
+		Me.Controls.Add(Me.lblD5P09)
+		Me.Controls.Add(Me.lblD5P08)
+		Me.Controls.Add(Me.lblD5P07)
+		Me.Controls.Add(Me.lblD5P06)
+		Me.Controls.Add(Me.lblD5P05)
 		Me.Controls.Add(Me.lbl11)
-		Me.Controls.Add(Me.lblD5P4)
-		Me.Controls.Add(Me.lblD5P3)
-		Me.Controls.Add(Me.lblD5P2)
-		Me.Controls.Add(Me.lblD5P1)
+		Me.Controls.Add(Me.lblD5P04)
+		Me.Controls.Add(Me.lblD5P03)
+		Me.Controls.Add(Me.lblD5P02)
+		Me.Controls.Add(Me.lblD5P01)
 		Me.Controls.Add(Me.lblD4P10)
-		Me.Controls.Add(Me.lblD4P9)
-		Me.Controls.Add(Me.lblD4P8)
-		Me.Controls.Add(Me.lblD4P7)
-		Me.Controls.Add(Me.lblD4P6)
-		Me.Controls.Add(Me.lblD4P5)
-		Me.Controls.Add(Me.lblD4P4)
-		Me.Controls.Add(Me.lblD4P3)
-		Me.Controls.Add(Me.lblD4P2)
-		Me.Controls.Add(Me.lblD4P1)
+		Me.Controls.Add(Me.lblD4P09)
+		Me.Controls.Add(Me.lblD4P08)
+		Me.Controls.Add(Me.lblD4P07)
+		Me.Controls.Add(Me.lblD4P06)
+		Me.Controls.Add(Me.lblD4P05)
+		Me.Controls.Add(Me.lblD4P04)
+		Me.Controls.Add(Me.lblD4P03)
+		Me.Controls.Add(Me.lblD4P02)
+		Me.Controls.Add(Me.lblD4P01)
 		Me.Controls.Add(Me.lblD3P10)
-		Me.Controls.Add(Me.lblD3P9)
-		Me.Controls.Add(Me.lblD3P8)
-		Me.Controls.Add(Me.lblD3P7)
-		Me.Controls.Add(Me.lblD3P6)
-		Me.Controls.Add(Me.lblD3P5)
-		Me.Controls.Add(Me.lblD3P4)
-		Me.Controls.Add(Me.lblD3P3)
-		Me.Controls.Add(Me.lblD3P2)
-		Me.Controls.Add(Me.lblD3P1)
+		Me.Controls.Add(Me.lblD3P09)
+		Me.Controls.Add(Me.lblD3P08)
+		Me.Controls.Add(Me.lblD3P07)
+		Me.Controls.Add(Me.lblD3P06)
+		Me.Controls.Add(Me.lblD3P05)
+		Me.Controls.Add(Me.lblD3P04)
+		Me.Controls.Add(Me.lblD3P03)
+		Me.Controls.Add(Me.lblD3P02)
+		Me.Controls.Add(Me.lblD3P01)
 		Me.Controls.Add(Me.lblD2P10)
-		Me.Controls.Add(Me.lblD2P9)
-		Me.Controls.Add(Me.lblD2P8)
-		Me.Controls.Add(Me.lblD2P7)
-		Me.Controls.Add(Me.lblD2P6)
-		Me.Controls.Add(Me.lblD2P5)
-		Me.Controls.Add(Me.lblD2P4)
-		Me.Controls.Add(Me.lblD2P3)
-		Me.Controls.Add(Me.lblD2P2)
-		Me.Controls.Add(Me.lblD2P1)
+		Me.Controls.Add(Me.lblD2P09)
+		Me.Controls.Add(Me.lblD2P08)
+		Me.Controls.Add(Me.lblD2P07)
+		Me.Controls.Add(Me.lblD2P06)
+		Me.Controls.Add(Me.lblD2P05)
+		Me.Controls.Add(Me.lblD2P04)
+		Me.Controls.Add(Me.lblD2P03)
+		Me.Controls.Add(Me.lblD2P02)
+		Me.Controls.Add(Me.lblD2P01)
 		Me.Controls.Add(Me.lblD1P10)
-		Me.Controls.Add(Me.lblD1P9)
-		Me.Controls.Add(Me.lblD1P8)
-		Me.Controls.Add(Me.lblD1P7)
-		Me.Controls.Add(Me.lblD1P6)
-		Me.Controls.Add(Me.lblD1P5)
-		Me.Controls.Add(Me.lblD1P4)
-		Me.Controls.Add(Me.lblD1P3)
-		Me.Controls.Add(Me.lblD1P2)
-		Me.Controls.Add(Me.lblD1P1)
+		Me.Controls.Add(Me.lblD1P09)
+		Me.Controls.Add(Me.lblD1P08)
+		Me.Controls.Add(Me.lblD1P07)
+		Me.Controls.Add(Me.lblD1P06)
+		Me.Controls.Add(Me.lblD1P05)
+		Me.Controls.Add(Me.lblD1P04)
+		Me.Controls.Add(Me.lblD1P03)
+		Me.Controls.Add(Me.lblD1P02)
+		Me.Controls.Add(Me.lblD1P01)
 		Me.Controls.Add(Me.lblTime11)
 		Me.Controls.Add(Me.lblTime10)
 		Me.Controls.Add(Me.lbl10)
@@ -1642,60 +1642,60 @@ Partial Class StudentTimetables
 	Friend WithEvents lblTeachers As Label
     Friend WithEvents lblD5P11 As Label
     Friend WithEvents lblD5P10 As Label
-    Friend WithEvents lblD5P9 As Label
-    Friend WithEvents lblD5P8 As Label
-    Friend WithEvents lblD5P7 As Label
-    Friend WithEvents lblD5P6 As Label
-    Friend WithEvents lblD5P5 As Label
+    Friend WithEvents lblD5P09 As Label
+    Friend WithEvents lblD5P08 As Label
+    Friend WithEvents lblD5P07 As Label
+    Friend WithEvents lblD5P06 As Label
+    Friend WithEvents lblD5P05 As Label
     Friend WithEvents lbl11 As Label
-    Friend WithEvents lblD5P4 As Label
-    Friend WithEvents lblD5P3 As Label
-    Friend WithEvents lblD5P2 As Label
-    Friend WithEvents lblD5P1 As Label
+    Friend WithEvents lblD5P04 As Label
+    Friend WithEvents lblD5P03 As Label
+    Friend WithEvents lblD5P02 As Label
+    Friend WithEvents lblD5P01 As Label
     Friend WithEvents lblD4P11 As Label
     Friend WithEvents lblD4P10 As Label
-    Friend WithEvents lblD4P9 As Label
-    Friend WithEvents lblD4P8 As Label
-    Friend WithEvents lblD4P7 As Label
-    Friend WithEvents lblD4P6 As Label
-    Friend WithEvents lblD4P5 As Label
-    Friend WithEvents lblD4P4 As Label
-    Friend WithEvents lblD4P3 As Label
-    Friend WithEvents lblD4P2 As Label
-    Friend WithEvents lblD4P1 As Label
+    Friend WithEvents lblD4P09 As Label
+    Friend WithEvents lblD4P08 As Label
+    Friend WithEvents lblD4P07 As Label
+    Friend WithEvents lblD4P06 As Label
+    Friend WithEvents lblD4P05 As Label
+    Friend WithEvents lblD4P04 As Label
+    Friend WithEvents lblD4P03 As Label
+    Friend WithEvents lblD4P02 As Label
+    Friend WithEvents lblD4P01 As Label
     Friend WithEvents lblD3P11 As Label
     Friend WithEvents lblD3P10 As Label
-    Friend WithEvents lblD3P9 As Label
-    Friend WithEvents lblD3P8 As Label
-    Friend WithEvents lblD3P7 As Label
-    Friend WithEvents lblD3P6 As Label
-    Friend WithEvents lblD3P5 As Label
-    Friend WithEvents lblD3P4 As Label
-    Friend WithEvents lblD3P3 As Label
-    Friend WithEvents lblD3P2 As Label
-    Friend WithEvents lblD3P1 As Label
+    Friend WithEvents lblD3P09 As Label
+    Friend WithEvents lblD3P08 As Label
+    Friend WithEvents lblD3P07 As Label
+    Friend WithEvents lblD3P06 As Label
+    Friend WithEvents lblD3P05 As Label
+    Friend WithEvents lblD3P04 As Label
+    Friend WithEvents lblD3P03 As Label
+    Friend WithEvents lblD3P02 As Label
+    Friend WithEvents lblD3P01 As Label
     Friend WithEvents lblD2P11 As Label
     Friend WithEvents lblD2P10 As Label
-    Friend WithEvents lblD2P9 As Label
-    Friend WithEvents lblD2P8 As Label
-    Friend WithEvents lblD2P7 As Label
-    Friend WithEvents lblD2P6 As Label
-    Friend WithEvents lblD2P5 As Label
-    Friend WithEvents lblD2P4 As Label
-    Friend WithEvents lblD2P3 As Label
-    Friend WithEvents lblD2P2 As Label
-    Friend WithEvents lblD2P1 As Label
+    Friend WithEvents lblD2P09 As Label
+    Friend WithEvents lblD2P08 As Label
+    Friend WithEvents lblD2P07 As Label
+    Friend WithEvents lblD2P06 As Label
+    Friend WithEvents lblD2P05 As Label
+    Friend WithEvents lblD2P04 As Label
+    Friend WithEvents lblD2P03 As Label
+    Friend WithEvents lblD2P02 As Label
+    Friend WithEvents lblD2P01 As Label
     Friend WithEvents lblD1P11 As Label
     Friend WithEvents lblD1P10 As Label
-    Friend WithEvents lblD1P9 As Label
-    Friend WithEvents lblD1P8 As Label
-    Friend WithEvents lblD1P7 As Label
-    Friend WithEvents lblD1P6 As Label
-    Friend WithEvents lblD1P5 As Label
-    Friend WithEvents lblD1P4 As Label
-    Friend WithEvents lblD1P3 As Label
-    Friend WithEvents lblD1P2 As Label
-    Friend WithEvents lblD1P1 As Label
+    Friend WithEvents lblD1P09 As Label
+    Friend WithEvents lblD1P08 As Label
+    Friend WithEvents lblD1P07 As Label
+    Friend WithEvents lblD1P06 As Label
+    Friend WithEvents lblD1P05 As Label
+    Friend WithEvents lblD1P04 As Label
+    Friend WithEvents lblD1P03 As Label
+    Friend WithEvents lblD1P02 As Label
+    Friend WithEvents lblD1P01 As Label
     Friend WithEvents lblTime11 As Label
     Friend WithEvents lblTime10 As Label
     Friend WithEvents lbl10 As Label
