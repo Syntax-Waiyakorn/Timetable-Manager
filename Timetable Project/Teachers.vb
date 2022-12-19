@@ -65,7 +65,7 @@ Public Class Teachers
                 If conn.State = ConnectionState.Closed Then
                     conn.Open()
                 End If
-                Dim cmd As New OleDb.OleDbCommand("Insert into Teachers(`TeacherFirstName`,`TeacherLastName`,`TeacherDepartment`,`TeacherQuota`) values(@TeacherCode,@TeacherFirstName,@TeacherLastName,@TeacherDepartment,@TeacherQuota)", conn)
+                Dim cmd As New OleDb.OleDbCommand("Insert into Teachers(`TeacherFirstName`,`TeacherLastName`,`TeacherDepartment`,`TeacherQuota`) values(@TeacherFirstName,@TeacherLastName,@TeacherDepartment,@TeacherQuota)", conn)
                 cmd.Parameters.Clear()
                 cmd.Parameters.AddWithValue("@TeacherFirstName", txtTeacherFirstName.Text)
                 cmd.Parameters.AddWithValue("@TeacherLastName", txtTeacherLastName.Text)
@@ -78,8 +78,8 @@ Public Class Teachers
                     MsgBox("ผิดพลาด", vbCritical)
                 End If
             End If
-        Catch
-            MsgBox("กรอกข้อมูลไม่ครบ", vbOKOnly, "เเจ้งเตือน")
+        Finally
+            'MsgBox("กรอกข้อมูลไม่ครบ", vbOKOnly, "เเจ้งเตือน")
         End Try
         conn.Close()
         LoadGrid()

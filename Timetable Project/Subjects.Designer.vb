@@ -29,10 +29,6 @@ Partial Class Subjects
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.lblDepartment = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.txtSubjectNextRequire = New System.Windows.Forms.TextBox()
-        Me.lblSubjectQuota = New System.Windows.Forms.Label()
-        Me.chkSubjectNextRequire = New System.Windows.Forms.CheckBox()
-        Me.txtSubjectQuota = New System.Windows.Forms.TextBox()
         Me.chkDefaultClass = New System.Windows.Forms.CheckBox()
         Me.cboDepartment = New System.Windows.Forms.ComboBox()
         Me.txtSubjectPlace = New System.Windows.Forms.TextBox()
@@ -58,9 +54,6 @@ Partial Class Subjects
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -81,10 +74,6 @@ Partial Class Subjects
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.txtSubjectNextRequire)
-        Me.Panel1.Controls.Add(Me.lblSubjectQuota)
-        Me.Panel1.Controls.Add(Me.chkSubjectNextRequire)
-        Me.Panel1.Controls.Add(Me.txtSubjectQuota)
         Me.Panel1.Controls.Add(Me.chkDefaultClass)
         Me.Panel1.Controls.Add(Me.cboDepartment)
         Me.Panel1.Controls.Add(Me.txtSubjectPlace)
@@ -98,60 +87,13 @@ Partial Class Subjects
         Me.Panel1.Size = New System.Drawing.Size(634, 506)
         Me.Panel1.TabIndex = 143
         '
-        'txtSubjectNextRequire
-        '
-        Me.txtSubjectNextRequire.BackColor = System.Drawing.Color.Black
-        Me.txtSubjectNextRequire.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtSubjectNextRequire.Font = New System.Drawing.Font("Arial", 35.0!)
-        Me.txtSubjectNextRequire.ForeColor = System.Drawing.Color.White
-        Me.txtSubjectNextRequire.Location = New System.Drawing.Point(215, 420)
-        Me.txtSubjectNextRequire.Name = "txtSubjectNextRequire"
-        Me.txtSubjectNextRequire.Size = New System.Drawing.Size(396, 61)
-        Me.txtSubjectNextRequire.TabIndex = 386
-        '
-        'lblSubjectQuota
-        '
-        Me.lblSubjectQuota.AutoSize = True
-        Me.lblSubjectQuota.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.lblSubjectQuota.Font = New System.Drawing.Font("Sylfaen", 30.0!)
-        Me.lblSubjectQuota.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.lblSubjectQuota.Location = New System.Drawing.Point(8, 270)
-        Me.lblSubjectQuota.Name = "lblSubjectQuota"
-        Me.lblSubjectQuota.Size = New System.Drawing.Size(201, 52)
-        Me.lblSubjectQuota.TabIndex = 385
-        Me.lblSubjectQuota.Text = "คาบ/สัปดาห์"
-        '
-        'chkSubjectNextRequire
-        '
-        Me.chkSubjectNextRequire.AutoSize = True
-        Me.chkSubjectNextRequire.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.chkSubjectNextRequire.Font = New System.Drawing.Font("Arial Narrow", 30.0!)
-        Me.chkSubjectNextRequire.ForeColor = System.Drawing.Color.White
-        Me.chkSubjectNextRequire.Location = New System.Drawing.Point(30, 427)
-        Me.chkSubjectNextRequire.Name = "chkSubjectNextRequire"
-        Me.chkSubjectNextRequire.Size = New System.Drawing.Size(144, 50)
-        Me.chkSubjectNextRequire.TabIndex = 384
-        Me.chkSubjectNextRequire.Text = "บังคับซ้ำ"
-        Me.chkSubjectNextRequire.UseVisualStyleBackColor = False
-        '
-        'txtSubjectQuota
-        '
-        Me.txtSubjectQuota.BackColor = System.Drawing.Color.Black
-        Me.txtSubjectQuota.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtSubjectQuota.Font = New System.Drawing.Font("Arial", 35.0!)
-        Me.txtSubjectQuota.ForeColor = System.Drawing.Color.White
-        Me.txtSubjectQuota.Location = New System.Drawing.Point(215, 270)
-        Me.txtSubjectQuota.Name = "txtSubjectQuota"
-        Me.txtSubjectQuota.Size = New System.Drawing.Size(396, 61)
-        Me.txtSubjectQuota.TabIndex = 383
-        '
         'chkDefaultClass
         '
         Me.chkDefaultClass.AutoSize = True
         Me.chkDefaultClass.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.chkDefaultClass.Font = New System.Drawing.Font("Arial Narrow", 30.0!)
         Me.chkDefaultClass.ForeColor = System.Drawing.Color.White
-        Me.chkDefaultClass.Location = New System.Drawing.Point(30, 354)
+        Me.chkDefaultClass.Location = New System.Drawing.Point(29, 287)
         Me.chkDefaultClass.Name = "chkDefaultClass"
         Me.chkDefaultClass.Size = New System.Drawing.Size(164, 50)
         Me.chkDefaultClass.TabIndex = 380
@@ -177,7 +119,7 @@ Partial Class Subjects
         Me.txtSubjectPlace.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtSubjectPlace.Font = New System.Drawing.Font("Arial", 35.0!)
         Me.txtSubjectPlace.ForeColor = System.Drawing.Color.White
-        Me.txtSubjectPlace.Location = New System.Drawing.Point(215, 347)
+        Me.txtSubjectPlace.Location = New System.Drawing.Point(215, 287)
         Me.txtSubjectPlace.Name = "txtSubjectPlace"
         Me.txtSubjectPlace.Size = New System.Drawing.Size(396, 61)
         Me.txtSubjectPlace.TabIndex = 381
@@ -317,7 +259,7 @@ Partial Class Subjects
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column5, Me.Column1, Me.Column4, Me.Column2, Me.Column3, Me.Column6, Me.Column7, Me.Column8})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column5, Me.Column1, Me.Column4, Me.Column2, Me.Column3})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Arial Narrow", 15.0!)
@@ -496,25 +438,6 @@ Partial Class Subjects
         Me.Column3.Name = "Column3"
         Me.Column3.ReadOnly = True
         '
-        'Column6
-        '
-        Me.Column6.HeaderText = "คาบ/สัปดาห์"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
-        '
-        'Column7
-        '
-        Me.Column7.HeaderText = "บังคับซ้ำ"
-        Me.Column7.Name = "Column7"
-        Me.Column7.ReadOnly = True
-        Me.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        '
-        'Column8
-        '
-        Me.Column8.HeaderText = "ซ้ำกี่คาบ"
-        Me.Column8.Name = "Column8"
-        Me.Column8.ReadOnly = True
-        '
         'Subjects
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -566,16 +489,9 @@ Partial Class Subjects
     Friend WithEvents txtName As TextBox
     Friend WithEvents chkDefaultClass As CheckBox
     Friend WithEvents lblTitle As Label
-    Friend WithEvents txtSubjectNextRequire As TextBox
-    Friend WithEvents lblSubjectQuota As Label
-    Friend WithEvents chkSubjectNextRequire As CheckBox
-    Friend WithEvents txtSubjectQuota As TextBox
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As DataGridViewTextBoxColumn
-    Friend WithEvents Column7 As DataGridViewTextBoxColumn
-    Friend WithEvents Column8 As DataGridViewTextBoxColumn
 End Class
