@@ -294,18 +294,40 @@ Public Class LockTable
             If conn.State = ConnectionState.Closed Then
                 conn.Open()
             End If
-            Dim cmd As New OleDb.OleDbCommand("Select  SubjectCode, SubjectName, SubjectDepartment, SubjectPlace from Subjects where SubjectSpecial =@SubjectSpecial ", conn)
+            Dim cmd As New OleDb.OleDbCommand("Select  SubjectID, SubjectCode, SubjectName, SubjectDepartment, SubjectPlace from Subjects where SubjectSpecial =@SubjectSpecial ", conn)
             cmd.Parameters.Clear()
             cmd.Parameters.AddWithValue("@SubjectSpecial", True)
             dr = cmd.ExecuteReader
             While dr.Read
-                DataGridView1.Rows.Add(dr.Item("SubjectCode"), dr.Item("SubjectName"), dr.Item("SubjectDepartment"), dr.Item("SubjectPlace"))
+                DataGridView1.Rows.Add(dr.Item("SubjectID"), dr.Item("SubjectCode"), dr.Item("SubjectName"), dr.Item("SubjectDepartment"), dr.Item("SubjectPlace"))
             End While
             dr.Close()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
         conn.Close()
+    End Sub
+    Sub editS()
+        Try
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
+            Dim cmd As New OleDb.OleDbCommand("UPDATE Subjects SET `SubjectCode`=@SubjectCode,`SubjectName`=@SubjectName,`SubjectDepartment`=@SubjectDepartment Where '" + TxtSubjectID.Text + "' ", conn)
+            cmd.Parameters.AddWithValue("@SubjectCode", SubjectCodeBox.Text)
+            cmd.Parameters.AddWithValue("@SubjectName", SubjectNameBox.Text)
+            cmd.Parameters.AddWithValue("@SubjectDepartment", cboSubjectDepartment.Text)
+            i = cmd.ExecuteNonQuery
+            If i > 0 Then
+                MsgBox("แก้ไขแล้ว !", vbInformation)
+            Else
+                MsgBox("ผิดพลาด", vbCritical)
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        conn.Close()
+        LoadGrid()
+        clear()
     End Sub
     Sub ID()
         Try
@@ -332,6 +354,7 @@ Public Class LockTable
         End Try
     End Sub
     Sub clear()
+        TxtSubjectID.Clear()
         SubjectCodeBox.Clear()
         SubjectNameBox.Clear()
         cboSubjectDepartment.SelectedIndex = -1
@@ -378,6 +401,7 @@ Public Class LockTable
         clear()
         cboteacherSubject()
     End Sub
+
     Private Sub Delete_Click(sender As Object, e As EventArgs) Handles Delete.Click
         Try
             If MsgBox("คุณต้องการลบหรือไม่ ?", vbQuestion + vbYesNo, "เเจ้งเตือน") = vbYes Then
@@ -405,9 +429,10 @@ Public Class LockTable
         cboteacherSubject()
     End Sub
     Private Sub DataGridView1_Click(sender As Object, e As EventArgs) Handles DataGridView1.Click
-        SubjectCodeBox.Text = DataGridView1.CurrentRow.Cells(0).Value
-        SubjectNameBox.Text = DataGridView1.CurrentRow.Cells(1).Value
-        cboSubjectDepartment.Text = DataGridView1.CurrentRow.Cells(2).Value
+        TxtSubjectID.Text = DataGridView1.CurrentRow.Cells(0).Value
+        SubjectCodeBox.Text = DataGridView1.CurrentRow.Cells(1).Value
+        SubjectNameBox.Text = DataGridView1.CurrentRow.Cells(2).Value
+        cboSubjectDepartment.Text = DataGridView1.CurrentRow.Cells(3).Value
     End Sub
     Private Sub cboTeachersSubjects_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboTeachersSubjects.SelectedIndexChanged
         Me.agent.Focus()
@@ -427,5 +452,8 @@ Public Class LockTable
     End Sub
     Private Sub ChackClassrooms_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ChackClassrooms.SelectedIndexChanged
         status()
+    End Sub
+    Private Sub btnEditS_Click(sender As Object, e As EventArgs) Handles btnEditS.Click
+        editS()
     End Sub
 End Class

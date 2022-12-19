@@ -22,11 +22,11 @@ Partial Class LockTable
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-		Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-		Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-		Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-		Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-		Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+		Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+		Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+		Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+		Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+		Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
 		Me.lblTeachers = New System.Windows.Forms.Label()
 		Me.lblD5P11 = New System.Windows.Forms.Label()
 		Me.lblD5P10 = New System.Windows.Forms.Label()
@@ -139,10 +139,13 @@ Partial Class LockTable
 		Me.Label7 = New System.Windows.Forms.Label()
 		Me.lblTime10 = New System.Windows.Forms.Label()
 		Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+		Me.Panel5 = New System.Windows.Forms.Panel()
+		Me.btnEditS = New System.Windows.Forms.Button()
+		Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
 		Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
 		Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
 		Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-		Me.Panel5 = New System.Windows.Forms.Panel()
+		Me.TxtSubjectID = New System.Windows.Forms.TextBox()
 		Me.Panel3.SuspendLayout()
 		Me.Panel1.SuspendLayout()
 		Me.Panel4.SuspendLayout()
@@ -1405,9 +1408,9 @@ Partial Class LockTable
 		'
 		Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
 		Me.Panel1.Controls.Add(Me.btnEdit)
-		Me.Panel1.Location = New System.Drawing.Point(20, 780)
+		Me.Panel1.Location = New System.Drawing.Point(20, 831)
 		Me.Panel1.Name = "Panel1"
-		Me.Panel1.Size = New System.Drawing.Size(372, 165)
+		Me.Panel1.Size = New System.Drawing.Size(372, 114)
 		Me.Panel1.TabIndex = 196
 		'
 		'btnEdit
@@ -1419,9 +1422,9 @@ Partial Class LockTable
 		Me.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.btnEdit.Font = New System.Drawing.Font("Arial", 25.0!)
 		Me.btnEdit.ForeColor = System.Drawing.Color.White
-		Me.btnEdit.Location = New System.Drawing.Point(22, 17)
+		Me.btnEdit.Location = New System.Drawing.Point(16, 18)
 		Me.btnEdit.Name = "btnEdit"
-		Me.btnEdit.Size = New System.Drawing.Size(337, 131)
+		Me.btnEdit.Size = New System.Drawing.Size(343, 82)
 		Me.btnEdit.TabIndex = 383
 		Me.btnEdit.Text = "ล็อกคาบ"
 		Me.btnEdit.UseVisualStyleBackColor = False
@@ -1483,6 +1486,7 @@ Partial Class LockTable
 		'Panel2
 		'
 		Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
+		Me.Panel2.Controls.Add(Me.btnEditS)
 		Me.Panel2.Controls.Add(Me.Delete)
 		Me.Panel2.Controls.Add(Me.cboSubjectDepartment)
 		Me.Panel2.Controls.Add(Me.Save)
@@ -1495,7 +1499,7 @@ Partial Class LockTable
 		Me.Panel2.Controls.Add(Me.Label7)
 		Me.Panel2.Location = New System.Drawing.Point(16, 335)
 		Me.Panel2.Name = "Panel2"
-		Me.Panel2.Size = New System.Drawing.Size(376, 439)
+		Me.Panel2.Size = New System.Drawing.Size(376, 461)
 		Me.Panel2.TabIndex = 388
 		'
 		'Delete
@@ -1508,9 +1512,9 @@ Partial Class LockTable
 		Me.Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.Delete.Font = New System.Drawing.Font("Arial", 25.0!)
 		Me.Delete.ForeColor = System.Drawing.Color.White
-		Me.Delete.Location = New System.Drawing.Point(207, 286)
+		Me.Delete.Location = New System.Drawing.Point(203, 273)
 		Me.Delete.Name = "Delete"
-		Me.Delete.Size = New System.Drawing.Size(156, 77)
+		Me.Delete.Size = New System.Drawing.Size(160, 77)
 		Me.Delete.TabIndex = 398
 		Me.Delete.Text = "ลบ"
 		Me.Delete.UseVisualStyleBackColor = True
@@ -1538,7 +1542,7 @@ Partial Class LockTable
 		Me.Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.Save.Font = New System.Drawing.Font("Arial", 25.0!)
 		Me.Save.ForeColor = System.Drawing.Color.FloralWhite
-		Me.Save.Location = New System.Drawing.Point(20, 285)
+		Me.Save.Location = New System.Drawing.Point(20, 272)
 		Me.Save.Name = "Save"
 		Me.Save.Size = New System.Drawing.Size(162, 78)
 		Me.Save.TabIndex = 384
@@ -1643,37 +1647,37 @@ Partial Class LockTable
 		Me.DataGridView1.AllowUserToDeleteRows = False
 		Me.DataGridView1.AllowUserToResizeColumns = False
 		Me.DataGridView1.AllowUserToResizeRows = False
-		DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-		DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		DataGridViewCellStyle1.Font = New System.Drawing.Font("Arial Narrow", 15.0!)
-		DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-		DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(60, Byte), Integer))
-		DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
-		DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-		Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+		DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+		DataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		DataGridViewCellStyle11.Font = New System.Drawing.Font("Arial Narrow", 15.0!)
+		DataGridViewCellStyle11.ForeColor = System.Drawing.Color.White
+		DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(60, Byte), Integer))
+		DataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White
+		DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+		Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle11
 		Me.DataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
 		Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
 		Me.DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
 		Me.DataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText
 		Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-		DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-		DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial Narrow", 15.0!)
-		DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-		DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(60, Byte), Integer))
-		DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
-		DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-		Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+		DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+		DataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		DataGridViewCellStyle12.Font = New System.Drawing.Font("Arial Narrow", 15.0!)
+		DataGridViewCellStyle12.ForeColor = System.Drawing.Color.White
+		DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(60, Byte), Integer))
+		DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White
+		DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+		Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle12
 		Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column4, Me.Column2})
-		DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-		DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		DataGridViewCellStyle3.Font = New System.Drawing.Font("Arial Narrow", 15.0!)
-		DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
-		DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(60, Byte), Integer))
-		DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
-		DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-		Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle3
+		Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column3, Me.Column1, Me.Column4, Me.Column2})
+		DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+		DataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		DataGridViewCellStyle13.Font = New System.Drawing.Font("Arial Narrow", 15.0!)
+		DataGridViewCellStyle13.ForeColor = System.Drawing.Color.White
+		DataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(60, Byte), Integer))
+		DataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White
+		DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+		Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle13
 		Me.DataGridView1.EnableHeadersVisualStyles = False
 		Me.DataGridView1.GridColor = System.Drawing.Color.White
 		Me.DataGridView1.ImeMode = System.Windows.Forms.ImeMode.[On]
@@ -1683,23 +1687,23 @@ Partial Class LockTable
 		Me.DataGridView1.ReadOnly = True
 		Me.DataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No
 		Me.DataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-		DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-		DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		DataGridViewCellStyle4.Font = New System.Drawing.Font("Arial Narrow", 15.0!)
-		DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
-		DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(60, Byte), Integer))
-		DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
-		DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-		Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+		DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+		DataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		DataGridViewCellStyle14.Font = New System.Drawing.Font("Arial Narrow", 15.0!)
+		DataGridViewCellStyle14.ForeColor = System.Drawing.Color.White
+		DataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(60, Byte), Integer))
+		DataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White
+		DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+		Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle14
 		Me.DataGridView1.RowHeadersVisible = False
-		DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft
-		DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-		DataGridViewCellStyle5.Font = New System.Drawing.Font("Arial Narrow", 15.0!)
-		DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
-		DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(60, Byte), Integer))
-		DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White
-		DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-		Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle5
+		DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft
+		DataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		DataGridViewCellStyle15.Font = New System.Drawing.Font("Arial Narrow", 15.0!)
+		DataGridViewCellStyle15.ForeColor = System.Drawing.Color.White
+		DataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(60, Byte), Integer))
+		DataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White
+		DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+		Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle15
 		Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
 		Me.DataGridView1.ShowCellErrors = False
 		Me.DataGridView1.ShowCellToolTips = False
@@ -1707,30 +1711,6 @@ Partial Class LockTable
 		Me.DataGridView1.ShowRowErrors = False
 		Me.DataGridView1.Size = New System.Drawing.Size(693, 277)
 		Me.DataGridView1.TabIndex = 389
-		'
-		'Column1
-		'
-		Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-		Me.Column1.HeaderText = "รหัสวิชา"
-		Me.Column1.Name = "Column1"
-		Me.Column1.ReadOnly = True
-		Me.Column1.Width = 79
-		'
-		'Column4
-		'
-		Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-		Me.Column4.HeaderText = "ชื่อวิชา"
-		Me.Column4.MinimumWidth = 70
-		Me.Column4.Name = "Column4"
-		Me.Column4.ReadOnly = True
-		'
-		'Column2
-		'
-		Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-		Me.Column2.HeaderText = "กลุ่มสาระ"
-		Me.Column2.Name = "Column2"
-		Me.Column2.ReadOnly = True
-		Me.Column2.Width = 84
 		'
 		'Panel5
 		'
@@ -1767,6 +1747,61 @@ Partial Class LockTable
 		Me.Panel5.Size = New System.Drawing.Size(1310, 610)
 		Me.Panel5.TabIndex = 390
 		'
+		'btnEditS
+		'
+		Me.btnEditS.BackColor = System.Drawing.Color.Black
+		Me.btnEditS.Cursor = System.Windows.Forms.Cursors.Hand
+		Me.btnEditS.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+		Me.btnEditS.FlatAppearance.BorderSize = 2
+		Me.btnEditS.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+		Me.btnEditS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.btnEditS.Font = New System.Drawing.Font("Arial", 25.0!)
+		Me.btnEditS.ForeColor = System.Drawing.Color.FloralWhite
+		Me.btnEditS.Location = New System.Drawing.Point(20, 369)
+		Me.btnEditS.Name = "btnEditS"
+		Me.btnEditS.Size = New System.Drawing.Size(343, 78)
+		Me.btnEditS.TabIndex = 399
+		Me.btnEditS.Text = "แก้ไข"
+		Me.btnEditS.UseVisualStyleBackColor = False
+		'
+		'Column3
+		'
+		Me.Column3.HeaderText = "SubjectID"
+		Me.Column3.Name = "Column3"
+		Me.Column3.ReadOnly = True
+		Me.Column3.Visible = False
+		'
+		'Column1
+		'
+		Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+		Me.Column1.HeaderText = "รหัสวิชา"
+		Me.Column1.Name = "Column1"
+		Me.Column1.ReadOnly = True
+		Me.Column1.Width = 79
+		'
+		'Column4
+		'
+		Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+		Me.Column4.HeaderText = "ชื่อวิชา"
+		Me.Column4.MinimumWidth = 70
+		Me.Column4.Name = "Column4"
+		Me.Column4.ReadOnly = True
+		'
+		'Column2
+		'
+		Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+		Me.Column2.HeaderText = "กลุ่มสาระ"
+		Me.Column2.Name = "Column2"
+		Me.Column2.ReadOnly = True
+		Me.Column2.Width = 84
+		'
+		'TxtSubjectID
+		'
+		Me.TxtSubjectID.Location = New System.Drawing.Point(339, 12)
+		Me.TxtSubjectID.Name = "TxtSubjectID"
+		Me.TxtSubjectID.Size = New System.Drawing.Size(100, 20)
+		Me.TxtSubjectID.TabIndex = 391
+		'
 		'LockTable
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1774,6 +1809,7 @@ Partial Class LockTable
 		Me.BackColor = System.Drawing.Color.Black
 		Me.BackgroundImage = Global.project.My.Resources.Resources.BGExtend
 		Me.ClientSize = New System.Drawing.Size(1803, 1080)
+		Me.Controls.Add(Me.TxtSubjectID)
 		Me.Controls.Add(Me.DataGridView1)
 		Me.Controls.Add(Me.Panel2)
 		Me.Controls.Add(Me.Panel4)
@@ -1966,7 +2002,10 @@ Partial Class LockTable
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Panel5 As Panel
     Friend WithEvents Label4 As Label
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+	Friend WithEvents btnEditS As Button
+	Friend WithEvents Column3 As DataGridViewTextBoxColumn
+	Friend WithEvents Column1 As DataGridViewTextBoxColumn
+	Friend WithEvents Column4 As DataGridViewTextBoxColumn
+	Friend WithEvents Column2 As DataGridViewTextBoxColumn
+	Friend WithEvents TxtSubjectID As TextBox
 End Class
