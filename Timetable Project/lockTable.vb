@@ -402,19 +402,23 @@ Public Class LockTable
     End Sub
     Private Sub Delete_Click(sender As Object, e As EventArgs) Handles Delete.Click
         Try
-            If MsgBox("คุณต้องการลบหรือไม่ ?", vbQuestion + vbYesNo, "เเจ้งเตือน") = vbYes Then
-                If conn.State = ConnectionState.Closed Then
-                    conn.Open()
+            If Not txtPR.Text = "381" Then
+                If MsgBox("คุณต้องการลบหรือไม่ ?", vbQuestion + vbYesNo, "เเจ้งเตือน") = vbYes Then
+                    If conn.State = ConnectionState.Closed Then
+                        conn.Open()
+                    End If
+                    Dim cmd As New OleDb.OleDbCommand("Delete from Subjects WHERE SubjectID = @SubjectID", conn)
+                    cmd.Parameters.Clear()
+                    cmd.Parameters.AddWithValue("@SubjectID", txtPR.Text)
+                    i = cmd.ExecuteNonQuery
+                    If i > 0 Then
+                        MsgBox("ลบสำเร็จ !", vbInformation)
+                    Else
+                        MsgBox("ผิดพลาด", vbCritical)
+                    End If
                 End If
-                Dim cmd As New OleDb.OleDbCommand("Delete from Subjects WHERE SubjectID = @SubjectID", conn)
-                cmd.Parameters.Clear()
-                cmd.Parameters.AddWithValue("@SubjectID", txtPR.Text)
-                i = cmd.ExecuteNonQuery
-                If i > 0 Then
-                    MsgBox("ลบสำเร็จ !", vbInformation)
-                Else
-                    MsgBox("ผิดพลาด", vbCritical)
-                End If
+            Else
+                MsgBox("คาบว่างลบไม่ได้", vbCritical)
             End If
         Catch ex As Exception
             MsgBox(ex.Message)

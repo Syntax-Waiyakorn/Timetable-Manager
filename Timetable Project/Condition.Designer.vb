@@ -621,7 +621,7 @@ Partial Class Condition
         Me.txtId.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtId.Font = New System.Drawing.Font("Arial", 22.0!)
         Me.txtId.ForeColor = System.Drawing.Color.White
-        Me.txtId.Location = New System.Drawing.Point(1405, 443)
+        Me.txtId.Location = New System.Drawing.Point(1686, 140)
         Me.txtId.MaxLength = 5
         Me.txtId.Name = "txtId"
         Me.txtId.Size = New System.Drawing.Size(90, 34)

@@ -4,10 +4,6 @@ Public Class StudentTimetables
     Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\Timetable.accdb")
     Dim dr As OleDbDataReader
     Dim i As Integer
-    Dim PLabelName As String = "null"
-    Dim PDay As String = "null"
-    Dim PPeriod As String = "null"
-    Dim TimetableIndex As String = "null"
     Sub LoadCbo()
         Try
             If conn.State = ConnectionState.Closed Then

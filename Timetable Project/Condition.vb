@@ -11,26 +11,31 @@ Public Class Condition
             Dim cmd2 As New OleDb.OleDbCommand("Select SubjectCode from Subjects", conn)
             Dim cmd3 As New OleDb.OleDbCommand("Select TeacherSubjectDisplay from TeachersSubjectsQuery", conn)
             Dim cmd4 As New OleDb.OleDbCommand("Select ClassroomName from Classrooms", conn)
+
             cboTeachers.Items.Clear()
             dr = cmd1.ExecuteReader
             While dr.Read
                 cboTeachers.Items.Add(dr.GetString(0))
             End While
+
             cboSubjects.Items.Clear()
             dr = cmd2.ExecuteReader
             While dr.Read
                 cboSubjects.Items.Add(dr.GetString(0))
             End While
+
             cboClassrooms.Items.Clear()
             dr = cmd4.ExecuteReader
             While dr.Read
                 cboClassrooms.Items.Add(dr.GetString(0))
             End While
+
             cboTeachersSubjects.Items.Clear()
             dr = cmd3.ExecuteReader
             While dr.Read
                 cboTeachersSubjects.Items.Add(dr.GetString(0))
             End While
+
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
@@ -51,8 +56,8 @@ Public Class Condition
             If conn.State = ConnectionState.Closed Then
                 conn.Open()
             End If
-            Dim cmd1 As New OleDb.OleDbCommand("Select TeacherSubjectID ,TeacherFirstName, SubjectCode, SubjectName from TeachersSubjectsQuery", conn)
-            Dim cmd2 As New OleDb.OleDbCommand("Select TeacherSubjectDisplay, ClassroomName  from TSClassroomsQuery", conn)
+            Dim cmd1 As New OleDb.OleDbCommand("Select TeacherSubjectID, TeacherFirstName, SubjectCode, SubjectName from TeachersSubjectsQuery", conn)
+            Dim cmd2 As New OleDb.OleDbCommand("Select TeacherSubjectDisplay, ClassroomName from TSClassroomsQuery", conn)
             dr = cmd1.ExecuteReader
             While dr.Read
                 DataGridView1.Rows.Add(dr.Item("TeacherSubjectID"), dr.Item("TeacherFirstName"), dr.Item("SubjectCode"), dr.Item("SubjectName"))
