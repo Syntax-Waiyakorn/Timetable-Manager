@@ -166,9 +166,11 @@ Public Class Condition
                 End While
                 Dim cmd2 As New OleDb.OleDbCommand("Delete from TeachersSubjects WHERE TeacherSubjectID=@TeacherSubjectID", conn)
                 cmd2.Parameters.AddWithValue("@TeacherSubjectID", TeacherSubjectIDd)
+
                 Dim cmd As New OleDb.OleDbCommand("UPDATE TimetablesPeriods SET `TeacherSubjectID`=@TeacherSubjectID Where TimetablePeriodID=@TimetablePeriodID", conn)
                 cmd.Parameters.AddWithValue("@TimetablePeriodID", agent.Text)
                 cmd.Parameters.AddWithValue("@TeacherSubjectID", txtId.Text)
+
                 cmd.ExecuteNonQuery()
                 If cmd2.ExecuteNonQuery > 0 Then
                     MsgBox("ลบสำเร็จ!", vbInformation)

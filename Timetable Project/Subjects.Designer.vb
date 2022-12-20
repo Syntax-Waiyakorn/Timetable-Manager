@@ -42,6 +42,11 @@ Partial Class Subjects
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.lblSearch = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.agent = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.btnEdit = New System.Windows.Forms.Button()
@@ -49,11 +54,6 @@ Partial Class Subjects
         Me.btnClear = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.lblTitle = New System.Windows.Forms.Label()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -181,7 +181,6 @@ Partial Class Subjects
         Me.txtPR.Name = "txtPR"
         Me.txtPR.Size = New System.Drawing.Size(240, 34)
         Me.txtPR.TabIndex = 137
-        Me.txtPR.Visible = False
         '
         'Connection_status
         '
@@ -303,6 +302,42 @@ Partial Class Subjects
         Me.DataGridView1.Size = New System.Drawing.Size(971, 751)
         Me.DataGridView1.TabIndex = 132
         '
+        'Column5
+        '
+        Me.Column5.HeaderText = "number"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        Me.Column5.Visible = False
+        '
+        'Column1
+        '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Column1.HeaderText = "รหัสวิชา"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 91
+        '
+        'Column4
+        '
+        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column4.HeaderText = "ชื่อวิชา"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column2.HeaderText = "กลุ่มสาระ"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.Width = 97
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "ห้อง"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        '
         'agent
         '
         Me.agent.AutoSize = True
@@ -401,42 +436,6 @@ Partial Class Subjects
         Me.lblTitle.Size = New System.Drawing.Size(631, 125)
         Me.lblTitle.TabIndex = 134
         Me.lblTitle.Text = "เเก้ไขข้อมูลวิชา"
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "number"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        Me.Column5.Visible = False
-        '
-        'Column1
-        '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Column1.HeaderText = "รหัสวิชา"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Width = 91
-        '
-        'Column4
-        '
-        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column4.HeaderText = "ชื่อวิชา"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column2.HeaderText = "กลุ่มสาระ"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        Me.Column2.Width = 97
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "ห้อง"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
         '
         'Subjects
         '

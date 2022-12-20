@@ -136,6 +136,21 @@ Public Class Teachers
                 Dim cmd As New OleDb.OleDbCommand("Delete from Teachers WHERE TeacherID=@TeacherID", conn)
                 cmd.Parameters.Clear()
                 cmd.Parameters.AddWithValue("@TeacherID", txtPR.Text)
+
+
+                Dim cmd2 As New OleDb.OleDbCommand("SELECT TimetablePeriodID from TimetablesQuery WHERE TeacherFirstName=@TeacherFirstName", conn)
+                cmd2.Parameters.AddWithValue("@TeacherFirstName", txtTeacherFirstName.Text)
+                dr = cmd2.ExecuteReader()
+                While dr.Read
+                    Dim cmd1 As New OleDb.OleDbCommand("UPDATE TimetablesPeriods SET `TeacherSubjectID` = @TeacherSubjectID Where TimetablePeriodID = @TimetablePeriodID", conn)
+                    Console.WriteLine(dr.Item("TimetablePeriodID"))
+                    cmd1.Parameters.Clear()
+                    cmd1.Parameters.AddWithValue("@TeacherSubjectID", 1)
+                    cmd1.Parameters.AddWithValue("@TimetablePeriodID", dr.Item("TimetablePeriodID"))
+                    cmd1.ExecuteNonQuery()
+                End While
+                dr.Close()
+
                 i = cmd.ExecuteNonQuery
                 If i > 0 Then
                     MsgBox("ลบสำเร็จ!", vbInformation)

@@ -143,25 +143,39 @@ Public Class Subjects
         conn.Close()
     End Sub
     Sub delete()
-        Try
-            If MsgBox("คุณต้องการลบหรือไม่ ?", vbQuestion + vbYesNo, "เเจ้งเตือน") = vbYes Then
+        If MsgBox("คุณต้องการลบหรือไม่ ?", vbQuestion + vbYesNo, "เเจ้งเตือน") = vbYes Then
+            Try
                 If conn.State = ConnectionState.Closed Then
                     conn.Open()
                 End If
-                Dim cmd As New OleDb.OleDbCommand("Delete from Subjects WHERE SubjectCode=@SubjectCode", conn)
-                cmd.Parameters.Clear()
-                cmd.Parameters.AddWithValue("@SubjectCode", txtID.Text)
+                Dim cmd2 As New OleDb.OleDbCommand("DELETE FROM Subjects WHERE SubjectID=@SubjectID", conn)
+                cmd2.Parameters.Clear()
+                cmd2.Parameters.AddWithValue("@SubjectCode", txtPR.Text)
 
-                i = cmd.ExecuteNonQuery
+
+                Dim cmd As New OleDb.OleDbCommand("SELECT TimetablePeriodID from TimetablesQuery WHERE SubjectCode=@SubjectCode", conn)
+                cmd.Parameters.AddWithValue("@SubjectCode", txtID.Text)
+                dr = cmd.ExecuteReader()
+                While dr.Read
+                    Dim cmd1 As New OleDb.OleDbCommand("UPDATE TimetablesPeriods SET `TeacherSubjectID` = @TeacherSubjectID Where TimetablePeriodID = @TimetablePeriodID", conn)
+                    Console.WriteLine(dr.Item("TimetablePeriodID"))
+                    cmd1.Parameters.Clear()
+                    cmd1.Parameters.AddWithValue("@TeacherSubjectID", 1)
+                    cmd1.Parameters.AddWithValue("@TimetablePeriodID", dr.Item("TimetablePeriodID"))
+                    cmd1.ExecuteNonQuery()
+                End While
+                dr.Close()
+
+                i = cmd2.ExecuteNonQuery
                 If i > 0 Then
                     MsgBox("ลบสำเร็จ !", vbInformation)
                 Else
                     MsgBox("ผิดพลาด", vbCritical)
                 End If
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        End If
 
         conn.Close()
         LoadGrid()
