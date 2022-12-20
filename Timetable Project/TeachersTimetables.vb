@@ -98,40 +98,32 @@ Public Class TeachersTimetables
         Next
     End Sub
     Sub DisplayPeriod(Teacher As String, PLabel As Label)
-        If PLabel.Text = "ว่าง" Then
-            Try
-                If conn.State = ConnectionState.Closed Then
-                    conn.Open()
-                End If
-                Dim PLabelName As String = PLabel.Name
-                Dim PDay As String = PLabelName.Chars(4)
-                Dim PPeriod As String
-                Try
-                    PPeriod = PLabelName.Chars(6) & PLabelName.Chars(7)
-                Catch
-                    PPeriod = PLabelName.Chars(6)
-                End Try
-                Dim TeacherIndex As String = CStr(Teacher) & "$$" & PDay & "$$" & PPeriod
-                Dim cmd As New OleDb.OleDbCommand("SELECT SubjectCode, ClassroomName, ClassroomCode FROM TimetablesQuery WHERE TeacherIndex = '" + TeacherIndex + "'", conn)
-                dr = cmd.ExecuteReader
-                While dr.Read
-
-                    If PLabel.Text = "ว่าง" Then
-                        PLabel.Text = CStr(dr.Item("SubjectCode")) & vbCrLf & CStr(dr.Item("ClassroomName")) & vbCrLf & CStr(dr.Item("ClassroomCode"))
-                    Else
-                        PLabel.Text = "ว่าง"
-                    End If
-                End While
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            Finally
-                If conn.State = ConnectionState.Open Then
-                    conn.Close()
-                End If
-            End Try
-        Else
+        Try
             PLabel.Text = "ว่าง"
-        End If
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
+            Dim PLabelName As String = PLabel.Name
+            Dim PDay As String = PLabelName.Chars(4)
+            Dim PPeriod As String
+            Try
+                PPeriod = PLabelName.Chars(6) & PLabelName.Chars(7)
+            Catch
+                PPeriod = PLabelName.Chars(6)
+            End Try
+            Dim TeacherIndex As String = CStr(Teacher) & "$$" & PDay & "$$" & PPeriod
+            Dim cmd As New OleDb.OleDbCommand("SELECT SubjectCode, ClassroomName, ClassroomCode FROM TimetablesQuery WHERE TeacherIndex = '" + TeacherIndex + "'", conn)
+            dr = cmd.ExecuteReader
+            While dr.Read
+                PLabel.Text = CStr(dr.Item("SubjectCode")) & vbCrLf & CStr(dr.Item("ClassroomName")) & vbCrLf & CStr(dr.Item("ClassroomCode"))
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            If conn.State = ConnectionState.Open Then
+                conn.Close()
+            End If
+        End Try
     End Sub
     Private Sub cboClassrooms_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboTeachers.SelectedIndexChanged
         Dim Teacher As String = cboTeachers.Text
@@ -164,9 +156,6 @@ Public Class TeachersTimetables
         Else
             TeachersTimetablesFrom.Show()
         End If
-    End Sub
-    Private Sub cboTeachersSubjects_SelectedIndexChanged(sender As Object, e As EventArgs)
-        Me.agent.Focus()
     End Sub
     Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
         search("Teachers", "TeacherFirstName", txtSearch, cboTeachers)
