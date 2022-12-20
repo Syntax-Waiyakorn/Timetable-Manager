@@ -7,11 +7,11 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("project")>
-<Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("project")>
-<Assembly: AssemblyCopyright("Copyright ©  2022")>
+<Assembly: AssemblyTitle("Timetable Manager")>
+<Assembly: AssemblyDescription("Timetable arrangement assistance")>
+<Assembly: AssemblyCompany("Syntax")>
+<Assembly: AssemblyProduct("Timetable Manager")>
+<Assembly: AssemblyCopyright("Syntax©  2022")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
