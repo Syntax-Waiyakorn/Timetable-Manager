@@ -88,31 +88,33 @@ Public Class TeachersTimetables
         End Try
     End Sub
     Sub DisplayTeacherTable(Teacher As String)
+        Dim PDay = 1
+        Dim PPeriod = 1
         Dim lblDaysPeriods() As Label = {lblD1P1, lblD1P2, lblD1P3, lblD1P4, lblD1P5, lblD1P6, lblD1P7, lblD1P8, lblD1P9, lblD1P10, lblD1P11,
                                          lblD2P1, lblD2P2, lblD2P3, lblD2P4, lblD2P5, lblD2P6, lblD2P7, lblD2P8, lblD2P9, lblD2P10, lblD2P11,
                                          lblD3P1, lblD3P2, lblD3P3, lblD3P4, lblD3P5, lblD3P6, lblD3P7, lblD3P8, lblD3P9, lblD3P10, lblD3P11,
                                          lblD4P1, lblD4P2, lblD4P3, lblD4P4, lblD4P5, lblD4P6, lblD4P7, lblD4P8, lblD4P9, lblD4P10, lblD4P11,
                                          lblD5P1, lblD5P2, lblD5P3, lblD5P4, lblD5P5, lblD5P6, lblD5P7, lblD5P8, lblD5P9, lblD5P10, lblD5P11}
         For Each PLabel As Label In lblDaysPeriods
-            DisplayPeriod(Teacher, PLabel)
+            DisplayPeriod(Teacher, PLabel, CStr(PDay), CStr(PPeriod))
+            If PPeriod = 11 Then
+                PPeriod = 0
+                PDay = PDay + 1
+            End If
+            PPeriod = PPeriod + 1
         Next
     End Sub
-    Sub DisplayPeriod(Teacher As String, PLabel As Label)
+    Sub DisplayPeriod(Teacher As String, PLabel As Label, PDay As String, PPeriod As String)
         Try
             PLabel.Text = "ว่าง"
             If conn.State = ConnectionState.Closed Then
                 conn.Open()
             End If
-            Dim PLabelName As String = PLabel.Name
-            Dim PDay As String = PLabelName.Chars(4)
-            Dim PPeriod As String
-            Try
-                PPeriod = PLabelName.Chars(6) & PLabelName.Chars(7)
-            Catch
-                PPeriod = PLabelName.Chars(6)
-            End Try
             Dim TeacherIndex As String = CStr(Teacher) & "$$" & PDay & "$$" & PPeriod
-            Dim cmd As New OleDb.OleDbCommand("SELECT SubjectCode, ClassroomName, ClassroomCode FROM TimetablesQuery WHERE TeacherIndex = '" + TeacherIndex + "'", conn)
+            Dim cmd As New OleDb.OleDbCommand("SELECT SubjectCode, ClassroomName, ClassroomCode FROM TimetablesQuery WHERE TeacherFirstName = @TeacherFirstName AND DayNumber = @DayNumber AND PeriodNumber = @PeriodNumber", conn)
+            cmd.Parameters.AddWithValue("@TeacherFirstName", Teacher)
+            cmd.Parameters.AddWithValue("@DayNumber", PDay)
+            cmd.Parameters.AddWithValue("@PeriodNumber", PPeriod)
             dr = cmd.ExecuteReader
             While dr.Read
                 PLabel.Text = CStr(dr.Item("SubjectCode")) & vbCrLf & CStr(dr.Item("ClassroomName")) & vbCrLf & CStr(dr.Item("ClassroomCode"))
