@@ -181,6 +181,7 @@ Partial Class Subjects
         Me.txtPR.Name = "txtPR"
         Me.txtPR.Size = New System.Drawing.Size(240, 34)
         Me.txtPR.TabIndex = 137
+        Me.txtPR.Visible = False
         '
         'Connection_status
         '

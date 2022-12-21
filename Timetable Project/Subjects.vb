@@ -1,5 +1,4 @@
 ﻿Imports System.Data.OleDb
-
 Public Class Subjects
     Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\Timetable.accdb")
     Dim dr As OleDbDataReader
@@ -66,13 +65,10 @@ Public Class Subjects
         txtID.Clear()
         txtName.Clear()
         txtSubjectPlace.Clear()
-
         cboDepartment.SelectedIndex = -1
         chkDefaultClass.CheckState = False
     End Sub
-
     Sub save()
-
         Try
             If MsgBox("คุณต้องการเพิ่มข้อมูลหรือไม่ ?", vbQuestion + vbYesNo, "เเจ้งเตือน") = vbYes Then
                 If conn.State = ConnectionState.Closed Then
@@ -84,8 +80,6 @@ Public Class Subjects
                 cmd.Parameters.AddWithValue("@SubjectName", txtName.Text)
                 cmd.Parameters.AddWithValue("@SubjectDepartment", cboDepartment.Text)
                 cmd.Parameters.AddWithValue("@SubjectPlace", txtSubjectPlace.Text)
-
-
                 i = cmd.ExecuteNonQuery
                 If i > 0 Then
                     MsgBox("เพิ่มข้อมูลเเล้ว !", vbInformation)
@@ -111,7 +105,6 @@ Public Class Subjects
             cmd.Parameters.AddWithValue("@SubjectDepartment", cboDepartment.Text)
             cmd.Parameters.AddWithValue("@SubjectPlace", txtSubjectPlace.Text)
             cmd.Parameters.AddWithValue("@SubjectID", txtPR.Text)
-
             i = cmd.ExecuteNonQuery
             If i > 0 Then
                 MsgBox("แก้ไขแล้ว !", vbInformation)
@@ -158,14 +151,12 @@ Public Class Subjects
                 dr = cmd.ExecuteReader()
                 While dr.Read
                     Dim cmd1 As New OleDb.OleDbCommand("UPDATE TimetablesPeriods SET `TeacherSubjectID` = @TeacherSubjectID Where TimetablePeriodID = @TimetablePeriodID", conn)
-                    Console.WriteLine(dr.Item("TimetablePeriodID"))
                     cmd1.Parameters.Clear()
                     cmd1.Parameters.AddWithValue("@TeacherSubjectID", 1)
                     cmd1.Parameters.AddWithValue("@TimetablePeriodID", dr.Item("TimetablePeriodID"))
                     cmd1.ExecuteNonQuery()
                 End While
                 dr.Close()
-
                 i = cmd2.ExecuteNonQuery
                 If i > 0 Then
                     MsgBox("ลบสำเร็จ !", vbInformation)
@@ -176,7 +167,6 @@ Public Class Subjects
                 MsgBox(ex.Message)
             End Try
         End If
-
         conn.Close()
         LoadGrid()
         clear()
