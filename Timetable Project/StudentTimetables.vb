@@ -58,7 +58,9 @@ Public Class StudentTimetables
             If conn.State = ConnectionState.Closed Then
                 conn.Open()
             End If
-            Dim cmd1 As New OleDb.OleDbCommand("Select  " & Field1 & ", " & Field2 & " from " & Table & " WHERE " & Field1 & " like '%" & txtBox.Text & "%' or " & Field2 & " like '%" & txtBox.Text & "%'", conn)
+            Dim cmd1 As New OleDb.OleDbCommand("Select  " & Field1 & ", " & Field2 & " from " & Table & " WHERE (`SubjectCode` like '%" & txtBox.Text & "%' or `TeacherFirstName` like '%" & txtBox.Text & "%') and ClassroomName=@ClassroomName", conn)
+            cmd1.Parameters.Clear()
+            cmd1.Parameters.AddWithValue("ClassroomName", cboClassrooms.Text)
             dr = cmd1.ExecuteReader
             While dr.Read
                 cboBox.Items.Add(dr.Item(Field1) & " : " & dr.Item(Field2))
@@ -391,14 +393,15 @@ Public Class StudentTimetables
         DisplayClassroomTable(Classroom)
         status()
     End Sub
+    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
+        search("TSClassroomsQuery", "TeacherFirstName", "SubjectCode", txtSearch, cboTeachersSubjects)
+        status()
+    End Sub
     Private Sub cboTeachersSubjects_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboTeachersSubjects.SelectedIndexChanged
         Me.agent.Focus()
         status()
     End Sub
-    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
-        search("TeachersSubjectsQuery", "TeacherFirstName", "SubjectCode", txtSearch, cboTeachersSubjects)
-        status()
-    End Sub
+
     Private Sub StudentTimetables_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         InitializeTable()
         status()
@@ -418,9 +421,5 @@ Public Class StudentTimetables
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
         Dim OBJ As New TeachersTimetables
         Year()
-    End Sub
-
-    Private Sub Period_Click(sender As Object, e As EventArgs) Handles lblD5P11.Click, lblD5P10.Click, lblD5P9.Click, lblD5P8.Click, lblD5P7.Click, lblD5P6.Click, lblD5P5.Click, lblD5P4.Click, lblD5P3.Click, lblD5P2.Click, lblD5P1.Click, lblD4P11.Click, lblD4P10.Click, lblD4P9.Click, lblD4P8.Click, lblD4P7.Click, lblD4P6.Click, lblD4P5.Click, lblD4P4.Click, lblD4P3.Click, lblD4P2.Click, lblD4P1.Click, lblD3P11.Click, lblD3P10.Click, lblD3P09.Click, lblD3P8.Click, lblD3P7.Click, lblD3P6.Click, lblD3P5.Click, lblD3P4.Click, lblD3P3.Click, lblD3P2.Click, lblD3P1.Click, lblD2P11.Click, lblD2P10.Click, lblD2P9.Click, lblD2P8.Click, lblD2P7.Click, lblD2P6.Click, lblD2P5.Click, lblD2P4.Click, lblD2P3.Click, lblD2P2.Click, lblD2P1.Click, lblD1P9.Click, lblD1P8.Click, lblD1P7.Click, lblD1P6.Click, lblD1P5.Click, lblD1P4.Click, lblD1P3.Click, lblD1P2.Click, lblD1P11.Click, lblD1P10.Click, lblD1P1.Click
-
     End Sub
 End Class

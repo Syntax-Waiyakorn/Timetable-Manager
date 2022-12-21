@@ -154,28 +154,32 @@ Public Class Condition
     Sub TSdelete()
         Try
             If MsgBox("คุณต้องการลบหรือไม่ ?", vbQuestion + vbYesNo, "เเจ้งเตือน") = vbYes Then
-                Dim TeacherSubjectIndex As String = cboTeachers.Text & "$$" & cboSubjects.Text
-                Dim TeacherSubjectIDd As String = "null"
-                If conn.State = ConnectionState.Closed Then
-                    conn.Open()
-                End If
-                Dim cmd1 As New OleDb.OleDbCommand("SELECT TeacherSubjectID FROM TeachersSubjectsQuery WHERE TeacherSubjectIndex = '" + TeacherSubjectIndex + "'", conn)
-                dr = cmd1.ExecuteReader
-                While dr.Read
-                    TeacherSubjectIDd = dr.Item("TeacherSubjectID")
-                End While
-                Dim cmd2 As New OleDb.OleDbCommand("Delete from TeachersSubjects WHERE TeacherSubjectID=@TeacherSubjectID", conn)
-                cmd2.Parameters.AddWithValue("@TeacherSubjectID", TeacherSubjectIDd)
+                If Not cboSubjects.Text = "ว่าง" Then
+                    Dim TeacherSubjectIndex As String = cboTeachers.Text & "$$" & cboSubjects.Text
+                    Dim TeacherSubjectIDd As String = "null"
+                    If conn.State = ConnectionState.Closed Then
+                        conn.Open()
+                    End If
+                    Dim cmd1 As New OleDb.OleDbCommand("SELECT TeacherSubjectID FROM TeachersSubjectsQuery WHERE TeacherSubjectIndex = '" + TeacherSubjectIndex + "'", conn)
+                    dr = cmd1.ExecuteReader
+                    While dr.Read
+                        TeacherSubjectIDd = dr.Item("TeacherSubjectID")
+                    End While
+                    Dim cmd2 As New OleDb.OleDbCommand("Delete from TeachersSubjects WHERE TeacherSubjectID=@TeacherSubjectID", conn)
+                    cmd2.Parameters.AddWithValue("@TeacherSubjectID", TeacherSubjectIDd)
 
-                Dim cmd As New OleDb.OleDbCommand("UPDATE TimetablesPeriods SET `TeacherSubjectID`=@TeacherSubjectID Where TimetablePeriodID=@TimetablePeriodID", conn)
-                cmd.Parameters.AddWithValue("@TimetablePeriodID", agent.Text)
-                cmd.Parameters.AddWithValue("@TeacherSubjectID", txtId.Text)
+                    Dim cmd As New OleDb.OleDbCommand("UPDATE TimetablesPeriods SET `TeacherSubjectID`=@TeacherSubjectID Where TimetablePeriodID=@TimetablePeriodID", conn)
+                    cmd.Parameters.AddWithValue("@TimetablePeriodID", agent.Text)
+                    cmd.Parameters.AddWithValue("@TeacherSubjectID", txtId.Text)
 
-                cmd.ExecuteNonQuery()
-                If cmd2.ExecuteNonQuery > 0 Then
-                    MsgBox("ลบสำเร็จ!", vbInformation)
+                    cmd.ExecuteNonQuery()
+                    If cmd2.ExecuteNonQuery > 0 Then
+                        MsgBox("ลบสำเร็จ!", vbInformation)
+                    Else
+                        MsgBox("ผิดพลาด", vbCritical)
+                    End If
                 Else
-                    MsgBox("ผิดพลาด", vbCritical)
+                    MsgBox("ลบวิขาว่างไม่ได้!", vbCritical)
                 End If
             End If
         Catch ex As Exception
@@ -191,27 +195,32 @@ Public Class Condition
     Sub TSCdelete()
         Try
             If MsgBox("คุณต้องการลบหรือไม่ ?", vbQuestion + vbYesNo, "เเจ้งเตือน") = vbYes Then
-                Dim Separaters() = {" : "}
-                Dim cboTextSplit() As String = cboTeachersSubjects.Text.Split(Separaters, StringSplitOptions.RemoveEmptyEntries)
-                Dim TeacherFirstName = cboTextSplit(0)
-                Dim SubjectName = cboTextSplit(1)
-                Dim TSClassroomIndex As String = TeacherFirstName & "$$" & SubjectName & "$$" & cboClassrooms.Text
-                Dim TSClassroomID As String = "null"
-                If conn.State = ConnectionState.Closed Then
-                    conn.Open()
-                End If
-                Dim cmd1 As New OleDb.OleDbCommand("SELECT TSClassroomID FROM TSClassroomsQuery WHERE TSClassroomIndex = '" + TSClassroomIndex + "'", conn)
-                dr = cmd1.ExecuteReader
-                While dr.Read
-                    TSClassroomID = dr.Item("TSClassroomID")
-                End While
-                Dim cmd2 As New OleDb.OleDbCommand("Delete from TSClassrooms WHERE TSClassroomID = @TSClassroomID", conn)
-                cmd2.Parameters.Clear()
-                cmd2.Parameters.AddWithValue("@TSClassroomID", TSClassroomID)
-                If cmd2.ExecuteNonQuery > 0 Then
-                    MsgBox("ลบสำเร็จ!", vbInformation)
+                If Not cboTeachersSubjects.Text = "- : ว่าง" Then
+
+                    Dim Separaters() = {" : "}
+                    Dim cboTextSplit() As String = cboTeachersSubjects.Text.Split(Separaters, StringSplitOptions.RemoveEmptyEntries)
+                    Dim TeacherFirstName = cboTextSplit(0)
+                    Dim SubjectName = cboTextSplit(1)
+                    Dim TSClassroomIndex As String = TeacherFirstName & "$$" & SubjectName & "$$" & cboClassrooms.Text
+                    Dim TSClassroomID As String = "null"
+                    If conn.State = ConnectionState.Closed Then
+                        conn.Open()
+                    End If
+                    Dim cmd1 As New OleDb.OleDbCommand("SELECT TSClassroomID FROM TSClassroomsQuery WHERE TSClassroomIndex = '" + TSClassroomIndex + "'", conn)
+                    dr = cmd1.ExecuteReader
+                    While dr.Read
+                        TSClassroomID = dr.Item("TSClassroomID")
+                    End While
+                    Dim cmd2 As New OleDb.OleDbCommand("Delete from TSClassrooms WHERE TSClassroomID = @TSClassroomID", conn)
+                    cmd2.Parameters.Clear()
+                    cmd2.Parameters.AddWithValue("@TSClassroomID", TSClassroomID)
+                    If cmd2.ExecuteNonQuery > 0 Then
+                        MsgBox("ลบสำเร็จ!", vbInformation)
+                    Else
+                        MsgBox("ผิดพลาด", vbCritical)
+                    End If
                 Else
-                    MsgBox("ผิดพลาด", vbCritical)
+                    MsgBox("ลบคาบวางไมได้", vbCritical)
                 End If
             End If
         Catch ex As Exception
@@ -224,23 +233,39 @@ Public Class Condition
         LoadGrid()
         loadcbo()
     End Sub
-    Sub TSsearch(Table As String, Field As String, txtBox As TextBox, cboBox As ComboBox)
+    Sub TSsearch()
         Try
-            cboBox.Items.Clear()
+            cboTeachers.Items.Clear()
+            cboSubjects.Items.Clear()
             If conn.State = ConnectionState.Closed Then
                 conn.Open()
             End If
-            Dim cmd1 As New OleDb.OleDbCommand("Select " & Field & " from " & Table & " WHERE " & Field & " like '%" & txtBox.Text & "%'", conn)
-            Dim cmd2 As New OleDb.OleDbCommand("Select TeacherSubjectID,TeacherFirstName, SubjectCode, SubjectName from TeachersSubjectsQuery WHERE " & Field & " like '%" & txtBox.Text & "%'", conn)
+
+            Dim cmd1 As New OleDb.OleDbCommand("Select TeacherFirstName  from Teachers WHERE TeacherFirstName like '%" & txtSearchT.Text & "%'", conn)
+            Dim cmd As New OleDb.OleDbCommand("Select SubjectCode  from Subjects WHERE SubjectCode like '%" & txtSearchS.Text & "%'", conn)
+
+            Dim cmd2 As New OleDb.OleDbCommand("Select TeacherSubjectID,TeacherFirstName, SubjectCode, SubjectName from TeachersSubjectsQuery WHERE TeacherFirstName like '%" & txtSearchT.Text & "%' and  SubjectCode like '%" & txtSearchS.Text & "%'", conn)
+
+            DataGridView1.Rows.Clear()
+
             dr = cmd1.ExecuteReader
             While dr.Read
-                cboBox.Items.Add(dr.Item(Field))
+                cboTeachers.Items.Add(dr.Item("TeacherFirstName"))
             End While
-            DataGridView1.Rows.Clear()
+            dr.Close()
+
+            dr = cmd.ExecuteReader
+            While dr.Read
+                cboSubjects.Items.Add(dr.Item("SubjectCode"))
+            End While
+            dr.Close()
+
             dr = cmd2.ExecuteReader
             While dr.Read
                 DataGridView1.Rows.Add(dr.Item("TeacherSubjectID"), dr.Item("TeacherFirstName"), dr.Item("SubjectCode"), dr.Item("SubjectName"))
             End While
+            dr.Close()
+
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
@@ -249,23 +274,45 @@ Public Class Condition
             End If
         End Try
     End Sub
-    Sub TSCsearch(Table As String, Field As String, txtBox As TextBox, cboBox As ComboBox)
+    Private Sub txtSearchT_TextChanged(sender As Object, e As EventArgs) Handles txtSearchT.TextChanged
+        TSsearch()
+    End Sub
+    Private Sub txtSearchS_TextChanged(sender As Object, e As EventArgs) Handles txtSearchS.TextChanged
+        TSsearch()
+    End Sub
+    Sub TSCsearch()
         Try
+            cboTeachersSubjects.Items.Clear()
+            cboClassrooms.Items.Clear()
             If conn.State = ConnectionState.Closed Then
                 conn.Open()
             End If
-            Dim cmd1 As New OleDb.OleDbCommand("Select " & Field & " from " & Table & " WHERE " & Field & " like '%" & txtBox.Text & "%'", conn)
-            Dim cmd2 As New OleDb.OleDbCommand("Select TeacherSubjectDisplay, ClassroomName from TSClassroomsQuery WHERE " & Field & " like '%" & txtBox.Text & "%'", conn)
-            cboBox.Items.Clear()
+
+            Dim cmd1 As New OleDb.OleDbCommand("Select TeacherSubjectDisplay  from TeachersSubjectsQuery WHERE TeacherSubjectDisplay like '%" & txtSearchTS.Text & "%'", conn)
+            Dim cmd As New OleDb.OleDbCommand("Select ClassroomName from Classrooms WHERE ClassroomName like '%" & txtSearchC.Text & "%'", conn)
+
+            Dim cmd2 As New OleDb.OleDbCommand("Select TeacherSubjectDisplay,ClassroomName from TSClassroomsQuery WHERE TeacherSubjectDisplay like '%" & txtSearchTS.Text & "%' and  ClassroomName like '%" & txtSearchC.Text & "%'", conn)
+
+            DataGridView2.Rows.Clear()
+
             dr = cmd1.ExecuteReader
             While dr.Read
-                cboBox.Items.Add(dr.Item(Field))
+                cboTeachersSubjects.Items.Add(dr.Item("TeacherSubjectDisplay"))
             End While
-            DataGridView2.Rows.Clear()
+            dr.Close()
+
+            dr = cmd.ExecuteReader
+            While dr.Read
+                cboClassrooms.Items.Add(dr.Item("ClassroomName"))
+            End While
+            dr.Close()
+
             dr = cmd2.ExecuteReader
             While dr.Read
                 DataGridView2.Rows.Add(dr.Item("TeacherSubjectDisplay"), dr.Item("ClassroomName"))
             End While
+            dr.Close()
+
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
@@ -273,6 +320,7 @@ Public Class Condition
                 conn.Close()
             End If
         End Try
+
     End Sub
     Sub id()
         Try
@@ -303,17 +351,11 @@ Public Class Condition
         cboTeachersSubjects.Text = DataGridView2.CurrentRow.Cells(0).Value
         cboClassrooms.Text = DataGridView2.CurrentRow.Cells(1).Value
     End Sub
-    Private Sub txtSearchT_TextChanged(sender As Object, e As EventArgs) Handles txtSearchT.TextChanged
-        TSsearch("Teachers", "TeacherFirstName", txtSearchT, cboTeachers)
-    End Sub
-    Private Sub txtSearchS_TextChanged(sender As Object, e As EventArgs) Handles txtSearchS.TextChanged
-        TSsearch("Subjects", "SubjectCode", txtSearchS, cboSubjects)
-    End Sub
     Private Sub txtSearchC_TextChanged(sender As Object, e As EventArgs) Handles txtSearchC.TextChanged
-        TSCsearch("Classrooms", "ClassroomName", txtSearchC, cboClassrooms)
+        TSCsearch()
     End Sub
     Private Sub txtSearchTS_TextChanged(sender As Object, e As EventArgs) Handles txtSearchTS.TextChanged
-        TSCsearch("TeachersSubjectsQuery", "TeacherSubjectDisplay", txtSearchTS, cboTeachersSubjects)
+        TSCsearch()
     End Sub
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnTSSave.Click
         TSsave()

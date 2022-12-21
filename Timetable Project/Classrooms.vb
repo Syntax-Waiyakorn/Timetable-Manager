@@ -56,7 +56,7 @@ Public Class Classrooms
                 If conn.State = ConnectionState.Closed Then
                     conn.Open()
                 End If
-                Dim cmd As New OleDb.OleDbCommand("Insert into Classrooms(`ClassroomCode`,`ClassroomName`) values(@ClassroomID,@ClassroomID)", conn)
+                Dim cmd As New OleDb.OleDbCommand("Insert into Classrooms(`ClassroomCode`,`ClassroomName`) values(@ClassroomID,@ClassroomName)", conn)
                 cmd.Parameters.Clear()
                 cmd.Parameters.AddWithValue("@ClassroomCode", txtID.Text)
                 cmd.Parameters.AddWithValue("@ClassroomName", txtName.Text)
@@ -121,10 +121,9 @@ Public Class Classrooms
                 If conn.State = ConnectionState.Closed Then
                     conn.Open()
                 End If
-                Dim cmd As New OleDb.OleDbCommand("Delete from Classrooms WHERE ClassroomCode=@ClassroomCode", conn)
+                Dim cmd As New OleDb.OleDbCommand("Delete from Classrooms WHERE ClassroomID=@ClassroomID", conn)
                 cmd.Parameters.Clear()
-                cmd.Parameters.AddWithValue("@RoomCode", txtID.Text)
-                cmd.Parameters.AddWithValue("@ClassroomName", txtName.Text)
+                cmd.Parameters.AddWithValue("@ClassroomID", txtPR.Text)
                 i = cmd.ExecuteNonQuery
                 If i > 0 Then
                     MsgBox("ลบสำเร็จ!", vbInformation)
