@@ -153,6 +153,10 @@ Public Class StudentTimetables
 
             If TeacherFirstName = "-" Then
                 TeacherFirstName = ""
+                If Not SubjectCode = "ว่าง" Then
+                    PLabel.BackColor = Color.Orange
+                    PLabel.ForeColor = Color.Black
+                End If
             End If
             If Not SubjectPlace = "ห้องประจำ" Then
                 ClassroomCode = SubjectPlace
