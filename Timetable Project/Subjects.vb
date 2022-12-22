@@ -1,4 +1,5 @@
 ﻿Imports System.Data.OleDb
+
 Public Class Subjects
     Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\Timetable.accdb")
     Dim dr As OleDbDataReader
@@ -49,10 +50,12 @@ Public Class Subjects
             If conn.State = ConnectionState.Closed Then
                 conn.Open()
             End If
-            Dim cmd As New OleDb.OleDbCommand("Select  SubjectID, SubjectCode, SubjectName, SubjectDepartment, SubjectPlace, SubjectQuota, SubjectNextRequire, SubjectNextSelfMax from Subjects", conn)
+            Dim cmd As New OleDb.OleDbCommand("Select  SubjectID, SubjectCode, SubjectName, SubjectDepartment, SubjectPlace, SubjectQuota from Subjects WHERE SubjectSpecial <> True", conn)
+            cmd.Parameters.Clear()
+            cmd.Parameters.AddWithValue("@SubjectSpecial", False)
             dr = cmd.ExecuteReader
             While dr.Read
-                DataGridView1.Rows.Add(dr.Item("SubjectID"), dr.Item("SubjectCode"), dr.Item("SubjectName"), dr.Item("SubjectDepartment"), dr.Item("SubjectPlace"), dr.Item("SubjectQuota"), dr.Item("SubjectNextRequire"), dr.Item("SubjectNextSelfMax"))
+                DataGridView1.Rows.Add(dr.Item("SubjectID"), dr.Item("SubjectCode"), dr.Item("SubjectName"), dr.Item("SubjectDepartment"), dr.Item("SubjectPlace"), dr.Item("SubjectQuota"))
             End While
             dr.Close()
         Catch ex As Exception
@@ -65,10 +68,13 @@ Public Class Subjects
         txtID.Clear()
         txtName.Clear()
         txtSubjectPlace.Clear()
+
         cboDepartment.SelectedIndex = -1
         chkDefaultClass.CheckState = False
     End Sub
+
     Sub save()
+
         Try
             If MsgBox("คุณต้องการเพิ่มข้อมูลหรือไม่ ?", vbQuestion + vbYesNo, "เเจ้งเตือน") = vbYes Then
                 If conn.State = ConnectionState.Closed Then
@@ -80,6 +86,8 @@ Public Class Subjects
                 cmd.Parameters.AddWithValue("@SubjectName", txtName.Text)
                 cmd.Parameters.AddWithValue("@SubjectDepartment", cboDepartment.Text)
                 cmd.Parameters.AddWithValue("@SubjectPlace", txtSubjectPlace.Text)
+
+
                 i = cmd.ExecuteNonQuery
                 If i > 0 Then
                     MsgBox("เพิ่มข้อมูลเเล้ว !", vbInformation)
@@ -105,6 +113,7 @@ Public Class Subjects
             cmd.Parameters.AddWithValue("@SubjectDepartment", cboDepartment.Text)
             cmd.Parameters.AddWithValue("@SubjectPlace", txtSubjectPlace.Text)
             cmd.Parameters.AddWithValue("@SubjectID", txtPR.Text)
+
             i = cmd.ExecuteNonQuery
             If i > 0 Then
                 MsgBox("แก้ไขแล้ว !", vbInformation)
@@ -124,7 +133,7 @@ Public Class Subjects
             If conn.State = ConnectionState.Closed Then
                 conn.Open()
             End If
-            Dim cmd As New OleDb.OleDbCommand("Select SubjectID, SubjectCode, SubjectName, SubjectDepartment, SubjectPlace from Subjects WHERE `SubjectName` like '%" & txtSearch.Text & "%' or `SubjectDepartment` like '%" & txtSearch.Text & "%'or `SubjectCode` like '%" & txtSearch.Text & "%'or `SubjectID` like '%" & txtSearch.Text & "%' ", conn)
+            Dim cmd As New OleDb.OleDbCommand("Select SubjectID, SubjectCode, SubjectName, SubjectDepartment, SubjectPlace from Subjects WHERE (`SubjectName` like '%" & txtSearch.Text & "%' or `SubjectDepartment` like '%" & txtSearch.Text & "%'or `SubjectCode` like '%" & txtSearch.Text & "%'or `SubjectID` like '%" & txtSearch.Text & "%') AND SubjectSpecial <> True", conn)
             dr = cmd.ExecuteReader
             While dr.Read
                 DataGridView1.Rows.Add(dr.Item("SubjectID"), dr.Item("SubjectCode"), dr.Item("SubjectName"), dr.Item("SubjectDepartment"), dr.Item("SubjectPlace"))
@@ -141,22 +150,22 @@ Public Class Subjects
                 If conn.State = ConnectionState.Closed Then
                     conn.Open()
                 End If
+                Dim cmd As New OleDb.OleDbCommand("SELECT TimetablePeriodID from TimetablesQuery WHERE SubjectID=@SubjectID", conn)
+                cmd.Parameters.AddWithValue("@SubjectCode", txtPR.Text)
+                dr = cmd.ExecuteReader()
+                While dr.Read
+                    Dim cmd1 As New OleDb.OleDbCommand("UPDATE TimetablesPeriods SET `TeacherSubjectID` = @TeacherSubjectID Where TimetablePeriodID = @TimetablePeriodID", conn)
+                    Print(dr.Item("TimetablePeriodID"))
+                    cmd1.Parameters.Clear()
+                    cmd1.Parameters.AddWithValue("@TeacherSubjectID", "1")
+                    cmd1.Parameters.AddWithValue("@TimetablePeriodID", dr.Item("TimetablePeriodID"))
+                End While
+                dr.Close()
+
                 Dim cmd2 As New OleDb.OleDbCommand("DELETE FROM Subjects WHERE SubjectID=@SubjectID", conn)
                 cmd2.Parameters.Clear()
                 cmd2.Parameters.AddWithValue("@SubjectCode", txtPR.Text)
 
-
-                Dim cmd As New OleDb.OleDbCommand("SELECT TimetablePeriodID from TimetablesQuery WHERE SubjectCode=@SubjectCode", conn)
-                cmd.Parameters.AddWithValue("@SubjectCode", txtID.Text)
-                dr = cmd.ExecuteReader()
-                While dr.Read
-                    Dim cmd1 As New OleDb.OleDbCommand("UPDATE TimetablesPeriods SET `TeacherSubjectID` = @TeacherSubjectID Where TimetablePeriodID = @TimetablePeriodID", conn)
-                    cmd1.Parameters.Clear()
-                    cmd1.Parameters.AddWithValue("@TeacherSubjectID", 1)
-                    cmd1.Parameters.AddWithValue("@TimetablePeriodID", dr.Item("TimetablePeriodID"))
-                    cmd1.ExecuteNonQuery()
-                End While
-                dr.Close()
                 i = cmd2.ExecuteNonQuery
                 If i > 0 Then
                     MsgBox("ลบสำเร็จ !", vbInformation)
@@ -167,6 +176,7 @@ Public Class Subjects
                 MsgBox(ex.Message)
             End Try
         End If
+
         conn.Close()
         LoadGrid()
         clear()

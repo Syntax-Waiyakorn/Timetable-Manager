@@ -3,6 +3,9 @@ Public Class Classrooms
     Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\Timetable.accdb")
     Dim dr As OleDbDataReader
     Dim i As Integer
+
+    Dim ClassroomID As String = "null"
+    Dim ClassroomDayID As String = "null"
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             If conn.State = ConnectionState.Closed Then
@@ -56,11 +59,47 @@ Public Class Classrooms
                 If conn.State = ConnectionState.Closed Then
                     conn.Open()
                 End If
-                Dim cmd As New OleDb.OleDbCommand("Insert into Classrooms(`ClassroomCode`,`ClassroomName`) values(@ClassroomID,@ClassroomName)", conn)
+                Dim cmd As New OleDb.OleDbCommand("INSERT into Classrooms(`ClassroomCode`,`ClassroomName`) values(@ClassroomCode,@ClassroomName)", conn)
                 cmd.Parameters.Clear()
                 cmd.Parameters.AddWithValue("@ClassroomCode", txtID.Text)
                 cmd.Parameters.AddWithValue("@ClassroomName", txtName.Text)
-                i = cmd.ExecuteNonQuery
+                cmd.ExecuteNonQuery()
+
+                Dim cmd1 As New OleDb.OleDbCommand("SELECT ClassroomID from Classrooms WHERE ClassroomCode=@ClassroomCode AND ClassroomName=@ClassroomName", conn)
+                cmd1.Parameters.Clear()
+                cmd1.Parameters.AddWithValue("@ClassroomCode", txtID.Text)
+                cmd1.Parameters.AddWithValue("@ClassroomName", txtName.Text)
+                dr = cmd1.ExecuteReader
+                While dr.Read()
+                    ClassroomID = dr.Item("ClassroomID")
+                End While
+
+                For Day As Integer = 1 To 5
+                    Dim cmd2 As New OleDb.OleDbCommand("INSERT into ClassroomsDays(`ClassroomID`,`DayID`) values(@ClassroomID,@DayID)", conn)
+                    cmd2.Parameters.Clear()
+                    cmd2.Parameters.AddWithValue("@ClassroomID", ClassroomID)
+                    cmd2.Parameters.AddWithValue("@DayID", Day)
+                    cmd2.ExecuteNonQuery()
+
+                    Dim cmd3 As New OleDb.OleDbCommand("SELECT ClassroomDayID from ClassroomsDays WHERE ClassroomID=@ClassroomID AND DayID=@DayID", conn)
+                    cmd3.Parameters.Clear()
+                    cmd3.Parameters.AddWithValue("@ClassroomID", ClassroomID)
+                    cmd3.Parameters.AddWithValue("@DayID", Day)
+                    dr = cmd3.ExecuteReader
+                    While dr.Read()
+                        ClassroomDayID = dr.Item("ClassroomDayID")
+                    End While
+
+                    For Period As Integer = 1 To 11
+                        Dim cmd4 As New OleDb.OleDbCommand("INSERT into TimetablesPeriods(`ClassroomDayID`,`PeriodID`,`TeacherSubjectID`) values(@ClassroomDayID,@PeriodID,@TeacherSubjectID)", conn)
+                        cmd4.Parameters.Clear()
+                        cmd4.Parameters.AddWithValue("@ClassroomDayID", ClassroomDayID)
+                        cmd4.Parameters.AddWithValue("@PeriodID", Period)
+                        cmd4.Parameters.AddWithValue("@TeacherSubjectID", 1)
+                        i = cmd4.ExecuteNonQuery()
+                    Next
+                Next
+
                 If i > 0 Then
                     MsgBox("เพิ่มข้อมูลเเล้ว !", vbInformation)
                 Else
