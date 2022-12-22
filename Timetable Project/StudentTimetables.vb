@@ -156,7 +156,11 @@ Public Class StudentTimetables
                 If Not SubjectCode = "ว่าง" Then
                     PLabel.BackColor = Color.Orange
                     PLabel.ForeColor = Color.Black
+                Else
+                    PLabel.BackColor = Color.FromArgb(30, 30, 30)
+                    PLabel.ForeColor = Color.White
                 End If
+
             End If
             If Not SubjectPlace = "ห้องประจำ" Then
                 ClassroomCode = SubjectPlace
@@ -270,19 +274,21 @@ Public Class StudentTimetables
                 End If
                 DisplayClassroomTable(Classroom)
             Else
-                Dim cmd4 As New OleDb.OleDbCommand("SELECT TeacherIndex FROM TimetablesQuery WHERE DayPeriodIndex = '" + DayPeriodIndex + "' ", conn)
+                Dim again As String = "null"
+                Dim cmd4 As New OleDb.OleDbCommand("SELECT ClassroomName ,TeacherIndex FROM TimetablesQuery WHERE DayPeriodIndex = '" + DayPeriodIndex + "' ", conn)
                 dr = cmd4.ExecuteReader
                 While dr.Read
                     TeacherIndex = dr.Item("TeacherIndex")
                     TeacherIndex.ToString()
                     If TeacherIndex = UserTeacherIndex Then
                         Occupied = True
+                        again = dr.Item("ClassroomName")
                     End If
                 End While
                 dr.Close()
 
                 If Occupied = True Then
-                    MsgBox("มันซ้ำ ไปเปลี่ยน", vbInformation)
+                    MsgBox("มันซ้ำที่ห้อง " & again & " ไปเปลี่ยน", vbCritical)
                 End If
                 If Occupied = False Then
                     Dim cmd1 As New OleDb.OleDbCommand("SELECT TimetablePeriodID FROM TimetablesQuery WHERE TimetableIndex = '" + TimetableIndex + "'", conn)

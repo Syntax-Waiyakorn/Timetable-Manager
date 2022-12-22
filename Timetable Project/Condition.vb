@@ -7,9 +7,14 @@ Public Class Condition
             If conn.State = ConnectionState.Closed Then
                 conn.Open()
             End If
-            Dim cmd1 As New OleDb.OleDbCommand("Select TeacherFirstName from Teachers", conn)
+            Dim cmd1 As New OleDb.OleDbCommand("Select TeacherFirstName from Teachers where TeacherFirstName <> @TeacherFirstName", conn)
+            cmd1.Parameters.Clear()
+            cmd1.Parameters.AddWithValue("@TeacherFirstName", "-")
             Dim cmd2 As New OleDb.OleDbCommand("Select SubjectCode from Subjects", conn)
-            Dim cmd3 As New OleDb.OleDbCommand("Select TeacherSubjectDisplay from TeachersSubjectsQuery", conn)
+
+            Dim cmd3 As New OleDb.OleDbCommand("Select TeacherSubjectDisplay from TeachersSubjectsQuery where TeacherFirstName <> @TeacherFirstName", conn)
+            cmd3.Parameters.Clear()
+            cmd3.Parameters.AddWithValue("@TeacherFirstName", "-")
             Dim cmd4 As New OleDb.OleDbCommand("Select ClassroomName from Classrooms", conn)
 
             cboTeachers.Items.Clear()
@@ -56,9 +61,15 @@ Public Class Condition
             If conn.State = ConnectionState.Closed Then
                 conn.Open()
             End If
-            Dim cmd1 As New OleDb.OleDbCommand("Select TeacherSubjectID, TeacherFirstName, SubjectCode, SubjectName from TeachersSubjectsQuery", conn)
-            Dim cmd2 As New OleDb.OleDbCommand("Select TeacherSubjectDisplay, ClassroomName from TSClassroomsQuery", conn)
+            Dim cmd1 As New OleDb.OleDbCommand("Select TeacherSubjectID, TeacherFirstName, SubjectCode, SubjectName from TeachersSubjectsQuery where TeacherFirstName <> @TeacherFirstName", conn)
+            cmd1.Parameters.Clear()
+            cmd1.Parameters.AddWithValue("@TeacherFirstName", "-")
+            Dim cmd2 As New OleDb.OleDbCommand("Select TeacherSubjectDisplay, ClassroomName from TSClassroomsQuery where TeacherFirstName<>@TeacherFirstName", conn)
+            cmd2.Parameters.Clear()
+            cmd2.Parameters.AddWithValue("TeacherFirstName", "-")
+
             dr = cmd1.ExecuteReader
+
             While dr.Read
                 DataGridView1.Rows.Add(dr.Item("TeacherSubjectID"), dr.Item("TeacherFirstName"), dr.Item("SubjectCode"), dr.Item("SubjectName"))
             End While
@@ -241,11 +252,17 @@ Public Class Condition
                 conn.Open()
             End If
 
-            Dim cmd1 As New OleDb.OleDbCommand("Select TeacherFirstName  from Teachers WHERE TeacherFirstName like '%" & txtSearchT.Text & "%'", conn)
+            Dim cmd1 As New OleDb.OleDbCommand("Select TeacherFirstName  from Teachers WHERE TeacherFirstName like '%" & txtSearchT.Text & "%' and TeacherFirstName <> @TeacherFirstName", conn)
+            cmd1.Parameters.Clear()
+            cmd1.Parameters.AddWithValue("@TeacherFirstName", "-")
+
             Dim cmd As New OleDb.OleDbCommand("Select SubjectCode  from Subjects WHERE SubjectCode like '%" & txtSearchS.Text & "%'", conn)
 
-            Dim cmd2 As New OleDb.OleDbCommand("Select TeacherSubjectID,TeacherFirstName, SubjectCode, SubjectName from TeachersSubjectsQuery WHERE TeacherFirstName like '%" & txtSearchT.Text & "%' and  SubjectCode like '%" & txtSearchS.Text & "%'", conn)
 
+
+            Dim cmd2 As New OleDb.OleDbCommand("Select TeacherSubjectID,TeacherFirstName, SubjectCode, SubjectName from TeachersSubjectsQuery WHERE TeacherFirstName like '%" & txtSearchT.Text & "%' and  SubjectCode like '%" & txtSearchS.Text & "%' and TeacherFirstName <> @TeacherFirstName", conn)
+            cmd2.Parameters.Clear()
+            cmd2.Parameters.AddWithValue("@TeacherFirstName", "-")
             DataGridView1.Rows.Clear()
 
             dr = cmd1.ExecuteReader
@@ -266,8 +283,7 @@ Public Class Condition
             End While
             dr.Close()
 
-        Catch ex As Exception
-            MsgBox(ex.Message)
+        Catch
         Finally
             If conn.State = ConnectionState.Open Then
                 conn.Close()
@@ -288,11 +304,14 @@ Public Class Condition
                 conn.Open()
             End If
 
-            Dim cmd1 As New OleDb.OleDbCommand("Select TeacherSubjectDisplay  from TeachersSubjectsQuery WHERE TeacherSubjectDisplay like '%" & txtSearchTS.Text & "%'", conn)
+            Dim cmd1 As New OleDb.OleDbCommand("Select TeacherSubjectDisplay  from TeachersSubjectsQuery WHERE TeacherSubjectDisplay like '%" & txtSearchTS.Text & "%' and TeacherFirstName<>@TeacherFirstName", conn)
+            cmd1.Parameters.Clear()
+            cmd1.Parameters.AddWithValue("@TeacherFirstName", "-")
             Dim cmd As New OleDb.OleDbCommand("Select ClassroomName from Classrooms WHERE ClassroomName like '%" & txtSearchC.Text & "%'", conn)
 
-            Dim cmd2 As New OleDb.OleDbCommand("Select TeacherSubjectDisplay,ClassroomName from TSClassroomsQuery WHERE TeacherSubjectDisplay like '%" & txtSearchTS.Text & "%' and  ClassroomName like '%" & txtSearchC.Text & "%'", conn)
-
+            Dim cmd2 As New OleDb.OleDbCommand("Select TeacherSubjectDisplay,ClassroomName from TSClassroomsQuery WHERE TeacherSubjectDisplay like '%" & txtSearchTS.Text & "%' and  ClassroomName like '%" & txtSearchC.Text & "%' and TeacherFirstName<>@TeacherFirstName", conn)
+            cmd2.Parameters.Clear()
+            cmd2.Parameters.AddWithValue("@TeacherFirstName", "-")
             DataGridView2.Rows.Clear()
 
             dr = cmd1.ExecuteReader

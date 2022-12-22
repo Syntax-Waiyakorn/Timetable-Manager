@@ -51,8 +51,6 @@ Public Class Subjects
                 conn.Open()
             End If
             Dim cmd As New OleDb.OleDbCommand("Select  SubjectID, SubjectCode, SubjectName, SubjectDepartment, SubjectPlace, SubjectQuota from Subjects WHERE SubjectSpecial <> True", conn)
-            cmd.Parameters.Clear()
-            cmd.Parameters.AddWithValue("@SubjectSpecial", False)
             dr = cmd.ExecuteReader
             While dr.Read
                 DataGridView1.Rows.Add(dr.Item("SubjectID"), dr.Item("SubjectCode"), dr.Item("SubjectName"), dr.Item("SubjectDepartment"), dr.Item("SubjectPlace"), dr.Item("SubjectQuota"))
