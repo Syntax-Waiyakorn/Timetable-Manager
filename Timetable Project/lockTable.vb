@@ -8,6 +8,7 @@ Public Class LockTable
     Dim PPeriod As String = "null"
     Dim TimetableIndex As String = "null"
     Dim SubjectID As Integer
+    Dim LabelClick As Label
     Sub LoadCbo()
         Try
             If conn.State = ConnectionState.Closed Then
@@ -184,6 +185,8 @@ Public Class LockTable
                                                               lblD3P1.Click, lblD3P2.Click, lblD3P3.Click, lblD3P4.Click, lblD3P5.Click, lblD3P6.Click, lblD3P7.Click, lblD3P8.Click, lblD3P9.Click, lblD3P10.Click, lblD3P11.Click,
                                                               lblD4P1.Click, lblD4P2.Click, lblD4P3.Click, lblD4P4.Click, lblD4P5.Click, lblD4P6.Click, lblD4P7.Click, lblD4P8.Click, lblD4P9.Click, lblD4P10.Click, lblD4P11.Click,
                                                               lblD5P1.Click, lblD5P2.Click, lblD5P3.Click, lblD5P4.Click, lblD5P5.Click, lblD5P6.Click, lblD5P7.Click, lblD5P8.Click, lblD5P9.Click, lblD5P10.Click, lblD5P11.Click
+        LabelClick = sender
+
         Try
             Dim lblName As String = sender.Name
             Dim lblPeriod As String
@@ -255,6 +258,8 @@ Public Class LockTable
     Sub Savelock()
         Dim selectedItems As String() = ChackClassrooms.CheckedItems.OfType(Of String)().ToArray()
         Dim itemsString As String = String.Join(vbCrLf, selectedItems)
+        Dim EditLabel As String = "null"
+
         Try
             For Each CurrentClassroom In selectedItems
                 If conn.State = ConnectionState.Closed Then
@@ -299,6 +304,8 @@ Public Class LockTable
                 cmd3.Parameters.AddWithValue("@TeacherSubjectID", TeacherSubjectID)
                 cmd3.Parameters.AddWithValue("TimetablePeriodID", TimetablePeriodID)
                 i = cmd3.ExecuteNonQuery
+                EditLabel = cboText
+
             Next
             DisplayClassroomTable(selectedItems(0))
             If i > 0 Then
@@ -306,6 +313,10 @@ Public Class LockTable
             Else
                 MsgBox("ผิดพลาด", vbCritical)
             End If
+
+            clear()
+            LabelClick.Text = EditLabel
+
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally

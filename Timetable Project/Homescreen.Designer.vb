@@ -41,6 +41,7 @@ Partial Class Homescreen
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel6.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
@@ -57,7 +58,7 @@ Partial Class Homescreen
         Me.Label7.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.Label7.Font = New System.Drawing.Font("Sylfaen", 20.0!)
         Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(77, 195)
+        Me.Label7.Location = New System.Drawing.Point(76, 195)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(501, 35)
         Me.Label7.TabIndex = 138
@@ -70,7 +71,7 @@ Partial Class Homescreen
         Me.Label6.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.Label6.Font = New System.Drawing.Font("Sylfaen", 40.0!)
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(71, 125)
+        Me.Label6.Location = New System.Drawing.Point(70, 125)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(718, 70)
         Me.Label6.TabIndex = 137
@@ -85,7 +86,7 @@ Partial Class Homescreen
         Me.lblHello.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.lblHello.Location = New System.Drawing.Point(62, 19)
         Me.lblHello.Name = "lblHello"
-        Me.lblHello.Size = New System.Drawing.Size(857, 106)
+        Me.lblHello.Size = New System.Drawing.Size(856, 106)
         Me.lblHello.TabIndex = 136
         Me.lblHello.Text = "สวัสดี !"
         Me.lblHello.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -111,7 +112,7 @@ Partial Class Homescreen
         Me.lblRoom.ForeColor = System.Drawing.Color.White
         Me.lblRoom.Location = New System.Drawing.Point(150, 17)
         Me.lblRoom.Name = "lblRoom"
-        Me.lblRoom.Size = New System.Drawing.Size(235, 75)
+        Me.lblRoom.Size = New System.Drawing.Size(236, 75)
         Me.lblRoom.TabIndex = 126
         Me.lblRoom.Text = "load"
         Me.lblRoom.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -148,7 +149,7 @@ Partial Class Homescreen
         Me.Label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label3.Font = New System.Drawing.Font("Sylfaen", 25.0!, System.Drawing.FontStyle.Bold)
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(23, 113)
+        Me.Label3.Location = New System.Drawing.Point(22, 113)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(274, 44)
         Me.Label3.TabIndex = 125
@@ -161,7 +162,7 @@ Partial Class Homescreen
         Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(186, Byte), Integer), CType(CType(212, Byte), Integer))
         Me.Label1.Font = New System.Drawing.Font("Sylfaen", 25.0!, System.Drawing.FontStyle.Bold)
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(31, 110)
+        Me.Label1.Location = New System.Drawing.Point(32, 110)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(253, 44)
         Me.Label1.TabIndex = 122
@@ -175,9 +176,9 @@ Partial Class Homescreen
         Me.Panel6.Controls.Add(Me.lblTea)
         Me.Panel6.Controls.Add(Me.PictureBox1)
         Me.Panel6.Controls.Add(Me.Label1)
-        Me.Panel6.Location = New System.Drawing.Point(979, 265)
+        Me.Panel6.Location = New System.Drawing.Point(980, 265)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(405, 173)
+        Me.Panel6.Size = New System.Drawing.Size(406, 173)
         Me.Panel6.TabIndex = 145
         '
         'PictureBox1
@@ -198,16 +199,16 @@ Partial Class Homescreen
         Me.Panel5.Controls.Add(Me.PictureBox3)
         Me.Panel5.Controls.Add(Me.Label3)
         Me.Panel5.Controls.Add(Me.lblbook)
-        Me.Panel5.Location = New System.Drawing.Point(83, 262)
+        Me.Panel5.Location = New System.Drawing.Point(82, 262)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(405, 176)
+        Me.Panel5.Size = New System.Drawing.Size(406, 176)
         Me.Panel5.TabIndex = 145
         '
         'PictureBox3
         '
         Me.PictureBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.PictureBox3.Image = Global.project.My.Resources.Resources.books_512
-        Me.PictureBox3.Location = New System.Drawing.Point(31, 17)
+        Me.PictureBox3.Location = New System.Drawing.Point(32, 17)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(93, 93)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -223,7 +224,7 @@ Partial Class Homescreen
         Me.Panel4.Controls.Add(Me.lblRoom)
         Me.Panel4.Location = New System.Drawing.Point(534, 262)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(405, 176)
+        Me.Panel4.Size = New System.Drawing.Size(406, 176)
         Me.Panel4.TabIndex = 144
         '
         'PictureBox2
@@ -232,7 +233,7 @@ Partial Class Homescreen
         Me.PictureBox2.Image = Global.project.My.Resources.Resources.classroom_2_512
         Me.PictureBox2.Location = New System.Drawing.Point(39, 27)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(77, 75)
+        Me.PictureBox2.Size = New System.Drawing.Size(76, 75)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 133
         Me.PictureBox2.TabStop = False
@@ -241,7 +242,7 @@ Partial Class Homescreen
         '
         Me.PictureBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.PictureBox4.Image = Global.project.My.Resources.Resources.TPN_Phrakiaw
-        Me.PictureBox4.Location = New System.Drawing.Point(1457, 19)
+        Me.PictureBox4.Location = New System.Drawing.Point(1456, 19)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(198, 258)
         Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -258,6 +259,22 @@ Partial Class Homescreen
         Me.PictureBox5.TabIndex = 146
         Me.PictureBox5.TabStop = False
         '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.MediumSlateBlue
+        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.MediumSlateBlue
+        Me.Button1.FlatAppearance.BorderSize = 10
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 36.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Button1.Location = New System.Drawing.Point(980, 64)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(405, 150)
+        Me.Button1.TabIndex = 148
+        Me.Button1.Text = "คู่มือการใช้งาน"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'Homescreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -265,7 +282,8 @@ Partial Class Homescreen
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = Global.project.My.Resources.Resources.wp9637312_no_copyright_wallpapers
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1803, 1080)
+        Me.ClientSize = New System.Drawing.Size(1803, 1021)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.PictureBox4)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.lblHello)
@@ -313,4 +331,5 @@ Partial Class Homescreen
     Friend WithEvents Panel4 As Panel
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents Button1 As Button
 End Class

@@ -111,7 +111,7 @@ Public Class TeachersTimetablesPrint
         Dim sizeProductionDate As SizeF = New SizeF() 'initialize
         Dim sizeShipper As SizeF = New SizeF() 'initialize
         Dim sizeCosigner As SizeF = New SizeF() 'initialize
-        Dim widthOuter As Integer = 820
+        Dim widthOuter As Integer = 800
         Dim heightOuter As Integer = 310
 
         If conn.State = ConnectionState.Closed Then
@@ -156,18 +156,19 @@ Public Class TeachersTimetablesPrint
             Using path As GraphicsPath = RoundRect(outerRect, 10, 10, 10, 10)
                 g.DrawPath(penDimGray, path)
             End Using
-            g.DrawLine(penDimGray, New PointF(60, 130), New PointF(835, 130))
-            g.DrawLine(penDimGray, New PointF(60, 145), New PointF(835, 145))
-            g.DrawLine(penDimGray, New PointF(15, 160), New PointF(835, 160))
+            g.DrawLine(penDimGray, New PointF(60, 130), New PointF(815, 130))
+            g.DrawLine(penDimGray, New PointF(60, 145), New PointF(815, 145))
+            g.DrawLine(penDimGray, New PointF(15, 160), New PointF(815, 160))
+
 
             g.DrawLine(penDimGray, New PointF(60, 100), New PointF(60, 410))
 
-            For x As Integer = 130 To 820 Step +70
+            For x As Integer = 130 To 780 Step +69
                 g.DrawLine(penDimGray, New PointF(x, 130), New PointF(x, 410))
             Next
 
             For y As Integer = 210 To 360 Step +50
-                g.DrawLine(penDimGray, New PointF(15, y), New PointF(835, y))
+                g.DrawLine(penDimGray, New PointF(15, y), New PointF(815, y))
             Next
         End Using
 
@@ -177,7 +178,7 @@ Public Class TeachersTimetablesPrint
                     XCoord = 90
                     For PeriodNumber As Integer = 0 To 10
                         g.DrawString(CStr(PeriodNumber), labelFont, brush, XCoord, 130)
-                        XCoord = XCoord + 70
+                        XCoord = XCoord + 69
                     Next
                 End Using
             End Using
@@ -191,10 +192,10 @@ Public Class TeachersTimetablesPrint
 
         Using font As Font = New Font("Arial", 7, FontStyle.Regular)
             Using brush As SolidBrush = New SolidBrush(Color.Black)
-                i = 70
+                i = 66
                 For index As Integer = 0 To 10
                     g.DrawString(PeriodTimes(index), font, brush, i, 150)
-                    i = i + 70
+                    i = i + 69
                 Next
             End Using
         End Using
@@ -214,7 +215,7 @@ Public Class TeachersTimetablesPrint
             Using brush As SolidBrush = New SolidBrush(Color.Black)
                 Dim TeacherFirstNameT As String = "null"
                 Dim TeacherIndex As String = "null"
-                XCoord = 65
+                XCoord = 63
                 YCoord = 165
                 For Day As Integer = 1 To 5
                     For Period As Integer = 1 To 11
@@ -250,7 +251,7 @@ Public Class TeachersTimetablesPrint
                             XCoord = XCoord + 70
                         End If
                     Next
-                    XCoord = 65
+                    XCoord = 63
                     YCoord = YCoord + 50
 
                     conn.Close()

@@ -1,4 +1,7 @@
 ﻿Imports System.Data.OleDb
+
+
+
 Public Class Homescreen
     Private Sub Homescreen_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint
         Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\Timetable.accdb")
@@ -56,5 +59,9 @@ Public Class Homescreen
         End If
         conn.Close()
 
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Process.Start(Application.StartupPath & "\Manual.pdf")
     End Sub
 End Class
